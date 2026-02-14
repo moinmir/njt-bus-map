@@ -153,7 +153,7 @@ export function createRouteSelectionManager({
   }
 
   async function ensureRouteScheduleLoaded(state: RouteState): Promise<ScheduleData | null> {
-    if (state.routeData?.activeServicesByDay) {
+    if (state.routeData?.activeServicesByDayByDirection) {
       return null;
     }
 
@@ -184,7 +184,7 @@ export function createRouteSelectionManager({
 
   function prefetchScheduleForRoute(state: RouteState): void {
     if (!state.routeData) return;
-    if (state.routeData.activeServicesByDay) return;
+    if (state.routeData.activeServicesByDayByDirection) return;
     if (state.scheduleData || state.scheduleLoadPromise) return;
 
     const scheduleFile = resolveScheduleFile(state);
@@ -240,7 +240,7 @@ export function createRouteSelectionManager({
         marker,
         async () => {
           let scheduleData = state.scheduleData;
-          if (!scheduleData && !routeData.activeServicesByDay) {
+          if (!scheduleData && !routeData.activeServicesByDayByDirection) {
             scheduleData = await ensureRouteScheduleLoaded(state);
           }
           return buildStopPopupContent(routeMeta, routeData, stop, scheduleData);

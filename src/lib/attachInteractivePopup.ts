@@ -11,6 +11,22 @@ export function attachInteractivePopup(
   options: PopupOptions,
 ): void {
   const { closeDelayMs, hoverPointerQuery } = options;
+  const loadingPopupHtml = `
+    <div class="popup-shell">
+      <div class="next-card next-card--status" aria-live="polite">
+        <p class="next-kicker"><span class="next-icon" aria-hidden="true">⏱</span>Status</p>
+        <p class="next-empty">Loading stop schedule…</p>
+      </div>
+    </div>
+  `;
+  const errorPopupHtml = `
+    <div class="popup-shell">
+      <div class="next-card next-card--status" aria-live="polite">
+        <p class="next-kicker"><span class="next-icon" aria-hidden="true">⚠</span>Status</p>
+        <p class="next-empty">Unable to load stop schedule right now.</p>
+      </div>
+    </div>
+  `;
   let closeTimer: number | null = null;
   let popupRequestToken = 0;
   const hoverCapable = window.matchMedia(hoverPointerQuery).matches;
@@ -29,26 +45,124 @@ export function attachInteractivePopup(
     }, closeDelayMs);
   };
 
+  const bindDirectionToggles = () => {
+    const popupElement = marker.getPopup()?.getElement();
+    if (!popupElement) return;
+
+    const panels = Array.from(popupElement.querySelectorAll<HTMLElement>(".direction-panel[data-direction-panel]"));
+    if (panels.length === 0) return;
+
+    const switchButton = popupElement.querySelector<HTMLButtonElement>(".direction-switch[data-direction-switch]");
+    const currentLabelElement = switchButton?.querySelector<HTMLElement>("[data-direction-current-label]");
+    const currentIconElement = switchButton?.querySelector<HTMLElement>("[data-direction-current-icon]");
+
+    const setActiveDirectionByIndex = (index: number) => {
+      const normalizedIndex = ((index % panels.length) + panels.length) % panels.length;
+      for (const panel of panels) {
+        const panelIndex = panels.indexOf(panel);
+        const isActive = panelIndex === normalizedIndex;
+        panel.classList.toggle("is-active", isActive);
+        panel.setAttribute("aria-hidden", isActive ? "false" : "true");
+      }
+
+      if (!switchButton || panels.length < 2) return;
+
+      const activePanel = panels[normalizedIndex];
+      const nextPanel = panels[(normalizedIndex + 1) % panels.length];
+      const activeLabel = activePanel.dataset.directionLabel ?? `Direction ${normalizedIndex + 1}`;
+      const activeIcon = activePanel.dataset.directionIcon ?? "→";
+      const nextLabel = nextPanel.dataset.directionLabel ?? "the next direction";
+
+      if (currentLabelElement) {
+        currentLabelElement.textContent = activeLabel;
+      }
+      if (currentIconElement) {
+        currentIconElement.textContent = activeIcon;
+      }
+      switchButton.setAttribute("aria-label", `Switch direction to ${nextLabel}`);
+      switchButton.title = `Switch direction to ${nextLabel}`;
+      switchButton.dataset.directionIndex = String(normalizedIndex);
+    };
+
+    const defaultPanelIndex = panels.findIndex((panel) => panel.classList.contains("is-active"));
+    const initialIndex = defaultPanelIndex >= 0 ? defaultPanelIndex : 0;
+    setActiveDirectionByIndex(initialIndex);
+
+    if (!switchButton || panels.length < 2) {
+      return;
+    }
+
+    if (switchButton.dataset.directionBound === "1") {
+      return;
+    }
+    switchButton.dataset.directionBound = "1";
+
+    switchButton.addEventListener("click", () => {
+      const currentIndex = Number.parseInt(switchButton.dataset.directionIndex ?? "0", 10);
+      const safeCurrentIndex = Number.isNaN(currentIndex) ? 0 : currentIndex;
+      setActiveDirectionByIndex(safeCurrentIndex + 1);
+    });
+
+    switchButton.addEventListener("keydown", (event) => {
+      const currentIndex = Number.parseInt(switchButton.dataset.directionIndex ?? "0", 10);
+      const safeCurrentIndex = Number.isNaN(currentIndex) ? 0 : currentIndex;
+
+      if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+        event.preventDefault();
+        setActiveDirectionByIndex(safeCurrentIndex + 1);
+        return;
+      }
+      if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+        event.preventDefault();
+        setActiveDirectionByIndex(safeCurrentIndex - 1);
+        return;
+      }
+      if (event.key === "Home") {
+        event.preventDefault();
+        setActiveDirectionByIndex(0);
+        return;
+      }
+      if (event.key === "End") {
+        event.preventDefault();
+        setActiveDirectionByIndex(panels.length - 1);
+      }
+    });
+  };
+
+  const bindPopupBehaviors = () => {
+    const popupElement = marker.getPopup()?.getElement();
+    if (!popupElement) return;
+
+    L.DomEvent.disableClickPropagation(popupElement);
+    L.DomEvent.disableScrollPropagation(popupElement);
+
+    if ((popupElement as HTMLElement & { dataset: DOMStringMap }).dataset.boundInteractive !== "1") {
+      (popupElement as HTMLElement & { dataset: DOMStringMap }).dataset.boundInteractive = "1";
+      popupElement.addEventListener("mouseenter", clearCloseTimer);
+      popupElement.addEventListener("mouseleave", scheduleClose);
+    }
+
+    bindDirectionToggles();
+  };
+
   const openPopup = () => {
     clearCloseTimer();
     const token = ++popupRequestToken;
-    marker.setPopupContent(
-      '<div class="popup-shell"><div class="next-bar">Loading stop schedule...</div></div>',
-    );
+    marker.setPopupContent(loadingPopupHtml);
     marker.openPopup();
     Promise.resolve(contentFactory())
       .then((content) => {
         if (token !== popupRequestToken) return;
         if (!marker.isPopupOpen()) return;
         marker.setPopupContent(content);
+        bindPopupBehaviors();
       })
       .catch((error) => {
         console.error(error);
         if (token !== popupRequestToken) return;
         if (!marker.isPopupOpen()) return;
-        marker.setPopupContent(
-          '<div class="popup-shell"><div class="next-bar">Unable to load stop schedule right now.</div></div>',
-        );
+        marker.setPopupContent(errorPopupHtml);
+        bindPopupBehaviors();
       });
   };
 
@@ -59,19 +173,7 @@ export function attachInteractivePopup(
   marker.on("click", openPopup);
 
   marker.on("popupopen", () => {
-    const popupElement = marker.getPopup()?.getElement();
-    if (!popupElement) return;
-
-    L.DomEvent.disableClickPropagation(popupElement);
-    L.DomEvent.disableScrollPropagation(popupElement);
-
-    if ((popupElement as HTMLElement & { dataset: DOMStringMap }).dataset.boundInteractive === "1") {
-      return;
-    }
-    (popupElement as HTMLElement & { dataset: DOMStringMap }).dataset.boundInteractive = "1";
-
-    popupElement.addEventListener("mouseenter", clearCloseTimer);
-    popupElement.addEventListener("mouseleave", scheduleClose);
+    bindPopupBehaviors();
   });
 
   marker.on("remove", clearCloseTimer);

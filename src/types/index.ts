@@ -58,20 +58,22 @@ export interface StopData {
   name: string;
   lat: number;
   lon: number;
-  serviceSchedule?: Record<string, string[]>;
-  _daySchedules?: Record<string, string[]>;
+  serviceScheduleByDirection?: Record<string, Record<string, string[]>>;
+  _daySchedulesByDirection?: Record<string, Record<string, string[]>>;
 }
 
 export interface RouteData {
   shapes?: ShapeData[];
   stops?: StopData[];
   scheduleFile?: string;
-  activeServicesByDay?: Record<string, string[]>;
+  directionLabels?: Record<string, string>;
+  activeServicesByDayByDirection?: Record<string, Record<string, string[]>>;
   representativeDates?: Record<string, string>;
 }
 
 export interface ScheduleData {
-  daySchedulesByStop?: Record<string, Record<string, string[]>>;
+  daySchedulesByStopByDirection?: Record<string, Record<string, Record<string, string[]>>>;
+  directionLabels?: Record<string, string>;
   representativeDates?: Record<string, string>;
 }
 

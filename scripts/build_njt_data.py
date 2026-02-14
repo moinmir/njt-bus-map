@@ -95,6 +95,56 @@ def normalize_gtfs_time(value: str) -> str | None:
     return f"{hours:02d}:{minutes:02d}:{seconds:02d}"
 
 
+def normalize_whitespace(value: str) -> str:
+    return re.sub(r"\s+", " ", (value or "").strip())
+
+
+def normalize_trip_headsign(raw: str, short_name: str, route_id: str) -> str:
+    headsign = normalize_whitespace(raw)
+    if not headsign:
+        return ""
+
+    prefixes = [normalize_whitespace(short_name), normalize_whitespace(route_id)]
+    for prefix in prefixes:
+        if not prefix:
+            continue
+        if not headsign.lower().startswith(prefix.lower() + " "):
+            continue
+
+        trimmed = headsign[len(prefix) :].strip(" -")
+        if trimmed:
+            return trimmed
+
+    return headsign
+
+
+def build_direction_key(direction_id: str, headsign: str) -> str:
+    direction_value = normalize_whitespace(direction_id)
+    if direction_value:
+        safe_direction = re.sub(r"[^A-Za-z0-9_-]+", "_", direction_value).strip("_")
+        return f"dir_{safe_direction or '0'}"
+
+    if headsign:
+        digest = hashlib.md5(headsign.lower().encode("utf-8")).hexdigest()[:10]
+        return f"hs_{digest}"
+
+    return "dir_default"
+
+
+def fallback_direction_label(direction_id: str | None) -> str:
+    if direction_id:
+        return f"Direction {direction_id}"
+    return "Direction"
+
+
+def direction_sort_key(direction_id: str | None, label: str, direction_key: str) -> tuple[int, int, str, str]:
+    if direction_id is not None:
+        if direction_id.isdigit():
+            return (0, int(direction_id), label.lower(), direction_key)
+        return (0, 10_000, direction_id.lower(), direction_key)
+    return (1, 10_000, label.lower(), direction_key)
+
+
 def normalize_color(raw: str) -> str | None:
     value = (raw or "").strip().lstrip("#")
     if len(value) != 6:
@@ -306,9 +356,17 @@ def build_feed(
 
         trip_to_route: dict[str, str] = {}
         trip_to_service: dict[str, str] = {}
+        trip_to_direction_key: dict[str, str] = {}
         route_shape_ids: dict[str, set[str]] = defaultdict(set)
         route_trip_ids: dict[str, set[str]] = defaultdict(set)
         route_service_ids: dict[str, set[str]] = defaultdict(set)
+        route_direction_service_ids: dict[str, dict[str, set[str]]] = defaultdict(
+            lambda: defaultdict(set)
+        )
+        route_direction_id_by_key: dict[str, dict[str, str | None]] = defaultdict(dict)
+        route_direction_label_votes: dict[str, dict[str, dict[str, int]]] = defaultdict(
+            lambda: defaultdict(lambda: defaultdict(int))
+        )
 
         for row in iter_csv(zf, "trips.txt"):
             route_id = row["route_id"].strip()
@@ -318,13 +376,65 @@ def build_feed(
             trip_id = row["trip_id"].strip()
             service_id = row["service_id"].strip()
             shape_id = row.get("shape_id", "").strip()
+            direction_id = normalize_whitespace(row.get("direction_id", ""))
+            trip_headsign = normalize_trip_headsign(
+                row.get("trip_headsign", ""),
+                route_meta[route_id]["shortName"],
+                route_id,
+            )
+            direction_key = build_direction_key(direction_id, trip_headsign)
 
             trip_to_route[trip_id] = route_id
             trip_to_service[trip_id] = service_id
+            trip_to_direction_key[trip_id] = direction_key
             route_trip_ids[route_id].add(trip_id)
             route_service_ids[route_id].add(service_id)
+            route_direction_service_ids[route_id][direction_key].add(service_id)
             if shape_id:
                 route_shape_ids[route_id].add(shape_id)
+
+            if direction_key not in route_direction_id_by_key[route_id]:
+                route_direction_id_by_key[route_id][direction_key] = direction_id or None
+
+            if trip_headsign:
+                route_direction_label_votes[route_id][direction_key][trip_headsign] += 1
+
+        route_direction_labels: dict[str, dict[str, str]] = {}
+        route_direction_keys: dict[str, list[str]] = {}
+        for route_id in route_meta:
+            direction_keys = list(route_direction_service_ids[route_id].keys())
+            if not direction_keys:
+                direction_keys = ["dir_default"]
+                route_direction_service_ids[route_id]["dir_default"] = set(route_service_ids[route_id])
+                route_direction_id_by_key[route_id]["dir_default"] = None
+
+            labels_for_route: dict[str, str] = {}
+            for direction_key in direction_keys:
+                vote_map = route_direction_label_votes[route_id].get(direction_key, {})
+                if vote_map:
+                    labels_for_route[direction_key] = sorted(
+                        vote_map.items(),
+                        key=lambda item: (-item[1], item[0].lower()),
+                    )[0][0]
+                    continue
+
+                labels_for_route[direction_key] = fallback_direction_label(
+                    route_direction_id_by_key[route_id].get(direction_key)
+                )
+
+            sorted_keys = sorted(
+                direction_keys,
+                key=lambda direction_key: direction_sort_key(
+                    route_direction_id_by_key[route_id].get(direction_key),
+                    labels_for_route[direction_key],
+                    direction_key,
+                ),
+            )
+
+            route_direction_keys[route_id] = sorted_keys
+            route_direction_labels[route_id] = {
+                direction_key: labels_for_route[direction_key] for direction_key in sorted_keys
+            }
 
         relevant_service_ids: set[str] = set()
         for service_set in route_service_ids.values():
@@ -341,7 +451,9 @@ def build_feed(
                 route_date_trip_count[route_id][service_date] += 1
 
         representative_dates: dict[str, dict[str, dt.date | None]] = defaultdict(dict)
-        active_services_by_route_day: dict[str, dict[str, set[str]]] = defaultdict(dict)
+        active_services_by_route_day_direction: dict[str, dict[str, dict[str, set[str]]]] = (
+            defaultdict(lambda: defaultdict(dict))
+        )
 
         for route_id in route_meta:
             for weekday_index, day_key in enumerate(DAY_KEYS):
@@ -350,21 +462,26 @@ def build_feed(
                 )
                 representative_dates[route_id][day_key] = chosen_date
 
-                if not chosen_date:
-                    active_services_by_route_day[route_id][day_key] = set()
-                    continue
+            for direction_key in route_direction_keys[route_id]:
+                for day_key in DAY_KEYS:
+                    chosen_date = representative_dates[route_id][day_key]
+                    if not chosen_date:
+                        active_services_by_route_day_direction[route_id][direction_key][day_key] = set()
+                        continue
 
-                active_services = {
-                    service_id
-                    for service_id in route_service_ids[route_id]
-                    if chosen_date in service_dates.get(service_id, set())
-                }
-                active_services_by_route_day[route_id][day_key] = active_services
+                    active_services = {
+                        service_id
+                        for service_id in route_direction_service_ids[route_id][direction_key]
+                        if chosen_date in service_dates.get(service_id, set())
+                    }
+                    active_services_by_route_day_direction[route_id][direction_key][day_key] = (
+                        active_services
+                    )
 
         route_stop_ids: dict[str, set[str]] = defaultdict(set)
-        route_stop_schedule_by_service: dict[
-            str, dict[str, dict[str, set[str]]]
-        ] = defaultdict(lambda: defaultdict(lambda: defaultdict(set)))
+        route_stop_schedule_by_service_direction: dict[
+            str, dict[str, dict[str, dict[str, set[str]]]]
+        ] = defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: defaultdict(set))))
 
         for row in iter_csv(zf, "stop_times.txt"):
             trip_id = row["trip_id"].strip()
@@ -384,7 +501,10 @@ def build_feed(
                 continue
 
             service_id = trip_to_service[trip_id]
-            route_stop_schedule_by_service[route_id][stop_id][service_id].add(normalized_time)
+            direction_key = trip_to_direction_key.get(trip_id, "dir_default")
+            route_stop_schedule_by_service_direction[route_id][stop_id][direction_key][
+                service_id
+            ].add(normalized_time)
 
         selected_stop_ids: set[str] = set()
         for route_id in route_meta:
@@ -471,6 +591,10 @@ def build_feed(
     for route_id, meta in route_meta.items():
         route_key = f"{agency_id}:{route_id}"
         route_stops = []
+        direction_keys = route_direction_keys.get(route_id, ["dir_default"])
+        direction_labels = route_direction_labels.get(route_id) or {
+            "dir_default": fallback_direction_label(None)
+        }
 
         for stop_id in sorted(
             route_stop_ids[route_id],
@@ -485,14 +609,21 @@ def build_feed(
 
             stop_payload = {**info}
             if schedule_mode == "inline":
-                service_schedule = {}
-                for service_id, times in route_stop_schedule_by_service[route_id][stop_id].items():
-                    if service_id not in route_service_ids[route_id]:
-                        continue
-                    sorted_times = sorted(times, key=parse_time_to_seconds)
-                    if sorted_times:
-                        service_schedule[service_id] = sorted_times
-                stop_payload["serviceSchedule"] = service_schedule
+                direction_schedule: dict[str, dict[str, list[str]]] = {}
+                by_direction = route_stop_schedule_by_service_direction[route_id][stop_id]
+                for direction_key in direction_keys:
+                    by_service = by_direction.get(direction_key, {})
+                    service_schedule_for_direction: dict[str, list[str]] = {}
+                    for service_id, times in by_service.items():
+                        if service_id not in route_service_ids[route_id]:
+                            continue
+                        sorted_times = sorted(times, key=parse_time_to_seconds)
+                        if sorted_times:
+                            service_schedule_for_direction[service_id] = sorted_times
+                    if service_schedule_for_direction:
+                        direction_schedule[direction_key] = service_schedule_for_direction
+
+                stop_payload["serviceScheduleByDirection"] = direction_schedule
 
             route_stops.append(stop_payload)
 
@@ -546,35 +677,48 @@ def build_feed(
             "bounds": bounds,
             "shapes": shapes,
             "stops": route_stops,
+            "directionLabels": direction_labels,
         }
         if schedule_mode == "inline":
-            active_services_json = {
-                day_key: sorted(active_services_by_route_day[route_id][day_key])
-                for day_key in DAY_KEYS
+            active_services_by_direction_json = {
+                direction_key: {
+                    day_key: sorted(
+                        active_services_by_route_day_direction[route_id][direction_key][day_key]
+                    )
+                    for day_key in DAY_KEYS
+                }
+                for direction_key in direction_keys
             }
             route_payload["representativeDates"] = representative_dates_json
-            route_payload["activeServicesByDay"] = active_services_json
+            route_payload["activeServicesByDayByDirection"] = active_services_by_direction_json
         elif schedule_mode == "external":
             if schedules_dir is None:
                 raise RuntimeError("schedules_dir is required when schedule_mode='external'")
 
-            day_schedules_by_stop: dict[str, dict[str, list[str]]] = {}
+            day_schedules_by_stop_by_direction: dict[str, dict[str, dict[str, list[str]]]] = {}
             for stop in route_stops:
                 stop_id = stop["stopId"]
-                day_schedule: dict[str, list[str]] = {}
+                day_schedule_by_direction: dict[str, dict[str, list[str]]] = {}
 
-                for day_key in DAY_KEYS:
-                    merged: set[str] = set()
-                    active_services = active_services_by_route_day[route_id][day_key]
-                    for service_id in active_services:
-                        merged.update(
-                            route_stop_schedule_by_service[route_id][stop_id].get(service_id, set())
-                        )
+                for direction_key in direction_keys:
+                    day_schedule_for_direction: dict[str, list[str]] = {}
+                    by_service = route_stop_schedule_by_service_direction[route_id][stop_id].get(
+                        direction_key, {}
+                    )
+                    for day_key in DAY_KEYS:
+                        merged: set[str] = set()
+                        active_services = active_services_by_route_day_direction[route_id][
+                            direction_key
+                        ][day_key]
+                        for service_id in active_services:
+                            merged.update(by_service.get(service_id, set()))
 
-                    sorted_times = sorted(merged, key=parse_time_to_seconds)
-                    day_schedule[day_key] = sorted_times
+                        sorted_times = sorted(merged, key=parse_time_to_seconds)
+                        day_schedule_for_direction[day_key] = sorted_times
 
-                day_schedules_by_stop[stop_id] = day_schedule
+                    day_schedule_by_direction[direction_key] = day_schedule_for_direction
+
+                day_schedules_by_stop_by_direction[stop_id] = day_schedule_by_direction
 
             schedule_filename = filename.replace(".json", "_schedule.json")
             schedule_file_rel = f"schedules/{schedule_filename}"
@@ -583,7 +727,8 @@ def build_feed(
                 "agencyId": agency_id,
                 "routeId": route_id,
                 "representativeDates": representative_dates_json,
-                "daySchedulesByStop": day_schedules_by_stop,
+                "directionLabels": direction_labels,
+                "daySchedulesByStopByDirection": day_schedules_by_stop_by_direction,
             }
             (schedules_dir / schedule_filename).write_text(
                 json.dumps(schedule_payload, separators=(",", ":")),
