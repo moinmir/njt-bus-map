@@ -7,3 +7,5 @@ Thumbs.db
 *.swo
 .vercel/
 data/*.zip
+node_modules/
+dist/

@@ -13,90 +13,20 @@
     <title>NJ + Princeton Transit Explorer</title>
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      crossorigin=""
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
     />
-    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <a class="skip-link" href="#map">Skip to map</a>
-    <div class="layout">
-      <aside class="panel" aria-label="Route controls">
-        <button
-          id="panel-toggle"
-          type="button"
-          class="secondary sidebar-toggle"
-          aria-controls="panel-content"
-          aria-expanded="true"
-          aria-label="Collapse controls sidebar"
-        >
-          <span class="sidebar-toggle-icon" aria-hidden="true">❮</span>
-          <span class="sr-only">Toggle controls sidebar</span>
-        </button>
-
-        <h1>NJ + Princeton Transit Explorer</h1>
-        <p class="subtitle">
-          Official GTFS-backed map for all NJ Transit bus routes plus Princeton transit
-          routes (TigerTransit, Princeton Loop, Weekend Shopper).
-        </p>
-
-        <div id="panel-content">
-          <section class="control-block">
-            <h2>Search</h2>
-            <input
-              id="route-search"
-              class="route-search"
-              type="search"
-              placeholder="Search route number or name"
-              autocomplete="off"
-            />
-          </section>
-
-          <section class="control-block">
-            <div class="routes-head">
-              <h2>Routes</h2>
-              <div class="routes-actions">
-                <button id="select-visible" type="button" class="secondary">Select Visible</button>
-                <button id="clear-selected" type="button" class="secondary">Clear All</button>
-              </div>
-            </div>
-            <div id="route-groups" class="route-groups" aria-live="polite"></div>
-            <div class="primary-actions">
-              <button id="fit-selected" type="button">Fit Selected Routes</button>
-              <button id="locate-me" type="button" class="secondary primary-secondary">
-                Use My Location
-              </button>
-            </div>
-          </section>
-
-          <section class="control-block">
-            <h2>Status</h2>
-            <p id="status" class="status-line" role="status" aria-live="polite">Loading data...</p>
-          </section>
-
-          <section class="control-block source-block">
-            <h2>Data Sources</h2>
-            <div id="source-details"></div>
-          </section>
-        </div>
-      </aside>
-
-      <main class="map-shell">
-        <div id="map" role="region" aria-label="Map of transit routes"></div>
-        <div class="map-area-filter" aria-label="Map area search controls">
-          <button id="search-area" type="button" class="map-area-button">Search this area</button>
-          <button id="clear-area" type="button" class="map-area-button is-hidden" aria-label="Clear area and deselect all routes">×</button>
-        </div>
-      </main>
-    </div>
-
+  <body class="min-h-dvh font-[IBM_Plex_Sans,Segoe_UI,sans-serif]">
+    <div id="root"></div>
     <noscript>
-      <p class="noscript">This map requires JavaScript to load route and stop data.</p>
+      <p style="position:fixed;left:0.8rem;right:0.8rem;bottom:0.8rem;z-index:4000;margin:0;padding:0.65rem 0.8rem;border-radius:10px;background:rgba(16,36,59,0.92);color:#fff;">
+        This map requires JavaScript to load route and stop data.
+      </p>
     </noscript>
-
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-    <script type="module" src="src/main.js"></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
