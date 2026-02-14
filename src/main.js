@@ -2,15 +2,15 @@ import {
   HOVER_POINTER_QUERY,
   MOBILE_LAYOUT_QUERY,
   POPUP_CLOSE_DELAY_MS,
-} from "./js/constants.js";
-import { createMap } from "./js/map.js";
-import { attachInteractivePopup } from "./js/popup.js";
-import { loadManifest, loadRouteData, loadScheduleData } from "./js/route-data.js";
-import { buildStopPopupContent } from "./js/stop-popup.js";
-import { escapeHtml } from "./js/text.js";
+} from "./config/constants.js";
+import { loadManifest, loadRouteData, loadScheduleData } from "./data/transitDataClient.js";
+import { attachInteractivePopup } from "./map/attachInteractivePopup.js";
+import { createBaseMap } from "./map/createBaseMap.js";
+import { buildStopPopupContent } from "./ui/popup/buildStopPopupContent.js";
+import { escapeHtml } from "./utils/escapeHtml.js";
 
 const mobileLayoutMediaQuery = window.matchMedia(MOBILE_LAYOUT_QUERY);
-const map = createMap();
+const map = createBaseMap();
 
 const routeGroupsNode = document.getElementById("route-groups");
 const routeSearchNode = document.getElementById("route-search");

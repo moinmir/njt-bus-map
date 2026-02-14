@@ -1,4 +1,4 @@
-import { DAY_LABELS, JS_DAY_TO_KEY } from "./constants.js";
+import { DAY_LABELS, JS_DAY_TO_KEY } from "../config/constants.js";
 
 export function parseGtfsSeconds(rawTime) {
   const [h, m, s] = rawTime.split(":").map((segment) => Number.parseInt(segment, 10));

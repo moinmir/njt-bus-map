@@ -1,4 +1,4 @@
-export function createMap() {
+export function createBaseMap() {
   const map = L.map("map", {
     preferCanvas: true,
     zoomControl: false,

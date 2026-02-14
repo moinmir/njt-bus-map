@@ -1,12 +1,12 @@
-import { DAY_KEYS, DAY_LABELS, JS_DAY_TO_KEY } from "./constants.js";
-import { escapeHtml } from "./text.js";
+import { DAY_KEYS, DAY_LABELS, JS_DAY_TO_KEY } from "../../config/constants.js";
+import { escapeHtml } from "../../utils/escapeHtml.js";
 import {
   findNextArrival,
   findUpcomingArrivals,
   formatDateShort,
   formatGtfsTime,
   parseGtfsSeconds,
-} from "./time.js";
+} from "../../utils/time.js";
 
 function hasInlineScheduleData(routeData, stop) {
   return Boolean(routeData.activeServicesByDay) && Boolean(stop.serviceSchedule);

@@ -1,76 +1,70 @@
 # NJ + Princeton Transit Explorer
 
-Interactive map for:
+Interactive web map for:
+- All NJ Transit bus routes
+- Princeton transit routes (TigerTransit, Princeton Loop, Weekend Shopper)
 
-- **All NJ Transit bus routes**
-- **Princeton transit routes** (TigerTransit, Princeton Loop, Weekend Shopper, and related shuttles)
+## What You Get
+- Route search and multi-select controls
+- Area-based route selection from current map viewport
+- Colored route overlays with stop markers
+- Stop-level schedule popups
+- Offline-friendly app shell via service worker
 
-## Features
+## Requirements
+- `uv`
+- Python 3.10+
 
-- Searchable route catalog grouped by agency
-- Multi-route overlays with distinct colors
-- Stop popups with route/stop details
-- Stop-level schedule popups (optimized external schedule files by default)
-- Mobile-friendly controls: collapsible panel + location centering
-- Installable web app support (`manifest.webmanifest` + service worker)
-
-## Official Data Sources
-
-- NJ Transit GTFS: `https://www.njtransit.com/bus_data.zip`
-- Princeton Transit (TripShot) GTFS: `https://princeton.tripshot.com/v1/gtfs.zip`
-
-## Build or Refresh Dataset
-
-Default optimized web build (shape simplification + lazy schedule files):
-
+## Quick Start
+1. Build or refresh route data:
 ```bash
-./scripts/build_njt_data.py --refresh
+uv run scripts/build_njt_data.py --refresh
 ```
 
-Inline schedules in route files (larger payloads, no schedule-file request on hover):
-
+2. Start a local server:
 ```bash
-./scripts/build_njt_data.py --inline-schedules --refresh
+uv run python -m http.server 8000
 ```
 
-No stop schedules (smallest payload, schedules omitted):
-
-```bash
-./scripts/build_njt_data.py --no-stop-schedules --refresh
+3. Open:
+```text
+http://localhost:8000
 ```
 
-Generated output paths:
-
-- `data/manifest.json`
-- `data/routes/*.json`
-- `data/schedules/*.json` (default mode)
-
-## Run Locally
-
+## Data Build Modes
+Default (recommended): simplified route geometry + external schedule files for fast initial load.
 ```bash
-python3 -m http.server 8000
+uv run scripts/build_njt_data.py --refresh
 ```
 
-Open `http://localhost:8000`.
-
-## Deploy to Vercel
-
-Deploy from repo root with the Vercel CLI:
-
+Inline schedules (larger per-route files, no extra schedule request on popup):
 ```bash
-vercel deploy
+uv run scripts/build_njt_data.py --inline-schedules --refresh
 ```
 
-Deploy to production:
-
+No schedules (smallest payload):
 ```bash
-vercel deploy --prod
+uv run scripts/build_njt_data.py --no-stop-schedules --refresh
 ```
 
-## Deployment Notes
+## Project Structure
+```text
+src/
+  main.js
+  config/
+  data/
+  map/
+  ui/
+  utils/
+scripts/
+  build_njt_data.py
+data/
+  manifest.json
+  routes/
+  schedules/
+```
 
-- `vercel.json` sets caching and security headers for static assets and route data.
-- `.vercelignore` excludes local-only files (`scripts/`, raw GTFS zip files, and skill folders) from deployment uploads.
-- `data/routes/*.json` remains lazy-loaded to keep initial page load fast.
-- `data/schedules/*.json` is cached and prefetched when routes are selected to keep hover popups responsive.
-- For smallest deployment payloads, use `--no-stop-schedules`.
+## Notes
+- Route payloads are lazy-loaded from `data/routes/`.
+- Schedule payloads are loaded from `data/schedules/` and prefetched after route selection for faster hover popups.
+- GTFS source zips are stored under `data/` for reproducible rebuilds.

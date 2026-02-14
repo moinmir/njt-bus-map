@@ -1,23 +1,23 @@
-const APP_SHELL_CACHE = "njt-app-shell-v2";
-const ROUTE_DATA_CACHE = "njt-route-data-v2";
-const SCHEDULE_DATA_CACHE = "njt-schedule-data-v1";
+const APP_SHELL_CACHE = "njt-app-shell-v3";
+const ROUTE_DATA_CACHE = "njt-route-data-v3";
+const SCHEDULE_DATA_CACHE = "njt-schedule-data-v2";
 
 const APP_SHELL_PATHS = new Set([
   "/",
   "/index.html",
   "/styles.css",
-  "/app.js",
+  "/src/main.js",
   "/manifest.webmanifest",
   "/icons/icon-192.svg",
   "/icons/icon-512.svg",
   "/data/manifest.json",
-  "/js/constants.js",
-  "/js/map.js",
-  "/js/popup.js",
-  "/js/route-data.js",
-  "/js/stop-popup.js",
-  "/js/text.js",
-  "/js/time.js",
+  "/src/config/constants.js",
+  "/src/data/transitDataClient.js",
+  "/src/map/attachInteractivePopup.js",
+  "/src/map/createBaseMap.js",
+  "/src/ui/popup/buildStopPopupContent.js",
+  "/src/utils/escapeHtml.js",
+  "/src/utils/time.js",
 ]);
 
 self.addEventListener("install", (event) => {
