@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Search, X } from "lucide-react";
 import type { AreaBounds } from "@/types";
@@ -9,6 +10,15 @@ interface MapAreaFilterProps {
   onClearArea: () => void;
 }
 
+const MAP_OVERLAY_HORIZONTAL_MARGIN_PX = 24;
+
+function resolveOverlayViewport(element: HTMLElement): HTMLElement | null {
+  if (element.offsetParent instanceof HTMLElement) {
+    return element.offsetParent;
+  }
+  return element.parentElement;
+}
+
 export function MapAreaFilter({
   activeAreaBounds,
   areaSelectionInProgress,
@@ -16,9 +26,64 @@ export function MapAreaFilter({
   onClearArea,
 }: MapAreaFilterProps) {
   const areaFilterActive = Boolean(activeAreaBounds);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [hasHorizontalSpace, setHasHorizontalSpace] = useState(true);
+
+  useEffect(() => {
+    const element = containerRef.current;
+    if (!element) return;
+
+    let animationFrameId: number | null = null;
+
+    const updateVisibility = () => {
+      const viewport = resolveOverlayViewport(element);
+      if (!viewport) return;
+
+      const requiredWidth = element.scrollWidth + MAP_OVERLAY_HORIZONTAL_MARGIN_PX;
+      const nextHasHorizontalSpace = viewport.clientWidth >= requiredWidth;
+      setHasHorizontalSpace((current) =>
+        current === nextHasHorizontalSpace ? current : nextHasHorizontalSpace,
+      );
+    };
+
+    const scheduleUpdate = () => {
+      if (animationFrameId !== null) {
+        window.cancelAnimationFrame(animationFrameId);
+      }
+      animationFrameId = window.requestAnimationFrame(() => {
+        animationFrameId = null;
+        updateVisibility();
+      });
+    };
+
+    const resizeObserver =
+      typeof ResizeObserver === "undefined" ? null : new ResizeObserver(scheduleUpdate);
+    resizeObserver?.observe(element);
+    const viewport = resolveOverlayViewport(element);
+    if (viewport) {
+      resizeObserver?.observe(viewport);
+    }
+
+    scheduleUpdate();
+    window.addEventListener("resize", scheduleUpdate);
+
+    return () => {
+      resizeObserver?.disconnect();
+      window.removeEventListener("resize", scheduleUpdate);
+      if (animationFrameId !== null) {
+        window.cancelAnimationFrame(animationFrameId);
+      }
+    };
+  }, [areaFilterActive, areaSelectionInProgress]);
 
   return (
-    <div className="absolute top-3 left-1/2 -translate-x-1/2 z-[1100] flex gap-2 pointer-events-none">
+    <div
+      ref={containerRef}
+      className={`absolute top-3 left-1/2 -translate-x-1/2 z-[1100] flex gap-2 pointer-events-none ${
+        hasHorizontalSpace ? "" : "invisible"
+      }`}
+      aria-hidden={!hasHorizontalSpace}
+    >
       <Button
         variant="outline"
         size="sm"

@@ -190,14 +190,16 @@ export function attachInteractivePopup(
       });
   };
 
+  const openPopupWithPreviewSession = () => {
+    beginHoverSession();
+    openPopup();
+  };
+
   if (hoverCapable) {
-    marker.on("mouseover", () => {
-      beginHoverSession();
-      openPopup();
-    });
+    marker.on("mouseover", openPopupWithPreviewSession);
     marker.on("mouseout", scheduleClose);
   }
-  marker.on("click", openPopup);
+  marker.on("click", openPopupWithPreviewSession);
 
   marker.on("popupopen", () => {
     bindPopupBehaviors();
