@@ -3,6 +3,8 @@ import L from "leaflet";
 interface PopupOptions {
   closeDelayMs: number;
   hoverPointerQuery: string;
+  onHoverSessionStart?: () => void;
+  onHoverSessionEnd?: () => void;
 }
 
 export function attachInteractivePopup(
@@ -10,7 +12,12 @@ export function attachInteractivePopup(
   contentFactory: () => Promise<string> | string,
   options: PopupOptions,
 ): void {
-  const { closeDelayMs, hoverPointerQuery } = options;
+  const {
+    closeDelayMs,
+    hoverPointerQuery,
+    onHoverSessionStart,
+    onHoverSessionEnd,
+  } = options;
   const loadingPopupHtml = `
     <div class="popup-shell">
       <div class="next-card next-card--status" aria-live="polite">
@@ -29,6 +36,7 @@ export function attachInteractivePopup(
   `;
   let closeTimer: number | null = null;
   let popupRequestToken = 0;
+  let hoverSessionActive = false;
   const hoverCapable = window.matchMedia(hoverPointerQuery).matches;
 
   const clearCloseTimer = () => {
@@ -43,6 +51,18 @@ export function attachInteractivePopup(
     closeTimer = window.setTimeout(() => {
       marker.closePopup();
     }, closeDelayMs);
+  };
+
+  const beginHoverSession = () => {
+    if (hoverSessionActive) return;
+    hoverSessionActive = true;
+    onHoverSessionStart?.();
+  };
+
+  const endHoverSession = () => {
+    if (!hoverSessionActive) return;
+    hoverSessionActive = false;
+    onHoverSessionEnd?.();
   };
 
   const bindDirectionToggles = () => {
@@ -167,7 +187,10 @@ export function attachInteractivePopup(
   };
 
   if (hoverCapable) {
-    marker.on("mouseover", openPopup);
+    marker.on("mouseover", () => {
+      beginHoverSession();
+      openPopup();
+    });
     marker.on("mouseout", scheduleClose);
   }
   marker.on("click", openPopup);
@@ -176,5 +199,10 @@ export function attachInteractivePopup(
     bindPopupBehaviors();
   });
 
-  marker.on("remove", clearCloseTimer);
+  marker.on("popupclose", endHoverSession);
+
+  marker.on("remove", () => {
+    clearCloseTimer();
+    endHoverSession();
+  });
 }

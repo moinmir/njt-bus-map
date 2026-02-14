@@ -27,6 +27,96 @@ export function createRouteSelectionManager({
   onUiRefresh,
 }: ManagerDeps): RouteSelectionManager {
   const refreshUi = onUiRefresh;
+  const previewHoverCountsByRouteKey = new Map<string, number>();
+  const previewActivationOrderByRouteKey = new Map<string, number>();
+  let activePreviewRouteKey: string | null = null;
+  let previewActivationSequence = 0;
+
+  function setLayerVisibility(state: RouteState, visible: boolean): void {
+    if (!state.layer) return;
+    const hasLayer = map.hasLayer(state.layer);
+    if (visible && !hasLayer) {
+      map.addLayer(state.layer);
+      return;
+    }
+    if (!visible && hasLayer) {
+      map.removeLayer(state.layer);
+    }
+  }
+
+  function shouldShowSelectedRoute(routeKey: string, state: RouteState): boolean {
+    if (!state.selected || !state.layer) return false;
+    if (!activePreviewRouteKey) return true;
+    return routeKey === activePreviewRouteKey;
+  }
+
+  function syncSelectedRouteLayer(routeKey: string): void {
+    const state = routeStateByKey.get(routeKey);
+    if (!state) return;
+    setLayerVisibility(state, shouldShowSelectedRoute(routeKey, state));
+  }
+
+  function syncAllSelectedRouteLayers(): void {
+    for (const routeKey of selectedRouteKeys) {
+      syncSelectedRouteLayer(routeKey);
+    }
+  }
+
+  function pickNextPreviewRouteKey(): string | null {
+    let nextRouteKey: string | null = null;
+    let bestActivation = -1;
+
+    for (const [routeKey, hoverCount] of previewHoverCountsByRouteKey) {
+      if (hoverCount <= 0) continue;
+      const state = routeStateByKey.get(routeKey);
+      if (!state?.selected) continue;
+
+      const activationOrder = previewActivationOrderByRouteKey.get(routeKey) ?? -1;
+      if (activationOrder > bestActivation) {
+        bestActivation = activationOrder;
+        nextRouteKey = routeKey;
+      }
+    }
+
+    return nextRouteKey;
+  }
+
+  function applyActivePreviewRoute(routeKey: string | null): void {
+    if (activePreviewRouteKey === routeKey) return;
+    activePreviewRouteKey = routeKey;
+    syncAllSelectedRouteLayers();
+  }
+
+  function startStationHoverPreview(routeKey: string): void {
+    const state = routeStateByKey.get(routeKey);
+    if (!state?.selected) return;
+
+    previewHoverCountsByRouteKey.set(routeKey, (previewHoverCountsByRouteKey.get(routeKey) ?? 0) + 1);
+    previewActivationSequence += 1;
+    previewActivationOrderByRouteKey.set(routeKey, previewActivationSequence);
+    applyActivePreviewRoute(routeKey);
+  }
+
+  function endStationHoverPreview(routeKey: string): void {
+    const hoverCount = previewHoverCountsByRouteKey.get(routeKey) ?? 0;
+    if (hoverCount <= 1) {
+      previewHoverCountsByRouteKey.delete(routeKey);
+      previewActivationOrderByRouteKey.delete(routeKey);
+    } else {
+      previewHoverCountsByRouteKey.set(routeKey, hoverCount - 1);
+    }
+
+    if (activePreviewRouteKey !== routeKey) return;
+    if ((previewHoverCountsByRouteKey.get(routeKey) ?? 0) > 0) return;
+    applyActivePreviewRoute(pickNextPreviewRouteKey());
+  }
+
+  function clearStationHoverPreviewForRoute(routeKey: string): void {
+    previewHoverCountsByRouteKey.delete(routeKey);
+    previewActivationOrderByRouteKey.delete(routeKey);
+    if (activePreviewRouteKey !== routeKey) return;
+    applyActivePreviewRoute(pickNextPreviewRouteKey());
+  }
 
   async function setRouteKeysSelected(
     keys: string[],
@@ -92,22 +182,21 @@ export function createRouteSelectionManager({
           if (!state.selected || !state.layer) {
             return;
           }
-          if (!map.hasLayer(state.layer)) {
-            map.addLayer(state.layer);
-          }
+          syncSelectedRouteLayer(routeKey);
         } catch (error) {
           console.error(error);
           state.selected = false;
           selectedRouteKeys.delete(routeKey);
+          clearStationHoverPreviewForRoute(routeKey);
+          syncSelectedRouteLayer(routeKey);
           onStatusUpdate(
             `Failed to load route ${state.meta.shortName}: ${error instanceof Error ? error.message : "Unknown error"}`,
           );
         }
       } else {
         selectedRouteKeys.delete(routeKey);
-        if (state.layer && map.hasLayer(state.layer)) {
-          map.removeLayer(state.layer);
-        }
+        clearStationHoverPreviewForRoute(routeKey);
+        syncSelectedRouteLayer(routeKey);
       }
     } finally {
       if (refreshUiAtEnd) {
@@ -248,6 +337,12 @@ export function createRouteSelectionManager({
         {
           closeDelayMs: POPUP_CLOSE_DELAY_MS,
           hoverPointerQuery: HOVER_POINTER_QUERY,
+          onHoverSessionStart: () => {
+            startStationHoverPreview(routeMeta.key);
+          },
+          onHoverSessionEnd: () => {
+            endStationHoverPreview(routeMeta.key);
+          },
         },
       );
 
