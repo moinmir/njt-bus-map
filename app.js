@@ -59,6 +59,8 @@ const fitButton = document.getElementById("fit-selected");
 const locateMeButton = document.getElementById("locate-me");
 const selectVisibleButton = document.getElementById("select-visible");
 const clearSelectedButton = document.getElementById("clear-selected");
+const searchAreaButton = document.getElementById("search-area");
+const clearAreaButton = document.getElementById("clear-area");
 const panelNode = document.querySelector(".panel");
 const panelToggleButton = document.getElementById("panel-toggle");
 
@@ -68,6 +70,7 @@ const selectedRouteKeys = new Set();
 
 let manifestData = null;
 let activeSearchTerm = "";
+let activeAreaBounds = null;
 let userLocationLayer = null;
 let mobilePanelCollapsed = mobileLayoutMediaQuery.matches;
 
@@ -90,6 +93,7 @@ async function init() {
   configureMobilePanel();
   registerServiceWorker();
   applySearchFilter();
+  updateAreaFilterControls();
   updateStatus();
 }
 
@@ -102,6 +106,8 @@ function attachTopLevelEvents() {
 
   fitButton.addEventListener("click", fitToSelectedRoutes);
   locateMeButton.addEventListener("click", locateUser);
+  searchAreaButton?.addEventListener("click", applyCurrentMapAreaFilter);
+  clearAreaButton?.addEventListener("click", clearAreaFilter);
 
   selectVisibleButton.addEventListener("click", async () => {
     const keys = getVisibleRouteKeys();
@@ -369,10 +375,59 @@ function getVisibleRouteKeys() {
   return keys;
 }
 
+function applyCurrentMapAreaFilter() {
+  activeAreaBounds = createMapAreaBounds(map.getBounds());
+  applySearchFilter();
+  updateAreaFilterControls();
+  updateStatus();
+}
+
+function clearAreaFilter() {
+  if (!activeAreaBounds) return;
+  activeAreaBounds = null;
+  applySearchFilter();
+  updateAreaFilterControls();
+  updateStatus();
+}
+
+function updateAreaFilterControls() {
+  const areaFilterActive = Boolean(activeAreaBounds);
+
+  if (searchAreaButton) {
+    searchAreaButton.textContent = areaFilterActive ? "Search this area again" : "Search this area";
+  }
+  clearAreaButton?.classList.toggle("is-hidden", !areaFilterActive);
+}
+
+function createMapAreaBounds(bounds) {
+  return {
+    south: bounds.getSouth(),
+    west: bounds.getWest(),
+    north: bounds.getNorth(),
+    east: bounds.getEast(),
+  };
+}
+
+function routeIntersectsArea(routeBounds, areaBounds) {
+  if (!routeBounds) return false;
+
+  const [[south, west], [north, east]] = routeBounds;
+  return (
+    north >= areaBounds.south &&
+    south <= areaBounds.north &&
+    east >= areaBounds.west &&
+    west <= areaBounds.east
+  );
+}
+
 function applySearchFilter() {
+  const areaBounds = activeAreaBounds;
+
   for (const state of routeStateByKey.values()) {
     const haystack = state.meta.searchText || "";
-    const matches = !activeSearchTerm || haystack.includes(activeSearchTerm);
+    const matchesSearch = !activeSearchTerm || haystack.includes(activeSearchTerm);
+    const matchesArea = !areaBounds || routeIntersectsArea(state.meta.bounds, areaBounds);
+    const matches = matchesSearch && matchesArea;
     state.isVisible = matches;
     state.row.style.display = matches ? "" : "none";
   }
@@ -744,7 +799,8 @@ function updateStatus() {
   const visibleCount = getVisibleRouteKeys().length;
 
   if (selectedCount === 0) {
-    statusNode.textContent = `No routes selected. ${visibleCount} route(s) currently visible in filter.`;
+    const scopeLabel = activeAreaBounds ? "in searched map area" : "in filter";
+    statusNode.textContent = `No routes selected. ${visibleCount} route(s) currently visible ${scopeLabel}.`;
     return;
   }
 
@@ -760,7 +816,12 @@ function updateStatus() {
     .map(([label, count]) => `${label}: ${count}`)
     .join(" | ");
 
-  statusNode.textContent = `Selected ${selectedCount} route(s)${activeSearchTerm ? ` | Filter: \"${activeSearchTerm}\"` : ""} | ${agencyText}`;
+  const filters = [];
+  if (activeSearchTerm) filters.push(`Search: "${activeSearchTerm}"`);
+  if (activeAreaBounds) filters.push("Area filter: on");
+
+  const filterText = filters.length ? ` | ${filters.join(" | ")}` : "";
+  statusNode.textContent = `Selected ${selectedCount} route(s)${filterText} | ${agencyText}`;
 }
 
 function renderSourceDetails(sources) {
