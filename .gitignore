@@ -9,3 +9,5 @@ Thumbs.db
 data/*.zip
 node_modules/
 dist/
+.vite/
+*.tsbuildinfo
