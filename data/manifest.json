@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-14T19:17:28.924159+00:00",
+  "generatedAt": "2026-02-14T20:31:37.205625+00:00",
   "timezone": "America/New_York",
   "agencies": [
     {
@@ -28,7 +28,7 @@
       "description": "TigerTransit, Princeton Loop, Weekend Shopper, and related Princeton shuttles",
       "gtfsUrl": "https://princeton.tripshot.com/v1/gtfs.zip",
       "gtfsZip": "data/princeton_gtfs.zip",
-      "feedUpdatedAt": "2026-02-14T04:33:14+00:00"
+      "feedUpdatedAt": "2026-02-14T20:31:36+00:00"
     }
   ],
   "routeCount": 271,
@@ -45,7 +45,7 @@
       "color": "#26c56b",
       "tripCount": 1193,
       "stopCount": 185,
-      "shapeCount": 160,
+      "shapeCount": 8,
       "bounds": [
         [
           40.711476,
@@ -72,7 +72,7 @@
       "color": "#c54326",
       "tripCount": 311,
       "stopCount": 116,
-      "shapeCount": 32,
+      "shapeCount": 6,
       "bounds": [
         [
           40.730628,
@@ -99,7 +99,7 @@
       "color": "#5b26c5",
       "tripCount": 135,
       "stopCount": 69,
-      "shapeCount": 10,
+      "shapeCount": 4,
       "bounds": [
         [
           40.728968,
@@ -126,7 +126,7 @@
       "color": "#c52653",
       "tripCount": 150,
       "stopCount": 79,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           40.685449,
@@ -153,7 +153,7 @@
       "color": "#adc526",
       "tripCount": 156,
       "stopCount": 81,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           40.685449,
@@ -180,7 +180,7 @@
       "color": "#26aac5",
       "tripCount": 85,
       "stopCount": 75,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           40.704776,
@@ -207,7 +207,7 @@
       "color": "#9326c5",
       "tripCount": 717,
       "stopCount": 115,
-      "shapeCount": 35,
+      "shapeCount": 3,
       "bounds": [
         [
           40.647538,
@@ -234,7 +234,7 @@
       "color": "#9026c5",
       "tripCount": 305,
       "stopCount": 160,
-      "shapeCount": 27,
+      "shapeCount": 6,
       "bounds": [
         [
           40.731546,
@@ -261,7 +261,7 @@
       "color": "#c52675",
       "tripCount": 166,
       "stopCount": 67,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           40.645236,
@@ -288,15 +288,15 @@
       "color": "#3b26c5",
       "tripCount": 496,
       "stopCount": 186,
-      "shapeCount": 73,
+      "shapeCount": 8,
       "bounds": [
         [
-          40.711326,
-          -74.229955
+          40.711608,
+          -74.229933
         ],
         [
           40.846388,
-          -74.139542
+          -74.139664
         ]
       ],
       "file": "routes/njt_13_29.json",
@@ -315,7 +315,7 @@
       "color": "#26a5c5",
       "tripCount": 120,
       "stopCount": 45,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           40.704776,
@@ -342,7 +342,7 @@
       "color": "#8bc526",
       "tripCount": 100,
       "stopCount": 57,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           40.704927,
@@ -369,14 +369,14 @@
       "color": "#9bc526",
       "tripCount": 465,
       "stopCount": 86,
-      "shapeCount": 14,
+      "shapeCount": 4,
       "bounds": [
         [
           40.733779,
           -74.239284
         ],
         [
-          40.794539,
+          40.794518,
           -74.162962
         ]
       ],
@@ -396,7 +396,7 @@
       "color": "#38c526",
       "tripCount": 122,
       "stopCount": 97,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           40.735437,
@@ -450,7 +450,7 @@
       "color": "#26c57d",
       "tripCount": 402,
       "stopCount": 249,
-      "shapeCount": 46,
+      "shapeCount": 8,
       "bounds": [
         [
           40.646488,
@@ -477,15 +477,15 @@
       "color": "#c52678",
       "tripCount": 613,
       "stopCount": 117,
-      "shapeCount": 69,
+      "shapeCount": 8,
       "bounds": [
         [
-          40.699318,
+          40.699348,
           -74.285066
         ],
         [
           40.736997,
-          -74.122422
+          -74.122872
         ]
       ],
       "file": "routes/njt_25_85.json",
@@ -504,7 +504,7 @@
       "color": "#26c583",
       "tripCount": 169,
       "stopCount": 68,
-      "shapeCount": 10,
+      "shapeCount": 2,
       "bounds": [
         [
           40.66002,
@@ -531,15 +531,15 @@
       "color": "#a0c526",
       "tripCount": 458,
       "stopCount": 163,
-      "shapeCount": 40,
+      "shapeCount": 6,
       "bounds": [
         [
           40.713148,
           -74.227553
         ],
         [
-          40.834906,
-          -74.131504
+          40.834698,
+          -74.1325
         ]
       ],
       "file": "routes/njt_27_87.json",
@@ -558,7 +558,7 @@
       "color": "#c54026",
       "tripCount": 277,
       "stopCount": 167,
-      "shapeCount": 45,
+      "shapeCount": 8,
       "bounds": [
         [
           40.731546,
@@ -585,14 +585,14 @@
       "color": "#2648c5",
       "tripCount": 398,
       "stopCount": 240,
-      "shapeCount": 70,
+      "shapeCount": 8,
       "bounds": [
         [
           40.731546,
           -74.420981
         ],
         [
-          40.891438,
+          40.884629,
           -74.162962
         ]
       ],
@@ -612,7 +612,7 @@
       "color": "#26c5b5",
       "tripCount": 193,
       "stopCount": 86,
-      "shapeCount": 14,
+      "shapeCount": 6,
       "bounds": [
         [
           40.726899,
@@ -639,7 +639,7 @@
       "color": "#c52b26",
       "tripCount": 276,
       "stopCount": 66,
-      "shapeCount": 10,
+      "shapeCount": 4,
       "bounds": [
         [
           40.733779,
@@ -666,14 +666,14 @@
       "color": "#2678c5",
       "tripCount": 824,
       "stopCount": 178,
-      "shapeCount": 69,
+      "shapeCount": 8,
       "bounds": [
         [
           40.718396,
-          -74.221254
+          -74.221112
         ],
         [
-          40.824926,
+          40.8226,
           -74.157322
         ]
       ],
@@ -720,7 +720,7 @@
       "color": "#26c558",
       "tripCount": 168,
       "stopCount": 80,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           40.681057,
@@ -747,7 +747,7 @@
       "color": "#264bc5",
       "tripCount": 336,
       "stopCount": 94,
-      "shapeCount": 12,
+      "shapeCount": 2,
       "bounds": [
         [
           40.706788,
@@ -774,7 +774,7 @@
       "color": "#aac526",
       "tripCount": 233,
       "stopCount": 91,
-      "shapeCount": 50,
+      "shapeCount": 8,
       "bounds": [
         [
           40.658178,
@@ -801,11 +801,11 @@
       "color": "#26c5a8",
       "tripCount": 361,
       "stopCount": 97,
-      "shapeCount": 27,
+      "shapeCount": 4,
       "bounds": [
         [
           40.726899,
-          -74.233613
+          -74.233463
         ],
         [
           40.778166,
@@ -828,7 +828,7 @@
       "color": "#7026c5",
       "tripCount": 127,
       "stopCount": 96,
-      "shapeCount": 12,
+      "shapeCount": 3,
       "bounds": [
         [
           40.733779,
@@ -855,11 +855,11 @@
       "color": "#45c526",
       "tripCount": 209,
       "stopCount": 303,
-      "shapeCount": 25,
+      "shapeCount": 7,
       "bounds": [
         [
           40.507326,
-          -74.361374
+          -74.361333
         ],
         [
           40.666328,
@@ -882,7 +882,7 @@
       "color": "#2685c5",
       "tripCount": 149,
       "stopCount": 87,
-      "shapeCount": 10,
+      "shapeCount": 2,
       "bounds": [
         [
           40.66002,
@@ -909,7 +909,7 @@
       "color": "#b826c5",
       "tripCount": 44,
       "stopCount": 79,
-      "shapeCount": 6,
+      "shapeCount": 4,
       "bounds": [
         [
           40.626558,
@@ -936,7 +936,7 @@
       "color": "#2633c5",
       "tripCount": 58,
       "stopCount": 61,
-      "shapeCount": 4,
+      "shapeCount": 2,
       "bounds": [
         [
           40.609127,
@@ -963,7 +963,7 @@
       "color": "#c52640",
       "tripCount": 149,
       "stopCount": 99,
-      "shapeCount": 23,
+      "shapeCount": 6,
       "bounds": [
         [
           40.637747,
@@ -990,11 +990,11 @@
       "color": "#4026c5",
       "tripCount": 397,
       "stopCount": 242,
-      "shapeCount": 47,
+      "shapeCount": 8,
       "bounds": [
         [
-          40.588427,
-          -74.464164
+          40.588836,
+          -74.464065
         ],
         [
           40.743636,
@@ -1017,7 +1017,7 @@
       "color": "#2630c5",
       "tripCount": 419,
       "stopCount": 69,
-      "shapeCount": 45,
+      "shapeCount": 8,
       "bounds": [
         [
           40.662557,
@@ -1071,7 +1071,7 @@
       "color": "#c52e26",
       "tripCount": 42,
       "stopCount": 114,
-      "shapeCount": 15,
+      "shapeCount": 6,
       "bounds": [
         [
           40.089917,
@@ -1098,7 +1098,7 @@
       "color": "#b526c5",
       "tripCount": 42,
       "stopCount": 236,
-      "shapeCount": 14,
+      "shapeCount": 4,
       "bounds": [
         [
           40.566269,
@@ -1125,10 +1125,10 @@
       "color": "#85c526",
       "tripCount": 262,
       "stopCount": 198,
-      "shapeCount": 39,
+      "shapeCount": 8,
       "bounds": [
         [
-          40.667098,
+          40.667166,
           -74.370425
         ],
         [
@@ -1152,10 +1152,10 @@
       "color": "#2630c5",
       "tripCount": 90,
       "stopCount": 193,
-      "shapeCount": 34,
+      "shapeCount": 8,
       "bounds": [
         [
-          39.950457,
+          39.950506,
           -74.308472
         ],
         [
@@ -1179,7 +1179,7 @@
       "color": "#c56826",
       "tripCount": 30,
       "stopCount": 35,
-      "shapeCount": 7,
+      "shapeCount": 2,
       "bounds": [
         [
           40.396707,
@@ -1206,15 +1206,15 @@
       "color": "#26c52b",
       "tripCount": 381,
       "stopCount": 191,
-      "shapeCount": 94,
+      "shapeCount": 8,
       "bounds": [
         [
           40.709238,
-          -74.387965
+          -74.387582
         ],
         [
           40.794948,
-          -74.162962
+          -74.163102
         ]
       ],
       "file": "routes/njt_70_179.json",
@@ -1233,7 +1233,7 @@
       "color": "#26c5b2",
       "tripCount": 261,
       "stopCount": 218,
-      "shapeCount": 59,
+      "shapeCount": 8,
       "bounds": [
         [
           40.734538,
@@ -1241,7 +1241,7 @@
         ],
         [
           40.883757,
-          -74.162795
+          -74.162962
         ]
       ],
       "file": "routes/njt_71_186.json",
@@ -1260,11 +1260,11 @@
       "color": "#c59826",
       "tripCount": 166,
       "stopCount": 156,
-      "shapeCount": 12,
+      "shapeCount": 2,
       "bounds": [
         [
           40.733779,
-          -74.197684
+          -74.197585
         ],
         [
           40.919096,
@@ -1287,14 +1287,14 @@
       "color": "#c52690",
       "tripCount": 356,
       "stopCount": 203,
-      "shapeCount": 90,
+      "shapeCount": 8,
       "bounds": [
         [
           40.734538,
-          -74.407752
+          -74.407741
         ],
         [
-          40.826908,
+          40.820849,
           -74.163102
         ]
       ],
@@ -1314,7 +1314,7 @@
       "color": "#26c575",
       "tripCount": 251,
       "stopCount": 201,
-      "shapeCount": 15,
+      "shapeCount": 6,
       "bounds": [
         [
           40.775506,
@@ -1341,7 +1341,7 @@
       "color": "#c54d26",
       "tripCount": 367,
       "stopCount": 204,
-      "shapeCount": 37,
+      "shapeCount": 7,
       "bounds": [
         [
           40.733779,
@@ -1368,7 +1368,7 @@
       "color": "#4026c5",
       "tripCount": 55,
       "stopCount": 80,
-      "shapeCount": 15,
+      "shapeCount": 5,
       "bounds": [
         [
           40.734538,
@@ -1395,7 +1395,7 @@
       "color": "#c5263b",
       "tripCount": 20,
       "stopCount": 108,
-      "shapeCount": 7,
+      "shapeCount": 5,
       "bounds": [
         [
           40.734538,
@@ -1422,7 +1422,7 @@
       "color": "#c52675",
       "tripCount": 855,
       "stopCount": 107,
-      "shapeCount": 39,
+      "shapeCount": 8,
       "bounds": [
         [
           40.691807,
@@ -1449,7 +1449,7 @@
       "color": "#c55d26",
       "tripCount": 418,
       "stopCount": 154,
-      "shapeCount": 31,
+      "shapeCount": 8,
       "bounds": [
         [
           40.645236,
@@ -1503,14 +1503,14 @@
       "color": "#7826c5",
       "tripCount": 273,
       "stopCount": 209,
-      "shapeCount": 16,
+      "shapeCount": 2,
       "bounds": [
         [
           40.730447,
-          -74.062773
+          -74.062594
         ],
         [
-          40.907507,
+          40.907496,
           -73.997035
         ]
       ],
@@ -1530,7 +1530,7 @@
       "color": "#c52663",
       "tripCount": 241,
       "stopCount": 160,
-      "shapeCount": 14,
+      "shapeCount": 4,
       "bounds": [
         [
           40.729938,
@@ -1557,7 +1557,7 @@
       "color": "#38c526",
       "tripCount": 203,
       "stopCount": 70,
-      "shapeCount": 11,
+      "shapeCount": 3,
       "bounds": [
         [
           40.735437,
@@ -1584,7 +1584,7 @@
       "color": "#c2c526",
       "tripCount": 80,
       "stopCount": 89,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           40.719037,
@@ -1611,15 +1611,15 @@
       "color": "#2655c5",
       "tripCount": 917,
       "stopCount": 170,
-      "shapeCount": 26,
+      "shapeCount": 5,
       "bounds": [
         [
           40.691807,
           -74.096883
         ],
         [
-          40.787966,
-          -74.028772
+          40.787187,
+          -74.02911
         ]
       ],
       "file": "routes/njt_87_237.json",
@@ -1638,7 +1638,7 @@
       "color": "#269dc5",
       "tripCount": 201,
       "stopCount": 140,
-      "shapeCount": 12,
+      "shapeCount": 4,
       "bounds": [
         [
           40.730447,
@@ -1665,7 +1665,7 @@
       "color": "#2675c5",
       "tripCount": 124,
       "stopCount": 87,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           40.735437,
@@ -1692,7 +1692,7 @@
       "color": "#c5a826",
       "tripCount": 174,
       "stopCount": 94,
-      "shapeCount": 10,
+      "shapeCount": 4,
       "bounds": [
         [
           40.712466,
@@ -1719,11 +1719,11 @@
       "color": "#269bc5",
       "tripCount": 162,
       "stopCount": 98,
-      "shapeCount": 23,
+      "shapeCount": 7,
       "bounds": [
         [
-          40.743546,
-          -74.261774
+          40.743677,
+          -74.261561
         ],
         [
           40.799867,
@@ -1746,7 +1746,7 @@
       "color": "#26c590",
       "tripCount": 897,
       "stopCount": 223,
-      "shapeCount": 43,
+      "shapeCount": 8,
       "bounds": [
         [
           40.625536,
@@ -1773,7 +1773,7 @@
       "color": "#5dc526",
       "tripCount": 68,
       "stopCount": 61,
-      "shapeCount": 4,
+      "shapeCount": 2,
       "bounds": [
         [
           40.710846,
@@ -1800,7 +1800,7 @@
       "color": "#c52690",
       "tripCount": 50,
       "stopCount": 68,
-      "shapeCount": 6,
+      "shapeCount": 4,
       "bounds": [
         [
           40.752337,
@@ -1827,7 +1827,7 @@
       "color": "#269bc5",
       "tripCount": 245,
       "stopCount": 133,
-      "shapeCount": 17,
+      "shapeCount": 6,
       "bounds": [
         [
           40.698688,
@@ -1854,7 +1854,7 @@
       "color": "#26bac5",
       "tripCount": 25,
       "stopCount": 84,
-      "shapeCount": 9,
+      "shapeCount": 2,
       "bounds": [
         [
           40.756209,
@@ -1881,7 +1881,7 @@
       "color": "#c2c526",
       "tripCount": 42,
       "stopCount": 43,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           40.756696,
@@ -1908,7 +1908,7 @@
       "color": "#c52655",
       "tripCount": 26,
       "stopCount": 99,
-      "shapeCount": 7,
+      "shapeCount": 2,
       "bounds": [
         [
           40.756209,
@@ -1935,15 +1935,15 @@
       "color": "#2635c5",
       "tripCount": 534,
       "stopCount": 116,
-      "shapeCount": 76,
+      "shapeCount": 8,
       "bounds": [
         [
-          40.681057,
+          40.684959,
           -74.261561
         ],
         [
           40.780926,
-          -73.990265
+          -73.990753
         ]
       ],
       "file": "routes/njt_107_6.json",
@@ -1962,7 +1962,7 @@
       "color": "#26c57b",
       "tripCount": 147,
       "stopCount": 64,
-      "shapeCount": 10,
+      "shapeCount": 2,
       "bounds": [
         [
           40.728266,
@@ -1989,7 +1989,7 @@
       "color": "#26c530",
       "tripCount": 49,
       "stopCount": 102,
-      "shapeCount": 12,
+      "shapeCount": 4,
       "bounds": [
         [
           40.747059,
@@ -2016,7 +2016,7 @@
       "color": "#26c593",
       "tripCount": 119,
       "stopCount": 19,
-      "shapeCount": 12,
+      "shapeCount": 4,
       "bounds": [
         [
           40.660417,
@@ -2043,10 +2043,10 @@
       "color": "#c52673",
       "tripCount": 222,
       "stopCount": 117,
-      "shapeCount": 29,
+      "shapeCount": 6,
       "bounds": [
         [
-          40.611906,
+          40.612007,
           -74.359592
         ],
         [
@@ -2070,7 +2070,7 @@
       "color": "#2638c5",
       "tripCount": 351,
       "stopCount": 242,
-      "shapeCount": 54,
+      "shapeCount": 8,
       "bounds": [
         [
           40.588427,
@@ -2078,7 +2078,7 @@
         ],
         [
           40.780926,
-          -73.990265
+          -73.990597
         ]
       ],
       "file": "routes/njt_113_12.json",
@@ -2097,15 +2097,15 @@
       "color": "#26c538",
       "tripCount": 422,
       "stopCount": 244,
-      "shapeCount": 69,
+      "shapeCount": 8,
       "bounds": [
         [
-          40.566187,
-          -74.624563
+          40.566267,
+          -74.624284
         ],
         [
           40.780926,
-          -73.990597
+          -73.990753
         ]
       ],
       "file": "routes/njt_114_13.json",
@@ -2124,7 +2124,7 @@
       "color": "#63c526",
       "tripCount": 178,
       "stopCount": 124,
-      "shapeCount": 30,
+      "shapeCount": 7,
       "bounds": [
         [
           40.574578,
@@ -2151,10 +2151,10 @@
       "color": "#4d26c5",
       "tripCount": 267,
       "stopCount": 100,
-      "shapeCount": 16,
+      "shapeCount": 2,
       "bounds": [
         [
-          40.507507,
+          40.50765,
           -74.282584
         ],
         [
@@ -2205,7 +2205,7 @@
       "color": "#a526c5",
       "tripCount": 714,
       "stopCount": 164,
-      "shapeCount": 81,
+      "shapeCount": 8,
       "bounds": [
         [
           40.647538,
@@ -2286,7 +2286,7 @@
       "color": "#26b5c5",
       "tripCount": 61,
       "stopCount": 30,
-      "shapeCount": 12,
+      "shapeCount": 2,
       "bounds": [
         [
           40.756209,
@@ -2313,7 +2313,7 @@
       "color": "#9026c5",
       "tripCount": 644,
       "stopCount": 53,
-      "shapeCount": 28,
+      "shapeCount": 4,
       "bounds": [
         [
           40.734618,
@@ -2340,7 +2340,7 @@
       "color": "#26c2c5",
       "tripCount": 19,
       "stopCount": 59,
-      "shapeCount": 5,
+      "shapeCount": 4,
       "bounds": [
         [
           40.756209,
@@ -2367,7 +2367,7 @@
       "color": "#26c56b",
       "tripCount": 136,
       "stopCount": 65,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           40.730628,
@@ -2394,10 +2394,10 @@
       "color": "#4d26c5",
       "tripCount": 757,
       "stopCount": 56,
-      "shapeCount": 47,
+      "shapeCount": 8,
       "bounds": [
         [
-          40.724416,
+          40.724567,
           -74.046207
         ],
         [
@@ -2421,14 +2421,14 @@
       "color": "#268bc5",
       "tripCount": 231,
       "stopCount": 69,
-      "shapeCount": 22,
+      "shapeCount": 5,
       "bounds": [
         [
           40.756209,
-          -74.052852
+          -74.033261
         ],
         [
-          40.848386,
+          40.841439,
           -73.990572
         ]
       ],
@@ -2448,7 +2448,7 @@
       "color": "#7326c5",
       "tripCount": 671,
       "stopCount": 59,
-      "shapeCount": 28,
+      "shapeCount": 2,
       "bounds": [
         [
           40.756209,
@@ -2475,7 +2475,7 @@
       "color": "#262ec5",
       "tripCount": 264,
       "stopCount": 70,
-      "shapeCount": 33,
+      "shapeCount": 7,
       "bounds": [
         [
           40.756209,
@@ -2502,7 +2502,7 @@
       "color": "#c526a0",
       "tripCount": 50,
       "stopCount": 53,
-      "shapeCount": 11,
+      "shapeCount": 3,
       "bounds": [
         [
           40.089955,
@@ -2529,7 +2529,7 @@
       "color": "#c52688",
       "tripCount": 44,
       "stopCount": 58,
-      "shapeCount": 11,
+      "shapeCount": 3,
       "bounds": [
         [
           40.27254,
@@ -2556,7 +2556,7 @@
       "color": "#c57026",
       "tripCount": 22,
       "stopCount": 55,
-      "shapeCount": 8,
+      "shapeCount": 5,
       "bounds": [
         [
           40.089917,
@@ -2583,7 +2583,7 @@
       "color": "#43c526",
       "tripCount": 42,
       "stopCount": 75,
-      "shapeCount": 15,
+      "shapeCount": 6,
       "bounds": [
         [
           40.394578,
@@ -2610,7 +2610,7 @@
       "color": "#c59026",
       "tripCount": 19,
       "stopCount": 60,
-      "shapeCount": 7,
+      "shapeCount": 2,
       "bounds": [
         [
           40.259178,
@@ -2637,7 +2637,7 @@
       "color": "#26c563",
       "tripCount": 13,
       "stopCount": 25,
-      "shapeCount": 3,
+      "shapeCount": 1,
       "bounds": [
         [
           40.090076,
@@ -2664,7 +2664,7 @@
       "color": "#60c526",
       "tripCount": 129,
       "stopCount": 89,
-      "shapeCount": 27,
+      "shapeCount": 7,
       "bounds": [
         [
           39.950437,
@@ -2691,7 +2691,7 @@
       "color": "#c52693",
       "tripCount": 32,
       "stopCount": 67,
-      "shapeCount": 18,
+      "shapeCount": 6,
       "bounds": [
         [
           40.354397,
@@ -2718,14 +2718,14 @@
       "color": "#26c573",
       "tripCount": 723,
       "stopCount": 201,
-      "shapeCount": 121,
+      "shapeCount": 8,
       "bounds": [
         [
           40.089887,
-          -74.362672
+          -74.361561
         ],
         [
-          40.780926,
+          40.780918,
           -73.990265
         ]
       ],
@@ -2745,7 +2745,7 @@
       "color": "#26b0c5",
       "tripCount": 71,
       "stopCount": 111,
-      "shapeCount": 20,
+      "shapeCount": 6,
       "bounds": [
         [
           40.756209,
@@ -2772,7 +2772,7 @@
       "color": "#9b26c5",
       "tripCount": 27,
       "stopCount": 71,
-      "shapeCount": 9,
+      "shapeCount": 2,
       "bounds": [
         [
           40.756209,
@@ -2826,7 +2826,7 @@
       "color": "#bd26c5",
       "tripCount": 31,
       "stopCount": 76,
-      "shapeCount": 7,
+      "shapeCount": 2,
       "bounds": [
         [
           40.756209,
@@ -2880,7 +2880,7 @@
       "color": "#26a0c5",
       "tripCount": 277,
       "stopCount": 97,
-      "shapeCount": 19,
+      "shapeCount": 5,
       "bounds": [
         [
           40.756209,
@@ -2907,7 +2907,7 @@
       "color": "#2650c5",
       "tripCount": 22,
       "stopCount": 62,
-      "shapeCount": 9,
+      "shapeCount": 2,
       "bounds": [
         [
           40.756209,
@@ -2934,10 +2934,10 @@
       "color": "#c5264d",
       "tripCount": 438,
       "stopCount": 162,
-      "shapeCount": 57,
+      "shapeCount": 7,
       "bounds": [
         [
-          40.756181,
+          40.756209,
           -74.027752
         ],
         [
@@ -2961,7 +2961,7 @@
       "color": "#2826c5",
       "tripCount": 21,
       "stopCount": 62,
-      "shapeCount": 9,
+      "shapeCount": 2,
       "bounds": [
         [
           40.756209,
@@ -2988,7 +2988,7 @@
       "color": "#8dc526",
       "tripCount": 651,
       "stopCount": 80,
-      "shapeCount": 44,
+      "shapeCount": 4,
       "bounds": [
         [
           40.756209,
@@ -3015,11 +3015,11 @@
       "color": "#5526c5",
       "tripCount": 985,
       "stopCount": 162,
-      "shapeCount": 89,
+      "shapeCount": 8,
       "bounds": [
         [
-          40.756181,
-          -74.029932
+          40.756209,
+          -74.029844
         ],
         [
           40.864326,
@@ -3042,7 +3042,7 @@
       "color": "#26b2c5",
       "tripCount": 242,
       "stopCount": 140,
-      "shapeCount": 21,
+      "shapeCount": 4,
       "bounds": [
         [
           40.756209,
@@ -3069,7 +3069,7 @@
       "color": "#c58d26",
       "tripCount": 581,
       "stopCount": 161,
-      "shapeCount": 50,
+      "shapeCount": 7,
       "bounds": [
         [
           40.756209,
@@ -3077,7 +3077,7 @@
         ],
         [
           40.919096,
-          -73.990597
+          -73.990753
         ]
       ],
       "file": "routes/njt_161_53.json",
@@ -3096,7 +3096,7 @@
       "color": "#5bc526",
       "tripCount": 53,
       "stopCount": 39,
-      "shapeCount": 7,
+      "shapeCount": 2,
       "bounds": [
         [
           40.756209,
@@ -3123,11 +3123,11 @@
       "color": "#c5266d",
       "tripCount": 718,
       "stopCount": 190,
-      "shapeCount": 156,
+      "shapeCount": 8,
       "bounds": [
         [
           40.756209,
-          -74.127213
+          -74.127011
         ],
         [
           41.004258,
@@ -3177,7 +3177,7 @@
       "color": "#6dc526",
       "tripCount": 247,
       "stopCount": 209,
-      "shapeCount": 41,
+      "shapeCount": 7,
       "bounds": [
         [
           40.756209,
@@ -3204,14 +3204,14 @@
       "color": "#2680c5",
       "tripCount": 936,
       "stopCount": 258,
-      "shapeCount": 121,
+      "shapeCount": 8,
       "bounds": [
         [
           40.756209,
-          -74.112005
+          -74.100495
         ],
         [
-          40.994078,
+          40.993837,
           -73.990265
         ]
       ],
@@ -3231,7 +3231,7 @@
       "color": "#c52645",
       "tripCount": 1168,
       "stopCount": 222,
-      "shapeCount": 159,
+      "shapeCount": 8,
       "bounds": [
         [
           40.756209,
@@ -3239,7 +3239,7 @@
         ],
         [
           40.94141,
-          -73.961193
+          -73.961273
         ]
       ],
       "file": "routes/njt_166_59.json",
@@ -3258,7 +3258,7 @@
       "color": "#267dc5",
       "tripCount": 570,
       "stopCount": 199,
-      "shapeCount": 164,
+      "shapeCount": 8,
       "bounds": [
         [
           40.756209,
@@ -3285,14 +3285,14 @@
       "color": "#38c526",
       "tripCount": 251,
       "stopCount": 215,
-      "shapeCount": 51,
+      "shapeCount": 8,
       "bounds": [
         [
           40.756209,
           -74.072881
         ],
         [
-          40.966867,
+          40.966678,
           -73.990265
         ]
       ],
@@ -3312,7 +3312,7 @@
       "color": "#6026c5",
       "tripCount": 110,
       "stopCount": 118,
-      "shapeCount": 6,
+      "shapeCount": 4,
       "bounds": [
         [
           40.848868,
@@ -3339,7 +3339,7 @@
       "color": "#7d26c5",
       "tripCount": 115,
       "stopCount": 138,
-      "shapeCount": 10,
+      "shapeCount": 6,
       "bounds": [
         [
           40.848868,
@@ -3366,7 +3366,7 @@
       "color": "#26c526",
       "tripCount": 172,
       "stopCount": 76,
-      "shapeCount": 36,
+      "shapeCount": 5,
       "bounds": [
         [
           40.756209,
@@ -3393,14 +3393,14 @@
       "color": "#53c526",
       "tripCount": 110,
       "stopCount": 105,
-      "shapeCount": 7,
+      "shapeCount": 2,
       "bounds": [
         [
           40.848868,
-          -74.042985
+          -74.042904
         ],
         [
-          40.907406,
+          40.907228,
           -73.939185
         ]
       ],
@@ -3420,7 +3420,7 @@
       "color": "#c57026",
       "tripCount": 44,
       "stopCount": 94,
-      "shapeCount": 4,
+      "shapeCount": 2,
       "bounds": [
         [
           40.781866,
@@ -3447,7 +3447,7 @@
       "color": "#4dc526",
       "tripCount": 103,
       "stopCount": 52,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           40.848868,
@@ -3474,7 +3474,7 @@
       "color": "#26c53d",
       "tripCount": 132,
       "stopCount": 106,
-      "shapeCount": 7,
+      "shapeCount": 2,
       "bounds": [
         [
           40.848868,
@@ -3501,7 +3501,7 @@
       "color": "#6026c5",
       "tripCount": 60,
       "stopCount": 61,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           40.784307,
@@ -3528,7 +3528,7 @@
       "color": "#c52660",
       "tripCount": 925,
       "stopCount": 173,
-      "shapeCount": 119,
+      "shapeCount": 8,
       "bounds": [
         [
           40.756209,
@@ -3555,7 +3555,7 @@
       "color": "#26c5b0",
       "tripCount": 132,
       "stopCount": 105,
-      "shapeCount": 36,
+      "shapeCount": 8,
       "bounds": [
         [
           40.756209,
@@ -3582,7 +3582,7 @@
       "color": "#264bc5",
       "tripCount": 299,
       "stopCount": 131,
-      "shapeCount": 48,
+      "shapeCount": 7,
       "bounds": [
         [
           40.756209,
@@ -3609,7 +3609,7 @@
       "color": "#269bc5",
       "tripCount": 126,
       "stopCount": 4,
-      "shapeCount": 9,
+      "shapeCount": 2,
       "bounds": [
         [
           40.756209,
@@ -3636,7 +3636,7 @@
       "color": "#73c526",
       "tripCount": 186,
       "stopCount": 118,
-      "shapeCount": 69,
+      "shapeCount": 8,
       "bounds": [
         [
           40.756209,
@@ -3644,7 +3644,7 @@
         ],
         [
           41.09763,
-          -73.990265
+          -73.990597
         ]
       ],
       "file": "routes/njt_194_74.json",
@@ -3663,7 +3663,7 @@
       "color": "#c526b8",
       "tripCount": 101,
       "stopCount": 111,
-      "shapeCount": 32,
+      "shapeCount": 8,
       "bounds": [
         [
           40.756209,
@@ -3690,7 +3690,7 @@
       "color": "#a526c5",
       "tripCount": 34,
       "stopCount": 58,
-      "shapeCount": 9,
+      "shapeCount": 2,
       "bounds": [
         [
           40.756209,
@@ -3717,7 +3717,7 @@
       "color": "#3526c5",
       "tripCount": 243,
       "stopCount": 267,
-      "shapeCount": 70,
+      "shapeCount": 8,
       "bounds": [
         [
           40.756209,
@@ -3725,7 +3725,7 @@
         ],
         [
           41.255927,
-          -73.990265
+          -73.990597
         ]
       ],
       "file": "routes/njt_197_77.json",
@@ -3744,7 +3744,7 @@
       "color": "#3826c5",
       "tripCount": 101,
       "stopCount": 53,
-      "shapeCount": 18,
+      "shapeCount": 3,
       "bounds": [
         [
           40.756209,
@@ -3771,7 +3771,7 @@
       "color": "#26c558",
       "tripCount": 119,
       "stopCount": 118,
-      "shapeCount": 21,
+      "shapeCount": 5,
       "bounds": [
         [
           40.756209,
@@ -3798,7 +3798,7 @@
       "color": "#b226c5",
       "tripCount": 21,
       "stopCount": 215,
-      "shapeCount": 12,
+      "shapeCount": 2,
       "bounds": [
         [
           38.933057,
@@ -3825,7 +3825,7 @@
       "color": "#c53b26",
       "tripCount": 15,
       "stopCount": 202,
-      "shapeCount": 9,
+      "shapeCount": 2,
       "bounds": [
         [
           38.933208,
@@ -3852,10 +3852,10 @@
       "color": "#3026c5",
       "tripCount": 51,
       "stopCount": 270,
-      "shapeCount": 20,
+      "shapeCount": 7,
       "bounds": [
         [
-          39.933467,
+          39.933497,
           -75.163322
         ],
         [
@@ -3879,7 +3879,7 @@
       "color": "#c5a526",
       "tripCount": 246,
       "stopCount": 83,
-      "shapeCount": 53,
+      "shapeCount": 5,
       "bounds": [
         [
           38.986328,
@@ -3906,7 +3906,7 @@
       "color": "#5dc526",
       "tripCount": 659,
       "stopCount": 19,
-      "shapeCount": 13,
+      "shapeCount": 3,
       "bounds": [
         [
           40.756209,
@@ -3933,7 +3933,7 @@
       "color": "#38c526",
       "tripCount": 59,
       "stopCount": 4,
-      "shapeCount": 5,
+      "shapeCount": 2,
       "bounds": [
         [
           40.756209,
@@ -3960,7 +3960,7 @@
       "color": "#26c528",
       "tripCount": 69,
       "stopCount": 5,
-      "shapeCount": 10,
+      "shapeCount": 3,
       "bounds": [
         [
           40.756209,
@@ -4014,7 +4014,7 @@
       "color": "#c52626",
       "tripCount": 77,
       "stopCount": 3,
-      "shapeCount": 7,
+      "shapeCount": 2,
       "bounds": [
         [
           40.756209,
@@ -4122,15 +4122,15 @@
       "color": "#c52650",
       "tripCount": 249,
       "stopCount": 261,
-      "shapeCount": 62,
+      "shapeCount": 8,
       "bounds": [
         [
-          39.673856,
+          39.673966,
           -75.163322
         ],
         [
           39.957907,
-          -74.942914
+          -74.942935
         ]
       ],
       "file": "routes/njt_400_109.json",
@@ -4149,7 +4149,7 @@
       "color": "#c52b26",
       "tripCount": 60,
       "stopCount": 205,
-      "shapeCount": 15,
+      "shapeCount": 5,
       "bounds": [
         [
           39.563248,
@@ -4176,14 +4176,14 @@
       "color": "#c58026",
       "tripCount": 46,
       "stopCount": 248,
-      "shapeCount": 22,
+      "shapeCount": 8,
       "bounds": [
         [
           39.640299,
-          -75.521214
+          -75.521102
         ],
         [
-          39.957907,
+          39.957896,
           -75.103574
         ]
       ],
@@ -4203,11 +4203,11 @@
       "color": "#c5b526",
       "tripCount": 156,
       "stopCount": 224,
-      "shapeCount": 44,
+      "shapeCount": 8,
       "bounds": [
         [
           39.72764,
-          -75.119224
+          -75.119081
         ],
         [
           39.944096,
@@ -4230,7 +4230,7 @@
       "color": "#7dc526",
       "tripCount": 131,
       "stopCount": 152,
-      "shapeCount": 15,
+      "shapeCount": 5,
       "bounds": [
         [
           39.942567,
@@ -4257,7 +4257,7 @@
       "color": "#26c540",
       "tripCount": 93,
       "stopCount": 79,
-      "shapeCount": 9,
+      "shapeCount": 4,
       "bounds": [
         [
           39.925208,
@@ -4284,7 +4284,7 @@
       "color": "#26c57b",
       "tripCount": 130,
       "stopCount": 181,
-      "shapeCount": 32,
+      "shapeCount": 8,
       "bounds": [
         [
           39.804699,
@@ -4311,7 +4311,7 @@
       "color": "#c59326",
       "tripCount": 112,
       "stopCount": 142,
-      "shapeCount": 10,
+      "shapeCount": 4,
       "bounds": [
         [
           39.939038,
@@ -4338,14 +4338,14 @@
       "color": "#c54026",
       "tripCount": 100,
       "stopCount": 235,
-      "shapeCount": 14,
+      "shapeCount": 4,
       "bounds": [
         [
           39.371169,
           -75.163263
         ],
         [
-          39.957907,
+          39.957885,
           -74.999404
         ]
       ],
@@ -4365,14 +4365,14 @@
       "color": "#c52668",
       "tripCount": 120,
       "stopCount": 293,
-      "shapeCount": 23,
+      "shapeCount": 7,
       "bounds": [
         [
-          39.933116,
+          39.933127,
           -75.163315
         ],
         [
-          40.221327,
+          40.221217,
           -74.6994
         ]
       ],
@@ -4392,15 +4392,15 @@
       "color": "#a8c526",
       "tripCount": 89,
       "stopCount": 222,
-      "shapeCount": 25,
+      "shapeCount": 7,
       "bounds": [
         [
-          39.426215,
+          39.426615,
           -75.240163
         ],
         [
           39.957907,
-          -75.103604
+          -75.114621
         ]
       ],
       "file": "routes/njt_410_120.json",
@@ -4419,7 +4419,7 @@
       "color": "#26c563",
       "tripCount": 67,
       "stopCount": 187,
-      "shapeCount": 13,
+      "shapeCount": 5,
       "bounds": [
         [
           39.696368,
@@ -4446,15 +4446,15 @@
       "color": "#c53026",
       "tripCount": 101,
       "stopCount": 163,
-      "shapeCount": 24,
+      "shapeCount": 8,
       "bounds": [
         [
-          39.933467,
+          39.933497,
           -75.119081
         ],
         [
           40.100966,
-          -74.780724
+          -74.780742
         ]
       ],
       "file": "routes/njt_413_122.json",
@@ -4554,7 +4554,7 @@
       "color": "#265bc5",
       "tripCount": 111,
       "stopCount": 109,
-      "shapeCount": 20,
+      "shapeCount": 6,
       "bounds": [
         [
           39.942567,
@@ -4581,7 +4581,7 @@
       "color": "#26c570",
       "tripCount": 98,
       "stopCount": 126,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           39.893059,
@@ -4635,7 +4635,7 @@
       "color": "#267dc5",
       "tripCount": 167,
       "stopCount": 105,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           39.928175,
@@ -4662,7 +4662,7 @@
       "color": "#26c565",
       "tripCount": 53,
       "stopCount": 56,
-      "shapeCount": 4,
+      "shapeCount": 2,
       "bounds": [
         [
           39.916987,
@@ -4689,7 +4689,7 @@
       "color": "#2660c5",
       "tripCount": 95,
       "stopCount": 193,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           39.817446,
@@ -4716,7 +4716,7 @@
       "color": "#26c598",
       "tripCount": 97,
       "stopCount": 196,
-      "shapeCount": 8,
+      "shapeCount": 4,
       "bounds": [
         [
           39.880218,
@@ -4743,7 +4743,7 @@
       "color": "#c59026",
       "tripCount": 76,
       "stopCount": 112,
-      "shapeCount": 21,
+      "shapeCount": 8,
       "bounds": [
         [
           39.710036,
@@ -4797,7 +4797,7 @@
       "color": "#266dc5",
       "tripCount": 39,
       "stopCount": 125,
-      "shapeCount": 28,
+      "shapeCount": 8,
       "bounds": [
         [
           39.559297,
@@ -4824,7 +4824,7 @@
       "color": "#c5bd26",
       "tripCount": 137,
       "stopCount": 85,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           39.359377,
@@ -4851,7 +4851,7 @@
       "color": "#5326c5",
       "tripCount": 169,
       "stopCount": 75,
-      "shapeCount": 14,
+      "shapeCount": 6,
       "bounds": [
         [
           39.358067,
@@ -4878,7 +4878,7 @@
       "color": "#b5c526",
       "tripCount": 138,
       "stopCount": 112,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           39.330259,
@@ -4905,7 +4905,7 @@
       "color": "#2ec526",
       "tripCount": 369,
       "stopCount": 198,
-      "shapeCount": 56,
+      "shapeCount": 8,
       "bounds": [
         [
           39.30717,
@@ -4932,7 +4932,7 @@
       "color": "#c58326",
       "tripCount": 177,
       "stopCount": 112,
-      "shapeCount": 12,
+      "shapeCount": 4,
       "bounds": [
         [
           39.276807,
@@ -4959,7 +4959,7 @@
       "color": "#c52660",
       "tripCount": 121,
       "stopCount": 148,
-      "shapeCount": 21,
+      "shapeCount": 7,
       "bounds": [
         [
           39.350027,
@@ -4986,7 +4986,7 @@
       "color": "#26c56d",
       "tripCount": 108,
       "stopCount": 116,
-      "shapeCount": 20,
+      "shapeCount": 6,
       "bounds": [
         [
           39.276988,
@@ -5013,7 +5013,7 @@
       "color": "#bd26c5",
       "tripCount": 198,
       "stopCount": 25,
-      "shapeCount": 39,
+      "shapeCount": 8,
       "bounds": [
         [
           39.359857,
@@ -5040,11 +5040,11 @@
       "color": "#9b26c5",
       "tripCount": 153,
       "stopCount": 147,
-      "shapeCount": 37,
+      "shapeCount": 8,
       "bounds": [
         [
           38.933057,
-          -74.942383
+          -74.942334
         ],
         [
           39.416038,
@@ -5067,7 +5067,7 @@
       "color": "#26c54d",
       "tripCount": 212,
       "stopCount": 277,
-      "shapeCount": 54,
+      "shapeCount": 8,
       "bounds": [
         [
           39.359786,
@@ -5094,15 +5094,15 @@
       "color": "#6826c5",
       "tripCount": 157,
       "stopCount": 235,
-      "shapeCount": 14,
+      "shapeCount": 4,
       "bounds": [
         [
-          39.359306,
+          39.359479,
           -75.001985
         ],
         [
           39.834477,
-          -74.425703
+          -74.425803
         ]
       ],
       "file": "routes/njt_554_150.json",
@@ -5148,7 +5148,7 @@
       "color": "#26c543",
       "tripCount": 134,
       "stopCount": 245,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           39.360408,
@@ -5175,7 +5175,7 @@
       "color": "#c52658",
       "tripCount": 109,
       "stopCount": 86,
-      "shapeCount": 12,
+      "shapeCount": 2,
       "bounds": [
         [
           40.21891,
@@ -5183,7 +5183,7 @@
         ],
         [
           40.358028,
-          -74.557644
+          -74.558032
         ]
       ],
       "file": "routes/njt_600_158.json",
@@ -5202,7 +5202,7 @@
       "color": "#c52680",
       "tripCount": 103,
       "stopCount": 135,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           40.189537,
@@ -5229,7 +5229,7 @@
       "color": "#26c585",
       "tripCount": 73,
       "stopCount": 159,
-      "shapeCount": 15,
+      "shapeCount": 8,
       "bounds": [
         [
           40.188038,
@@ -5256,7 +5256,7 @@
       "color": "#c55526",
       "tripCount": 75,
       "stopCount": 64,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           40.288176,
@@ -5283,7 +5283,7 @@
       "color": "#c52658",
       "tripCount": 129,
       "stopCount": 234,
-      "shapeCount": 24,
+      "shapeCount": 8,
       "bounds": [
         [
           40.189537,
@@ -5291,7 +5291,7 @@
         ],
         [
           40.377788,
-          -74.617773
+          -74.617832
         ]
       ],
       "file": "routes/njt_606_162.json",
@@ -5310,7 +5310,7 @@
       "color": "#c5c226",
       "tripCount": 118,
       "stopCount": 105,
-      "shapeCount": 10,
+      "shapeCount": 2,
       "bounds": [
         [
           40.192617,
@@ -5337,7 +5337,7 @@
       "color": "#263bc5",
       "tripCount": 160,
       "stopCount": 109,
-      "shapeCount": 8,
+      "shapeCount": 4,
       "bounds": [
         [
           40.218926,
@@ -5364,7 +5364,7 @@
       "color": "#262bc5",
       "tripCount": 152,
       "stopCount": 117,
-      "shapeCount": 24,
+      "shapeCount": 8,
       "bounds": [
         [
           40.214156,
@@ -5445,7 +5445,7 @@
       "color": "#2660c5",
       "tripCount": 8,
       "stopCount": 13,
-      "shapeCount": 5,
+      "shapeCount": 4,
       "bounds": [
         [
           40.263848,
@@ -5472,7 +5472,7 @@
       "color": "#c55326",
       "tripCount": 113,
       "stopCount": 144,
-      "shapeCount": 8,
+      "shapeCount": 3,
       "bounds": [
         [
           40.178485,
@@ -5499,7 +5499,7 @@
       "color": "#2826c5",
       "tripCount": 88,
       "stopCount": 108,
-      "shapeCount": 14,
+      "shapeCount": 6,
       "bounds": [
         [
           40.214156,
@@ -5526,7 +5526,7 @@
       "color": "#53c526",
       "tripCount": 75,
       "stopCount": 118,
-      "shapeCount": 10,
+      "shapeCount": 4,
       "bounds": [
         [
           40.212747,
@@ -5553,7 +5553,7 @@
       "color": "#26c598",
       "tripCount": 56,
       "stopCount": 133,
-      "shapeCount": 8,
+      "shapeCount": 4,
       "bounds": [
         [
           40.850087,
@@ -5580,7 +5580,7 @@
       "color": "#26c535",
       "tripCount": 234,
       "stopCount": 157,
-      "shapeCount": 22,
+      "shapeCount": 8,
       "bounds": [
         [
           40.810266,
@@ -5607,7 +5607,7 @@
       "color": "#c5a826",
       "tripCount": 120,
       "stopCount": 118,
-      "shapeCount": 16,
+      "shapeCount": 5,
       "bounds": [
         [
           40.876876,
@@ -5634,7 +5634,7 @@
       "color": "#c52673",
       "tripCount": 62,
       "stopCount": 111,
-      "shapeCount": 4,
+      "shapeCount": 2,
       "bounds": [
         [
           40.846057,
@@ -5661,7 +5661,7 @@
       "color": "#c5265b",
       "tripCount": 55,
       "stopCount": 156,
-      "shapeCount": 4,
+      "shapeCount": 2,
       "bounds": [
         [
           40.854666,
@@ -5688,7 +5688,7 @@
       "color": "#9026c5",
       "tripCount": 108,
       "stopCount": 145,
-      "shapeCount": 9,
+      "shapeCount": 4,
       "bounds": [
         [
           40.791558,
@@ -5715,7 +5715,7 @@
       "color": "#c5b526",
       "tripCount": 179,
       "stopCount": 144,
-      "shapeCount": 16,
+      "shapeCount": 7,
       "bounds": [
         [
           40.878126,
@@ -5769,7 +5769,7 @@
       "color": "#4526c5",
       "tripCount": 93,
       "stopCount": 124,
-      "shapeCount": 16,
+      "shapeCount": 8,
       "bounds": [
         [
           40.861736,
@@ -5796,7 +5796,7 @@
       "color": "#26a8c5",
       "tripCount": 70,
       "stopCount": 70,
-      "shapeCount": 4,
+      "shapeCount": 2,
       "bounds": [
         [
           40.915736,
@@ -5823,7 +5823,7 @@
       "color": "#2693c5",
       "tripCount": 60,
       "stopCount": 155,
-      "shapeCount": 9,
+      "shapeCount": 6,
       "bounds": [
         [
           40.887048,
@@ -5850,7 +5850,7 @@
       "color": "#26adc5",
       "tripCount": 44,
       "stopCount": 165,
-      "shapeCount": 6,
+      "shapeCount": 4,
       "bounds": [
         [
           40.805898,
@@ -5877,7 +5877,7 @@
       "color": "#26a2c5",
       "tripCount": 69,
       "stopCount": 153,
-      "shapeCount": 6,
+      "shapeCount": 4,
       "bounds": [
         [
           40.880198,
@@ -5904,7 +5904,7 @@
       "color": "#2653c5",
       "tripCount": 48,
       "stopCount": 176,
-      "shapeCount": 8,
+      "shapeCount": 4,
       "bounds": [
         [
           40.884368,
@@ -5931,7 +5931,7 @@
       "color": "#80c526",
       "tripCount": 43,
       "stopCount": 134,
-      "shapeCount": 6,
+      "shapeCount": 4,
       "bounds": [
         [
           40.811496,
@@ -5958,7 +5958,7 @@
       "color": "#bac526",
       "tripCount": 106,
       "stopCount": 160,
-      "shapeCount": 13,
+      "shapeCount": 6,
       "bounds": [
         [
           40.851178,
@@ -5985,7 +5985,7 @@
       "color": "#7dc526",
       "tripCount": 67,
       "stopCount": 109,
-      "shapeCount": 4,
+      "shapeCount": 2,
       "bounds": [
         [
           40.859999,
@@ -6012,7 +6012,7 @@
       "color": "#3b26c5",
       "tripCount": 56,
       "stopCount": 76,
-      "shapeCount": 4,
+      "shapeCount": 2,
       "bounds": [
         [
           40.881938,
@@ -6039,7 +6039,7 @@
       "color": "#2660c5",
       "tripCount": 102,
       "stopCount": 118,
-      "shapeCount": 6,
+      "shapeCount": 4,
       "bounds": [
         [
           40.880198,
@@ -6066,7 +6066,7 @@
       "color": "#c526a0",
       "tripCount": 149,
       "stopCount": 229,
-      "shapeCount": 10,
+      "shapeCount": 7,
       "bounds": [
         [
           40.810266,
@@ -6093,7 +6093,7 @@
       "color": "#7326c5",
       "tripCount": 94,
       "stopCount": 153,
-      "shapeCount": 4,
+      "shapeCount": 2,
       "bounds": [
         [
           40.854176,
@@ -6255,7 +6255,7 @@
       "color": "#c52663",
       "tripCount": 81,
       "stopCount": 76,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           40.496768,
@@ -6309,7 +6309,7 @@
       "color": "#43c526",
       "tripCount": 62,
       "stopCount": 112,
-      "shapeCount": 13,
+      "shapeCount": 8,
       "bounds": [
         [
           40.490586,
@@ -6336,7 +6336,7 @@
       "color": "#c52630",
       "tripCount": 99,
       "stopCount": 75,
-      "shapeCount": 22,
+      "shapeCount": 8,
       "bounds": [
         [
           40.458207,
@@ -6363,7 +6363,7 @@
       "color": "#c52655",
       "tripCount": 82,
       "stopCount": 126,
-      "shapeCount": 6,
+      "shapeCount": 4,
       "bounds": [
         [
           40.441757,
@@ -6390,7 +6390,7 @@
       "color": "#8b26c5",
       "tripCount": 53,
       "stopCount": 155,
-      "shapeCount": 4,
+      "shapeCount": 2,
       "bounds": [
         [
           40.414716,
@@ -6417,7 +6417,7 @@
       "color": "#c52658",
       "tripCount": 73,
       "stopCount": 58,
-      "shapeCount": 13,
+      "shapeCount": 4,
       "bounds": [
         [
           40.394578,
@@ -6444,7 +6444,7 @@
       "color": "#7826c5",
       "tripCount": 58,
       "stopCount": 148,
-      "shapeCount": 8,
+      "shapeCount": 6,
       "bounds": [
         [
           40.54104,
@@ -6471,7 +6471,7 @@
       "color": "#c526b0",
       "tripCount": 39,
       "stopCount": 56,
-      "shapeCount": 4,
+      "shapeCount": 2,
       "bounds": [
         [
           40.607368,
@@ -6498,7 +6498,7 @@
       "color": "#2e26c5",
       "tripCount": 49,
       "stopCount": 106,
-      "shapeCount": 6,
+      "shapeCount": 4,
       "bounds": [
         [
           40.091756,
@@ -6525,7 +6525,7 @@
       "color": "#45c526",
       "tripCount": 66,
       "stopCount": 76,
-      "shapeCount": 10,
+      "shapeCount": 6,
       "bounds": [
         [
           40.284926,
@@ -6552,7 +6552,7 @@
       "color": "#2685c5",
       "tripCount": 78,
       "stopCount": 90,
-      "shapeCount": 11,
+      "shapeCount": 7,
       "bounds": [
         [
           40.183856,
@@ -6579,7 +6579,7 @@
       "color": "#b826c5",
       "tripCount": 56,
       "stopCount": 78,
-      "shapeCount": 10,
+      "shapeCount": 4,
       "bounds": [
         [
           40.347848,
@@ -6606,7 +6606,7 @@
       "color": "#26c543",
       "tripCount": 54,
       "stopCount": 81,
-      "shapeCount": 17,
+      "shapeCount": 8,
       "bounds": [
         [
           40.206099,
@@ -6633,7 +6633,7 @@
       "color": "#26c560",
       "tripCount": 52,
       "stopCount": 94,
-      "shapeCount": 8,
+      "shapeCount": 4,
       "bounds": [
         [
           40.215027,
@@ -6660,7 +6660,7 @@
       "color": "#c5266d",
       "tripCount": 46,
       "stopCount": 84,
-      "shapeCount": 11,
+      "shapeCount": 7,
       "bounds": [
         [
           40.250165,
@@ -6687,7 +6687,7 @@
       "color": "#26c52b",
       "tripCount": 21,
       "stopCount": 132,
-      "shapeCount": 6,
+      "shapeCount": 4,
       "bounds": [
         [
           40.795997,
@@ -6741,7 +6741,7 @@
       "color": "#c52653",
       "tripCount": 30,
       "stopCount": 69,
-      "shapeCount": 5,
+      "shapeCount": 3,
       "bounds": [
         [
           40.736698,
@@ -6768,7 +6768,7 @@
       "color": "#c53326",
       "tripCount": 24,
       "stopCount": 72,
-      "shapeCount": 4,
+      "shapeCount": 2,
       "bounds": [
         [
           40.796258,
@@ -6849,7 +6849,7 @@
       "color": "#3326c5",
       "tripCount": 41,
       "stopCount": 104,
-      "shapeCount": 5,
+      "shapeCount": 3,
       "bounds": [
         [
           40.796307,
@@ -6876,7 +6876,7 @@
       "color": "#75c526",
       "tripCount": 34,
       "stopCount": 49,
-      "shapeCount": 12,
+      "shapeCount": 7,
       "bounds": [
         [
           40.673228,
@@ -6903,7 +6903,7 @@
       "color": "#26c578",
       "tripCount": 24,
       "stopCount": 51,
-      "shapeCount": 14,
+      "shapeCount": 7,
       "bounds": [
         [
           40.673228,
@@ -6957,7 +6957,7 @@
       "color": "#c526c5",
       "tripCount": 72,
       "stopCount": 6,
-      "shapeCount": 11,
+      "shapeCount": 2,
       "bounds": [
         [
           39.352938,
@@ -6984,7 +6984,7 @@
       "color": "#2660c5",
       "tripCount": 72,
       "stopCount": 6,
-      "shapeCount": 8,
+      "shapeCount": 2,
       "bounds": [
         [
           39.359076,
@@ -7011,7 +7011,7 @@
       "color": "#26c550",
       "tripCount": 72,
       "stopCount": 5,
-      "shapeCount": 10,
+      "shapeCount": 2,
       "bounds": [
         [
           39.360377,
@@ -7065,7 +7065,7 @@
       "color": "#2bc526",
       "tripCount": 240,
       "stopCount": 37,
-      "shapeCount": 6,
+      "shapeCount": 2,
       "bounds": [
         [
           40.681057,
@@ -7092,7 +7092,7 @@
       "color": "#1302f7",
       "tripCount": 113,
       "stopCount": 15,
-      "shapeCount": 3,
+      "shapeCount": 2,
       "bounds": [
         [
           40.33629,
@@ -7227,7 +7227,7 @@
       "color": "#e8f906",
       "tripCount": 30,
       "stopCount": 12,
-      "shapeCount": 3,
+      "shapeCount": 1,
       "bounds": [
         [
           40.333288,
@@ -7254,7 +7254,7 @@
       "color": "#fbff00",
       "tripCount": 34,
       "stopCount": 10,
-      "shapeCount": 2,
+      "shapeCount": 1,
       "bounds": [
         [
           40.333288,

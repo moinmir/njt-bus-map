@@ -36,6 +36,10 @@ DAY_KEYS = (
     "sunday",
 )
 
+PRIMARY_SHAPE_COVERAGE_TARGET = 0.95
+PRIMARY_SHAPE_SHARE_FLOOR = 0.10
+MAX_SHAPES_PER_DIRECTION = 4
+
 FEEDS = (
     {
         "id": "njt",
@@ -319,6 +323,150 @@ def dedupe_and_simplify_shape(
     return simplified
 
 
+def choose_display_shapes(
+    raw_shapes: list[dict],
+    direction_key_order: list[str],
+    direction_trip_counts: dict[str, int],
+    direction_shape_trip_counts: dict[str, dict[str, int]],
+) -> list[dict]:
+    if not raw_shapes:
+        return []
+
+    grouped: dict[tuple[tuple[float, float], ...], dict] = {}
+    for shape in raw_shapes:
+        points = shape.get("points", [])
+        if len(points) < 2:
+            continue
+
+        points_key = tuple((float(lat), float(lon)) for lat, lon in points)
+        entry = grouped.get(points_key)
+        if entry is None:
+            entry = {
+                "points": points,
+                "shapeIds": [],
+                "directionKeys": set(),
+                "tripCountByDirection": defaultdict(int),
+            }
+            grouped[points_key] = entry
+
+        shape_id = shape.get("shapeId", "")
+        if shape_id:
+            entry["shapeIds"].append(shape_id)
+
+        for direction_key in shape.get("directionKeys", []):
+            entry["directionKeys"].add(direction_key)
+            trip_count = direction_shape_trip_counts.get(direction_key, {}).get(shape_id, 0)
+            if trip_count:
+                entry["tripCountByDirection"][direction_key] += trip_count
+
+    if not grouped:
+        return []
+
+    ordered_direction_keys = [
+        direction_key for direction_key in direction_key_order if direction_key in direction_trip_counts
+    ]
+    ordered_direction_keys.extend(
+        sorted(
+            direction_key
+            for direction_key in direction_trip_counts
+            if direction_key not in ordered_direction_keys
+        )
+    )
+    if not ordered_direction_keys:
+        discovered = {
+            direction_key
+            for entry in grouped.values()
+            for direction_key in entry["directionKeys"]
+        }
+        ordered_direction_keys = sorted(discovered)
+
+    selected_keys: set[tuple[tuple[float, float], ...]] = set()
+    for direction_key in ordered_direction_keys:
+        total_trips = int(direction_trip_counts.get(direction_key, 0))
+        candidates: list[tuple[tuple[tuple[float, float], ...], dict, int]] = []
+        for points_key, entry in grouped.items():
+            trip_count = int(entry["tripCountByDirection"].get(direction_key, 0))
+            if trip_count == 0 and direction_key not in entry["directionKeys"]:
+                continue
+            candidates.append((points_key, entry, trip_count))
+
+        if not candidates:
+            continue
+
+        candidates.sort(
+            key=lambda item: (
+                -item[2],
+                -len(item[1]["points"]),
+                item[1]["shapeIds"][0] if item[1]["shapeIds"] else "",
+            )
+        )
+
+        cumulative = 0
+        for idx, (points_key, _, trip_count) in enumerate(candidates):
+            share = (trip_count / total_trips) if total_trips > 0 else 0.0
+            keep = False
+            if idx == 0:
+                keep = True
+            elif share >= PRIMARY_SHAPE_SHARE_FLOOR:
+                keep = True
+            elif total_trips > 0 and cumulative / total_trips < PRIMARY_SHAPE_COVERAGE_TARGET:
+                keep = True
+
+            if keep:
+                selected_keys.add(points_key)
+                cumulative += trip_count
+                if idx + 1 >= MAX_SHAPES_PER_DIRECTION:
+                    break
+
+    if not selected_keys:
+        selected_keys = set(grouped.keys())
+
+    direction_order_index = {direction_key: idx for idx, direction_key in enumerate(direction_key_order)}
+
+    def entry_sort_key(item: tuple[tuple[tuple[float, float], ...], dict]) -> tuple[int, int, str]:
+        _, entry = item
+        direction_positions = [
+            direction_order_index.get(direction_key, 10_000)
+            for direction_key in entry["directionKeys"]
+        ]
+        direction_rank = min(direction_positions) if direction_positions else 10_000
+        total_trip_count = sum(entry["tripCountByDirection"].values())
+        first_shape_id = entry["shapeIds"][0] if entry["shapeIds"] else ""
+        return (direction_rank, -total_trip_count, first_shape_id)
+
+    selected_items = [
+        (points_key, grouped[points_key]) for points_key in selected_keys if points_key in grouped
+    ]
+    selected_items.sort(key=entry_sort_key)
+
+    out: list[dict] = []
+    for _, entry in selected_items:
+        ordered_keys = [
+            direction_key
+            for direction_key in direction_key_order
+            if direction_key in entry["directionKeys"]
+        ]
+        ordered_keys.extend(
+            sorted(
+                direction_key
+                for direction_key in entry["directionKeys"]
+                if direction_key not in direction_key_order
+            )
+        )
+        if not ordered_keys:
+            ordered_keys = direction_key_order or ["dir_default"]
+
+        out.append(
+            {
+                "shapeId": entry["shapeIds"][0] if entry["shapeIds"] else "",
+                "directionKeys": ordered_keys,
+                "points": entry["points"],
+            }
+        )
+
+    return out
+
+
 def build_feed(
     feed_config: dict,
     gtfs_zip_path: pathlib.Path,
@@ -361,6 +509,12 @@ def build_feed(
         route_shape_direction_keys: dict[str, dict[str, set[str]]] = defaultdict(
             lambda: defaultdict(set)
         )
+        route_direction_trip_counts: dict[str, dict[str, int]] = defaultdict(
+            lambda: defaultdict(int)
+        )
+        route_direction_shape_trip_counts: dict[str, dict[str, dict[str, int]]] = defaultdict(
+            lambda: defaultdict(lambda: defaultdict(int))
+        )
         route_trip_ids: dict[str, set[str]] = defaultdict(set)
         route_service_ids: dict[str, set[str]] = defaultdict(set)
         route_direction_service_ids: dict[str, dict[str, set[str]]] = defaultdict(
@@ -393,9 +547,11 @@ def build_feed(
             route_trip_ids[route_id].add(trip_id)
             route_service_ids[route_id].add(service_id)
             route_direction_service_ids[route_id][direction_key].add(service_id)
+            route_direction_trip_counts[route_id][direction_key] += 1
             if shape_id:
                 route_shape_ids[route_id].add(shape_id)
                 route_shape_direction_keys[route_id][shape_id].add(direction_key)
+                route_direction_shape_trip_counts[route_id][direction_key][shape_id] += 1
 
             if direction_key not in route_direction_id_by_key[route_id]:
                 route_direction_id_by_key[route_id][direction_key] = direction_id or None
@@ -649,7 +805,12 @@ def build_feed(
 
             route_stops.append(stop_payload)
 
-        shapes = route_shapes.get(route_id, [])
+        shapes = choose_display_shapes(
+            route_shapes.get(route_id, []),
+            direction_keys,
+            route_direction_trip_counts.get(route_id, {}),
+            route_direction_shape_trip_counts.get(route_id, {}),
+        )
 
         all_lats: list[float] = []
         all_lons: list[float] = []
