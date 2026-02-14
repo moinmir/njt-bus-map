@@ -1,4 +1,5 @@
-import type { AreaBounds, RouteBounds, RouteState, AgencyState } from "@/types";
+import { routeIntersectsArea } from "./routeAreaMatching";
+import type { AreaBounds, RouteState, AgencyState } from "@/types";
 
 export function createMapAreaBounds(bounds: L.LatLngBounds): AreaBounds {
   return {
@@ -17,18 +18,6 @@ export function getVisibleRouteKeys(routeStateByKey: Map<string, RouteState>): s
     }
   }
   return visibleKeys;
-}
-
-function routeIntersectsArea(routeBounds: RouteBounds | undefined, areaBounds: AreaBounds): boolean {
-  if (!routeBounds) return false;
-
-  const [[south, west], [north, east]] = routeBounds;
-  return (
-    north >= areaBounds.south &&
-    south <= areaBounds.north &&
-    east >= areaBounds.west &&
-    west <= areaBounds.east
-  );
 }
 
 export interface ApplyRouteFiltersParams {
@@ -55,7 +44,11 @@ export function applyRouteFilters({
   for (const [key, state] of routeStateByKey) {
     const haystack = state.meta.searchText || "";
     const matchesSearch = !searchTerm || haystack.includes(searchTerm);
-    const matchesArea = !areaBounds || routeIntersectsArea(state.meta.bounds, areaBounds);
+    const matchesArea = !areaBounds || routeIntersectsArea(
+      state.meta.bounds,
+      state.routeData,
+      areaBounds,
+    );
     const matches = matchesSearch && matchesArea;
     state.isVisible = matches;
     routeVisibility.set(key, matches);

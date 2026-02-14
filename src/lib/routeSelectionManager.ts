@@ -1,5 +1,6 @@
 import L from "leaflet";
 import { HOVER_POINTER_QUERY, POPUP_CLOSE_DELAY_MS } from "./constants";
+import { getRouteHoverLabel } from "./routeLabel";
 import { loadRouteData, loadScheduleData } from "./transitDataClient";
 import { attachInteractivePopup } from "./attachInteractivePopup";
 import { buildStopPopupContent } from "./buildStopPopupContent";
@@ -121,6 +122,13 @@ export function createRouteSelectionManager({
       return;
     }
 
+    // Area filtering may pre-load route data before a route is selected.
+    if (state.routeData) {
+      state.layer = buildRouteLayer(state);
+      prefetchScheduleForRoute(state);
+      return;
+    }
+
     if (state.loadPromise) {
       await state.loadPromise;
       return;
@@ -191,15 +199,25 @@ export function createRouteSelectionManager({
     const routeData = state.routeData!;
     const routeMeta = state.meta;
     const group = L.layerGroup();
+    const routeHoverLabel = getRouteHoverLabel(routeMeta);
 
     for (const shape of routeData.shapes ?? []) {
-      L.polyline(shape.points, {
+      const polyline = L.polyline(shape.points, {
         color: routeMeta.color,
         weight: 3.8,
         opacity: 0.86,
         lineCap: "round",
         lineJoin: "round",
-      }).addTo(group);
+      });
+
+      polyline.bindTooltip(routeHoverLabel, {
+        sticky: true,
+        direction: "top",
+        offset: [0, -4],
+        className: "route-hover-tooltip",
+      });
+
+      polyline.addTo(group);
     }
 
     for (const stop of routeData.stops ?? []) {

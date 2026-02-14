@@ -3,7 +3,6 @@ import { MapPin, Maximize2, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RouteSearch } from "./RouteSearch";
 import { RouteGroups } from "./RouteGroups";
-import { StatusSection } from "./StatusSection";
 import { DataSources } from "./DataSources";
 import type { AppState, Source } from "@/types";
 
@@ -85,12 +84,6 @@ export function SidebarContent({
             Use My Location
           </Button>
         </div>
-      </section>
-
-      {/* Status */}
-      <section className="rounded-xl border border-border bg-white/80 p-3 space-y-2">
-        <h2 className="text-sm font-semibold font-[Sora,sans-serif]">Status</h2>
-        <StatusSection state={state} />
       </section>
 
       {/* Data Sources */}

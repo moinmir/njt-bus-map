@@ -11,6 +11,7 @@ import { MOBILE_LAYOUT_QUERY } from "@/lib/constants";
 import { createRouteSelectionManager } from "@/lib/routeSelectionManager";
 import { applyRouteFilters, getVisibleRouteKeys, createMapAreaBounds } from "@/lib/routeFiltering";
 import { loadManifest } from "@/lib/transitDataClient";
+import { resolveAreaRouteKeys } from "@/lib/resolveAreaRouteKeys";
 
 type Listener = () => void;
 
@@ -245,20 +246,30 @@ export function useAppState(): [AppState, AppActions] {
       s.areaSelectionInProgress = true;
       store.notify();
 
-      s.activeAreaBounds = createMapAreaBounds(map.getBounds());
+      const areaBounds = createMapAreaBounds(map.getBounds());
+      s.activeAreaBounds = areaBounds;
       refreshFilters();
 
-      const keysToSelect = getVisibleRouteKeys(s.routeStateByKey);
+      const candidateKeys = getVisibleRouteKeys(s.routeStateByKey);
 
       const doWork = async () => {
         try {
-          if (keysToSelect.length === 0) return;
-
           await managerRef.current?.setRouteKeysSelected(
             [...s.selectedRouteKeys],
             false,
             { concurrency: 8, refreshUiAtEnd: false, statusText: "Clearing existing routes..." },
           );
+
+          if (candidateKeys.length === 0) return;
+
+          const keysToSelect = await resolveAreaRouteKeys({
+            routeKeys: candidateKeys,
+            routeStateByKey: s.routeStateByKey,
+            areaBounds,
+            concurrency: 8,
+          });
+
+          if (keysToSelect.length === 0) return;
 
           await managerRef.current?.setRouteKeysSelected(keysToSelect, true, {
             concurrency: 6,

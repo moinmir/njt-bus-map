@@ -1,25 +1,14 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { Sidebar } from "@/components/Sidebar";
 import { MapView } from "@/components/MapView";
 import { MapAreaFilter } from "@/components/MapAreaFilter";
 import { useAppState } from "@/hooks/useAppState";
-import { MOBILE_LAYOUT_QUERY } from "@/lib/constants";
 import type { Source } from "@/types";
-import { cn } from "@/lib/utils";
 
 export default function App() {
   const [state, actions] = useAppState();
   const mapRef = useRef<L.Map | null>(null);
   const [sources, setSources] = useState<Source[]>([]);
-  const [isMobile, setIsMobile] = useState(() => window.matchMedia(MOBILE_LAYOUT_QUERY).matches);
-
-  // Track mobile state
-  useEffect(() => {
-    const mql = window.matchMedia(MOBILE_LAYOUT_QUERY);
-    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
-    mql.addEventListener("change", handler);
-    return () => mql.removeEventListener("change", handler);
-  }, []);
 
   const handleMapReady = useCallback(
     (map: L.Map) => {
@@ -54,16 +43,10 @@ export default function App() {
   }, [actions]);
 
   return (
-    <div
-      className={cn(
-        "grid h-dvh overflow-hidden",
-        isMobile ? "grid-cols-1 grid-rows-[auto_1fr]" : "grid-cols-[auto_1fr]",
-      )}
-    >
+    <div className="grid h-dvh grid-cols-[auto_1fr] overflow-hidden">
       <Sidebar
         state={state}
         sources={sources}
-        isMobile={isMobile}
         onSearchChange={actions.setSearchTerm}
         onToggleRoute={actions.toggleRoute}
         onClearAll={actions.clearAllRoutes}
@@ -73,7 +56,7 @@ export default function App() {
         onTogglePanel={actions.togglePanel}
       />
 
-      <main className="relative min-w-0">
+      <main className="relative min-h-0 min-w-0">
         <MapView onMapReady={handleMapReady} />
         <MapAreaFilter
           activeAreaBounds={state.activeAreaBounds}

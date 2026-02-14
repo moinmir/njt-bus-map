@@ -15,9 +15,9 @@ export function DesktopSidebar({
   return (
     <aside
       className={cn(
-        "relative bg-white/90 backdrop-blur-md border-r border-border shadow-xl",
+        "relative h-full min-h-0 overflow-hidden bg-white/90 backdrop-blur-md border-r border-border shadow-xl",
         "transition-all duration-200 ease-out flex flex-col",
-        collapsed ? "w-12" : "w-[390px]",
+        collapsed ? "w-12" : "w-[min(390px,88vw)]",
       )}
       aria-label="Route controls"
     >
