@@ -1,0 +1,7083 @@
+{
+  "generatedAt": "2026-02-14T05:06:37.273607+00:00",
+  "timezone": "America/New_York",
+  "agencies": [
+    {
+      "id": "njt",
+      "label": "NJ Transit",
+      "description": "Official NJ Transit bus routes"
+    },
+    {
+      "id": "princeton",
+      "label": "Princeton Transit",
+      "description": "TigerTransit, Princeton Loop, Weekend Shopper, and related Princeton shuttles"
+    }
+  ],
+  "sources": [
+    {
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "description": "Official NJ Transit bus routes",
+      "gtfsUrl": "https://www.njtransit.com/bus_data.zip",
+      "gtfsZip": "data/bus_data.zip",
+      "feedUpdatedAt": "2026-01-14T15:23:58+00:00"
+    },
+    {
+      "agencyId": "princeton",
+      "agencyLabel": "Princeton Transit",
+      "description": "TigerTransit, Princeton Loop, Weekend Shopper, and related Princeton shuttles",
+      "gtfsUrl": "https://princeton.tripshot.com/v1/gtfs.zip",
+      "gtfsZip": "data/princeton_gtfs.zip",
+      "feedUpdatedAt": "2026-02-14T04:33:14+00:00"
+    }
+  ],
+  "routeCount": 271,
+  "routes": [
+    {
+      "key": "njt:1",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "1",
+      "shortName": "1",
+      "longName": "",
+      "routeDesc": "",
+      "label": "1",
+      "color": "#26c56b",
+      "tripCount": 1193,
+      "stopCount": 185,
+      "shapeCount": 160,
+      "bounds": [
+        [
+          40.711476,
+          -74.245784
+        ],
+        [
+          40.740688,
+          -74.034053
+        ]
+      ],
+      "file": "routes/njt_1_1.json",
+      "searchText": "1 nj transit"
+    },
+    {
+      "key": "njt:80",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "80",
+      "shortName": "2",
+      "longName": "",
+      "routeDesc": "",
+      "label": "2",
+      "color": "#c54326",
+      "tripCount": 311,
+      "stopCount": 116,
+      "shapeCount": 32,
+      "bounds": [
+        [
+          40.730628,
+          -74.081165
+        ],
+        [
+          40.795647,
+          -74.045842
+        ]
+      ],
+      "file": "routes/njt_2_80.json",
+      "searchText": "2 nj transit"
+    },
+    {
+      "key": "njt:138",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "138",
+      "shortName": "5",
+      "longName": "",
+      "routeDesc": "",
+      "label": "5",
+      "color": "#5b26c5",
+      "tripCount": 135,
+      "stopCount": 69,
+      "shapeCount": 10,
+      "bounds": [
+        [
+          40.728968,
+          -74.203784
+        ],
+        [
+          40.756288,
+          -74.162795
+        ]
+      ],
+      "file": "routes/njt_5_138.json",
+      "searchText": "5 nj transit"
+    },
+    {
+      "key": "njt:157",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "157",
+      "shortName": "6",
+      "longName": "",
+      "routeDesc": "",
+      "label": "6",
+      "color": "#c52653",
+      "tripCount": 150,
+      "stopCount": 79,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.685449,
+          -74.099983
+        ],
+        [
+          40.732878,
+          -74.059602
+        ]
+      ],
+      "file": "routes/njt_6_157.json",
+      "searchText": "6 nj transit"
+    },
+    {
+      "key": "njt:208",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "208",
+      "shortName": "8",
+      "longName": "",
+      "routeDesc": "",
+      "label": "8",
+      "color": "#adc526",
+      "tripCount": 156,
+      "stopCount": 81,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.685449,
+          -74.099983
+        ],
+        [
+          40.733026,
+          -74.061765
+        ]
+      ],
+      "file": "routes/njt_8_208.json",
+      "searchText": "8 nj transit"
+    },
+    {
+      "key": "njt:249",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "249",
+      "shortName": "9",
+      "longName": "",
+      "routeDesc": "",
+      "label": "9",
+      "color": "#26aac5",
+      "tripCount": 85,
+      "stopCount": 75,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.704776,
+          -74.100772
+        ],
+        [
+          40.729466,
+          -74.034522
+        ]
+      ],
+      "file": "routes/njt_9_249.json",
+      "searchText": "9 nj transit"
+    },
+    {
+      "key": "njt:2",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "2",
+      "shortName": "10",
+      "longName": "",
+      "routeDesc": "",
+      "label": "10",
+      "color": "#9326c5",
+      "tripCount": 717,
+      "stopCount": 115,
+      "shapeCount": 35,
+      "bounds": [
+        [
+          40.647538,
+          -74.138744
+        ],
+        [
+          40.732987,
+          -74.061934
+        ]
+      ],
+      "file": "routes/njt_10_2.json",
+      "searchText": "10 nj transit"
+    },
+    {
+      "key": "njt:9",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "9",
+      "shortName": "11",
+      "longName": "",
+      "routeDesc": "",
+      "label": "11",
+      "color": "#9026c5",
+      "tripCount": 305,
+      "stopCount": 160,
+      "shapeCount": 27,
+      "bounds": [
+        [
+          40.731546,
+          -74.261245
+        ],
+        [
+          40.891238,
+          -74.162962
+        ]
+      ],
+      "file": "routes/njt_11_9.json",
+      "searchText": "11 nj transit"
+    },
+    {
+      "key": "njt:18",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "18",
+      "shortName": "12",
+      "longName": "",
+      "routeDesc": "",
+      "label": "12",
+      "color": "#c52675",
+      "tripCount": 166,
+      "stopCount": 67,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.645236,
+          -74.130682
+        ],
+        [
+          40.685548,
+          -74.09998
+        ]
+      ],
+      "file": "routes/njt_12_18.json",
+      "searchText": "12 nj transit"
+    },
+    {
+      "key": "njt:29",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "29",
+      "shortName": "13",
+      "longName": "",
+      "routeDesc": "",
+      "label": "13",
+      "color": "#3b26c5",
+      "tripCount": 496,
+      "stopCount": 186,
+      "shapeCount": 73,
+      "bounds": [
+        [
+          40.711326,
+          -74.229955
+        ],
+        [
+          40.846388,
+          -74.139542
+        ]
+      ],
+      "file": "routes/njt_13_29.json",
+      "searchText": "13 nj transit"
+    },
+    {
+      "key": "njt:39",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "39",
+      "shortName": "14",
+      "longName": "",
+      "routeDesc": "",
+      "label": "14",
+      "color": "#26a5c5",
+      "tripCount": 120,
+      "stopCount": 45,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.704776,
+          -74.101964
+        ],
+        [
+          40.734497,
+          -74.061765
+        ]
+      ],
+      "file": "routes/njt_14_39.json",
+      "searchText": "14 nj transit"
+    },
+    {
+      "key": "njt:51",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "51",
+      "shortName": "16",
+      "longName": "",
+      "routeDesc": "",
+      "label": "16",
+      "color": "#8bc526",
+      "tripCount": 100,
+      "stopCount": 57,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.704927,
+          -74.073494
+        ],
+        [
+          40.732878,
+          -74.034524
+        ]
+      ],
+      "file": "routes/njt_16_51.json",
+      "searchText": "16 nj transit"
+    },
+    {
+      "key": "njt:81",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "81",
+      "shortName": "21",
+      "longName": "",
+      "routeDesc": "",
+      "label": "21",
+      "color": "#9bc526",
+      "tripCount": 465,
+      "stopCount": 86,
+      "shapeCount": 14,
+      "bounds": [
+        [
+          40.733779,
+          -74.239284
+        ],
+        [
+          40.794539,
+          -74.162962
+        ]
+      ],
+      "file": "routes/njt_21_81.json",
+      "searchText": "21 nj transit"
+    },
+    {
+      "key": "njt:82",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "82",
+      "shortName": "22",
+      "longName": "",
+      "routeDesc": "",
+      "label": "22",
+      "color": "#38c526",
+      "tripCount": 122,
+      "stopCount": 97,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.735437,
+          -74.039612
+        ],
+        [
+          40.809249,
+          -74.001303
+        ]
+      ],
+      "file": "routes/njt_22_82.json",
+      "searchText": "22 nj transit"
+    },
+    {
+      "key": "njt:83",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "83",
+      "shortName": "23",
+      "longName": "",
+      "routeDesc": "",
+      "label": "23",
+      "color": "#c52683",
+      "tripCount": 12,
+      "stopCount": 70,
+      "shapeCount": 4,
+      "bounds": [
+        [
+          40.735437,
+          -74.030432
+        ],
+        [
+          40.810148,
+          -73.996022
+        ]
+      ],
+      "file": "routes/njt_23_83.json",
+      "searchText": "23 nj transit"
+    },
+    {
+      "key": "njt:84",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "84",
+      "shortName": "24",
+      "longName": "",
+      "routeDesc": "",
+      "label": "24",
+      "color": "#26c57d",
+      "tripCount": 402,
+      "stopCount": 249,
+      "shapeCount": 46,
+      "bounds": [
+        [
+          40.646488,
+          -74.240422
+        ],
+        [
+          40.776128,
+          -74.166054
+        ]
+      ],
+      "file": "routes/njt_24_84.json",
+      "searchText": "24 nj transit"
+    },
+    {
+      "key": "njt:85",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "85",
+      "shortName": "25",
+      "longName": "",
+      "routeDesc": "",
+      "label": "25",
+      "color": "#c52678",
+      "tripCount": 613,
+      "stopCount": 117,
+      "shapeCount": 69,
+      "bounds": [
+        [
+          40.699318,
+          -74.285066
+        ],
+        [
+          40.736997,
+          -74.122422
+        ]
+      ],
+      "file": "routes/njt_25_85.json",
+      "searchText": "25 nj transit"
+    },
+    {
+      "key": "njt:86",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "86",
+      "shortName": "26",
+      "longName": "",
+      "routeDesc": "",
+      "label": "26",
+      "color": "#26c583",
+      "tripCount": 169,
+      "stopCount": 68,
+      "shapeCount": 10,
+      "bounds": [
+        [
+          40.66002,
+          -74.242105
+        ],
+        [
+          40.727677,
+          -74.214773
+        ]
+      ],
+      "file": "routes/njt_26_86.json",
+      "searchText": "26 nj transit"
+    },
+    {
+      "key": "njt:87",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "87",
+      "shortName": "27",
+      "longName": "",
+      "routeDesc": "",
+      "label": "27",
+      "color": "#a0c526",
+      "tripCount": 458,
+      "stopCount": 163,
+      "shapeCount": 40,
+      "bounds": [
+        [
+          40.713148,
+          -74.227553
+        ],
+        [
+          40.834906,
+          -74.131504
+        ]
+      ],
+      "file": "routes/njt_27_87.json",
+      "searchText": "27 nj transit"
+    },
+    {
+      "key": "njt:88",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "88",
+      "shortName": "28",
+      "longName": "",
+      "routeDesc": "",
+      "label": "28",
+      "color": "#c54026",
+      "tripCount": 277,
+      "stopCount": 167,
+      "shapeCount": 45,
+      "bounds": [
+        [
+          40.731546,
+          -74.261245
+        ],
+        [
+          40.891238,
+          -74.162962
+        ]
+      ],
+      "file": "routes/njt_28_88.json",
+      "searchText": "28 nj transit"
+    },
+    {
+      "key": "njt:89",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "89",
+      "shortName": "29",
+      "longName": "",
+      "routeDesc": "",
+      "label": "29",
+      "color": "#2648c5",
+      "tripCount": 398,
+      "stopCount": 240,
+      "shapeCount": 70,
+      "bounds": [
+        [
+          40.731546,
+          -74.420981
+        ],
+        [
+          40.891438,
+          -74.162962
+        ]
+      ],
+      "file": "routes/njt_29_89.json",
+      "searchText": "29 nj transit"
+    },
+    {
+      "key": "njt:90",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "90",
+      "shortName": "30",
+      "longName": "",
+      "routeDesc": "",
+      "label": "30",
+      "color": "#26c5b5",
+      "tripCount": 193,
+      "stopCount": 86,
+      "shapeCount": 14,
+      "bounds": [
+        [
+          40.726899,
+          -74.177152
+        ],
+        [
+          40.783836,
+          -74.137104
+        ]
+      ],
+      "file": "routes/njt_30_90.json",
+      "searchText": "30 nj transit"
+    },
+    {
+      "key": "njt:91",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "91",
+      "shortName": "31",
+      "longName": "",
+      "routeDesc": "",
+      "label": "31",
+      "color": "#c52b26",
+      "tripCount": 276,
+      "stopCount": 66,
+      "shapeCount": 10,
+      "bounds": [
+        [
+          40.733779,
+          -74.261561
+        ],
+        [
+          40.746538,
+          -74.164402
+        ]
+      ],
+      "file": "routes/njt_31_91.json",
+      "searchText": "31 nj transit"
+    },
+    {
+      "key": "njt:100",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "100",
+      "shortName": "34",
+      "longName": "",
+      "routeDesc": "",
+      "label": "34",
+      "color": "#2678c5",
+      "tripCount": 824,
+      "stopCount": 178,
+      "shapeCount": 69,
+      "bounds": [
+        [
+          40.718396,
+          -74.221254
+        ],
+        [
+          40.824926,
+          -74.157322
+        ]
+      ],
+      "file": "routes/njt_34_100.json",
+      "searchText": "34 nj transit"
+    },
+    {
+      "key": "njt:101",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "101",
+      "shortName": "34S",
+      "longName": "",
+      "routeDesc": "",
+      "label": "34S",
+      "color": "#4326c5",
+      "tripCount": 1,
+      "stopCount": 9,
+      "shapeCount": 1,
+      "bounds": [
+        [
+          40.77527,
+          -74.197802
+        ],
+        [
+          40.796101,
+          -74.186531
+        ]
+      ],
+      "file": "routes/njt_34S_101.json",
+      "searchText": "34s nj transit"
+    },
+    {
+      "key": "njt:104",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "104",
+      "shortName": "37",
+      "longName": "",
+      "routeDesc": "",
+      "label": "37",
+      "color": "#26c558",
+      "tripCount": 168,
+      "stopCount": 80,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.681057,
+          -74.248603
+        ],
+        [
+          40.738087,
+          -74.159595
+        ]
+      ],
+      "file": "routes/njt_37_104.json",
+      "searchText": "37 nj transit"
+    },
+    {
+      "key": "njt:107",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "107",
+      "shortName": "39",
+      "longName": "",
+      "routeDesc": "",
+      "label": "39",
+      "color": "#264bc5",
+      "tripCount": 336,
+      "stopCount": 94,
+      "shapeCount": 12,
+      "bounds": [
+        [
+          40.706788,
+          -74.252584
+        ],
+        [
+          40.737498,
+          -74.162962
+        ]
+      ],
+      "file": "routes/njt_39_107.json",
+      "searchText": "39 nj transit"
+    },
+    {
+      "key": "njt:108",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "108",
+      "shortName": "40",
+      "longName": "",
+      "routeDesc": "",
+      "label": "40",
+      "color": "#aac526",
+      "tripCount": 233,
+      "stopCount": 91,
+      "shapeCount": 50,
+      "bounds": [
+        [
+          40.658178,
+          -74.178653
+        ],
+        [
+          40.783962,
+          -74.132253
+        ]
+      ],
+      "file": "routes/njt_40_108.json",
+      "searchText": "40 nj transit"
+    },
+    {
+      "key": "njt:119",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "119",
+      "shortName": "41",
+      "longName": "",
+      "routeDesc": "",
+      "label": "41",
+      "color": "#26c5a8",
+      "tripCount": 361,
+      "stopCount": 97,
+      "shapeCount": 27,
+      "bounds": [
+        [
+          40.726899,
+          -74.233613
+        ],
+        [
+          40.778166,
+          -74.162962
+        ]
+      ],
+      "file": "routes/njt_41_119.json",
+      "searchText": "41 nj transit"
+    },
+    {
+      "key": "njt:127",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "127",
+      "shortName": "44",
+      "longName": "",
+      "routeDesc": "",
+      "label": "44",
+      "color": "#7026c5",
+      "tripCount": 127,
+      "stopCount": 96,
+      "shapeCount": 12,
+      "bounds": [
+        [
+          40.733779,
+          -74.247582
+        ],
+        [
+          40.773716,
+          -74.162962
+        ]
+      ],
+      "file": "routes/njt_44_127.json",
+      "searchText": "44 nj transit"
+    },
+    {
+      "key": "njt:137",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "137",
+      "shortName": "48",
+      "longName": "",
+      "routeDesc": "",
+      "label": "48",
+      "color": "#45c526",
+      "tripCount": 209,
+      "stopCount": 303,
+      "shapeCount": 25,
+      "bounds": [
+        [
+          40.507326,
+          -74.361374
+        ],
+        [
+          40.666328,
+          -74.214773
+        ]
+      ],
+      "file": "routes/njt_48_137.json",
+      "searchText": "48 nj transit"
+    },
+    {
+      "key": "njt:146",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "146",
+      "shortName": "52",
+      "longName": "",
+      "routeDesc": "",
+      "label": "52",
+      "color": "#2685c5",
+      "tripCount": 149,
+      "stopCount": 87,
+      "shapeCount": 10,
+      "bounds": [
+        [
+          40.66002,
+          -74.311603
+        ],
+        [
+          40.71123,
+          -74.214773
+        ]
+      ],
+      "file": "routes/njt_52_146.json",
+      "searchText": "52 nj transit"
+    },
+    {
+      "key": "njt:153",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "153",
+      "shortName": "56",
+      "longName": "",
+      "routeDesc": "",
+      "label": "56",
+      "color": "#b826c5",
+      "tripCount": 44,
+      "stopCount": 79,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.626558,
+          -74.29469
+        ],
+        [
+          40.666328,
+          -74.214773
+        ]
+      ],
+      "file": "routes/njt_56_153.json",
+      "searchText": "56 nj transit"
+    },
+    {
+      "key": "njt:154",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "154",
+      "shortName": "57",
+      "longName": "",
+      "routeDesc": "",
+      "label": "57",
+      "color": "#2633c5",
+      "tripCount": 58,
+      "stopCount": 61,
+      "shapeCount": 4,
+      "bounds": [
+        [
+          40.609127,
+          -74.254674
+        ],
+        [
+          40.666328,
+          -74.214773
+        ]
+      ],
+      "file": "routes/njt_57_154.json",
+      "searchText": "57 nj transit"
+    },
+    {
+      "key": "njt:155",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "155",
+      "shortName": "58",
+      "longName": "",
+      "routeDesc": "",
+      "label": "58",
+      "color": "#c52640",
+      "tripCount": 149,
+      "stopCount": 99,
+      "shapeCount": 23,
+      "bounds": [
+        [
+          40.637747,
+          -74.320303
+        ],
+        [
+          40.679966,
+          -74.200702
+        ]
+      ],
+      "file": "routes/njt_58_155.json",
+      "searchText": "58 nj transit"
+    },
+    {
+      "key": "njt:156",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "156",
+      "shortName": "59",
+      "longName": "",
+      "routeDesc": "",
+      "label": "59",
+      "color": "#4026c5",
+      "tripCount": 397,
+      "stopCount": 242,
+      "shapeCount": 47,
+      "bounds": [
+        [
+          40.588427,
+          -74.464164
+        ],
+        [
+          40.743636,
+          -74.167914
+        ]
+      ],
+      "file": "routes/njt_59_156.json",
+      "searchText": "59 nj transit"
+    },
+    {
+      "key": "njt:171",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "171",
+      "shortName": "62",
+      "longName": "",
+      "routeDesc": "",
+      "label": "62",
+      "color": "#2630c5",
+      "tripCount": 419,
+      "stopCount": 69,
+      "shapeCount": 45,
+      "bounds": [
+        [
+          40.662557,
+          -74.215275
+        ],
+        [
+          40.737498,
+          -74.162795
+        ]
+      ],
+      "file": "routes/njt_62_171.json",
+      "searchText": "62 nj transit"
+    },
+    {
+      "key": "njt:173",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "173",
+      "shortName": "63",
+      "longName": "",
+      "routeDesc": "",
+      "label": "63",
+      "color": "#6b26c5",
+      "tripCount": 2,
+      "stopCount": 75,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          40.089887,
+          -74.308484
+        ],
+        [
+          40.763188,
+          -74.020515
+        ]
+      ],
+      "file": "routes/njt_63_173.json",
+      "searchText": "63 nj transit"
+    },
+    {
+      "key": "njt:174",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "174",
+      "shortName": "64",
+      "longName": "",
+      "routeDesc": "",
+      "label": "64",
+      "color": "#c52e26",
+      "tripCount": 42,
+      "stopCount": 114,
+      "shapeCount": 15,
+      "bounds": [
+        [
+          40.089917,
+          -74.308543
+        ],
+        [
+          40.763437,
+          -74.020345
+        ]
+      ],
+      "file": "routes/njt_64_174.json",
+      "searchText": "64 nj transit"
+    },
+    {
+      "key": "njt:175",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "175",
+      "shortName": "65",
+      "longName": "",
+      "routeDesc": "",
+      "label": "65",
+      "color": "#b526c5",
+      "tripCount": 42,
+      "stopCount": 236,
+      "shapeCount": 14,
+      "bounds": [
+        [
+          40.566269,
+          -74.624402
+        ],
+        [
+          40.737498,
+          -74.163102
+        ]
+      ],
+      "file": "routes/njt_65_175.json",
+      "searchText": "65 nj transit"
+    },
+    {
+      "key": "njt:176",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "176",
+      "shortName": "66",
+      "longName": "",
+      "routeDesc": "",
+      "label": "66",
+      "color": "#85c526",
+      "tripCount": 262,
+      "stopCount": 198,
+      "shapeCount": 39,
+      "bounds": [
+        [
+          40.667098,
+          -74.370425
+        ],
+        [
+          40.737498,
+          -74.162962
+        ]
+      ],
+      "file": "routes/njt_66_176.json",
+      "searchText": "66 nj transit"
+    },
+    {
+      "key": "njt:177",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "177",
+      "shortName": "67",
+      "longName": "",
+      "routeDesc": "",
+      "label": "67",
+      "color": "#2630c5",
+      "tripCount": 90,
+      "stopCount": 193,
+      "shapeCount": 34,
+      "bounds": [
+        [
+          39.950457,
+          -74.308472
+        ],
+        [
+          40.737498,
+          -74.137803
+        ]
+      ],
+      "file": "routes/njt_67_177.json",
+      "searchText": "67 nj transit"
+    },
+    {
+      "key": "njt:178",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "178",
+      "shortName": "68",
+      "longName": "",
+      "routeDesc": "",
+      "label": "68",
+      "color": "#c56826",
+      "tripCount": 30,
+      "stopCount": 35,
+      "shapeCount": 7,
+      "bounds": [
+        [
+          40.396707,
+          -74.411714
+        ],
+        [
+          40.763267,
+          -74.020412
+        ]
+      ],
+      "file": "routes/njt_68_178.json",
+      "searchText": "68 nj transit"
+    },
+    {
+      "key": "njt:179",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "179",
+      "shortName": "70",
+      "longName": "",
+      "routeDesc": "",
+      "label": "70",
+      "color": "#26c52b",
+      "tripCount": 381,
+      "stopCount": 191,
+      "shapeCount": 94,
+      "bounds": [
+        [
+          40.709238,
+          -74.387965
+        ],
+        [
+          40.794948,
+          -74.162962
+        ]
+      ],
+      "file": "routes/njt_70_179.json",
+      "searchText": "70 nj transit"
+    },
+    {
+      "key": "njt:186",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "186",
+      "shortName": "71",
+      "longName": "",
+      "routeDesc": "",
+      "label": "71",
+      "color": "#26c5b2",
+      "tripCount": 261,
+      "stopCount": 218,
+      "shapeCount": 59,
+      "bounds": [
+        [
+          40.734538,
+          -74.315893
+        ],
+        [
+          40.883757,
+          -74.162795
+        ]
+      ],
+      "file": "routes/njt_71_186.json",
+      "searchText": "71 nj transit"
+    },
+    {
+      "key": "njt:188",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "188",
+      "shortName": "72",
+      "longName": "",
+      "routeDesc": "",
+      "label": "72",
+      "color": "#c59826",
+      "tripCount": 166,
+      "stopCount": 156,
+      "shapeCount": 12,
+      "bounds": [
+        [
+          40.733779,
+          -74.197684
+        ],
+        [
+          40.919096,
+          -74.163102
+        ]
+      ],
+      "file": "routes/njt_72_188.json",
+      "searchText": "72 nj transit"
+    },
+    {
+      "key": "njt:190",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "190",
+      "shortName": "73",
+      "longName": "",
+      "routeDesc": "",
+      "label": "73",
+      "color": "#c52690",
+      "tripCount": 356,
+      "stopCount": 203,
+      "shapeCount": 90,
+      "bounds": [
+        [
+          40.734538,
+          -74.407752
+        ],
+        [
+          40.826908,
+          -74.163102
+        ]
+      ],
+      "file": "routes/njt_73_190.json",
+      "searchText": "73 nj transit"
+    },
+    {
+      "key": "njt:191",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "191",
+      "shortName": "74",
+      "longName": "",
+      "routeDesc": "",
+      "label": "74",
+      "color": "#26c575",
+      "tripCount": 251,
+      "stopCount": 201,
+      "shapeCount": 15,
+      "bounds": [
+        [
+          40.775506,
+          -74.176523
+        ],
+        [
+          40.919096,
+          -74.122452
+        ]
+      ],
+      "file": "routes/njt_74_191.json",
+      "searchText": "74 nj transit"
+    },
+    {
+      "key": "njt:201",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "201",
+      "shortName": "76",
+      "longName": "",
+      "routeDesc": "",
+      "label": "76",
+      "color": "#c54d26",
+      "tripCount": 367,
+      "stopCount": 204,
+      "shapeCount": 37,
+      "bounds": [
+        [
+          40.733779,
+          -74.175415
+        ],
+        [
+          40.884127,
+          -74.042032
+        ]
+      ],
+      "file": "routes/njt_76_201.json",
+      "searchText": "76 nj transit"
+    },
+    {
+      "key": "njt:205",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "205",
+      "shortName": "78",
+      "longName": "",
+      "routeDesc": "",
+      "label": "78",
+      "color": "#4026c5",
+      "tripCount": 55,
+      "stopCount": 80,
+      "shapeCount": 15,
+      "bounds": [
+        [
+          40.734538,
+          -74.180354
+        ],
+        [
+          40.799886,
+          -74.042652
+        ]
+      ],
+      "file": "routes/njt_78_205.json",
+      "searchText": "78 nj transit"
+    },
+    {
+      "key": "njt:207",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "207",
+      "shortName": "79",
+      "longName": "",
+      "routeDesc": "",
+      "label": "79",
+      "color": "#c5263b",
+      "tripCount": 20,
+      "stopCount": 108,
+      "shapeCount": 7,
+      "bounds": [
+        [
+          40.734538,
+          -74.450704
+        ],
+        [
+          40.878877,
+          -74.163102
+        ]
+      ],
+      "file": "routes/njt_79_207.json",
+      "searchText": "79 nj transit"
+    },
+    {
+      "key": "njt:209",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "209",
+      "shortName": "80",
+      "longName": "",
+      "routeDesc": "",
+      "label": "80",
+      "color": "#c52675",
+      "tripCount": 855,
+      "stopCount": 107,
+      "shapeCount": 39,
+      "bounds": [
+        [
+          40.691807,
+          -74.100783
+        ],
+        [
+          40.735377,
+          -74.034053
+        ]
+      ],
+      "file": "routes/njt_80_209.json",
+      "searchText": "80 nj transit"
+    },
+    {
+      "key": "njt:215",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "215",
+      "shortName": "81",
+      "longName": "",
+      "routeDesc": "",
+      "label": "81",
+      "color": "#c55d26",
+      "tripCount": 418,
+      "stopCount": 154,
+      "shapeCount": 31,
+      "bounds": [
+        [
+          40.645236,
+          -74.130682
+        ],
+        [
+          40.722928,
+          -74.035342
+        ]
+      ],
+      "file": "routes/njt_81_215.json",
+      "searchText": "81 nj transit"
+    },
+    {
+      "key": "njt:224",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "224",
+      "shortName": "82",
+      "longName": "",
+      "routeDesc": "",
+      "label": "82",
+      "color": "#c58826",
+      "tripCount": 10,
+      "stopCount": 50,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          40.716428,
+          -74.059262
+        ],
+        [
+          40.75642,
+          -74.034053
+        ]
+      ],
+      "file": "routes/njt_82_224.json",
+      "searchText": "82 nj transit"
+    },
+    {
+      "key": "njt:226",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "226",
+      "shortName": "83",
+      "longName": "",
+      "routeDesc": "",
+      "label": "83",
+      "color": "#7826c5",
+      "tripCount": 273,
+      "stopCount": 209,
+      "shapeCount": 16,
+      "bounds": [
+        [
+          40.730447,
+          -74.062773
+        ],
+        [
+          40.907507,
+          -73.997035
+        ]
+      ],
+      "file": "routes/njt_83_226.json",
+      "searchText": "83 nj transit"
+    },
+    {
+      "key": "njt:234",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "234",
+      "shortName": "84",
+      "longName": "",
+      "routeDesc": "",
+      "label": "84",
+      "color": "#c52663",
+      "tripCount": 241,
+      "stopCount": 160,
+      "shapeCount": 14,
+      "bounds": [
+        [
+          40.729938,
+          -74.063125
+        ],
+        [
+          40.809249,
+          -74.000302
+        ]
+      ],
+      "file": "routes/njt_84_234.json",
+      "searchText": "84 nj transit"
+    },
+    {
+      "key": "njt:235",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "235",
+      "shortName": "85",
+      "longName": "",
+      "routeDesc": "",
+      "label": "85",
+      "color": "#38c526",
+      "tripCount": 203,
+      "stopCount": 70,
+      "shapeCount": 11,
+      "bounds": [
+        [
+          40.735437,
+          -74.073994
+        ],
+        [
+          40.815516,
+          -74.028613
+        ]
+      ],
+      "file": "routes/njt_85_235.json",
+      "searchText": "85 nj transit"
+    },
+    {
+      "key": "njt:236",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "236",
+      "shortName": "86",
+      "longName": "",
+      "routeDesc": "",
+      "label": "86",
+      "color": "#c2c526",
+      "tripCount": 80,
+      "stopCount": 89,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.719037,
+          -74.055275
+        ],
+        [
+          40.782578,
+          -74.017003
+        ]
+      ],
+      "file": "routes/njt_86_236.json",
+      "searchText": "86 nj transit"
+    },
+    {
+      "key": "njt:237",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "237",
+      "shortName": "87",
+      "longName": "",
+      "routeDesc": "",
+      "label": "87",
+      "color": "#2655c5",
+      "tripCount": 917,
+      "stopCount": 170,
+      "shapeCount": 26,
+      "bounds": [
+        [
+          40.691807,
+          -74.096883
+        ],
+        [
+          40.787966,
+          -74.028772
+        ]
+      ],
+      "file": "routes/njt_87_237.json",
+      "searchText": "87 nj transit"
+    },
+    {
+      "key": "njt:244",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "244",
+      "shortName": "88",
+      "longName": "",
+      "routeDesc": "",
+      "label": "88",
+      "color": "#269dc5",
+      "tripCount": 201,
+      "stopCount": 140,
+      "shapeCount": 12,
+      "bounds": [
+        [
+          40.730447,
+          -74.064385
+        ],
+        [
+          40.810819,
+          -74.001252
+        ]
+      ],
+      "file": "routes/njt_88_244.json",
+      "searchText": "88 nj transit"
+    },
+    {
+      "key": "njt:246",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "246",
+      "shortName": "89",
+      "longName": "",
+      "routeDesc": "",
+      "label": "89",
+      "color": "#2675c5",
+      "tripCount": 124,
+      "stopCount": 87,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.735437,
+          -74.031432
+        ],
+        [
+          40.809249,
+          -74.000244
+        ]
+      ],
+      "file": "routes/njt_89_246.json",
+      "searchText": "89 nj transit"
+    },
+    {
+      "key": "njt:250",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "250",
+      "shortName": "90",
+      "longName": "",
+      "routeDesc": "",
+      "label": "90",
+      "color": "#c5a826",
+      "tripCount": 174,
+      "stopCount": 94,
+      "shapeCount": 10,
+      "bounds": [
+        [
+          40.712466,
+          -74.251733
+        ],
+        [
+          40.784337,
+          -74.174814
+        ]
+      ],
+      "file": "routes/njt_90_250.json",
+      "searchText": "90 nj transit"
+    },
+    {
+      "key": "njt:251",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "251",
+      "shortName": "92",
+      "longName": "",
+      "routeDesc": "",
+      "label": "92",
+      "color": "#269bc5",
+      "tripCount": 162,
+      "stopCount": 98,
+      "shapeCount": 23,
+      "bounds": [
+        [
+          40.743546,
+          -74.261774
+        ],
+        [
+          40.799867,
+          -74.170875
+        ]
+      ],
+      "file": "routes/njt_92_251.json",
+      "searchText": "92 nj transit"
+    },
+    {
+      "key": "njt:252",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "252",
+      "shortName": "94",
+      "longName": "",
+      "routeDesc": "",
+      "label": "94",
+      "color": "#26c590",
+      "tripCount": 897,
+      "stopCount": 223,
+      "shapeCount": 43,
+      "bounds": [
+        [
+          40.625536,
+          -74.303425
+        ],
+        [
+          40.791657,
+          -74.191703
+        ]
+      ],
+      "file": "routes/njt_94_252.json",
+      "searchText": "94 nj transit"
+    },
+    {
+      "key": "njt:253",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "253",
+      "shortName": "96",
+      "longName": "",
+      "routeDesc": "",
+      "label": "96",
+      "color": "#5dc526",
+      "tripCount": 68,
+      "stopCount": 61,
+      "shapeCount": 4,
+      "bounds": [
+        [
+          40.710846,
+          -74.229955
+        ],
+        [
+          40.77005,
+          -74.183472
+        ]
+      ],
+      "file": "routes/njt_96_253.json",
+      "searchText": "96 nj transit"
+    },
+    {
+      "key": "njt:254",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "254",
+      "shortName": "97",
+      "longName": "",
+      "routeDesc": "",
+      "label": "97",
+      "color": "#c52690",
+      "tripCount": 50,
+      "stopCount": 68,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.752337,
+          -74.236512
+        ],
+        [
+          40.818298,
+          -74.216614
+        ]
+      ],
+      "file": "routes/njt_97_254.json",
+      "searchText": "97 nj transit"
+    },
+    {
+      "key": "njt:256",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "256",
+      "shortName": "99",
+      "longName": "",
+      "routeDesc": "",
+      "label": "99",
+      "color": "#269bc5",
+      "tripCount": 245,
+      "stopCount": 133,
+      "shapeCount": 17,
+      "bounds": [
+        [
+          40.698688,
+          -74.239912
+        ],
+        [
+          40.78753,
+          -74.15907
+        ]
+      ],
+      "file": "routes/njt_99_256.json",
+      "searchText": "99 nj transit"
+    },
+    {
+      "key": "njt:3",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "3",
+      "shortName": "101",
+      "longName": "",
+      "routeDesc": "",
+      "label": "101",
+      "color": "#26bac5",
+      "tripCount": 25,
+      "stopCount": 84,
+      "shapeCount": 9,
+      "bounds": [
+        [
+          40.756209,
+          -74.2329
+        ],
+        [
+          40.872528,
+          -73.990753
+        ]
+      ],
+      "file": "routes/njt_101_3.json",
+      "searchText": "101 nj transit"
+    },
+    {
+      "key": "njt:4",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "4",
+      "shortName": "102",
+      "longName": "",
+      "routeDesc": "",
+      "label": "102",
+      "color": "#c2c526",
+      "tripCount": 42,
+      "stopCount": 43,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.756696,
+          -74.197441
+        ],
+        [
+          40.840557,
+          -73.993003
+        ]
+      ],
+      "file": "routes/njt_102_4.json",
+      "searchText": "102 nj transit"
+    },
+    {
+      "key": "njt:5",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "5",
+      "shortName": "105",
+      "longName": "",
+      "routeDesc": "",
+      "label": "105",
+      "color": "#c52655",
+      "tripCount": 26,
+      "stopCount": 99,
+      "shapeCount": 7,
+      "bounds": [
+        [
+          40.756209,
+          -74.298724
+        ],
+        [
+          40.876498,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_105_5.json",
+      "searchText": "105 nj transit"
+    },
+    {
+      "key": "njt:6",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "6",
+      "shortName": "107",
+      "longName": "",
+      "routeDesc": "",
+      "label": "107",
+      "color": "#2635c5",
+      "tripCount": 534,
+      "stopCount": 116,
+      "shapeCount": 76,
+      "bounds": [
+        [
+          40.681057,
+          -74.261561
+        ],
+        [
+          40.780926,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_107_6.json",
+      "searchText": "107 nj transit"
+    },
+    {
+      "key": "njt:7",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "7",
+      "shortName": "108",
+      "longName": "",
+      "routeDesc": "",
+      "label": "108",
+      "color": "#26c57b",
+      "tripCount": 147,
+      "stopCount": 64,
+      "shapeCount": 10,
+      "bounds": [
+        [
+          40.728266,
+          -74.180074
+        ],
+        [
+          40.780926,
+          -73.990597
+        ]
+      ],
+      "file": "routes/njt_108_7.json",
+      "searchText": "108 nj transit"
+    },
+    {
+      "key": "njt:8",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "8",
+      "shortName": "109",
+      "longName": "",
+      "routeDesc": "",
+      "label": "109",
+      "color": "#26c530",
+      "tripCount": 49,
+      "stopCount": 102,
+      "shapeCount": 12,
+      "bounds": [
+        [
+          40.747059,
+          -74.167082
+        ],
+        [
+          40.815886,
+          -73.993003
+        ]
+      ],
+      "file": "routes/njt_109_8.json",
+      "searchText": "109 nj transit"
+    },
+    {
+      "key": "njt:10",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "10",
+      "shortName": "111",
+      "longName": "",
+      "routeDesc": "",
+      "label": "111",
+      "color": "#26c593",
+      "tripCount": 119,
+      "stopCount": 19,
+      "shapeCount": 12,
+      "bounds": [
+        [
+          40.660417,
+          -74.186323
+        ],
+        [
+          40.780926,
+          -73.990597
+        ]
+      ],
+      "file": "routes/njt_111_10.json",
+      "searchText": "111 nj transit"
+    },
+    {
+      "key": "njt:11",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "11",
+      "shortName": "112",
+      "longName": "",
+      "routeDesc": "",
+      "label": "112",
+      "color": "#c52673",
+      "tripCount": 222,
+      "stopCount": 117,
+      "shapeCount": 29,
+      "bounds": [
+        [
+          40.611906,
+          -74.359592
+        ],
+        [
+          40.780926,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_112_11.json",
+      "searchText": "112 nj transit"
+    },
+    {
+      "key": "njt:12",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "12",
+      "shortName": "113",
+      "longName": "",
+      "routeDesc": "",
+      "label": "113",
+      "color": "#2638c5",
+      "tripCount": 351,
+      "stopCount": 242,
+      "shapeCount": 54,
+      "bounds": [
+        [
+          40.588427,
+          -74.464265
+        ],
+        [
+          40.780926,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_113_12.json",
+      "searchText": "113 nj transit"
+    },
+    {
+      "key": "njt:13",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "13",
+      "shortName": "114",
+      "longName": "",
+      "routeDesc": "",
+      "label": "114",
+      "color": "#26c538",
+      "tripCount": 422,
+      "stopCount": 244,
+      "shapeCount": 69,
+      "bounds": [
+        [
+          40.566187,
+          -74.624563
+        ],
+        [
+          40.780926,
+          -73.990597
+        ]
+      ],
+      "file": "routes/njt_114_13.json",
+      "searchText": "114 nj transit"
+    },
+    {
+      "key": "njt:14",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "14",
+      "shortName": "115",
+      "longName": "",
+      "routeDesc": "",
+      "label": "115",
+      "color": "#63c526",
+      "tripCount": 178,
+      "stopCount": 124,
+      "shapeCount": 30,
+      "bounds": [
+        [
+          40.574578,
+          -74.29441
+        ],
+        [
+          40.780926,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_115_14.json",
+      "searchText": "115 nj transit"
+    },
+    {
+      "key": "njt:15",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "15",
+      "shortName": "116",
+      "longName": "",
+      "routeDesc": "",
+      "label": "116",
+      "color": "#4d26c5",
+      "tripCount": 267,
+      "stopCount": 100,
+      "shapeCount": 16,
+      "bounds": [
+        [
+          40.507507,
+          -74.282584
+        ],
+        [
+          40.780918,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_116_15.json",
+      "searchText": "116 nj transit"
+    },
+    {
+      "key": "njt:16",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "16",
+      "shortName": "117",
+      "longName": "",
+      "routeDesc": "",
+      "label": "117",
+      "color": "#26c0c5",
+      "tripCount": 8,
+      "stopCount": 88,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          40.566206,
+          -74.620013
+        ],
+        [
+          40.780907,
+          -73.990753
+        ]
+      ],
+      "file": "routes/njt_117_16.json",
+      "searchText": "117 nj transit"
+    },
+    {
+      "key": "njt:17",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "17",
+      "shortName": "119",
+      "longName": "",
+      "routeDesc": "",
+      "label": "119",
+      "color": "#a526c5",
+      "tripCount": 714,
+      "stopCount": 164,
+      "shapeCount": 81,
+      "bounds": [
+        [
+          40.647538,
+          -74.138744
+        ],
+        [
+          40.767438,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_119_17.json",
+      "searchText": "119 nj transit"
+    },
+    {
+      "key": "njt:19",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "19",
+      "shortName": "120",
+      "longName": "",
+      "routeDesc": "",
+      "label": "120",
+      "color": "#c5266b",
+      "tripCount": 12,
+      "stopCount": 78,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          40.645247,
+          -74.130682
+        ],
+        [
+          40.732048,
+          -74.004493
+        ]
+      ],
+      "file": "routes/njt_120_19.json",
+      "searchText": "120 nj transit"
+    },
+    {
+      "key": "njt:20",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "20",
+      "shortName": "121",
+      "longName": "",
+      "routeDesc": "",
+      "label": "121",
+      "color": "#26c593",
+      "tripCount": 6,
+      "stopCount": 39,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          40.756209,
+          -74.041862
+        ],
+        [
+          40.815708,
+          -73.990572
+        ]
+      ],
+      "file": "routes/njt_121_20.json",
+      "searchText": "121 nj transit"
+    },
+    {
+      "key": "njt:21",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "21",
+      "shortName": "122",
+      "longName": "",
+      "routeDesc": "",
+      "label": "122",
+      "color": "#26b5c5",
+      "tripCount": 61,
+      "stopCount": 30,
+      "shapeCount": 12,
+      "bounds": [
+        [
+          40.756209,
+          -74.063443
+        ],
+        [
+          40.803508,
+          -73.990572
+        ]
+      ],
+      "file": "routes/njt_122_21.json",
+      "searchText": "122 nj transit"
+    },
+    {
+      "key": "njt:22",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "22",
+      "shortName": "123",
+      "longName": "",
+      "routeDesc": "",
+      "label": "123",
+      "color": "#9026c5",
+      "tripCount": 644,
+      "stopCount": 53,
+      "shapeCount": 28,
+      "bounds": [
+        [
+          40.734618,
+          -74.052323
+        ],
+        [
+          40.770537,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_123_22.json",
+      "searchText": "123 nj transit"
+    },
+    {
+      "key": "njt:23",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "23",
+      "shortName": "124",
+      "longName": "",
+      "routeDesc": "",
+      "label": "124",
+      "color": "#26c2c5",
+      "tripCount": 19,
+      "stopCount": 59,
+      "shapeCount": 5,
+      "bounds": [
+        [
+          40.756209,
+          -74.086785
+        ],
+        [
+          40.787776,
+          -73.990572
+        ]
+      ],
+      "file": "routes/njt_124_23.json",
+      "searchText": "124 nj transit"
+    },
+    {
+      "key": "njt:24",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "24",
+      "shortName": "125",
+      "longName": "",
+      "routeDesc": "",
+      "label": "125",
+      "color": "#26c56b",
+      "tripCount": 136,
+      "stopCount": 65,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.730628,
+          -74.064385
+        ],
+        [
+          40.773957,
+          -73.990572
+        ]
+      ],
+      "file": "routes/njt_125_24.json",
+      "searchText": "125 nj transit"
+    },
+    {
+      "key": "njt:25",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "25",
+      "shortName": "126",
+      "longName": "",
+      "routeDesc": "",
+      "label": "126",
+      "color": "#4d26c5",
+      "tripCount": 757,
+      "stopCount": 56,
+      "shapeCount": 47,
+      "bounds": [
+        [
+          40.724416,
+          -74.046207
+        ],
+        [
+          40.767438,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_126_25.json",
+      "searchText": "126 nj transit"
+    },
+    {
+      "key": "njt:26",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "26",
+      "shortName": "127",
+      "longName": "",
+      "routeDesc": "",
+      "label": "127",
+      "color": "#268bc5",
+      "tripCount": 231,
+      "stopCount": 69,
+      "shapeCount": 22,
+      "bounds": [
+        [
+          40.756209,
+          -74.052852
+        ],
+        [
+          40.848386,
+          -73.990572
+        ]
+      ],
+      "file": "routes/njt_127_26.json",
+      "searchText": "127 nj transit"
+    },
+    {
+      "key": "njt:27",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "27",
+      "shortName": "128",
+      "longName": "",
+      "routeDesc": "",
+      "label": "128",
+      "color": "#7326c5",
+      "tripCount": 671,
+      "stopCount": 59,
+      "shapeCount": 28,
+      "bounds": [
+        [
+          40.756209,
+          -74.025385
+        ],
+        [
+          40.809849,
+          -73.990572
+        ]
+      ],
+      "file": "routes/njt_128_27.json",
+      "searchText": "128 nj transit"
+    },
+    {
+      "key": "njt:28",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "28",
+      "shortName": "129",
+      "longName": "",
+      "routeDesc": "",
+      "label": "129",
+      "color": "#262ec5",
+      "tripCount": 264,
+      "stopCount": 70,
+      "shapeCount": 33,
+      "bounds": [
+        [
+          40.756209,
+          -74.081165
+        ],
+        [
+          40.799886,
+          -73.990572
+        ]
+      ],
+      "file": "routes/njt_129_28.json",
+      "searchText": "129 nj transit"
+    },
+    {
+      "key": "njt:30",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "30",
+      "shortName": "130",
+      "longName": "",
+      "routeDesc": "",
+      "label": "130",
+      "color": "#c526a0",
+      "tripCount": 50,
+      "stopCount": 53,
+      "shapeCount": 11,
+      "bounds": [
+        [
+          40.089955,
+          -74.330805
+        ],
+        [
+          40.780918,
+          -73.990753
+        ]
+      ],
+      "file": "routes/njt_130_30.json",
+      "searchText": "130 nj transit"
+    },
+    {
+      "key": "njt:31",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "31",
+      "shortName": "131",
+      "longName": "",
+      "routeDesc": "",
+      "label": "131",
+      "color": "#c52688",
+      "tripCount": 44,
+      "stopCount": 58,
+      "shapeCount": 11,
+      "bounds": [
+        [
+          40.27254,
+          -74.313864
+        ],
+        [
+          40.780918,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_131_31.json",
+      "searchText": "131 nj transit"
+    },
+    {
+      "key": "njt:32",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "32",
+      "shortName": "132",
+      "longName": "",
+      "routeDesc": "",
+      "label": "132",
+      "color": "#c57026",
+      "tripCount": 22,
+      "stopCount": 55,
+      "shapeCount": 8,
+      "bounds": [
+        [
+          40.089917,
+          -74.316185
+        ],
+        [
+          40.780918,
+          -73.990753
+        ]
+      ],
+      "file": "routes/njt_132_32.json",
+      "searchText": "132 nj transit"
+    },
+    {
+      "key": "njt:33",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "33",
+      "shortName": "133",
+      "longName": "",
+      "routeDesc": "",
+      "label": "133",
+      "color": "#43c526",
+      "tripCount": 42,
+      "stopCount": 75,
+      "shapeCount": 15,
+      "bounds": [
+        [
+          40.394578,
+          -74.306544
+        ],
+        [
+          40.780926,
+          -73.990597
+        ]
+      ],
+      "file": "routes/njt_133_33.json",
+      "searchText": "133 nj transit"
+    },
+    {
+      "key": "njt:34",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "34",
+      "shortName": "135",
+      "longName": "",
+      "routeDesc": "",
+      "label": "135",
+      "color": "#c59026",
+      "tripCount": 19,
+      "stopCount": 60,
+      "shapeCount": 7,
+      "bounds": [
+        [
+          40.259178,
+          -74.306544
+        ],
+        [
+          40.780918,
+          -73.990753
+        ]
+      ],
+      "file": "routes/njt_135_34.json",
+      "searchText": "135 nj transit"
+    },
+    {
+      "key": "njt:35",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "35",
+      "shortName": "136",
+      "longName": "",
+      "routeDesc": "",
+      "label": "136",
+      "color": "#26c563",
+      "tripCount": 13,
+      "stopCount": 25,
+      "shapeCount": 3,
+      "bounds": [
+        [
+          40.090076,
+          -74.308313
+        ],
+        [
+          40.780918,
+          -73.990753
+        ]
+      ],
+      "file": "routes/njt_136_35.json",
+      "searchText": "136 nj transit"
+    },
+    {
+      "key": "njt:36",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "36",
+      "shortName": "137",
+      "longName": "",
+      "routeDesc": "",
+      "label": "137",
+      "color": "#60c526",
+      "tripCount": 129,
+      "stopCount": 89,
+      "shapeCount": 27,
+      "bounds": [
+        [
+          39.950437,
+          -74.306535
+        ],
+        [
+          40.780918,
+          -73.990753
+        ]
+      ],
+      "file": "routes/njt_137_36.json",
+      "searchText": "137 nj transit"
+    },
+    {
+      "key": "njt:37",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "37",
+      "shortName": "138",
+      "longName": "",
+      "routeDesc": "",
+      "label": "138",
+      "color": "#c52693",
+      "tripCount": 32,
+      "stopCount": 67,
+      "shapeCount": 18,
+      "bounds": [
+        [
+          40.354397,
+          -74.411673
+        ],
+        [
+          40.780926,
+          -73.990597
+        ]
+      ],
+      "file": "routes/njt_138_37.json",
+      "searchText": "138 nj transit"
+    },
+    {
+      "key": "njt:38",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "38",
+      "shortName": "139",
+      "longName": "",
+      "routeDesc": "",
+      "label": "139",
+      "color": "#26c573",
+      "tripCount": 723,
+      "stopCount": 201,
+      "shapeCount": 121,
+      "bounds": [
+        [
+          40.089887,
+          -74.362672
+        ],
+        [
+          40.780926,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_139_38.json",
+      "searchText": "139 nj transit"
+    },
+    {
+      "key": "njt:40",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "40",
+      "shortName": "144",
+      "longName": "",
+      "routeDesc": "",
+      "label": "144",
+      "color": "#26b0c5",
+      "tripCount": 71,
+      "stopCount": 111,
+      "shapeCount": 20,
+      "bounds": [
+        [
+          40.756209,
+          -74.125993
+        ],
+        [
+          40.926856,
+          -73.990597
+        ]
+      ],
+      "file": "routes/njt_144_40.json",
+      "searchText": "144 nj transit"
+    },
+    {
+      "key": "njt:41",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "41",
+      "shortName": "145",
+      "longName": "",
+      "routeDesc": "",
+      "label": "145",
+      "color": "#9b26c5",
+      "tripCount": 27,
+      "stopCount": 71,
+      "shapeCount": 9,
+      "bounds": [
+        [
+          40.756209,
+          -74.13845
+        ],
+        [
+          40.945098,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_145_41.json",
+      "searchText": "145 nj transit"
+    },
+    {
+      "key": "njt:42",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "42",
+      "shortName": "148",
+      "longName": "",
+      "routeDesc": "",
+      "label": "148",
+      "color": "#c52635",
+      "tripCount": 4,
+      "stopCount": 30,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          40.756209,
+          -74.156344
+        ],
+        [
+          40.998638,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_148_42.json",
+      "searchText": "148 nj transit"
+    },
+    {
+      "key": "njt:43",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "43",
+      "shortName": "151",
+      "longName": "",
+      "routeDesc": "",
+      "label": "151",
+      "color": "#bd26c5",
+      "tripCount": 31,
+      "stopCount": 76,
+      "shapeCount": 7,
+      "bounds": [
+        [
+          40.756209,
+          -74.174364
+        ],
+        [
+          40.919096,
+          -73.990753
+        ]
+      ],
+      "file": "routes/njt_151_43.json",
+      "searchText": "151 nj transit"
+    },
+    {
+      "key": "njt:44",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "44",
+      "shortName": "153",
+      "longName": "",
+      "routeDesc": "",
+      "label": "153",
+      "color": "#6d26c5",
+      "tripCount": 2,
+      "stopCount": 48,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          40.756209,
+          -74.052842
+        ],
+        [
+          40.875917,
+          -73.967553
+        ]
+      ],
+      "file": "routes/njt_153_44.json",
+      "searchText": "153 nj transit"
+    },
+    {
+      "key": "njt:45",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "45",
+      "shortName": "154",
+      "longName": "",
+      "routeDesc": "",
+      "label": "154",
+      "color": "#26a0c5",
+      "tripCount": 277,
+      "stopCount": 97,
+      "shapeCount": 19,
+      "bounds": [
+        [
+          40.756209,
+          -74.031835
+        ],
+        [
+          40.857966,
+          -73.979982
+        ]
+      ],
+      "file": "routes/njt_154_45.json",
+      "searchText": "154 nj transit"
+    },
+    {
+      "key": "njt:46",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "46",
+      "shortName": "155",
+      "longName": "",
+      "routeDesc": "",
+      "label": "155",
+      "color": "#2650c5",
+      "tripCount": 22,
+      "stopCount": 62,
+      "shapeCount": 9,
+      "bounds": [
+        [
+          40.756209,
+          -74.052852
+        ],
+        [
+          40.90015,
+          -73.990597
+        ]
+      ],
+      "file": "routes/njt_155_46.json",
+      "searchText": "155 nj transit"
+    },
+    {
+      "key": "njt:47",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "47",
+      "shortName": "156",
+      "longName": "",
+      "routeDesc": "",
+      "label": "156",
+      "color": "#c5264d",
+      "tripCount": 438,
+      "stopCount": 162,
+      "shapeCount": 57,
+      "bounds": [
+        [
+          40.756181,
+          -74.027752
+        ],
+        [
+          40.880107,
+          -73.951331
+        ]
+      ],
+      "file": "routes/njt_156_47.json",
+      "searchText": "156 nj transit"
+    },
+    {
+      "key": "njt:48",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "48",
+      "shortName": "157",
+      "longName": "",
+      "routeDesc": "",
+      "label": "157",
+      "color": "#2826c5",
+      "tripCount": 21,
+      "stopCount": 62,
+      "shapeCount": 9,
+      "bounds": [
+        [
+          40.756209,
+          -74.052855
+        ],
+        [
+          40.890608,
+          -73.990597
+        ]
+      ],
+      "file": "routes/njt_157_48.json",
+      "searchText": "157 nj transit"
+    },
+    {
+      "key": "njt:49",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "49",
+      "shortName": "158",
+      "longName": "",
+      "routeDesc": "",
+      "label": "158",
+      "color": "#8dc526",
+      "tripCount": 651,
+      "stopCount": 80,
+      "shapeCount": 44,
+      "bounds": [
+        [
+          40.756209,
+          -74.027752
+        ],
+        [
+          40.861279,
+          -73.959734
+        ]
+      ],
+      "file": "routes/njt_158_49.json",
+      "searchText": "158 nj transit"
+    },
+    {
+      "key": "njt:50",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "50",
+      "shortName": "159",
+      "longName": "",
+      "routeDesc": "",
+      "label": "159",
+      "color": "#5526c5",
+      "tripCount": 985,
+      "stopCount": 162,
+      "shapeCount": 89,
+      "bounds": [
+        [
+          40.756181,
+          -74.029932
+        ],
+        [
+          40.864326,
+          -73.967553
+        ]
+      ],
+      "file": "routes/njt_159_50.json",
+      "searchText": "159 nj transit"
+    },
+    {
+      "key": "njt:52",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "52",
+      "shortName": "160",
+      "longName": "",
+      "routeDesc": "",
+      "label": "160",
+      "color": "#26b2c5",
+      "tripCount": 242,
+      "stopCount": 140,
+      "shapeCount": 21,
+      "bounds": [
+        [
+          40.756209,
+          -74.125544
+        ],
+        [
+          40.922337,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_160_52.json",
+      "searchText": "160 nj transit"
+    },
+    {
+      "key": "njt:53",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "53",
+      "shortName": "161",
+      "longName": "",
+      "routeDesc": "",
+      "label": "161",
+      "color": "#c58d26",
+      "tripCount": 581,
+      "stopCount": 161,
+      "shapeCount": 50,
+      "bounds": [
+        [
+          40.756209,
+          -74.174472
+        ],
+        [
+          40.919096,
+          -73.990597
+        ]
+      ],
+      "file": "routes/njt_161_53.json",
+      "searchText": "161 nj transit"
+    },
+    {
+      "key": "njt:54",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "54",
+      "shortName": "162",
+      "longName": "",
+      "routeDesc": "",
+      "label": "162",
+      "color": "#5bc526",
+      "tripCount": 53,
+      "stopCount": 39,
+      "shapeCount": 7,
+      "bounds": [
+        [
+          40.756209,
+          -74.087441
+        ],
+        [
+          40.923179,
+          -73.990597
+        ]
+      ],
+      "file": "routes/njt_162_54.json",
+      "searchText": "162 nj transit"
+    },
+    {
+      "key": "njt:55",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "55",
+      "shortName": "163",
+      "longName": "",
+      "routeDesc": "",
+      "label": "163",
+      "color": "#c5266d",
+      "tripCount": 718,
+      "stopCount": 190,
+      "shapeCount": 156,
+      "bounds": [
+        [
+          40.756209,
+          -74.127213
+        ],
+        [
+          41.004258,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_163_55.json",
+      "searchText": "163 nj transit"
+    },
+    {
+      "key": "njt:56",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "56",
+      "shortName": "163S",
+      "longName": "",
+      "routeDesc": "",
+      "label": "163S",
+      "color": "#26c526",
+      "tripCount": 4,
+      "stopCount": 10,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          40.976387,
+          -74.128722
+        ],
+        [
+          41.004258,
+          -74.104654
+        ]
+      ],
+      "file": "routes/njt_163S_56.json",
+      "searchText": "163s nj transit"
+    },
+    {
+      "key": "njt:57",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "57",
+      "shortName": "164",
+      "longName": "",
+      "routeDesc": "",
+      "label": "164",
+      "color": "#6dc526",
+      "tripCount": 247,
+      "stopCount": 209,
+      "shapeCount": 41,
+      "bounds": [
+        [
+          40.756209,
+          -74.153802
+        ],
+        [
+          40.998638,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_164_57.json",
+      "searchText": "164 nj transit"
+    },
+    {
+      "key": "njt:58",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "58",
+      "shortName": "165",
+      "longName": "",
+      "routeDesc": "",
+      "label": "165",
+      "color": "#2680c5",
+      "tripCount": 936,
+      "stopCount": 258,
+      "shapeCount": 121,
+      "bounds": [
+        [
+          40.756209,
+          -74.112005
+        ],
+        [
+          40.994078,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_165_58.json",
+      "searchText": "165 nj transit"
+    },
+    {
+      "key": "njt:59",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "59",
+      "shortName": "166",
+      "longName": "",
+      "routeDesc": "",
+      "label": "166",
+      "color": "#c52645",
+      "tripCount": 1168,
+      "stopCount": 222,
+      "shapeCount": 159,
+      "bounds": [
+        [
+          40.756209,
+          -74.052842
+        ],
+        [
+          40.94141,
+          -73.961193
+        ]
+      ],
+      "file": "routes/njt_166_59.json",
+      "searchText": "166 nj transit"
+    },
+    {
+      "key": "njt:60",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "60",
+      "shortName": "167",
+      "longName": "",
+      "routeDesc": "",
+      "label": "167",
+      "color": "#267dc5",
+      "tripCount": 570,
+      "stopCount": 199,
+      "shapeCount": 164,
+      "bounds": [
+        [
+          40.756209,
+          -74.052855
+        ],
+        [
+          40.985446,
+          -73.974992
+        ]
+      ],
+      "file": "routes/njt_167_60.json",
+      "searchText": "167 nj transit"
+    },
+    {
+      "key": "njt:61",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "61",
+      "shortName": "168",
+      "longName": "",
+      "routeDesc": "",
+      "label": "168",
+      "color": "#38c526",
+      "tripCount": 251,
+      "stopCount": 215,
+      "shapeCount": 51,
+      "bounds": [
+        [
+          40.756209,
+          -74.072881
+        ],
+        [
+          40.966867,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_168_61.json",
+      "searchText": "168 nj transit"
+    },
+    {
+      "key": "njt:62",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "62",
+      "shortName": "171",
+      "longName": "",
+      "routeDesc": "",
+      "label": "171",
+      "color": "#6026c5",
+      "tripCount": 110,
+      "stopCount": 118,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.848868,
+          -74.174364
+        ],
+        [
+          40.939426,
+          -73.939185
+        ]
+      ],
+      "file": "routes/njt_171_62.json",
+      "searchText": "171 nj transit"
+    },
+    {
+      "key": "njt:63",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "63",
+      "shortName": "175",
+      "longName": "",
+      "routeDesc": "",
+      "label": "175",
+      "color": "#7d26c5",
+      "tripCount": 115,
+      "stopCount": 138,
+      "shapeCount": 10,
+      "bounds": [
+        [
+          40.848868,
+          -74.128943
+        ],
+        [
+          40.979467,
+          -73.939143
+        ]
+      ],
+      "file": "routes/njt_175_63.json",
+      "searchText": "175 nj transit"
+    },
+    {
+      "key": "njt:64",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "64",
+      "shortName": "177",
+      "longName": "",
+      "routeDesc": "",
+      "label": "177",
+      "color": "#26c526",
+      "tripCount": 172,
+      "stopCount": 76,
+      "shapeCount": 36,
+      "bounds": [
+        [
+          40.756209,
+          -74.052855
+        ],
+        [
+          40.985446,
+          -73.974992
+        ]
+      ],
+      "file": "routes/njt_177_64.json",
+      "searchText": "177 nj transit"
+    },
+    {
+      "key": "njt:65",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "65",
+      "shortName": "178",
+      "longName": "",
+      "routeDesc": "",
+      "label": "178",
+      "color": "#53c526",
+      "tripCount": 110,
+      "stopCount": 105,
+      "shapeCount": 7,
+      "bounds": [
+        [
+          40.848868,
+          -74.042985
+        ],
+        [
+          40.907406,
+          -73.939185
+        ]
+      ],
+      "file": "routes/njt_178_65.json",
+      "searchText": "178 nj transit"
+    },
+    {
+      "key": "njt:66",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "66",
+      "shortName": "181",
+      "longName": "",
+      "routeDesc": "",
+      "label": "181",
+      "color": "#c57026",
+      "tripCount": 44,
+      "stopCount": 94,
+      "shapeCount": 4,
+      "bounds": [
+        [
+          40.781866,
+          -74.022815
+        ],
+        [
+          40.856048,
+          -73.939153
+        ]
+      ],
+      "file": "routes/njt_181_66.json",
+      "searchText": "181 nj transit"
+    },
+    {
+      "key": "njt:67",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "67",
+      "shortName": "182",
+      "longName": "",
+      "routeDesc": "",
+      "label": "182",
+      "color": "#4dc526",
+      "tripCount": 103,
+      "stopCount": 52,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.848868,
+          -74.043362
+        ],
+        [
+          40.882157,
+          -73.939185
+        ]
+      ],
+      "file": "routes/njt_182_67.json",
+      "searchText": "182 nj transit"
+    },
+    {
+      "key": "njt:68",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "68",
+      "shortName": "186",
+      "longName": "",
+      "routeDesc": "",
+      "label": "186",
+      "color": "#26c53d",
+      "tripCount": 132,
+      "stopCount": 106,
+      "shapeCount": 7,
+      "bounds": [
+        [
+          40.848868,
+          -73.998862
+        ],
+        [
+          40.954629,
+          -73.939185
+        ]
+      ],
+      "file": "routes/njt_186_68.json",
+      "searchText": "186 nj transit"
+    },
+    {
+      "key": "njt:69",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "69",
+      "shortName": "188",
+      "longName": "",
+      "routeDesc": "",
+      "label": "188",
+      "color": "#6026c5",
+      "tripCount": 60,
+      "stopCount": 61,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.784307,
+          -74.021742
+        ],
+        [
+          40.856048,
+          -73.939185
+        ]
+      ],
+      "file": "routes/njt_188_69.json",
+      "searchText": "188 nj transit"
+    },
+    {
+      "key": "njt:70",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "70",
+      "shortName": "190",
+      "longName": "",
+      "routeDesc": "",
+      "label": "190",
+      "color": "#c52660",
+      "tripCount": 925,
+      "stopCount": 173,
+      "shapeCount": 119,
+      "bounds": [
+        [
+          40.756209,
+          -74.174364
+        ],
+        [
+          40.919096,
+          -73.990572
+        ]
+      ],
+      "file": "routes/njt_190_70.json",
+      "searchText": "190 nj transit"
+    },
+    {
+      "key": "njt:71",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "71",
+      "shortName": "191",
+      "longName": "",
+      "routeDesc": "",
+      "label": "191",
+      "color": "#26c5b0",
+      "tripCount": 132,
+      "stopCount": 105,
+      "shapeCount": 36,
+      "bounds": [
+        [
+          40.756209,
+          -74.261393
+        ],
+        [
+          40.891238,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_191_71.json",
+      "searchText": "191 nj transit"
+    },
+    {
+      "key": "njt:72",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "72",
+      "shortName": "192",
+      "longName": "",
+      "routeDesc": "",
+      "label": "192",
+      "color": "#264bc5",
+      "tripCount": 299,
+      "stopCount": 131,
+      "shapeCount": 48,
+      "bounds": [
+        [
+          40.756209,
+          -74.182952
+        ],
+        [
+          40.894598,
+          -73.990597
+        ]
+      ],
+      "file": "routes/njt_192_72.json",
+      "searchText": "192 nj transit"
+    },
+    {
+      "key": "njt:73",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "73",
+      "shortName": "193",
+      "longName": "",
+      "routeDesc": "",
+      "label": "193",
+      "color": "#269bc5",
+      "tripCount": 126,
+      "stopCount": 4,
+      "shapeCount": 9,
+      "bounds": [
+        [
+          40.756209,
+          -74.263864
+        ],
+        [
+          40.895647,
+          -73.990753
+        ]
+      ],
+      "file": "routes/njt_193_73.json",
+      "searchText": "193 nj transit"
+    },
+    {
+      "key": "njt:74",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "74",
+      "shortName": "194",
+      "longName": "",
+      "routeDesc": "",
+      "label": "194",
+      "color": "#73c526",
+      "tripCount": 186,
+      "stopCount": 118,
+      "shapeCount": 69,
+      "bounds": [
+        [
+          40.756209,
+          -74.531044
+        ],
+        [
+          41.09763,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_194_74.json",
+      "searchText": "194 nj transit"
+    },
+    {
+      "key": "njt:75",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "75",
+      "shortName": "195",
+      "longName": "",
+      "routeDesc": "",
+      "label": "195",
+      "color": "#c526b8",
+      "tripCount": 101,
+      "stopCount": 111,
+      "shapeCount": 32,
+      "bounds": [
+        [
+          40.756209,
+          -74.261393
+        ],
+        [
+          40.891238,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_195_75.json",
+      "searchText": "195 nj transit"
+    },
+    {
+      "key": "njt:76",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "76",
+      "shortName": "196",
+      "longName": "",
+      "routeDesc": "",
+      "label": "196",
+      "color": "#a526c5",
+      "tripCount": 34,
+      "stopCount": 58,
+      "shapeCount": 9,
+      "bounds": [
+        [
+          40.756209,
+          -74.360115
+        ],
+        [
+          41.255568,
+          -73.990753
+        ]
+      ],
+      "file": "routes/njt_196_76.json",
+      "searchText": "196 nj transit"
+    },
+    {
+      "key": "njt:77",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "77",
+      "shortName": "197",
+      "longName": "",
+      "routeDesc": "",
+      "label": "197",
+      "color": "#3526c5",
+      "tripCount": 243,
+      "stopCount": 267,
+      "shapeCount": 70,
+      "bounds": [
+        [
+          40.756209,
+          -74.367581
+        ],
+        [
+          41.255927,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_197_77.json",
+      "searchText": "197 nj transit"
+    },
+    {
+      "key": "njt:78",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "78",
+      "shortName": "198",
+      "longName": "",
+      "routeDesc": "",
+      "label": "198",
+      "color": "#3826c5",
+      "tripCount": 101,
+      "stopCount": 53,
+      "shapeCount": 18,
+      "bounds": [
+        [
+          40.756209,
+          -74.263885
+        ],
+        [
+          40.958257,
+          -73.990265
+        ]
+      ],
+      "file": "routes/njt_198_78.json",
+      "searchText": "198 nj transit"
+    },
+    {
+      "key": "njt:79",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "79",
+      "shortName": "199",
+      "longName": "",
+      "routeDesc": "",
+      "label": "199",
+      "color": "#26c558",
+      "tripCount": 119,
+      "stopCount": 118,
+      "shapeCount": 21,
+      "bounds": [
+        [
+          40.756209,
+          -74.182952
+        ],
+        [
+          40.894598,
+          -73.990597
+        ]
+      ],
+      "file": "routes/njt_199_79.json",
+      "searchText": "199 nj transit"
+    },
+    {
+      "key": "njt:92",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "92",
+      "shortName": "313",
+      "longName": "",
+      "routeDesc": "",
+      "label": "313",
+      "color": "#b226c5",
+      "tripCount": 21,
+      "stopCount": 215,
+      "shapeCount": 12,
+      "bounds": [
+        [
+          38.933057,
+          -75.186773
+        ],
+        [
+          39.957126,
+          -74.794113
+        ]
+      ],
+      "file": "routes/njt_313_92.json",
+      "searchText": "313 nj transit"
+    },
+    {
+      "key": "njt:93",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "93",
+      "shortName": "315",
+      "longName": "",
+      "routeDesc": "",
+      "label": "315",
+      "color": "#c53b26",
+      "tripCount": 15,
+      "stopCount": 202,
+      "shapeCount": 9,
+      "bounds": [
+        [
+          38.933208,
+          -75.186713
+        ],
+        [
+          39.957787,
+          -74.693863
+        ]
+      ],
+      "file": "routes/njt_315_93.json",
+      "searchText": "315 nj transit"
+    },
+    {
+      "key": "njt:94",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "94",
+      "shortName": "317",
+      "longName": "",
+      "routeDesc": "",
+      "label": "317",
+      "color": "#3026c5",
+      "tripCount": 51,
+      "stopCount": 270,
+      "shapeCount": 20,
+      "bounds": [
+        [
+          39.933467,
+          -75.163322
+        ],
+        [
+          40.215838,
+          -74.014011
+        ]
+      ],
+      "file": "routes/njt_317_94.json",
+      "searchText": "317 nj transit"
+    },
+    {
+      "key": "njt:95",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "95",
+      "shortName": "319",
+      "longName": "",
+      "routeDesc": "",
+      "label": "319",
+      "color": "#c5a526",
+      "tripCount": 246,
+      "stopCount": 83,
+      "shapeCount": 53,
+      "bounds": [
+        [
+          38.986328,
+          -74.847385
+        ],
+        [
+          40.780838,
+          -73.990753
+        ]
+      ],
+      "file": "routes/njt_319_95.json",
+      "searchText": "319 nj transit"
+    },
+    {
+      "key": "njt:96",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "96",
+      "shortName": "320",
+      "longName": "",
+      "routeDesc": "",
+      "label": "320",
+      "color": "#5dc526",
+      "tripCount": 659,
+      "stopCount": 19,
+      "shapeCount": 13,
+      "bounds": [
+        [
+          40.756209,
+          -74.050523
+        ],
+        [
+          40.793578,
+          -73.990572
+        ]
+      ],
+      "file": "routes/njt_320_96.json",
+      "searchText": "320 nj transit"
+    },
+    {
+      "key": "njt:97",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "97",
+      "shortName": "321",
+      "longName": "",
+      "routeDesc": "",
+      "label": "321",
+      "color": "#38c526",
+      "tripCount": 59,
+      "stopCount": 4,
+      "shapeCount": 5,
+      "bounds": [
+        [
+          40.756209,
+          -74.052852
+        ],
+        [
+          40.830018,
+          -73.990572
+        ]
+      ],
+      "file": "routes/njt_321_97.json",
+      "searchText": "321 nj transit"
+    },
+    {
+      "key": "njt:98",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "98",
+      "shortName": "324",
+      "longName": "",
+      "routeDesc": "",
+      "label": "324",
+      "color": "#26c528",
+      "tripCount": 69,
+      "stopCount": 5,
+      "shapeCount": 10,
+      "bounds": [
+        [
+          40.756209,
+          -74.269553
+        ],
+        [
+          40.925218,
+          -73.990753
+        ]
+      ],
+      "file": "routes/njt_324_98.json",
+      "searchText": "324 nj transit"
+    },
+    {
+      "key": "njt:99",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "99",
+      "shortName": "329",
+      "longName": "",
+      "routeDesc": "",
+      "label": "329",
+      "color": "#26c57d",
+      "tripCount": 31,
+      "stopCount": 44,
+      "shapeCount": 4,
+      "bounds": [
+        [
+          40.761147,
+          -74.086785
+        ],
+        [
+          40.790536,
+          -74.062195
+        ]
+      ],
+      "file": "routes/njt_329_99.json",
+      "searchText": "329 nj transit"
+    },
+    {
+      "key": "njt:102",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "102",
+      "shortName": "355",
+      "longName": "",
+      "routeDesc": "",
+      "label": "355",
+      "color": "#c52626",
+      "tripCount": 77,
+      "stopCount": 3,
+      "shapeCount": 7,
+      "bounds": [
+        [
+          40.756209,
+          -74.074012
+        ],
+        [
+          40.815516,
+          -73.990572
+        ]
+      ],
+      "file": "routes/njt_355_102.json",
+      "searchText": "355 nj transit"
+    },
+    {
+      "key": "njt:103",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "103",
+      "shortName": "361",
+      "longName": "",
+      "routeDesc": "",
+      "label": "361",
+      "color": "#c52658",
+      "tripCount": 11,
+      "stopCount": 69,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          40.731146,
+          -74.245784
+        ],
+        [
+          40.740688,
+          -74.164402
+        ]
+      ],
+      "file": "routes/njt_361_103.json",
+      "searchText": "361 nj transit"
+    },
+    {
+      "key": "njt:105",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "105",
+      "shortName": "375",
+      "longName": "",
+      "routeDesc": "",
+      "label": "375",
+      "color": "#b226c5",
+      "tripCount": 10,
+      "stopCount": 87,
+      "shapeCount": 4,
+      "bounds": [
+        [
+          40.713197,
+          -74.285049
+        ],
+        [
+          40.736997,
+          -74.119715
+        ]
+      ],
+      "file": "routes/njt_375_105.json",
+      "searchText": "375 nj transit"
+    },
+    {
+      "key": "njt:106",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "106",
+      "shortName": "378",
+      "longName": "",
+      "routeDesc": "",
+      "label": "378",
+      "color": "#2e26c5",
+      "tripCount": 2,
+      "stopCount": 20,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          40.728258,
+          -74.171052
+        ],
+        [
+          40.787966,
+          -74.050595
+        ]
+      ],
+      "file": "routes/njt_378_106.json",
+      "searchText": "378 nj transit"
+    },
+    {
+      "key": "njt:109",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "109",
+      "shortName": "400",
+      "longName": "",
+      "routeDesc": "",
+      "label": "400",
+      "color": "#c52650",
+      "tripCount": 249,
+      "stopCount": 261,
+      "shapeCount": 62,
+      "bounds": [
+        [
+          39.673856,
+          -75.163322
+        ],
+        [
+          39.957907,
+          -74.942914
+        ]
+      ],
+      "file": "routes/njt_400_109.json",
+      "searchText": "400 nj transit"
+    },
+    {
+      "key": "njt:110",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "110",
+      "shortName": "401",
+      "longName": "",
+      "routeDesc": "",
+      "label": "401",
+      "color": "#c52b26",
+      "tripCount": 60,
+      "stopCount": 205,
+      "shapeCount": 15,
+      "bounds": [
+        [
+          39.563248,
+          -75.467044
+        ],
+        [
+          39.957907,
+          -75.116384
+        ]
+      ],
+      "file": "routes/njt_401_110.json",
+      "searchText": "401 nj transit"
+    },
+    {
+      "key": "njt:111",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "111",
+      "shortName": "402",
+      "longName": "",
+      "routeDesc": "",
+      "label": "402",
+      "color": "#c58026",
+      "tripCount": 46,
+      "stopCount": 248,
+      "shapeCount": 22,
+      "bounds": [
+        [
+          39.640299,
+          -75.521214
+        ],
+        [
+          39.957907,
+          -75.103574
+        ]
+      ],
+      "file": "routes/njt_402_111.json",
+      "searchText": "402 nj transit"
+    },
+    {
+      "key": "njt:112",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "112",
+      "shortName": "403",
+      "longName": "",
+      "routeDesc": "",
+      "label": "403",
+      "color": "#c5b526",
+      "tripCount": 156,
+      "stopCount": 224,
+      "shapeCount": 44,
+      "bounds": [
+        [
+          39.72764,
+          -75.119224
+        ],
+        [
+          39.944096,
+          -74.978553
+        ]
+      ],
+      "file": "routes/njt_403_112.json",
+      "searchText": "403 nj transit"
+    },
+    {
+      "key": "njt:113",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "113",
+      "shortName": "404",
+      "longName": "",
+      "routeDesc": "",
+      "label": "404",
+      "color": "#7dc526",
+      "tripCount": 131,
+      "stopCount": 152,
+      "shapeCount": 15,
+      "bounds": [
+        [
+          39.942567,
+          -75.163322
+        ],
+        [
+          39.988678,
+          -75.024303
+        ]
+      ],
+      "file": "routes/njt_404_113.json",
+      "searchText": "404 nj transit"
+    },
+    {
+      "key": "njt:114",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "114",
+      "shortName": "405",
+      "longName": "",
+      "routeDesc": "",
+      "label": "405",
+      "color": "#26c540",
+      "tripCount": 93,
+      "stopCount": 79,
+      "shapeCount": 9,
+      "bounds": [
+        [
+          39.925208,
+          -75.118573
+        ],
+        [
+          39.950166,
+          -74.996123
+        ]
+      ],
+      "file": "routes/njt_405_114.json",
+      "searchText": "405 nj transit"
+    },
+    {
+      "key": "njt:115",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "115",
+      "shortName": "406",
+      "longName": "",
+      "routeDesc": "",
+      "label": "406",
+      "color": "#26c57b",
+      "tripCount": 130,
+      "stopCount": 181,
+      "shapeCount": 32,
+      "bounds": [
+        [
+          39.804699,
+          -75.163322
+        ],
+        [
+          39.957907,
+          -74.904982
+        ]
+      ],
+      "file": "routes/njt_406_115.json",
+      "searchText": "406 nj transit"
+    },
+    {
+      "key": "njt:116",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "116",
+      "shortName": "407",
+      "longName": "",
+      "routeDesc": "",
+      "label": "407",
+      "color": "#c59326",
+      "tripCount": 112,
+      "stopCount": 142,
+      "shapeCount": 10,
+      "bounds": [
+        [
+          39.939038,
+          -75.119243
+        ],
+        [
+          39.972447,
+          -74.917823
+        ]
+      ],
+      "file": "routes/njt_407_116.json",
+      "searchText": "407 nj transit"
+    },
+    {
+      "key": "njt:117",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "117",
+      "shortName": "408",
+      "longName": "",
+      "routeDesc": "",
+      "label": "408",
+      "color": "#c54026",
+      "tripCount": 100,
+      "stopCount": 235,
+      "shapeCount": 14,
+      "bounds": [
+        [
+          39.371169,
+          -75.163263
+        ],
+        [
+          39.957907,
+          -74.999404
+        ]
+      ],
+      "file": "routes/njt_408_117.json",
+      "searchText": "408 nj transit"
+    },
+    {
+      "key": "njt:118",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "118",
+      "shortName": "409",
+      "longName": "",
+      "routeDesc": "",
+      "label": "409",
+      "color": "#c52668",
+      "tripCount": 120,
+      "stopCount": 293,
+      "shapeCount": 23,
+      "bounds": [
+        [
+          39.933116,
+          -75.163315
+        ],
+        [
+          40.221327,
+          -74.6994
+        ]
+      ],
+      "file": "routes/njt_409_118.json",
+      "searchText": "409 nj transit"
+    },
+    {
+      "key": "njt:120",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "120",
+      "shortName": "410",
+      "longName": "",
+      "routeDesc": "",
+      "label": "410",
+      "color": "#a8c526",
+      "tripCount": 89,
+      "stopCount": 222,
+      "shapeCount": 25,
+      "bounds": [
+        [
+          39.426215,
+          -75.240163
+        ],
+        [
+          39.957907,
+          -75.103604
+        ]
+      ],
+      "file": "routes/njt_410_120.json",
+      "searchText": "410 nj transit"
+    },
+    {
+      "key": "njt:121",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "121",
+      "shortName": "412",
+      "longName": "",
+      "routeDesc": "",
+      "label": "412",
+      "color": "#26c563",
+      "tripCount": 67,
+      "stopCount": 187,
+      "shapeCount": 13,
+      "bounds": [
+        [
+          39.696368,
+          -75.172034
+        ],
+        [
+          39.957907,
+          -75.103574
+        ]
+      ],
+      "file": "routes/njt_412_121.json",
+      "searchText": "412 nj transit"
+    },
+    {
+      "key": "njt:122",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "122",
+      "shortName": "413",
+      "longName": "",
+      "routeDesc": "",
+      "label": "413",
+      "color": "#c53026",
+      "tripCount": 101,
+      "stopCount": 163,
+      "shapeCount": 24,
+      "bounds": [
+        [
+          39.933467,
+          -75.119081
+        ],
+        [
+          40.100966,
+          -74.780724
+        ]
+      ],
+      "file": "routes/njt_413_122.json",
+      "searchText": "413 nj transit"
+    },
+    {
+      "key": "njt:123",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "123",
+      "shortName": "414",
+      "longName": "",
+      "routeDesc": "",
+      "label": "414",
+      "color": "#26c528",
+      "tripCount": 6,
+      "stopCount": 143,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          39.933146,
+          -75.187034
+        ],
+        [
+          39.972447,
+          -74.917823
+        ]
+      ],
+      "file": "routes/njt_414_123.json",
+      "searchText": "414 nj transit"
+    },
+    {
+      "key": "njt:124",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "124",
+      "shortName": "417",
+      "longName": "",
+      "routeDesc": "",
+      "label": "417",
+      "color": "#26b5c5",
+      "tripCount": 7,
+      "stopCount": 68,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          39.933116,
+          -75.186983
+        ],
+        [
+          40.056436,
+          -74.788253
+        ]
+      ],
+      "file": "routes/njt_417_124.json",
+      "searchText": "417 nj transit"
+    },
+    {
+      "key": "njt:125",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "125",
+      "shortName": "418",
+      "longName": "",
+      "routeDesc": "",
+      "label": "418",
+      "color": "#26b2c5",
+      "tripCount": 2,
+      "stopCount": 80,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          39.933078,
+          -75.119224
+        ],
+        [
+          40.222228,
+          -74.715253
+        ]
+      ],
+      "file": "routes/njt_418_125.json",
+      "searchText": "418 nj transit"
+    },
+    {
+      "key": "njt:126",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "126",
+      "shortName": "419",
+      "longName": "",
+      "routeDesc": "",
+      "label": "419",
+      "color": "#265bc5",
+      "tripCount": 111,
+      "stopCount": 109,
+      "shapeCount": 20,
+      "bounds": [
+        [
+          39.942567,
+          -75.119243
+        ],
+        [
+          40.039608,
+          -74.958002
+        ]
+      ],
+      "file": "routes/njt_419_126.json",
+      "searchText": "419 nj transit"
+    },
+    {
+      "key": "njt:128",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "128",
+      "shortName": "450",
+      "longName": "",
+      "routeDesc": "",
+      "label": "450",
+      "color": "#26c570",
+      "tripCount": 98,
+      "stopCount": 126,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          39.893059,
+          -75.119923
+        ],
+        [
+          39.945097,
+          -75.026973
+        ]
+      ],
+      "file": "routes/njt_450_128.json",
+      "searchText": "450 nj transit"
+    },
+    {
+      "key": "njt:129",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "129",
+      "shortName": "451",
+      "longName": "",
+      "routeDesc": "",
+      "label": "451",
+      "color": "#c526a2",
+      "tripCount": 21,
+      "stopCount": 125,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          39.847466,
+          -75.119224
+        ],
+        [
+          39.944096,
+          -74.941722
+        ]
+      ],
+      "file": "routes/njt_451_129.json",
+      "searchText": "451 nj transit"
+    },
+    {
+      "key": "njt:130",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "130",
+      "shortName": "452",
+      "longName": "",
+      "routeDesc": "",
+      "label": "452",
+      "color": "#267dc5",
+      "tripCount": 167,
+      "stopCount": 105,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          39.928175,
+          -75.130393
+        ],
+        [
+          39.963845,
+          -75.075723
+        ]
+      ],
+      "file": "routes/njt_452_130.json",
+      "searchText": "452 nj transit"
+    },
+    {
+      "key": "njt:131",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "131",
+      "shortName": "453",
+      "longName": "",
+      "routeDesc": "",
+      "label": "453",
+      "color": "#26c565",
+      "tripCount": 53,
+      "stopCount": 56,
+      "shapeCount": 4,
+      "bounds": [
+        [
+          39.916987,
+          -75.130233
+        ],
+        [
+          39.946187,
+          -75.089325
+        ]
+      ],
+      "file": "routes/njt_453_131.json",
+      "searchText": "453 nj transit"
+    },
+    {
+      "key": "njt:132",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "132",
+      "shortName": "455",
+      "longName": "",
+      "routeDesc": "",
+      "label": "455",
+      "color": "#2660c5",
+      "tripCount": 95,
+      "stopCount": 193,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          39.817446,
+          -75.252825
+        ],
+        [
+          39.946439,
+          -74.998325
+        ]
+      ],
+      "file": "routes/njt_455_132.json",
+      "searchText": "455 nj transit"
+    },
+    {
+      "key": "njt:133",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "133",
+      "shortName": "457",
+      "longName": "",
+      "routeDesc": "",
+      "label": "457",
+      "color": "#26c598",
+      "tripCount": 97,
+      "stopCount": 196,
+      "shapeCount": 8,
+      "bounds": [
+        [
+          39.880218,
+          -75.120443
+        ],
+        [
+          39.948659,
+          -74.939634
+        ]
+      ],
+      "file": "routes/njt_457_133.json",
+      "searchText": "457 nj transit"
+    },
+    {
+      "key": "njt:134",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "134",
+      "shortName": "459",
+      "longName": "",
+      "routeDesc": "",
+      "label": "459",
+      "color": "#c59026",
+      "tripCount": 76,
+      "stopCount": 112,
+      "shapeCount": 21,
+      "bounds": [
+        [
+          39.710036,
+          -75.067314
+        ],
+        [
+          39.853747,
+          -74.973592
+        ]
+      ],
+      "file": "routes/njt_459_134.json",
+      "searchText": "459 nj transit"
+    },
+    {
+      "key": "njt:135",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "135",
+      "shortName": "463",
+      "longName": "",
+      "routeDesc": "",
+      "label": "463",
+      "color": "#5b26c5",
+      "tripCount": 24,
+      "stopCount": 96,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          39.686516,
+          -75.154973
+        ],
+        [
+          39.842838,
+          -74.974845
+        ]
+      ],
+      "file": "routes/njt_463_135.json",
+      "searchText": "463 nj transit"
+    },
+    {
+      "key": "njt:136",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "136",
+      "shortName": "468",
+      "longName": "",
+      "routeDesc": "",
+      "label": "468",
+      "color": "#266dc5",
+      "tripCount": 39,
+      "stopCount": 125,
+      "shapeCount": 28,
+      "bounds": [
+        [
+          39.559297,
+          -75.521214
+        ],
+        [
+          39.744607,
+          -75.327512
+        ]
+      ],
+      "file": "routes/njt_468_136.json",
+      "searchText": "468 nj transit"
+    },
+    {
+      "key": "njt:139",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "139",
+      "shortName": "501",
+      "longName": "",
+      "routeDesc": "",
+      "label": "501",
+      "color": "#c5bd26",
+      "tripCount": 137,
+      "stopCount": 85,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          39.359377,
+          -74.437913
+        ],
+        [
+          39.415347,
+          -74.354441
+        ]
+      ],
+      "file": "routes/njt_501_139.json",
+      "searchText": "501 nj transit"
+    },
+    {
+      "key": "njt:140",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "140",
+      "shortName": "502",
+      "longName": "",
+      "routeDesc": "",
+      "label": "502",
+      "color": "#5326c5",
+      "tripCount": 169,
+      "stopCount": 75,
+      "shapeCount": 14,
+      "bounds": [
+        [
+          39.358067,
+          -74.682973
+        ],
+        [
+          39.465777,
+          -74.426682
+        ]
+      ],
+      "file": "routes/njt_502_140.json",
+      "searchText": "502 nj transit"
+    },
+    {
+      "key": "njt:141",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "141",
+      "shortName": "504",
+      "longName": "",
+      "routeDesc": "",
+      "label": "504",
+      "color": "#b5c526",
+      "tripCount": 138,
+      "stopCount": 112,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          39.330259,
+          -74.498452
+        ],
+        [
+          39.377126,
+          -74.413981
+        ]
+      ],
+      "file": "routes/njt_504_141.json",
+      "searchText": "504 nj transit"
+    },
+    {
+      "key": "njt:142",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "142",
+      "shortName": "505",
+      "longName": "",
+      "routeDesc": "",
+      "label": "505",
+      "color": "#2ec526",
+      "tripCount": 369,
+      "stopCount": 198,
+      "shapeCount": 56,
+      "bounds": [
+        [
+          39.30717,
+          -74.533211
+        ],
+        [
+          39.376564,
+          -74.413065
+        ]
+      ],
+      "file": "routes/njt_505_142.json",
+      "searchText": "505 nj transit"
+    },
+    {
+      "key": "njt:143",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "143",
+      "shortName": "507",
+      "longName": "",
+      "routeDesc": "",
+      "label": "507",
+      "color": "#c58326",
+      "tripCount": 177,
+      "stopCount": 112,
+      "shapeCount": 12,
+      "bounds": [
+        [
+          39.276807,
+          -74.599074
+        ],
+        [
+          39.390797,
+          -74.426682
+        ]
+      ],
+      "file": "routes/njt_507_143.json",
+      "searchText": "507 nj transit"
+    },
+    {
+      "key": "njt:144",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "144",
+      "shortName": "508",
+      "longName": "",
+      "routeDesc": "",
+      "label": "508",
+      "color": "#c52660",
+      "tripCount": 121,
+      "stopCount": 148,
+      "shapeCount": 21,
+      "bounds": [
+        [
+          39.350027,
+          -74.644183
+        ],
+        [
+          39.501258,
+          -74.426682
+        ]
+      ],
+      "file": "routes/njt_508_144.json",
+      "searchText": "508 nj transit"
+    },
+    {
+      "key": "njt:145",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "145",
+      "shortName": "509",
+      "longName": "",
+      "routeDesc": "",
+      "label": "509",
+      "color": "#26c56d",
+      "tripCount": 108,
+      "stopCount": 116,
+      "shapeCount": 20,
+      "bounds": [
+        [
+          39.276988,
+          -74.612764
+        ],
+        [
+          39.397437,
+          -74.426682
+        ]
+      ],
+      "file": "routes/njt_509_145.json",
+      "searchText": "509 nj transit"
+    },
+    {
+      "key": "njt:147",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "147",
+      "shortName": "551",
+      "longName": "",
+      "routeDesc": "",
+      "label": "551",
+      "color": "#bd26c5",
+      "tripCount": 198,
+      "stopCount": 25,
+      "shapeCount": 39,
+      "bounds": [
+        [
+          39.359857,
+          -75.163312
+        ],
+        [
+          39.957907,
+          -74.435367
+        ]
+      ],
+      "file": "routes/njt_551_147.json",
+      "searchText": "551 nj transit"
+    },
+    {
+      "key": "njt:148",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "148",
+      "shortName": "552",
+      "longName": "",
+      "routeDesc": "",
+      "label": "552",
+      "color": "#9b26c5",
+      "tripCount": 153,
+      "stopCount": 147,
+      "shapeCount": 37,
+      "bounds": [
+        [
+          38.933057,
+          -74.942383
+        ],
+        [
+          39.416038,
+          -74.435367
+        ]
+      ],
+      "file": "routes/njt_552_148.json",
+      "searchText": "552 nj transit"
+    },
+    {
+      "key": "njt:149",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "149",
+      "shortName": "553",
+      "longName": "",
+      "routeDesc": "",
+      "label": "553",
+      "color": "#26c54d",
+      "tripCount": 212,
+      "stopCount": 277,
+      "shapeCount": 54,
+      "bounds": [
+        [
+          39.359786,
+          -75.234203
+        ],
+        [
+          39.514466,
+          -74.435367
+        ]
+      ],
+      "file": "routes/njt_553_149.json",
+      "searchText": "553 nj transit"
+    },
+    {
+      "key": "njt:150",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "150",
+      "shortName": "554",
+      "longName": "",
+      "routeDesc": "",
+      "label": "554",
+      "color": "#6826c5",
+      "tripCount": 157,
+      "stopCount": 235,
+      "shapeCount": 14,
+      "bounds": [
+        [
+          39.359306,
+          -75.001985
+        ],
+        [
+          39.834477,
+          -74.425703
+        ]
+      ],
+      "file": "routes/njt_554_150.json",
+      "searchText": "554 nj transit"
+    },
+    {
+      "key": "njt:151",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "151",
+      "shortName": "555",
+      "longName": "",
+      "routeDesc": "",
+      "label": "555",
+      "color": "#26c593",
+      "tripCount": 6,
+      "stopCount": 19,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          39.707586,
+          -75.187134
+        ],
+        [
+          39.957907,
+          -74.974845
+        ]
+      ],
+      "file": "routes/njt_555_151.json",
+      "searchText": "555 nj transit"
+    },
+    {
+      "key": "njt:152",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "152",
+      "shortName": "559",
+      "longName": "",
+      "routeDesc": "",
+      "label": "559",
+      "color": "#26c543",
+      "tripCount": 134,
+      "stopCount": 245,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          39.360408,
+          -74.522971
+        ],
+        [
+          40.091008,
+          -74.154473
+        ]
+      ],
+      "file": "routes/njt_559_152.json",
+      "searchText": "559 nj transit"
+    },
+    {
+      "key": "njt:158",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "158",
+      "shortName": "600",
+      "longName": "",
+      "routeDesc": "",
+      "label": "600",
+      "color": "#c52658",
+      "tripCount": 109,
+      "stopCount": 86,
+      "shapeCount": 12,
+      "bounds": [
+        [
+          40.21891,
+          -74.766054
+        ],
+        [
+          40.358028,
+          -74.557644
+        ]
+      ],
+      "file": "routes/njt_600_158.json",
+      "searchText": "600 nj transit"
+    },
+    {
+      "key": "njt:159",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "159",
+      "shortName": "601",
+      "longName": "",
+      "routeDesc": "",
+      "label": "601",
+      "color": "#c52680",
+      "tripCount": 103,
+      "stopCount": 135,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.189537,
+          -74.783924
+        ],
+        [
+          40.271216,
+          -74.635013
+        ]
+      ],
+      "file": "routes/njt_601_159.json",
+      "searchText": "601 nj transit"
+    },
+    {
+      "key": "njt:160",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "160",
+      "shortName": "603",
+      "longName": "",
+      "routeDesc": "",
+      "label": "603",
+      "color": "#26c585",
+      "tripCount": 73,
+      "stopCount": 159,
+      "shapeCount": 15,
+      "bounds": [
+        [
+          40.188038,
+          -74.766054
+        ],
+        [
+          40.304637,
+          -74.635013
+        ]
+      ],
+      "file": "routes/njt_603_160.json",
+      "searchText": "603 nj transit"
+    },
+    {
+      "key": "njt:161",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "161",
+      "shortName": "605",
+      "longName": "",
+      "routeDesc": "",
+      "label": "605",
+      "color": "#c55526",
+      "tripCount": 75,
+      "stopCount": 64,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.288176,
+          -74.685343
+        ],
+        [
+          40.417547,
+          -74.646715
+        ]
+      ],
+      "file": "routes/njt_605_161.json",
+      "searchText": "605 nj transit"
+    },
+    {
+      "key": "njt:162",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "162",
+      "shortName": "606",
+      "longName": "",
+      "routeDesc": "",
+      "label": "606",
+      "color": "#c52658",
+      "tripCount": 129,
+      "stopCount": 234,
+      "shapeCount": 24,
+      "bounds": [
+        [
+          40.189537,
+          -74.774863
+        ],
+        [
+          40.377788,
+          -74.617773
+        ]
+      ],
+      "file": "routes/njt_606_162.json",
+      "searchText": "606 nj transit"
+    },
+    {
+      "key": "njt:163",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "163",
+      "shortName": "607",
+      "longName": "",
+      "routeDesc": "",
+      "label": "607",
+      "color": "#c5c226",
+      "tripCount": 118,
+      "stopCount": 105,
+      "shapeCount": 10,
+      "bounds": [
+        [
+          40.192617,
+          -74.840284
+        ],
+        [
+          40.278335,
+          -74.718192
+        ]
+      ],
+      "file": "routes/njt_607_163.json",
+      "searchText": "607 nj transit"
+    },
+    {
+      "key": "njt:164",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "164",
+      "shortName": "608",
+      "longName": "",
+      "routeDesc": "",
+      "label": "608",
+      "color": "#263bc5",
+      "tripCount": 160,
+      "stopCount": 109,
+      "shapeCount": 8,
+      "bounds": [
+        [
+          40.218926,
+          -74.842255
+        ],
+        [
+          40.294898,
+          -74.704374
+        ]
+      ],
+      "file": "routes/njt_608_164.json",
+      "searchText": "608 nj transit"
+    },
+    {
+      "key": "njt:165",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "165",
+      "shortName": "609",
+      "longName": "",
+      "routeDesc": "",
+      "label": "609",
+      "color": "#262bc5",
+      "tripCount": 152,
+      "stopCount": 117,
+      "shapeCount": 24,
+      "bounds": [
+        [
+          40.214156,
+          -74.807572
+        ],
+        [
+          40.292026,
+          -74.669462
+        ]
+      ],
+      "file": "routes/njt_609_165.json",
+      "searchText": "609 nj transit"
+    },
+    {
+      "key": "njt:166",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "166",
+      "shortName": "610",
+      "longName": "",
+      "routeDesc": "",
+      "label": "610",
+      "color": "#c5b226",
+      "tripCount": 1,
+      "stopCount": 14,
+      "shapeCount": 1,
+      "bounds": [
+        [
+          40.348456,
+          -74.656032
+        ],
+        [
+          40.372598,
+          -74.623234
+        ]
+      ],
+      "file": "routes/njt_610_166.json",
+      "searchText": "610 nj transit"
+    },
+    {
+      "key": "njt:167",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "167",
+      "shortName": "611",
+      "longName": "",
+      "routeDesc": "",
+      "label": "611",
+      "color": "#c526a5",
+      "tripCount": 26,
+      "stopCount": 26,
+      "shapeCount": 5,
+      "bounds": [
+        [
+          40.204397,
+          -74.769474
+        ],
+        [
+          40.225777,
+          -74.752083
+        ]
+      ],
+      "file": "routes/njt_611_167.json",
+      "searchText": "611 nj transit"
+    },
+    {
+      "key": "njt:168",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "168",
+      "shortName": "612",
+      "longName": "",
+      "routeDesc": "",
+      "label": "612",
+      "color": "#2660c5",
+      "tripCount": 8,
+      "stopCount": 13,
+      "shapeCount": 5,
+      "bounds": [
+        [
+          40.263848,
+          -74.690774
+        ],
+        [
+          40.31568,
+          -74.623045
+        ]
+      ],
+      "file": "routes/njt_612_168.json",
+      "searchText": "612 nj transit"
+    },
+    {
+      "key": "njt:169",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "169",
+      "shortName": "613",
+      "longName": "",
+      "routeDesc": "",
+      "label": "613",
+      "color": "#c55326",
+      "tripCount": 113,
+      "stopCount": 144,
+      "shapeCount": 8,
+      "bounds": [
+        [
+          40.178485,
+          -74.766054
+        ],
+        [
+          40.304595,
+          -74.635013
+        ]
+      ],
+      "file": "routes/njt_613_169.json",
+      "searchText": "613 nj transit"
+    },
+    {
+      "key": "njt:170",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "170",
+      "shortName": "619",
+      "longName": "",
+      "routeDesc": "",
+      "label": "619",
+      "color": "#2826c5",
+      "tripCount": 88,
+      "stopCount": 108,
+      "shapeCount": 14,
+      "bounds": [
+        [
+          40.214156,
+          -74.807572
+        ],
+        [
+          40.257337,
+          -74.645212
+        ]
+      ],
+      "file": "routes/njt_619_170.json",
+      "searchText": "619 nj transit"
+    },
+    {
+      "key": "njt:172",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "172",
+      "shortName": "624",
+      "longName": "",
+      "routeDesc": "",
+      "label": "624",
+      "color": "#53c526",
+      "tripCount": 75,
+      "stopCount": 118,
+      "shapeCount": 10,
+      "bounds": [
+        [
+          40.212747,
+          -74.798974
+        ],
+        [
+          40.330406,
+          -74.738451
+        ]
+      ],
+      "file": "routes/njt_624_172.json",
+      "searchText": "624 nj transit"
+    },
+    {
+      "key": "njt:180",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "180",
+      "shortName": "702",
+      "longName": "",
+      "routeDesc": "",
+      "label": "702",
+      "color": "#26c598",
+      "tripCount": 56,
+      "stopCount": 133,
+      "shapeCount": 8,
+      "bounds": [
+        [
+          40.850087,
+          -74.182952
+        ],
+        [
+          40.919586,
+          -74.108234
+        ]
+      ],
+      "file": "routes/njt_702_180.json",
+      "searchText": "702 nj transit"
+    },
+    {
+      "key": "njt:181",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "181",
+      "shortName": "703",
+      "longName": "",
+      "routeDesc": "",
+      "label": "703",
+      "color": "#26c535",
+      "tripCount": 234,
+      "stopCount": 157,
+      "shapeCount": 22,
+      "bounds": [
+        [
+          40.810266,
+          -74.185132
+        ],
+        [
+          40.939319,
+          -74.049632
+        ]
+      ],
+      "file": "routes/njt_703_181.json",
+      "searchText": "703 nj transit"
+    },
+    {
+      "key": "njt:182",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "182",
+      "shortName": "704",
+      "longName": "",
+      "routeDesc": "",
+      "label": "704",
+      "color": "#c5a826",
+      "tripCount": 120,
+      "stopCount": 118,
+      "shapeCount": 16,
+      "bounds": [
+        [
+          40.876876,
+          -74.261245
+        ],
+        [
+          40.934976,
+          -74.144183
+        ]
+      ],
+      "file": "routes/njt_704_182.json",
+      "searchText": "704 nj transit"
+    },
+    {
+      "key": "njt:183",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "183",
+      "shortName": "705",
+      "longName": "",
+      "routeDesc": "",
+      "label": "705",
+      "color": "#c52673",
+      "tripCount": 62,
+      "stopCount": 111,
+      "shapeCount": 4,
+      "bounds": [
+        [
+          40.846057,
+          -74.261245
+        ],
+        [
+          40.891016,
+          -74.123013
+        ]
+      ],
+      "file": "routes/njt_705_183.json",
+      "searchText": "705 nj transit"
+    },
+    {
+      "key": "njt:184",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "184",
+      "shortName": "707",
+      "longName": "",
+      "routeDesc": "",
+      "label": "707",
+      "color": "#c5265b",
+      "tripCount": 55,
+      "stopCount": 156,
+      "shapeCount": 4,
+      "bounds": [
+        [
+          40.854666,
+          -74.172235
+        ],
+        [
+          40.924787,
+          -74.079377
+        ]
+      ],
+      "file": "routes/njt_707_184.json",
+      "searchText": "707 nj transit"
+    },
+    {
+      "key": "njt:185",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "185",
+      "shortName": "709",
+      "longName": "",
+      "routeDesc": "",
+      "label": "709",
+      "color": "#9026c5",
+      "tripCount": 108,
+      "stopCount": 145,
+      "shapeCount": 9,
+      "bounds": [
+        [
+          40.791558,
+          -74.199974
+        ],
+        [
+          40.920428,
+          -74.065683
+        ]
+      ],
+      "file": "routes/njt_709_185.json",
+      "searchText": "709 nj transit"
+    },
+    {
+      "key": "njt:187",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "187",
+      "shortName": "712",
+      "longName": "",
+      "routeDesc": "",
+      "label": "712",
+      "color": "#c5b526",
+      "tripCount": 179,
+      "stopCount": 144,
+      "shapeCount": 16,
+      "bounds": [
+        [
+          40.878126,
+          -74.261245
+        ],
+        [
+          40.919967,
+          -74.042032
+        ]
+      ],
+      "file": "routes/njt_712_187.json",
+      "searchText": "712 nj transit"
+    },
+    {
+      "key": "njt:189",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "189",
+      "shortName": "722",
+      "longName": "",
+      "routeDesc": "",
+      "label": "722",
+      "color": "#2ec526",
+      "tripCount": 8,
+      "stopCount": 120,
+      "shapeCount": 4,
+      "bounds": [
+        [
+          40.889627,
+          -74.173112
+        ],
+        [
+          40.985627,
+          -74.066505
+        ]
+      ],
+      "file": "routes/njt_722_189.json",
+      "searchText": "722 nj transit"
+    },
+    {
+      "key": "njt:192",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "192",
+      "shortName": "744",
+      "longName": "",
+      "routeDesc": "",
+      "label": "744",
+      "color": "#4526c5",
+      "tripCount": 93,
+      "stopCount": 124,
+      "shapeCount": 16,
+      "bounds": [
+        [
+          40.861736,
+          -74.246835
+        ],
+        [
+          40.968467,
+          -74.118174
+        ]
+      ],
+      "file": "routes/njt_744_192.json",
+      "searchText": "744 nj transit"
+    },
+    {
+      "key": "njt:193",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "193",
+      "shortName": "746",
+      "longName": "",
+      "routeDesc": "",
+      "label": "746",
+      "color": "#26a8c5",
+      "tripCount": 70,
+      "stopCount": 70,
+      "shapeCount": 4,
+      "bounds": [
+        [
+          40.915736,
+          -74.174484
+        ],
+        [
+          40.979557,
+          -74.113215
+        ]
+      ],
+      "file": "routes/njt_746_193.json",
+      "searchText": "746 nj transit"
+    },
+    {
+      "key": "njt:194",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "194",
+      "shortName": "748",
+      "longName": "",
+      "routeDesc": "",
+      "label": "748",
+      "color": "#2693c5",
+      "tripCount": 60,
+      "stopCount": 155,
+      "shapeCount": 9,
+      "bounds": [
+        [
+          40.887048,
+          -74.294793
+        ],
+        [
+          41.00776,
+          -74.147841
+        ]
+      ],
+      "file": "routes/njt_748_194.json",
+      "searchText": "748 nj transit"
+    },
+    {
+      "key": "njt:195",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "195",
+      "shortName": "751",
+      "longName": "",
+      "routeDesc": "",
+      "label": "751",
+      "color": "#26adc5",
+      "tripCount": 44,
+      "stopCount": 165,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.805898,
+          -74.094273
+        ],
+        [
+          40.955706,
+          -73.981803
+        ]
+      ],
+      "file": "routes/njt_751_195.json",
+      "searchText": "751 nj transit"
+    },
+    {
+      "key": "njt:196",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "196",
+      "shortName": "752",
+      "longName": "",
+      "routeDesc": "",
+      "label": "752",
+      "color": "#26a2c5",
+      "tripCount": 69,
+      "stopCount": 153,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.880198,
+          -74.240954
+        ],
+        [
+          41.029619,
+          -74.042032
+        ]
+      ],
+      "file": "routes/njt_752_196.json",
+      "searchText": "752 nj transit"
+    },
+    {
+      "key": "njt:197",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "197",
+      "shortName": "753",
+      "longName": "",
+      "routeDesc": "",
+      "label": "753",
+      "color": "#2653c5",
+      "tripCount": 48,
+      "stopCount": 176,
+      "shapeCount": 8,
+      "bounds": [
+        [
+          40.884368,
+          -74.063113
+        ],
+        [
+          40.942276,
+          -73.957362
+        ]
+      ],
+      "file": "routes/njt_753_197.json",
+      "searchText": "753 nj transit"
+    },
+    {
+      "key": "njt:198",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "198",
+      "shortName": "755",
+      "longName": "",
+      "routeDesc": "",
+      "label": "755",
+      "color": "#80c526",
+      "tripCount": 43,
+      "stopCount": 134,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.811496,
+          -74.094273
+        ],
+        [
+          40.955706,
+          -73.968763
+        ]
+      ],
+      "file": "routes/njt_755_198.json",
+      "searchText": "755 nj transit"
+    },
+    {
+      "key": "njt:199",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "199",
+      "shortName": "756",
+      "longName": "",
+      "routeDesc": "",
+      "label": "756",
+      "color": "#bac526",
+      "tripCount": 106,
+      "stopCount": 160,
+      "shapeCount": 13,
+      "bounds": [
+        [
+          40.851178,
+          -74.094273
+        ],
+        [
+          40.955706,
+          -73.951843
+        ]
+      ],
+      "file": "routes/njt_756_199.json",
+      "searchText": "756 nj transit"
+    },
+    {
+      "key": "njt:200",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "200",
+      "shortName": "758",
+      "longName": "",
+      "routeDesc": "",
+      "label": "758",
+      "color": "#7dc526",
+      "tripCount": 67,
+      "stopCount": 109,
+      "shapeCount": 4,
+      "bounds": [
+        [
+          40.859999,
+          -74.127905
+        ],
+        [
+          40.966867,
+          -74.057233
+        ]
+      ],
+      "file": "routes/njt_758_200.json",
+      "searchText": "758 nj transit"
+    },
+    {
+      "key": "njt:202",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "202",
+      "shortName": "762",
+      "longName": "",
+      "routeDesc": "",
+      "label": "762",
+      "color": "#3b26c5",
+      "tripCount": 56,
+      "stopCount": 76,
+      "shapeCount": 4,
+      "bounds": [
+        [
+          40.881938,
+          -74.072881
+        ],
+        [
+          40.966678,
+          -74.020241
+        ]
+      ],
+      "file": "routes/njt_762_202.json",
+      "searchText": "762 nj transit"
+    },
+    {
+      "key": "njt:203",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "203",
+      "shortName": "770",
+      "longName": "",
+      "routeDesc": "",
+      "label": "770",
+      "color": "#2660c5",
+      "tripCount": 102,
+      "stopCount": 118,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.880198,
+          -74.174584
+        ],
+        [
+          40.926878,
+          -74.042032
+        ]
+      ],
+      "file": "routes/njt_770_203.json",
+      "searchText": "770 nj transit"
+    },
+    {
+      "key": "njt:204",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "204",
+      "shortName": "772",
+      "longName": "",
+      "routeDesc": "",
+      "label": "772",
+      "color": "#c526a0",
+      "tripCount": 149,
+      "stopCount": 229,
+      "shapeCount": 10,
+      "bounds": [
+        [
+          40.810266,
+          -74.094564
+        ],
+        [
+          40.961847,
+          -73.993784
+        ]
+      ],
+      "file": "routes/njt_772_204.json",
+      "searchText": "772 nj transit"
+    },
+    {
+      "key": "njt:206",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "206",
+      "shortName": "780",
+      "longName": "",
+      "routeDesc": "",
+      "label": "780",
+      "color": "#7326c5",
+      "tripCount": 94,
+      "stopCount": 153,
+      "shapeCount": 4,
+      "bounds": [
+        [
+          40.854176,
+          -74.127502
+        ],
+        [
+          40.910036,
+          -73.964984
+        ]
+      ],
+      "file": "routes/njt_780_206.json",
+      "searchText": "780 nj transit"
+    },
+    {
+      "key": "njt:210",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "210",
+      "shortName": "801",
+      "longName": "",
+      "routeDesc": "",
+      "label": "801",
+      "color": "#6526c5",
+      "tripCount": 17,
+      "stopCount": 43,
+      "shapeCount": 3,
+      "bounds": [
+        [
+          40.555947,
+          -74.358023
+        ],
+        [
+          40.573876,
+          -74.320434
+        ]
+      ],
+      "file": "routes/njt_801_210.json",
+      "searchText": "801 nj transit"
+    },
+    {
+      "key": "njt:211",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "211",
+      "shortName": "802",
+      "longName": "",
+      "routeDesc": "",
+      "label": "802",
+      "color": "#26b8c5",
+      "tripCount": 19,
+      "stopCount": 13,
+      "shapeCount": 3,
+      "bounds": [
+        [
+          40.554336,
+          -74.330633
+        ],
+        [
+          40.573106,
+          -74.300452
+        ]
+      ],
+      "file": "routes/njt_802_211.json",
+      "searchText": "802 nj transit"
+    },
+    {
+      "key": "njt:212",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "212",
+      "shortName": "803",
+      "longName": "",
+      "routeDesc": "",
+      "label": "803",
+      "color": "#c5262b",
+      "tripCount": 26,
+      "stopCount": 16,
+      "shapeCount": 4,
+      "bounds": [
+        [
+          40.544476,
+          -74.330633
+        ],
+        [
+          40.570298,
+          -74.276203
+        ]
+      ],
+      "file": "routes/njt_803_212.json",
+      "searchText": "803 nj transit"
+    },
+    {
+      "key": "njt:213",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "213",
+      "shortName": "804",
+      "longName": "",
+      "routeDesc": "",
+      "label": "804",
+      "color": "#6326c5",
+      "tripCount": 14,
+      "stopCount": 49,
+      "shapeCount": 4,
+      "bounds": [
+        [
+          40.565787,
+          -74.361394
+        ],
+        [
+          40.597939,
+          -74.320434
+        ]
+      ],
+      "file": "routes/njt_804_213.json",
+      "searchText": "804 nj transit"
+    },
+    {
+      "key": "njt:214",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "214",
+      "shortName": "805",
+      "longName": "",
+      "routeDesc": "",
+      "label": "805",
+      "color": "#c52626",
+      "tripCount": 20,
+      "stopCount": 29,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          40.528966,
+          -74.337934
+        ],
+        [
+          40.570377,
+          -74.299542
+        ]
+      ],
+      "file": "routes/njt_805_214.json",
+      "searchText": "805 nj transit"
+    },
+    {
+      "key": "njt:216",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "216",
+      "shortName": "810",
+      "longName": "",
+      "routeDesc": "",
+      "label": "810",
+      "color": "#c52663",
+      "tripCount": 81,
+      "stopCount": 76,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.496768,
+          -74.445052
+        ],
+        [
+          40.557257,
+          -74.296903
+        ]
+      ],
+      "file": "routes/njt_810_216.json",
+      "searchText": "810 nj transit"
+    },
+    {
+      "key": "njt:217",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "217",
+      "shortName": "811",
+      "longName": "",
+      "routeDesc": "",
+      "label": "811",
+      "color": "#c56b26",
+      "tripCount": 24,
+      "stopCount": 94,
+      "shapeCount": 4,
+      "bounds": [
+        [
+          40.415686,
+          -74.459302
+        ],
+        [
+          40.503238,
+          -74.376434
+        ]
+      ],
+      "file": "routes/njt_811_217.json",
+      "searchText": "811 nj transit"
+    },
+    {
+      "key": "njt:218",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "218",
+      "shortName": "813",
+      "longName": "",
+      "routeDesc": "",
+      "label": "813",
+      "color": "#43c526",
+      "tripCount": 62,
+      "stopCount": 112,
+      "shapeCount": 13,
+      "bounds": [
+        [
+          40.490586,
+          -74.378773
+        ],
+        [
+          40.543627,
+          -74.262473
+        ]
+      ],
+      "file": "routes/njt_813_218.json",
+      "searchText": "813 nj transit"
+    },
+    {
+      "key": "njt:219",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "219",
+      "shortName": "814",
+      "longName": "",
+      "routeDesc": "",
+      "label": "814",
+      "color": "#c52630",
+      "tripCount": 99,
+      "stopCount": 75,
+      "shapeCount": 22,
+      "bounds": [
+        [
+          40.458207,
+          -74.478934
+        ],
+        [
+          40.508428,
+          -74.366582
+        ]
+      ],
+      "file": "routes/njt_814_219.json",
+      "searchText": "814 nj transit"
+    },
+    {
+      "key": "njt:220",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "220",
+      "shortName": "815",
+      "longName": "",
+      "routeDesc": "",
+      "label": "815",
+      "color": "#c52655",
+      "tripCount": 82,
+      "stopCount": 126,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.441757,
+          -74.447464
+        ],
+        [
+          40.558038,
+          -74.263513
+        ]
+      ],
+      "file": "routes/njt_815_220.json",
+      "searchText": "815 nj transit"
+    },
+    {
+      "key": "njt:221",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "221",
+      "shortName": "817",
+      "longName": "",
+      "routeDesc": "",
+      "label": "817",
+      "color": "#8b26c5",
+      "tripCount": 53,
+      "stopCount": 155,
+      "shapeCount": 4,
+      "bounds": [
+        [
+          40.414716,
+          -74.298255
+        ],
+        [
+          40.519457,
+          -74.091753
+        ]
+      ],
+      "file": "routes/njt_817_221.json",
+      "searchText": "817 nj transit"
+    },
+    {
+      "key": "njt:222",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "222",
+      "shortName": "818",
+      "longName": "",
+      "routeDesc": "",
+      "label": "818",
+      "color": "#c52658",
+      "tripCount": 73,
+      "stopCount": 58,
+      "shapeCount": 13,
+      "bounds": [
+        [
+          40.394578,
+          -74.447232
+        ],
+        [
+          40.499407,
+          -74.295312
+        ]
+      ],
+      "file": "routes/njt_818_222.json",
+      "searchText": "818 nj transit"
+    },
+    {
+      "key": "njt:223",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "223",
+      "shortName": "819",
+      "longName": "",
+      "routeDesc": "",
+      "label": "819",
+      "color": "#7826c5",
+      "tripCount": 58,
+      "stopCount": 148,
+      "shapeCount": 8,
+      "bounds": [
+        [
+          40.54104,
+          -74.451453
+        ],
+        [
+          40.620998,
+          -74.360263
+        ]
+      ],
+      "file": "routes/njt_819_223.json",
+      "searchText": "819 nj transit"
+    },
+    {
+      "key": "njt:225",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "225",
+      "shortName": "822",
+      "longName": "",
+      "routeDesc": "",
+      "label": "822",
+      "color": "#c526b0",
+      "tripCount": 39,
+      "stopCount": 56,
+      "shapeCount": 4,
+      "bounds": [
+        [
+          40.607368,
+          -74.464164
+        ],
+        [
+          40.636777,
+          -74.391144
+        ]
+      ],
+      "file": "routes/njt_822_225.json",
+      "searchText": "822 nj transit"
+    },
+    {
+      "key": "njt:227",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "227",
+      "shortName": "830",
+      "longName": "",
+      "routeDesc": "",
+      "label": "830",
+      "color": "#2e26c5",
+      "tripCount": 49,
+      "stopCount": 106,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.091756,
+          -74.059004
+        ],
+        [
+          40.228427,
+          -73.999002
+        ]
+      ],
+      "file": "routes/njt_830_227.json",
+      "searchText": "830 nj transit"
+    },
+    {
+      "key": "njt:228",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "228",
+      "shortName": "831",
+      "longName": "",
+      "routeDesc": "",
+      "label": "831",
+      "color": "#45c526",
+      "tripCount": 66,
+      "stopCount": 76,
+      "shapeCount": 10,
+      "bounds": [
+        [
+          40.284926,
+          -74.074115
+        ],
+        [
+          40.349689,
+          -73.980874
+        ]
+      ],
+      "file": "routes/njt_831_228.json",
+      "searchText": "831 nj transit"
+    },
+    {
+      "key": "njt:229",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "229",
+      "shortName": "832",
+      "longName": "",
+      "routeDesc": "",
+      "label": "832",
+      "color": "#2685c5",
+      "tripCount": 78,
+      "stopCount": 90,
+      "shapeCount": 11,
+      "bounds": [
+        [
+          40.183856,
+          -74.132525
+        ],
+        [
+          40.349706,
+          -74.011791
+        ]
+      ],
+      "file": "routes/njt_832_229.json",
+      "searchText": "832 nj transit"
+    },
+    {
+      "key": "njt:230",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "230",
+      "shortName": "834",
+      "longName": "",
+      "routeDesc": "",
+      "label": "834",
+      "color": "#b826c5",
+      "tripCount": 56,
+      "stopCount": 78,
+      "shapeCount": 10,
+      "bounds": [
+        [
+          40.347848,
+          -74.112594
+        ],
+        [
+          40.418717,
+          -73.981362
+        ]
+      ],
+      "file": "routes/njt_834_230.json",
+      "searchText": "834 nj transit"
+    },
+    {
+      "key": "njt:231",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "231",
+      "shortName": "836",
+      "longName": "",
+      "routeDesc": "",
+      "label": "836",
+      "color": "#26c543",
+      "tripCount": 54,
+      "stopCount": 81,
+      "shapeCount": 17,
+      "bounds": [
+        [
+          40.206099,
+          -74.311862
+        ],
+        [
+          40.268276,
+          -73.999323
+        ]
+      ],
+      "file": "routes/njt_836_231.json",
+      "searchText": "836 nj transit"
+    },
+    {
+      "key": "njt:232",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "232",
+      "shortName": "837",
+      "longName": "",
+      "routeDesc": "",
+      "label": "837",
+      "color": "#26c560",
+      "tripCount": 52,
+      "stopCount": 94,
+      "shapeCount": 8,
+      "bounds": [
+        [
+          40.215027,
+          -74.047041
+        ],
+        [
+          40.305297,
+          -73.980874
+        ]
+      ],
+      "file": "routes/njt_837_232.json",
+      "searchText": "837 nj transit"
+    },
+    {
+      "key": "njt:233",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "233",
+      "shortName": "838",
+      "longName": "",
+      "routeDesc": "",
+      "label": "838",
+      "color": "#c5266d",
+      "tripCount": 46,
+      "stopCount": 84,
+      "shapeCount": 11,
+      "bounds": [
+        [
+          40.250165,
+          -74.303862
+        ],
+        [
+          40.376897,
+          -73.973993
+        ]
+      ],
+      "file": "routes/njt_838_233.json",
+      "searchText": "838 nj transit"
+    },
+    {
+      "key": "njt:238",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "238",
+      "shortName": "871",
+      "longName": "",
+      "routeDesc": "",
+      "label": "871",
+      "color": "#26c52b",
+      "tripCount": 21,
+      "stopCount": 132,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.795997,
+          -74.481864
+        ],
+        [
+          40.926366,
+          -74.248274
+        ]
+      ],
+      "file": "routes/njt_871_238.json",
+      "searchText": "871 nj transit"
+    },
+    {
+      "key": "njt:239",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "239",
+      "shortName": "872",
+      "longName": "",
+      "routeDesc": "",
+      "label": "872",
+      "color": "#2660c5",
+      "tripCount": 18,
+      "stopCount": 39,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          40.796767,
+          -74.481394
+        ],
+        [
+          40.849586,
+          -74.438604
+        ]
+      ],
+      "file": "routes/njt_872_239.json",
+      "searchText": "872 nj transit"
+    },
+    {
+      "key": "njt:240",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "240",
+      "shortName": "873",
+      "longName": "",
+      "routeDesc": "",
+      "label": "873",
+      "color": "#c52653",
+      "tripCount": 30,
+      "stopCount": 69,
+      "shapeCount": 5,
+      "bounds": [
+        [
+          40.736698,
+          -74.524304
+        ],
+        [
+          40.840866,
+          -74.329702
+        ]
+      ],
+      "file": "routes/njt_873_240.json",
+      "searchText": "873 nj transit"
+    },
+    {
+      "key": "njt:241",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "241",
+      "shortName": "874",
+      "longName": "",
+      "routeDesc": "",
+      "label": "874",
+      "color": "#c53326",
+      "tripCount": 24,
+      "stopCount": 72,
+      "shapeCount": 4,
+      "bounds": [
+        [
+          40.796258,
+          -74.481864
+        ],
+        [
+          40.893847,
+          -74.260532
+        ]
+      ],
+      "file": "routes/njt_874_241.json",
+      "searchText": "874 nj transit"
+    },
+    {
+      "key": "njt:242",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "242",
+      "shortName": "875",
+      "longName": "",
+      "routeDesc": "",
+      "label": "875",
+      "color": "#2e26c5",
+      "tripCount": 14,
+      "stopCount": 60,
+      "shapeCount": 4,
+      "bounds": [
+        [
+          40.796307,
+          -74.655383
+        ],
+        [
+          40.885316,
+          -74.473173
+        ]
+      ],
+      "file": "routes/njt_875_242.json",
+      "searchText": "875 nj transit"
+    },
+    {
+      "key": "njt:243",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "243",
+      "shortName": "878",
+      "longName": "",
+      "routeDesc": "",
+      "label": "878",
+      "color": "#9526c5",
+      "tripCount": 9,
+      "stopCount": 17,
+      "shapeCount": 1,
+      "bounds": [
+        [
+          40.768778,
+          -74.456923
+        ],
+        [
+          40.794778,
+          -74.414462
+        ]
+      ],
+      "file": "routes/njt_878_243.json",
+      "searchText": "878 nj transit"
+    },
+    {
+      "key": "njt:245",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "245",
+      "shortName": "880",
+      "longName": "",
+      "routeDesc": "",
+      "label": "880",
+      "color": "#3326c5",
+      "tripCount": 41,
+      "stopCount": 104,
+      "shapeCount": 5,
+      "bounds": [
+        [
+          40.796307,
+          -74.583254
+        ],
+        [
+          40.909176,
+          -74.462394
+        ]
+      ],
+      "file": "routes/njt_880_245.json",
+      "searchText": "880 nj transit"
+    },
+    {
+      "key": "njt:247",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "247",
+      "shortName": "890",
+      "longName": "",
+      "routeDesc": "",
+      "label": "890",
+      "color": "#75c526",
+      "tripCount": 34,
+      "stopCount": 49,
+      "shapeCount": 12,
+      "bounds": [
+        [
+          40.673228,
+          -75.20994
+        ],
+        [
+          40.711427,
+          -75.142514
+        ]
+      ],
+      "file": "routes/njt_890_247.json",
+      "searchText": "890 nj transit"
+    },
+    {
+      "key": "njt:248",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "248",
+      "shortName": "891",
+      "longName": "",
+      "routeDesc": "",
+      "label": "891",
+      "color": "#26c578",
+      "tripCount": 24,
+      "stopCount": 51,
+      "shapeCount": 14,
+      "bounds": [
+        [
+          40.673228,
+          -75.20994
+        ],
+        [
+          40.711427,
+          -75.142514
+        ]
+      ],
+      "file": "routes/njt_891_248.json",
+      "searchText": "891 nj transit"
+    },
+    {
+      "key": "njt:255",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "255",
+      "shortName": "986",
+      "longName": "",
+      "routeDesc": "",
+      "label": "986",
+      "color": "#c5266b",
+      "tripCount": 24,
+      "stopCount": 63,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.618088,
+          -74.452743
+        ],
+        [
+          40.716828,
+          -74.357882
+        ]
+      ],
+      "file": "routes/njt_986_255.json",
+      "searchText": "986 nj transit"
+    },
+    {
+      "key": "njt:257",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "257",
+      "shortName": "AC1",
+      "longName": "",
+      "routeDesc": "",
+      "label": "AC1",
+      "color": "#c526c5",
+      "tripCount": 72,
+      "stopCount": 6,
+      "shapeCount": 11,
+      "bounds": [
+        [
+          39.352938,
+          -74.445952
+        ],
+        [
+          39.362718,
+          -74.431224
+        ]
+      ],
+      "file": "routes/njt_AC1_257.json",
+      "searchText": "ac1 nj transit"
+    },
+    {
+      "key": "njt:258",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "258",
+      "shortName": "AC3",
+      "longName": "",
+      "routeDesc": "",
+      "label": "AC3",
+      "color": "#2660c5",
+      "tripCount": 72,
+      "stopCount": 6,
+      "shapeCount": 8,
+      "bounds": [
+        [
+          39.359076,
+          -74.439843
+        ],
+        [
+          39.364145,
+          -74.416285
+        ]
+      ],
+      "file": "routes/njt_AC3_258.json",
+      "searchText": "ac3 nj transit"
+    },
+    {
+      "key": "njt:259",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "259",
+      "shortName": "AC4B",
+      "longName": "",
+      "routeDesc": "",
+      "label": "AC4B",
+      "color": "#26c550",
+      "tripCount": 72,
+      "stopCount": 5,
+      "shapeCount": 10,
+      "bounds": [
+        [
+          39.360377,
+          -74.445394
+        ],
+        [
+          39.384475,
+          -74.424883
+        ]
+      ],
+      "file": "routes/njt_AC4B_259.json",
+      "searchText": "ac4b nj transit"
+    },
+    {
+      "key": "njt:260",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "260",
+      "shortName": "GO25",
+      "longName": "",
+      "routeDesc": "",
+      "label": "GO25",
+      "color": "#2670c5",
+      "tripCount": 20,
+      "stopCount": 21,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          40.726589,
+          -74.227241
+        ],
+        [
+          40.736997,
+          -74.164402
+        ]
+      ],
+      "file": "routes/njt_GO25_260.json",
+      "searchText": "go25 nj transit"
+    },
+    {
+      "key": "njt:261",
+      "agencyId": "njt",
+      "agencyLabel": "NJ Transit",
+      "routeId": "261",
+      "shortName": "GO28",
+      "longName": "",
+      "routeDesc": "",
+      "label": "GO28",
+      "color": "#2bc526",
+      "tripCount": 240,
+      "stopCount": 37,
+      "shapeCount": 6,
+      "bounds": [
+        [
+          40.681057,
+          -74.199933
+        ],
+        [
+          40.794808,
+          -74.159595
+        ]
+      ],
+      "file": "routes/njt_GO28_261.json",
+      "searchText": "go28 nj transit"
+    },
+    {
+      "key": "princeton:28ea7117-5d28-4c7e-a919-5e4e94e79b42",
+      "agencyId": "princeton",
+      "agencyLabel": "Princeton Transit",
+      "routeId": "28ea7117-5d28-4c7e-a919-5e4e94e79b42",
+      "shortName": "1",
+      "longName": "Route 1: Grad College to Meadows",
+      "routeDesc": "",
+      "label": "1 Route 1: Grad College to Meadows",
+      "color": "#1302f7",
+      "tripCount": 113,
+      "stopCount": 15,
+      "shapeCount": 3,
+      "bounds": [
+        [
+          40.33629,
+          -74.66475
+        ],
+        [
+          40.35174,
+          -74.64311
+        ]
+      ],
+      "file": "routes/princeton_1_28ea7117-5d28-4c7e-a919-5e4e94e79b42.json",
+      "searchText": "1 route 1: grad college to meadows princeton transit tigertransit tiger transit"
+    },
+    {
+      "key": "princeton:4894d1d9-889e-4687-8a93-13bb19426ed6",
+      "agencyId": "princeton",
+      "agencyLabel": "Princeton Transit",
+      "routeId": "4894d1d9-889e-4687-8a93-13bb19426ed6",
+      "shortName": "2",
+      "longName": "Route 2: Lawrence/Lakeside to EQUAD",
+      "routeDesc": "",
+      "label": "2 Route 2: Lawrence/Lakeside to EQUAD",
+      "color": "#f7a71c",
+      "tripCount": 113,
+      "stopCount": 10,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          40.333288,
+          -74.65712
+        ],
+        [
+          40.35185,
+          -74.64981
+        ]
+      ],
+      "file": "routes/princeton_2_4894d1d9-889e-4687-8a93-13bb19426ed6.json",
+      "searchText": "2 route 2: lawrence/lakeside to equad princeton transit tigertransit tiger transit"
+    },
+    {
+      "key": "princeton:886dd8f1-6a83-4be3-9909-3e3170a5fb65",
+      "agencyId": "princeton",
+      "agencyLabel": "Princeton Transit",
+      "routeId": "886dd8f1-6a83-4be3-9909-3e3170a5fb65",
+      "shortName": "3",
+      "longName": "Route 3: Merwick to Forrestal/PPPL",
+      "routeDesc": "",
+      "label": "3 Route 3: Merwick to Forrestal/PPPL",
+      "color": "#e51f26",
+      "tripCount": 19,
+      "stopCount": 11,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          40.33136,
+          -74.66726
+        ],
+        [
+          40.35313,
+          -74.60343
+        ]
+      ],
+      "file": "routes/princeton_3_886dd8f1-6a83-4be3-9909-3e3170a5fb65.json",
+      "searchText": "3 route 3: merwick to forrestal/pppl princeton transit tigertransit tiger transit"
+    },
+    {
+      "key": "princeton:d092e3be-9034-438f-9914-6ae8d74aa39e",
+      "agencyId": "princeton",
+      "agencyLabel": "Princeton Transit",
+      "routeId": "d092e3be-9034-438f-9914-6ae8d74aa39e",
+      "shortName": "4",
+      "longName": "Route 4: Princeton Junction to Stadium Drive Garage",
+      "routeDesc": "",
+      "label": "4 Route 4: Princeton Junction to Stadium Drive Garage",
+      "color": "#58b146",
+      "tripCount": 60,
+      "stopCount": 16,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          40.31582,
+          -74.66308
+        ],
+        [
+          40.35038,
+          -74.62486
+        ]
+      ],
+      "file": "routes/princeton_4_d092e3be-9034-438f-9914-6ae8d74aa39e.json",
+      "searchText": "4 route 4: princeton junction to stadium drive garage princeton transit tigertransit tiger transit"
+    },
+    {
+      "key": "princeton:70629116-e51d-4c6d-991d-5f100441a2d7",
+      "agencyId": "princeton",
+      "agencyLabel": "Princeton Transit",
+      "routeId": "70629116-e51d-4c6d-991d-5f100441a2d7",
+      "shortName": "5",
+      "longName": "Route 5: Princeton Station to Stadium Drive Garage",
+      "routeDesc": "",
+      "label": "5 Route 5: Princeton Station to Stadium Drive Garage",
+      "color": "#e609f6",
+      "tripCount": 32,
+      "stopCount": 10,
+      "shapeCount": 1,
+      "bounds": [
+        [
+          40.34126,
+          -74.66308
+        ],
+        [
+          40.35038,
+          -74.645
+        ]
+      ],
+      "file": "routes/princeton_5_70629116-e51d-4c6d-991d-5f100441a2d7.json",
+      "searchText": "5 route 5: princeton station to stadium drive garage princeton transit tigertransit tiger transit"
+    },
+    {
+      "key": "princeton:7f065734-5848-4c9e-8a5a-f5ae5c80e795",
+      "agencyId": "princeton",
+      "agencyLabel": "Princeton Transit",
+      "routeId": "7f065734-5848-4c9e-8a5a-f5ae5c80e795",
+      "shortName": "6A",
+      "longName": "Route 6A: Campus Circulator via EQUAD",
+      "routeDesc": "",
+      "label": "6A Route 6A: Campus Circulator via EQUAD",
+      "color": "#e8f906",
+      "tripCount": 30,
+      "stopCount": 12,
+      "shapeCount": 3,
+      "bounds": [
+        [
+          40.333288,
+          -74.66475
+        ],
+        [
+          40.35165,
+          -74.643119
+        ]
+      ],
+      "file": "routes/princeton_6A_7f065734-5848-4c9e-8a5a-f5ae5c80e795.json",
+      "searchText": "6a route 6a: campus circulator via equad princeton transit tigertransit tiger transit"
+    },
+    {
+      "key": "princeton:8213b9c6-a8f2-43b2-af72-041ad35719b7",
+      "agencyId": "princeton",
+      "agencyLabel": "Princeton Transit",
+      "routeId": "8213b9c6-a8f2-43b2-af72-041ad35719b7",
+      "shortName": "6B",
+      "longName": "Route 6B: Campus Circulator via Washington Road",
+      "routeDesc": "",
+      "label": "6B Route 6B: Campus Circulator via Washington Road",
+      "color": "#fbff00",
+      "tripCount": 34,
+      "stopCount": 10,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          40.333288,
+          -74.66475
+        ],
+        [
+          40.35038,
+          -74.64311
+        ]
+      ],
+      "file": "routes/princeton_6B_8213b9c6-a8f2-43b2-af72-041ad35719b7.json",
+      "searchText": "6b route 6b: campus circulator via washington road princeton transit tigertransit tiger transit"
+    },
+    {
+      "key": "princeton:bb733fc7-4b53-481f-9616-28d61cca131c",
+      "agencyId": "princeton",
+      "agencyLabel": "Princeton Transit",
+      "routeId": "bb733fc7-4b53-481f-9616-28d61cca131c",
+      "shortName": "TPL",
+      "longName": "The Princeton Loop - LOCAL",
+      "routeDesc": "",
+      "label": "TPL The Princeton Loop - LOCAL",
+      "color": "#ff6726",
+      "tripCount": 9,
+      "stopCount": 21,
+      "shapeCount": 1,
+      "bounds": [
+        [
+          40.34737,
+          -74.681362
+        ],
+        [
+          40.39159,
+          -74.64574
+        ]
+      ],
+      "file": "routes/princeton_TPL_bb733fc7-4b53-481f-9616-28d61cca131c.json",
+      "searchText": "tpl the princeton loop - local princeton transit princeton loop"
+    },
+    {
+      "key": "princeton:d03ad4f8-19b1-482a-a028-1bd79bffd7ef",
+      "agencyId": "princeton",
+      "agencyLabel": "Princeton Transit",
+      "routeId": "d03ad4f8-19b1-482a-a028-1bd79bffd7ef",
+      "shortName": "TPLEXP",
+      "longName": "The Princeton Loop - EXPRESS",
+      "routeDesc": "",
+      "label": "TPLEXP The Princeton Loop - EXPRESS",
+      "color": "#0feb97",
+      "tripCount": 34,
+      "stopCount": 2,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          40.34153,
+          -74.66988
+        ],
+        [
+          40.36438,
+          -74.652202
+        ]
+      ],
+      "file": "routes/princeton_TPLEXP_d03ad4f8-19b1-482a-a028-1bd79bffd7ef.json",
+      "searchText": "tplexp the princeton loop - express princeton transit princeton loop"
+    },
+    {
+      "key": "princeton:3f0911c5-6c8d-474a-9bc6-bb7c2ed7bf21",
+      "agencyId": "princeton",
+      "agencyLabel": "Princeton Transit",
+      "routeId": "3f0911c5-6c8d-474a-9bc6-bb7c2ed7bf21",
+      "shortName": "WS",
+      "longName": "WS: Weekend Shopper",
+      "routeDesc": "",
+      "label": "WS WS: Weekend Shopper",
+      "color": "#6a4394",
+      "tripCount": 14,
+      "stopCount": 8,
+      "shapeCount": 1,
+      "bounds": [
+        [
+          40.29599,
+          -74.68298
+        ],
+        [
+          40.3442,
+          -74.63772
+        ]
+      ],
+      "file": "routes/princeton_WS_3f0911c5-6c8d-474a-9bc6-bb7c2ed7bf21.json",
+      "searchText": "ws ws: weekend shopper princeton transit weekend shopper"
+    }
+  ]
+}

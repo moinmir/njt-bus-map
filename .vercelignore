@@ -1,0 +1,6 @@
+.agents
+.git
+scripts
+__pycache__
+*.pyc
+data/*.zip

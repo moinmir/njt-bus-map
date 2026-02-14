@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Interactive NJ Transit and Princeton bus route map with search, live route overlays, and stop schedules."
+    />
+    <meta name="theme-color" content="#123760" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title>NJ + Princeton Transit Explorer</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#map">Skip to map</a>
+    <div class="layout">
+      <aside class="panel" aria-label="Route controls">
+        <h1>NJ + Princeton Transit Explorer</h1>
+        <p class="subtitle">
+          Official GTFS-backed map for all NJ Transit bus routes plus Princeton transit
+          routes (TigerTransit, Princeton Loop, Weekend Shopper).
+        </p>
+        <button
+          id="panel-toggle"
+          type="button"
+          class="secondary panel-toggle"
+          aria-controls="panel-content"
+          aria-expanded="true"
+        >
+          Hide Controls
+        </button>
+
+        <div id="panel-content">
+          <section class="control-block">
+            <h2>Search</h2>
+            <input
+              id="route-search"
+              class="route-search"
+              type="search"
+              placeholder="Search route number or name"
+              autocomplete="off"
+            />
+          </section>
+
+          <section class="control-block">
+            <div class="routes-head">
+              <h2>Routes</h2>
+              <div class="routes-actions">
+                <button id="select-visible" type="button" class="secondary">Select Visible</button>
+                <button id="clear-selected" type="button" class="secondary">Clear All</button>
+              </div>
+            </div>
+            <div id="route-groups" class="route-groups" aria-live="polite"></div>
+            <div class="primary-actions">
+              <button id="fit-selected" type="button">Fit Selected Routes</button>
+              <button id="locate-me" type="button" class="secondary primary-secondary">
+                Use My Location
+              </button>
+            </div>
+          </section>
+
+          <section class="control-block">
+            <h2>Status</h2>
+            <p id="status" class="status-line" role="status" aria-live="polite">Loading data...</p>
+          </section>
+
+          <section class="control-block source-block">
+            <h2>Data Sources</h2>
+            <div id="source-details"></div>
+          </section>
+        </div>
+      </aside>
+
+      <main class="map-shell">
+        <div id="map" role="region" aria-label="Map of transit routes"></div>
+      </main>
+    </div>
+
+    <noscript>
+      <p class="noscript">This map requires JavaScript to load route and stop data.</p>
+    </noscript>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
