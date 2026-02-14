@@ -7,11 +7,21 @@ export function configureMobilePanel({
 }) {
   if (!panelNode || !panelToggleButton) return;
 
+  const iconNode = panelToggleButton.querySelector(".sidebar-toggle-icon");
+
   const syncPanelState = () => {
-    const shouldCollapse = mediaQuery.matches && appState.mobilePanelCollapsed;
+    const shouldCollapse = appState.mobilePanelCollapsed;
     panelNode.classList.toggle("is-collapsed", shouldCollapse);
     panelToggleButton.setAttribute("aria-expanded", String(!shouldCollapse));
-    panelToggleButton.textContent = shouldCollapse ? "Show Controls" : "Hide Controls";
+    panelToggleButton.setAttribute(
+      "aria-label",
+      shouldCollapse ? "Expand controls sidebar" : "Collapse controls sidebar",
+    );
+
+    if (iconNode) {
+      iconNode.textContent = mediaQuery.matches ? "⌄" : "❮";
+    }
+
     window.setTimeout(() => map.invalidateSize(), 180);
   };
 

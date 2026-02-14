@@ -24,20 +24,23 @@
     <a class="skip-link" href="#map">Skip to map</a>
     <div class="layout">
       <aside class="panel" aria-label="Route controls">
+        <button
+          id="panel-toggle"
+          type="button"
+          class="secondary sidebar-toggle"
+          aria-controls="panel-content"
+          aria-expanded="true"
+          aria-label="Collapse controls sidebar"
+        >
+          <span class="sidebar-toggle-icon" aria-hidden="true">❮</span>
+          <span class="sr-only">Toggle controls sidebar</span>
+        </button>
+
         <h1>NJ + Princeton Transit Explorer</h1>
         <p class="subtitle">
           Official GTFS-backed map for all NJ Transit bus routes plus Princeton transit
           routes (TigerTransit, Princeton Loop, Weekend Shopper).
         </p>
-        <button
-          id="panel-toggle"
-          type="button"
-          class="secondary panel-toggle"
-          aria-controls="panel-content"
-          aria-expanded="true"
-        >
-          Hide Controls
-        </button>
 
         <div id="panel-content">
           <section class="control-block">
