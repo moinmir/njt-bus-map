@@ -11,6 +11,12 @@ interface DirectionScheduleView {
   daySchedules: DaySchedules;
 }
 
+export interface StopPopupSections {
+  title: string;
+  subtitle: string;
+  bodyHtml: string;
+}
+
 const EXACT_FARE_SUFFIX_RE = /\s*-\s*exact fare\s*$/i;
 
 function createEmptyDaySchedules(): DaySchedules {
@@ -237,36 +243,30 @@ function buildDirectionViews(
   return directionViews;
 }
 
-export function buildStopPopupContent(
+export function buildStopPopupSections(
   routeMeta: RouteMeta,
   routeData: RouteData,
   stop: StopData,
   scheduleData: ScheduleData | null,
-): string {
+): StopPopupSections {
+  const title = escapeHtml(stop.name);
+  const subtitle = `${escapeHtml(routeMeta.agencyLabel)} • Route ${escapeHtml(routeMeta.shortName)}`;
   const directionSchedules = resolveDirectionDaySchedules(routeData, stop, scheduleData);
   if (!directionSchedules || Object.keys(directionSchedules).length === 0) {
-    return `
-      <div class="popup-shell">
-        <div class="popup-head">
-          <h3 class="popup-title">${escapeHtml(stop.name)}</h3>
-          <p class="popup-subtitle">${escapeHtml(routeMeta.agencyLabel)} • Route ${escapeHtml(routeMeta.shortName)}</p>
-        </div>
-        ${renderStatusCard("Schedule data is unavailable for this route right now.")}
-      </div>
-    `;
+    return {
+      title,
+      subtitle,
+      bodyHtml: renderStatusCard("Schedule data is unavailable for this route right now."),
+    };
   }
 
   const directionViews = buildDirectionViews(routeData, scheduleData, directionSchedules);
   if (directionViews.length === 0) {
-    return `
-      <div class="popup-shell">
-        <div class="popup-head">
-          <h3 class="popup-title">${escapeHtml(stop.name)}</h3>
-          <p class="popup-subtitle">${escapeHtml(routeMeta.agencyLabel)} • Route ${escapeHtml(routeMeta.shortName)}</p>
-        </div>
-        ${renderStatusCard("Direction data is unavailable for this stop right now.")}
-      </div>
-    `;
+    return {
+      title,
+      subtitle,
+      bodyHtml: renderStatusCard("Direction data is unavailable for this stop right now."),
+    };
   }
 
   const representativeDates = scheduleData?.representativeDates ?? routeData.representativeDates;
@@ -314,14 +314,30 @@ export function buildStopPopupContent(
       </div>
     `;
 
+  return {
+    title,
+    subtitle,
+    bodyHtml: `${directionToggleHtml}${directionPanelsHtml}`,
+  };
+}
+
+export function renderStopPopupShell(sections: StopPopupSections): string {
   return `
     <div class="popup-shell">
       <div class="popup-head">
-        <h3 class="popup-title">${escapeHtml(stop.name)}</h3>
-        <p class="popup-subtitle">${escapeHtml(routeMeta.agencyLabel)} • Route ${escapeHtml(routeMeta.shortName)}</p>
+        <h3 class="popup-title">${sections.title}</h3>
+        <p class="popup-subtitle">${sections.subtitle}</p>
       </div>
-      ${directionToggleHtml}
-      ${directionPanelsHtml}
+      ${sections.bodyHtml}
     </div>
   `;
+}
+
+export function buildStopPopupContent(
+  routeMeta: RouteMeta,
+  routeData: RouteData,
+  stop: StopData,
+  scheduleData: ScheduleData | null,
+): string {
+  return renderStopPopupShell(buildStopPopupSections(routeMeta, routeData, stop, scheduleData));
 }

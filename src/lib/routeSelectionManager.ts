@@ -3,7 +3,7 @@ import { HOVER_POINTER_QUERY, POPUP_CLOSE_DELAY_MS } from "./constants";
 import { getRouteHoverLabel } from "./routeLabel";
 import { loadRouteData, loadScheduleData } from "./transitDataClient";
 import { attachInteractivePopup } from "./attachInteractivePopup";
-import { buildStopPopupContent } from "./buildStopPopupContent";
+import { buildStopClusterPopupContent, type StopClusterRouteView } from "./buildStopClusterPopupContent";
 import { MAP_PANES } from "./mapPanes";
 import type {
   RouteState,
@@ -27,12 +27,34 @@ interface RouteShapeLayerState {
   directionKeys: Set<string>;
 }
 
-interface StopLayerState {
-  routeColor: string;
+interface StopVariantState {
+  routeKey: string;
+  routeData: RouteData;
+  routeState: RouteState;
+  stop: StopData;
+}
+
+interface StopClusterBuildState {
+  anchorX: number;
+  anchorY: number;
+  sumLat: number;
+  sumLon: number;
+  stopCount: number;
+  variants: StopVariantState[];
+}
+
+interface StopClusterLayerState {
+  variants: StopVariantState[];
+  activeRouteKey: string;
   visualMarker: L.CircleMarker;
   hitMarker: L.CircleMarker;
 }
 
+const STOP_CLUSTER_MERGE_DISTANCE_METERS = 24;
+const STOP_CLUSTER_NEUTRAL_FILL = "#f6f9fe";
+const STOP_CLUSTER_NEUTRAL_STROKE = "#29496d";
+const STOP_CLUSTER_MULTI_RADIUS = 6.1;
+const STOP_CLUSTER_MULTI_FOCUS_RADIUS = 7;
 const STOP_VISUAL_RADIUS = 5.2;
 const STOP_VISUAL_FOCUS_RADIUS = 6.4;
 const STOP_VISUAL_STROKE_COLOR = "#ffffff";
@@ -48,6 +70,7 @@ const STOP_HIT_RADIUS_MIN_FINE_POINTER = 6.5;
 const STOP_HIT_RADIUS_MIN_COARSE_POINTER = 9;
 const STOP_HIT_RADIUS_DENSE_SCALE = 0.44;
 const STOP_HIT_TARGET_CELL_SIZE_PX = 28;
+const METERS_PER_DEGREE = 111_320;
 
 function stopHasExternalDirectionDepartures(
   scheduleData: ScheduleData | null,
@@ -115,26 +138,31 @@ function getCellKey(x: number, y: number): string {
   return `${x}:${y}`;
 }
 
-function setStopFocusState(stopLayer: StopLayerState, focused: boolean): void {
-  const { visualMarker, hitMarker, routeColor } = stopLayer;
+function projectToMeters(lat: number, lon: number): { x: number; y: number } {
+  const latRadians = (lat * Math.PI) / 180;
+  const cosLat = Math.max(0.25, Math.cos(latRadians));
+  return {
+    x: lon * METERS_PER_DEGREE * cosLat,
+    y: lat * METERS_PER_DEGREE,
+  };
+}
 
-  visualMarker.setRadius(focused ? STOP_VISUAL_FOCUS_RADIUS : STOP_VISUAL_RADIUS);
-  visualMarker.setStyle({
-    color: focused ? STOP_VISUAL_FOCUS_STROKE_COLOR : STOP_VISUAL_STROKE_COLOR,
-    weight: focused ? STOP_VISUAL_FOCUS_STROKE_WEIGHT : STOP_VISUAL_STROKE_WEIGHT,
-    fillColor: routeColor,
-    fillOpacity: STOP_VISUAL_FILL_OPACITY,
-  });
+function compareStopVariants(a: StopVariantState, b: StopVariantState): number {
+  const routeCompare = a.routeState.meta.shortName.localeCompare(
+    b.routeState.meta.shortName,
+    undefined,
+    { numeric: true, sensitivity: "base" },
+  );
+  if (routeCompare !== 0) return routeCompare;
 
-  hitMarker.setStyle({
-    fillColor: routeColor,
-    fillOpacity: focused ? STOP_HIT_FOCUS_OPACITY : 0,
-  });
+  const agencyCompare = a.routeState.meta.agencyLabel.localeCompare(
+    b.routeState.meta.agencyLabel,
+    undefined,
+    { sensitivity: "base" },
+  );
+  if (agencyCompare !== 0) return agencyCompare;
 
-  if (focused) {
-    visualMarker.bringToFront();
-    hitMarker.bringToFront();
-  }
+  return a.routeKey.localeCompare(b.routeKey);
 }
 
 export function createRouteSelectionManager({
@@ -146,7 +174,8 @@ export function createRouteSelectionManager({
 }: ManagerDeps): RouteSelectionManager {
   const refreshUi = onUiRefresh;
   const shapeLayersByRouteKey = new Map<string, RouteShapeLayerState[]>();
-  const stopLayersByRouteKey = new Map<string, StopLayerState[]>();
+  const stopClusterLayerGroup = L.layerGroup().addTo(map);
+  const stopClusterLayers: StopClusterLayerState[] = [];
   const previewHoverCountsByRouteKey = new Map<string, number>();
   const previewActivationOrderByRouteKey = new Map<string, number>();
   const previewDirectionByRouteKey = new Map<string, string>();
@@ -154,21 +183,12 @@ export function createRouteSelectionManager({
   const defaultStopHitRadius = coarsePointer ? STOP_HIT_RADIUS_COARSE_POINTER : STOP_HIT_RADIUS_FINE_POINTER;
   const minStopHitRadius = coarsePointer ? STOP_HIT_RADIUS_MIN_COARSE_POINTER : STOP_HIT_RADIUS_MIN_FINE_POINTER;
   let stopHitTargetRefreshFrame: number | null = null;
+  let stopClusterRebuildFrame: number | null = null;
   let activePreviewRouteKey: string | null = null;
   let previewActivationSequence = 0;
 
-  function getVisibleStopLayers(): StopLayerState[] {
-    const visibleStopLayers: StopLayerState[] = [];
-
-    for (const routeKey of selectedRouteKeys) {
-      const state = routeStateByKey.get(routeKey);
-      if (!state?.layer || !map.hasLayer(state.layer)) continue;
-      const stopLayers = stopLayersByRouteKey.get(routeKey);
-      if (!stopLayers) continue;
-      visibleStopLayers.push(...stopLayers);
-    }
-
-    return visibleStopLayers;
+  function getVisibleStopLayers(): StopClusterLayerState[] {
+    return stopClusterLayers;
   }
 
   function getStopHitRadius(nearestDistancePx: number): number {
@@ -260,12 +280,10 @@ export function createRouteSelectionManager({
     const hasLayer = map.hasLayer(state.layer);
     if (visible && !hasLayer) {
       map.addLayer(state.layer);
-      scheduleStopHitTargetRefresh();
       return;
     }
     if (!visible && hasLayer) {
       map.removeLayer(state.layer);
-      scheduleStopHitTargetRefresh();
     }
   }
 
@@ -395,6 +413,313 @@ export function createRouteSelectionManager({
     applyActivePreviewRoute(pickNextPreviewRouteKey());
   }
 
+  function getActiveClusterVariant(clusterLayer: StopClusterLayerState): StopVariantState {
+    return (
+      clusterLayer.variants.find((variant) => variant.routeKey === clusterLayer.activeRouteKey) ??
+      clusterLayer.variants[0]
+    );
+  }
+
+  function setClusterActiveRoute(clusterLayer: StopClusterLayerState, routeKey: string): void {
+    if (clusterLayer.variants.some((variant) => variant.routeKey === routeKey)) {
+      clusterLayer.activeRouteKey = routeKey;
+    }
+  }
+
+  function setStopClusterFocusState(clusterLayer: StopClusterLayerState, focused: boolean): void {
+    const activeVariant = getActiveClusterVariant(clusterLayer);
+    const isSharedStop = clusterLayer.variants.length > 1;
+    const baseFillColor = isSharedStop ? STOP_CLUSTER_NEUTRAL_FILL : activeVariant.routeState.meta.color;
+    const fillColor = focused && isSharedStop ? activeVariant.routeState.meta.color : baseFillColor;
+    const strokeColor = isSharedStop
+      ? (focused ? STOP_VISUAL_FOCUS_STROKE_COLOR : STOP_CLUSTER_NEUTRAL_STROKE)
+      : (focused ? STOP_VISUAL_FOCUS_STROKE_COLOR : STOP_VISUAL_STROKE_COLOR);
+    const radius = isSharedStop
+      ? (focused ? STOP_CLUSTER_MULTI_FOCUS_RADIUS : STOP_CLUSTER_MULTI_RADIUS)
+      : (focused ? STOP_VISUAL_FOCUS_RADIUS : STOP_VISUAL_RADIUS);
+    const weight = focused ? STOP_VISUAL_FOCUS_STROKE_WEIGHT : STOP_VISUAL_STROKE_WEIGHT;
+
+    clusterLayer.visualMarker.setRadius(radius);
+    clusterLayer.visualMarker.setStyle({
+      color: strokeColor,
+      weight,
+      fillColor,
+      fillOpacity: STOP_VISUAL_FILL_OPACITY,
+    });
+
+    clusterLayer.hitMarker.setStyle({
+      fillColor: activeVariant.routeState.meta.color,
+      fillOpacity: focused ? STOP_HIT_FOCUS_OPACITY : 0,
+    });
+
+    if (focused) {
+      clusterLayer.visualMarker.bringToFront();
+      clusterLayer.hitMarker.bringToFront();
+    }
+  }
+
+  function collectSelectedStopVariants(): StopVariantState[] {
+    const variants: StopVariantState[] = [];
+
+    for (const routeKey of selectedRouteKeys) {
+      const routeState = routeStateByKey.get(routeKey);
+      if (!routeState?.selected || !routeState.routeData) continue;
+
+      for (const stop of routeState.routeData.stops ?? []) {
+        variants.push({
+          routeKey,
+          routeData: routeState.routeData,
+          routeState,
+          stop,
+        });
+      }
+    }
+
+    variants.sort(compareStopVariants);
+    return variants;
+  }
+
+  function clusterStopVariants(variants: StopVariantState[]): StopClusterBuildState[] {
+    const clusters: StopClusterBuildState[] = [];
+    const grid = new Map<string, number[]>();
+    const maxDistanceSq = STOP_CLUSTER_MERGE_DISTANCE_METERS * STOP_CLUSTER_MERGE_DISTANCE_METERS;
+
+    for (const variant of variants) {
+      const projected = projectToMeters(variant.stop.lat, variant.stop.lon);
+      const cellX = Math.floor(projected.x / STOP_CLUSTER_MERGE_DISTANCE_METERS);
+      const cellY = Math.floor(projected.y / STOP_CLUSTER_MERGE_DISTANCE_METERS);
+      let matchedClusterIndex = -1;
+      let bestDistanceSq = maxDistanceSq;
+
+      for (let offsetX = -1; offsetX <= 1; offsetX += 1) {
+        for (let offsetY = -1; offsetY <= 1; offsetY += 1) {
+          const neighbor = grid.get(getCellKey(cellX + offsetX, cellY + offsetY));
+          if (!neighbor) continue;
+
+          for (const clusterIndex of neighbor) {
+            const cluster = clusters[clusterIndex];
+            const deltaX = projected.x - cluster.anchorX;
+            const deltaY = projected.y - cluster.anchorY;
+            const distanceSq = deltaX * deltaX + deltaY * deltaY;
+            if (distanceSq <= bestDistanceSq) {
+              bestDistanceSq = distanceSq;
+              matchedClusterIndex = clusterIndex;
+            }
+          }
+        }
+      }
+
+      if (matchedClusterIndex >= 0) {
+        const cluster = clusters[matchedClusterIndex];
+        cluster.variants.push(variant);
+        cluster.sumLat += variant.stop.lat;
+        cluster.sumLon += variant.stop.lon;
+        cluster.stopCount += 1;
+        continue;
+      }
+
+      const clusterIndex = clusters.push({
+        anchorX: projected.x,
+        anchorY: projected.y,
+        sumLat: variant.stop.lat,
+        sumLon: variant.stop.lon,
+        stopCount: 1,
+        variants: [variant],
+      }) - 1;
+
+      const key = getCellKey(cellX, cellY);
+      const bucket = grid.get(key);
+      if (bucket) {
+        bucket.push(clusterIndex);
+      } else {
+        grid.set(key, [clusterIndex]);
+      }
+    }
+
+    return clusters;
+  }
+
+  function getClusterRouteVariants(
+    cluster: StopClusterBuildState,
+    centerLat: number,
+    centerLon: number,
+  ): StopVariantState[] {
+    const byRouteKey = new Map<string, { variant: StopVariantState; distanceMeters: number }>();
+
+    for (const variant of cluster.variants) {
+      const distanceMeters = map.distance([centerLat, centerLon], [variant.stop.lat, variant.stop.lon]);
+      const existing = byRouteKey.get(variant.routeKey);
+      if (!existing || distanceMeters < existing.distanceMeters) {
+        byRouteKey.set(variant.routeKey, { variant, distanceMeters });
+      }
+    }
+
+    return [...byRouteKey.values()].map((entry) => entry.variant).sort(compareStopVariants);
+  }
+
+  async function buildClusterRouteViews(variants: StopVariantState[]): Promise<StopClusterRouteView[]> {
+    return Promise.all(
+      variants.map(async (variant) => {
+        const state = routeStateByKey.get(variant.routeKey);
+        let scheduleData = state?.scheduleData ?? null;
+
+        if (!scheduleData && !variant.routeData.activeServicesByDayByDirection && state) {
+          scheduleData = await ensureRouteScheduleLoaded(state);
+        }
+
+        return {
+          routeKey: variant.routeKey,
+          routeMeta: variant.routeState.meta,
+          routeData: variant.routeData,
+          stop: variant.stop,
+          scheduleData,
+        };
+      }),
+    );
+  }
+
+  function getInitialDirectionForVariant(variant: StopVariantState): string | null {
+    const state = routeStateByKey.get(variant.routeKey);
+    const hoverDirectionKeys = getStopDirectionKeysForHoverPreview(
+      variant.routeData,
+      variant.stop,
+      state?.scheduleData ?? null,
+    );
+    return hoverDirectionKeys.length === 1 ? hoverDirectionKeys[0] : null;
+  }
+
+  function rebuildStopClusters(): void {
+    stopClusterLayerGroup.clearLayers();
+    stopClusterLayers.length = 0;
+
+    const selectedStopVariants = collectSelectedStopVariants();
+    if (selectedStopVariants.length === 0) {
+      return;
+    }
+
+    const clusteredStops = clusterStopVariants(selectedStopVariants);
+
+    for (const clusteredStop of clusteredStops) {
+      const centerLat = clusteredStop.sumLat / clusteredStop.stopCount;
+      const centerLon = clusteredStop.sumLon / clusteredStop.stopCount;
+      const variants = getClusterRouteVariants(clusteredStop, centerLat, centerLon);
+      if (variants.length === 0) continue;
+
+      const sharedStop = variants.length > 1;
+      const activeRouteKey = variants[0].routeKey;
+      const visualMarker = L.circleMarker([centerLat, centerLon], {
+        radius: sharedStop ? STOP_CLUSTER_MULTI_RADIUS : STOP_VISUAL_RADIUS,
+        color: sharedStop ? STOP_CLUSTER_NEUTRAL_STROKE : STOP_VISUAL_STROKE_COLOR,
+        weight: STOP_VISUAL_STROKE_WEIGHT,
+        fillColor: sharedStop ? STOP_CLUSTER_NEUTRAL_FILL : variants[0].routeState.meta.color,
+        fillOpacity: STOP_VISUAL_FILL_OPACITY,
+        pane: MAP_PANES.stopVisuals,
+        interactive: false,
+        bubblingMouseEvents: false,
+      });
+
+      const hitMarker = L.circleMarker([centerLat, centerLon], {
+        radius: defaultStopHitRadius,
+        stroke: false,
+        fill: true,
+        fillColor: variants[0].routeState.meta.color,
+        fillOpacity: 0,
+        pane: MAP_PANES.stopHitTargets,
+        bubblingMouseEvents: false,
+      });
+
+      const clusterLayer: StopClusterLayerState = {
+        variants,
+        activeRouteKey,
+        visualMarker,
+        hitMarker,
+      };
+      setStopClusterFocusState(clusterLayer, false);
+
+      let previewRouteKey: string | null = null;
+
+      hitMarker.bindPopup("", {
+        closeButton: false,
+        autoPan: true,
+        className: "stop-popup",
+        offset: [0, -6],
+      });
+
+      attachInteractivePopup(
+        hitMarker,
+        async () => {
+          const routeViews = await buildClusterRouteViews(clusterLayer.variants);
+          return buildStopClusterPopupContent(routeViews, clusterLayer.activeRouteKey);
+        },
+        {
+          closeDelayMs: POPUP_CLOSE_DELAY_MS,
+          hoverPointerQuery: HOVER_POINTER_QUERY,
+          defaultRouteKey: clusterLayer.activeRouteKey,
+          onHoverSessionStart: () => {
+            const activeVariant = getActiveClusterVariant(clusterLayer);
+            const initialDirection = getInitialDirectionForVariant(activeVariant);
+            previewRouteKey = activeVariant.routeKey;
+            setStopClusterFocusState(clusterLayer, true);
+            startStationHoverPreview(previewRouteKey, initialDirection);
+          },
+          onRouteChange: (routeKey, directionKey) => {
+            if (!routeKey) return;
+            setClusterActiveRoute(clusterLayer, routeKey);
+            setStopClusterFocusState(clusterLayer, true);
+
+            if (!previewRouteKey) {
+              previewRouteKey = routeKey;
+              startStationHoverPreview(routeKey, directionKey);
+              return;
+            }
+            if (previewRouteKey !== routeKey) {
+              endStationHoverPreview(previewRouteKey);
+              previewRouteKey = routeKey;
+              startStationHoverPreview(routeKey, directionKey);
+              return;
+            }
+            setStationHoverPreviewDirection(routeKey, directionKey);
+          },
+          onDirectionChange: (routeKey, directionKey) => {
+            if (!routeKey) return;
+            if (!previewRouteKey) {
+              previewRouteKey = routeKey;
+              startStationHoverPreview(routeKey, directionKey);
+              return;
+            }
+            if (previewRouteKey !== routeKey) {
+              endStationHoverPreview(previewRouteKey);
+              previewRouteKey = routeKey;
+              startStationHoverPreview(routeKey, directionKey);
+              return;
+            }
+            setStationHoverPreviewDirection(routeKey, directionKey);
+          },
+          onHoverSessionEnd: () => {
+            setStopClusterFocusState(clusterLayer, false);
+            if (!previewRouteKey) return;
+            endStationHoverPreview(previewRouteKey);
+            previewRouteKey = null;
+          },
+        },
+      );
+
+      visualMarker.addTo(stopClusterLayerGroup);
+      hitMarker.addTo(stopClusterLayerGroup);
+      stopClusterLayers.push(clusterLayer);
+    }
+
+    scheduleStopHitTargetRefresh();
+  }
+
+  function scheduleStopClusterRebuild(): void {
+    if (stopClusterRebuildFrame !== null) return;
+    stopClusterRebuildFrame = window.requestAnimationFrame(() => {
+      stopClusterRebuildFrame = null;
+      rebuildStopClusters();
+    });
+  }
+
   map.on("zoomend", scheduleStopHitTargetRefresh);
 
   async function setRouteKeysSelected(
@@ -462,12 +787,14 @@ export function createRouteSelectionManager({
             return;
           }
           syncSelectedRouteLayer(routeKey);
+          scheduleStopClusterRebuild();
         } catch (error) {
           console.error(error);
           state.selected = false;
           selectedRouteKeys.delete(routeKey);
           clearStationHoverPreviewForRoute(routeKey);
           syncSelectedRouteLayer(routeKey);
+          scheduleStopClusterRebuild();
           onStatusUpdate(
             `Failed to load route ${state.meta.shortName}: ${error instanceof Error ? error.message : "Unknown error"}`,
           );
@@ -476,6 +803,7 @@ export function createRouteSelectionManager({
         selectedRouteKeys.delete(routeKey);
         clearStationHoverPreviewForRoute(routeKey);
         syncSelectedRouteLayer(routeKey);
+        scheduleStopClusterRebuild();
       }
     } finally {
       if (refreshUiAtEnd) {
@@ -569,7 +897,6 @@ export function createRouteSelectionManager({
     const group = L.layerGroup();
     const routeHoverLabel = getRouteHoverLabel(routeMeta);
     const shapeLayers: RouteShapeLayerState[] = [];
-    const stopLayers: StopLayerState[] = [];
 
     for (const shape of routeData.shapes ?? []) {
       const polyline = L.polyline(shape.points, {
@@ -595,76 +922,6 @@ export function createRouteSelectionManager({
       });
     }
     shapeLayersByRouteKey.set(routeMeta.key, shapeLayers);
-
-    for (const stop of routeData.stops ?? []) {
-      const visualMarker = L.circleMarker([stop.lat, stop.lon], {
-        radius: STOP_VISUAL_RADIUS,
-        color: STOP_VISUAL_STROKE_COLOR,
-        weight: STOP_VISUAL_STROKE_WEIGHT,
-        fillColor: routeMeta.color,
-        fillOpacity: STOP_VISUAL_FILL_OPACITY,
-        pane: MAP_PANES.stopVisuals,
-        interactive: false,
-        bubblingMouseEvents: false,
-      });
-
-      const hitMarker = L.circleMarker([stop.lat, stop.lon], {
-        radius: defaultStopHitRadius,
-        stroke: false,
-        fill: true,
-        fillColor: routeMeta.color,
-        fillOpacity: 0,
-        pane: MAP_PANES.stopHitTargets,
-        bubblingMouseEvents: false,
-      });
-
-      const stopLayer: StopLayerState = {
-        routeColor: routeMeta.color,
-        visualMarker,
-        hitMarker,
-      };
-      setStopFocusState(stopLayer, false);
-
-      hitMarker.bindPopup("", {
-        closeButton: false,
-        autoPan: true,
-        className: "stop-popup",
-        offset: [0, -6],
-      });
-
-      attachInteractivePopup(
-        hitMarker,
-        async () => {
-          let scheduleData = state.scheduleData;
-          if (!scheduleData && !routeData.activeServicesByDayByDirection) {
-            scheduleData = await ensureRouteScheduleLoaded(state);
-          }
-          return buildStopPopupContent(routeMeta, routeData, stop, scheduleData);
-        },
-        {
-          closeDelayMs: POPUP_CLOSE_DELAY_MS,
-          hoverPointerQuery: HOVER_POINTER_QUERY,
-          onHoverSessionStart: () => {
-            setStopFocusState(stopLayer, true);
-            const hoverDirectionKeys = getStopDirectionKeysForHoverPreview(routeData, stop, state.scheduleData);
-            const initialDirectionKey = hoverDirectionKeys.length === 1 ? hoverDirectionKeys[0] : null;
-            startStationHoverPreview(routeMeta.key, initialDirectionKey);
-          },
-          onDirectionChange: (directionKey) => {
-            setStationHoverPreviewDirection(routeMeta.key, directionKey);
-          },
-          onHoverSessionEnd: () => {
-            setStopFocusState(stopLayer, false);
-            endStationHoverPreview(routeMeta.key);
-          },
-        },
-      );
-
-      visualMarker.addTo(group);
-      hitMarker.addTo(group);
-      stopLayers.push(stopLayer);
-    }
-    stopLayersByRouteKey.set(routeMeta.key, stopLayers);
 
     return group;
   }

@@ -281,6 +281,127 @@
   transform: rotate(30deg);
 }
 
+.route-toggle {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.34rem;
+  padding: 0.26rem;
+  border: 1px solid oklch(0.88 0.02 250);
+  border-radius: 11px;
+  background: linear-gradient(180deg, oklch(0.99 0.004 250), oklch(0.976 0.008 250));
+}
+
+.route-nav {
+  appearance: none;
+  inline-size: 1.95rem;
+  block-size: 1.95rem;
+  border-radius: 9px;
+  border: 1px solid oklch(0.86 0.02 250);
+  background: oklch(0.992 0.003 250);
+  color: oklch(0.35 0.06 240);
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform 140ms ease,
+    border-color 140ms ease,
+    background-color 140ms ease,
+    color 140ms ease;
+}
+
+.route-nav:hover {
+  border-color: oklch(0.72 0.08 225);
+  background: oklch(0.96 0.02 230);
+}
+
+.route-nav:active {
+  transform: translateY(1px);
+}
+
+.route-nav:focus-visible {
+  outline: 2px solid oklch(0.57 0.13 240);
+  outline-offset: 2px;
+}
+
+.route-chip {
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.38rem;
+  border: 1px solid oklch(0.86 0.02 250);
+  border-radius: 9px;
+  padding: 0.34rem 0.46rem;
+  background: oklch(0.992 0.003 250);
+}
+
+.route-chip-icon {
+  inline-size: 1.02rem;
+  block-size: 1.02rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: oklch(0.93 0.014 245);
+  color: oklch(0.4 0.055 240);
+  font-size: 0.66rem;
+  flex: 0 0 auto;
+}
+
+.route-chip-label {
+  color: oklch(0.29 0.06 240);
+  font-size: 0.77rem;
+  font-weight: 700;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.route-chip-count {
+  color: oklch(0.45 0.045 240);
+  font-size: 0.68rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.route-panel-group {
+  position: relative;
+  display: grid;
+}
+
+.route-panel {
+  display: grid;
+  gap: 0.6rem;
+  min-width: 0;
+  transition:
+    opacity 170ms ease,
+    transform 170ms ease;
+}
+
+.route-panel-group .route-panel {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: translateY(6px);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.route-panel-group .route-panel.is-active {
+  position: relative;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.route-panel-group .route-panel:not(.is-active) {
+  position: absolute;
+  inset: 0;
+}
+
 .direction-panel-group {
   position: relative;
   display: grid;
@@ -453,6 +574,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .route-nav,
+  .route-panel,
   .direction-switch,
   .direction-switch-arrow,
   .direction-panel,
