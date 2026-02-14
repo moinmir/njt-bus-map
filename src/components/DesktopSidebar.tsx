@@ -12,23 +12,34 @@ export function DesktopSidebar({
   onTogglePanel,
   ...contentProps
 }: DesktopSidebarProps) {
+  const asideClassName = collapsed
+    ? "w-0 min-w-0 overflow-visible border-r-0 bg-transparent shadow-none pointer-events-none"
+    : "w-[min(390px,88vw)] overflow-hidden border-r border-border bg-white/90 backdrop-blur-md shadow-xl flex flex-col";
+
   return (
     <aside
       className={cn(
-        "relative h-full min-h-0 overflow-hidden bg-white/90 backdrop-blur-md border-r border-border shadow-xl",
-        "transition-all duration-200 ease-out flex flex-col",
-        collapsed ? "w-12" : "w-[min(390px,88vw)]",
+        "relative h-full min-h-0 transition-all duration-200 ease-out",
+        asideClassName,
       )}
       aria-label="Route controls"
     >
       {/* Toggle button — always visible at the top */}
-      <div className={cn("flex items-center p-2", collapsed ? "justify-center" : "justify-end")}>
+      <div
+        className={cn(
+          "z-[1200]",
+          collapsed
+            ? "pointer-events-auto absolute left-3 top-3"
+            : "flex items-center justify-end p-2",
+        )}
+      >
         <button
           onClick={onTogglePanel}
           className={cn(
-            "flex items-center justify-center rounded-lg",
-            "h-8 w-8 border border-border bg-secondary text-secondary-foreground",
-            "hover:bg-accent transition-colors cursor-pointer",
+            "flex items-center justify-center transition-colors cursor-pointer",
+            collapsed
+              ? "h-10 w-10 rounded-full border border-border/70 bg-white/95 text-foreground shadow-lg backdrop-blur-sm hover:bg-white"
+              : "h-8 w-8 rounded-lg border border-border bg-secondary text-secondary-foreground hover:bg-accent",
           )}
           aria-expanded={!collapsed}
           aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
