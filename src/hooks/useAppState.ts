@@ -62,7 +62,7 @@ function createStore(): Store {
 }
 
 export interface AppActions {
-  init: (map: L.Map) => Promise<void>;
+  init: (map: L.Map) => Promise<Manifest>;
   setSearchTerm: (term: string) => void;
   toggleRoute: (routeKey: string, selected: boolean) => void;
   clearAllRoutes: () => void;
@@ -161,6 +161,7 @@ export function useAppState(): [AppState, AppActions] {
       });
 
       refreshFilters();
+      return manifest;
     },
 
     setSearchTerm: (term: string) => {

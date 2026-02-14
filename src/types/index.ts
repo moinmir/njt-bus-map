@@ -50,6 +50,8 @@ export interface Manifest {
 /* ── Route geometry & schedule data ── */
 
 export interface ShapeData {
+  shapeId: string;
+  directionKeys: string[];
   points: [number, number][];
 }
 

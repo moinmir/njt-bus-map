@@ -5,6 +5,7 @@ interface PopupOptions {
   hoverPointerQuery: string;
   onHoverSessionStart?: () => void;
   onHoverSessionEnd?: () => void;
+  onDirectionChange?: (directionKey: string | null) => void;
 }
 
 export function attachInteractivePopup(
@@ -17,6 +18,7 @@ export function attachInteractivePopup(
     hoverPointerQuery,
     onHoverSessionStart,
     onHoverSessionEnd,
+    onDirectionChange,
   } = options;
   const loadingPopupHtml = `
     <div class="popup-shell">
@@ -85,9 +87,11 @@ export function attachInteractivePopup(
         panel.setAttribute("aria-hidden", isActive ? "false" : "true");
       }
 
+      const activePanel = panels[normalizedIndex];
+      onDirectionChange?.(activePanel?.dataset.directionPanel ?? null);
+
       if (!switchButton || panels.length < 2) return;
 
-      const activePanel = panels[normalizedIndex];
       const nextPanel = panels[(normalizedIndex + 1) % panels.length];
       const activeLabel = activePanel.dataset.directionLabel ?? `Direction ${normalizedIndex + 1}`;
       const activeIcon = activePanel.dataset.directionIcon ?? "→";

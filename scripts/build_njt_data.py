@@ -358,6 +358,9 @@ def build_feed(
         trip_to_service: dict[str, str] = {}
         trip_to_direction_key: dict[str, str] = {}
         route_shape_ids: dict[str, set[str]] = defaultdict(set)
+        route_shape_direction_keys: dict[str, dict[str, set[str]]] = defaultdict(
+            lambda: defaultdict(set)
+        )
         route_trip_ids: dict[str, set[str]] = defaultdict(set)
         route_service_ids: dict[str, set[str]] = defaultdict(set)
         route_direction_service_ids: dict[str, dict[str, set[str]]] = defaultdict(
@@ -392,6 +395,7 @@ def build_feed(
             route_direction_service_ids[route_id][direction_key].add(service_id)
             if shape_id:
                 route_shape_ids[route_id].add(shape_id)
+                route_shape_direction_keys[route_id][shape_id].add(direction_key)
 
             if direction_key not in route_direction_id_by_key[route_id]:
                 route_direction_id_by_key[route_id][direction_key] = direction_id or None
@@ -548,11 +552,29 @@ def build_feed(
                 geometry = dedupe_and_simplify_shape(points, max_shape_points)
                 if len(geometry) < 2:
                     return
-                entry = {
-                    "shapeId": shape_id,
-                    "points": geometry,
-                }
                 for route_id in routes:
+                    route_direction_key_order = route_direction_keys.get(route_id, [])
+                    shape_direction_key_set = route_shape_direction_keys[route_id].get(shape_id, set())
+                    shape_direction_keys = [
+                        direction_key
+                        for direction_key in route_direction_key_order
+                        if direction_key in shape_direction_key_set
+                    ]
+                    shape_direction_keys.extend(
+                        sorted(
+                            direction_key
+                            for direction_key in shape_direction_key_set
+                            if direction_key not in route_direction_key_order
+                        )
+                    )
+                    if not shape_direction_keys:
+                        shape_direction_keys = route_direction_key_order or ["dir_default"]
+
+                    entry = {
+                        "shapeId": shape_id,
+                        "directionKeys": shape_direction_keys,
+                        "points": geometry,
+                    }
                     route_shapes[route_id].append(entry)
 
             for row in iter_csv(zf, "shapes.txt"):

@@ -1,7 +1,15 @@
 import type { Manifest, RouteData, ScheduleData } from "@/types";
 
-async function fetchJson<T>(path: string): Promise<T> {
-  const response = await fetch(path);
+let activeDataRevision = "";
+
+function withDataRevision(path: string): string {
+  if (!activeDataRevision) return path;
+  const separator = path.includes("?") ? "&" : "?";
+  return `${path}${separator}v=${encodeURIComponent(activeDataRevision)}`;
+}
+
+async function fetchJson<T>(path: string, init?: RequestInit): Promise<T> {
+  const response = await fetch(path, init);
   if (!response.ok) {
     throw new Error(`HTTP ${response.status}`);
   }
@@ -9,14 +17,16 @@ async function fetchJson<T>(path: string): Promise<T> {
 }
 
 export async function loadManifest(): Promise<Manifest> {
-  return fetchJson<Manifest>("./data/manifest.json");
+  const manifest = await fetchJson<Manifest>("./data/manifest.json", { cache: "no-store" });
+  activeDataRevision = manifest.generatedAt || "";
+  return manifest;
 }
 
 export async function loadRouteData(filePath: string): Promise<RouteData> {
-  return fetchJson<RouteData>(`./data/${filePath}`);
+  return fetchJson<RouteData>(withDataRevision(`./data/${filePath}`));
 }
 
 export async function loadScheduleData(filePath: string): Promise<ScheduleData | null> {
   if (!filePath) return null;
-  return fetchJson<ScheduleData>(`./data/${filePath}`);
+  return fetchJson<ScheduleData>(withDataRevision(`./data/${filePath}`));
 }

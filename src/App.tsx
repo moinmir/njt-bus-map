@@ -13,15 +13,11 @@ export default function App() {
   const handleMapReady = useCallback(
     (map: L.Map) => {
       mapRef.current = map;
-      actions.init(map).then(() => {
-        // Load sources from manifest
-        fetch("./data/manifest.json")
-          .then((res) => res.json())
-          .then((manifest: { sources?: Source[] }) => {
-            setSources(manifest.sources ?? []);
-          })
-          .catch(console.error);
-      }).catch(console.error);
+      actions.init(map)
+        .then((manifest) => {
+          setSources(manifest.sources ?? []);
+        })
+        .catch(console.error);
     },
     [actions],
   );

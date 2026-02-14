@@ -21,6 +21,28 @@ function createEmptyDaySchedules(): DaySchedules {
   return byDay;
 }
 
+function hasAnyDayDepartures(daySchedules: DaySchedules): boolean {
+  return DAY_KEYS.some((dayKey) => (daySchedules[dayKey]?.length ?? 0) > 0);
+}
+
+function filterDirectionsWithDepartures(
+  byDirection: Record<string, DaySchedules>,
+): Record<string, DaySchedules> {
+  const filtered: Record<string, DaySchedules> = {};
+  let filteredCount = 0;
+  for (const [directionKey, daySchedules] of Object.entries(byDirection)) {
+    if (!hasAnyDayDepartures(daySchedules)) continue;
+    filtered[directionKey] = daySchedules;
+    filteredCount += 1;
+  }
+
+  if (filteredCount > 0) {
+    return filtered;
+  }
+
+  return byDirection;
+}
+
 function hasInlineDirectionScheduleData(routeData: RouteData, stop: StopData): boolean {
   return Boolean(routeData.activeServicesByDayByDirection) && Boolean(stop.serviceScheduleByDirection);
 }
@@ -83,13 +105,16 @@ function resolveDirectionDaySchedules(
   scheduleData: ScheduleData | null,
 ): Record<string, DaySchedules> | null {
   const externalByStop = scheduleData?.daySchedulesByStopByDirection?.[stop.stopId];
-  const external = normalizeExternalDirectionDaySchedules(externalByStop);
+  const external = filterDirectionsWithDepartures(normalizeExternalDirectionDaySchedules(externalByStop));
   if (Object.keys(external).length > 0) {
     return external;
   }
 
   if (hasInlineDirectionScheduleData(routeData, stop)) {
-    return computeInlineDirectionDaySchedules(routeData, stop);
+    const inline = filterDirectionsWithDepartures(computeInlineDirectionDaySchedules(routeData, stop));
+    if (Object.keys(inline).length > 0) {
+      return inline;
+    }
   }
 
   return null;
