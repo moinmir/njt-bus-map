@@ -4,7 +4,7 @@
 Outputs:
 - data/manifest.json (route index + source metadata)
 - data/routes/*.json (per-route geometry + stops)
-- data/schedules/*.json (optional per-route stop schedules, web-slim mode)
+- data/schedules/*.json (optional per-route stop schedules in external mode)
 
 Official data sources:
 - NJ Transit GTFS: https://www.njtransit.com/bus_data.zip
@@ -562,7 +562,6 @@ def build_feed(
             for stop in route_stops:
                 stop_id = stop["stopId"]
                 day_schedule: dict[str, list[str]] = {}
-                has_times = False
 
                 for day_key in DAY_KEYS:
                     merged: set[str] = set()
@@ -574,11 +573,8 @@ def build_feed(
 
                     sorted_times = sorted(merged, key=parse_time_to_seconds)
                     day_schedule[day_key] = sorted_times
-                    if sorted_times:
-                        has_times = True
 
-                if has_times:
-                    day_schedules_by_stop[stop_id] = day_schedule
+                day_schedules_by_stop[stop_id] = day_schedule
 
             schedule_filename = filename.replace(".json", "_schedule.json")
             schedule_file_rel = f"schedules/{schedule_filename}"
@@ -616,25 +612,27 @@ def build_feed(
 
         long_bits = " ".join(part for part in search_parts if part)
 
-        manifest_entries.append(
-            {
-                "key": route_key,
-                "agencyId": agency_id,
-                "agencyLabel": agency_label,
-                "routeId": route_id,
-                "shortName": meta["shortName"],
-                "longName": meta["longName"],
-                "routeDesc": meta["routeDesc"],
-                "label": meta["label"],
-                "color": meta["color"],
-                "tripCount": len(route_trip_ids[route_id]),
-                "stopCount": len(route_stops),
-                "shapeCount": len(shapes),
-                "bounds": bounds,
-                "file": route_file_rel,
-                "searchText": long_bits.lower(),
-            }
-        )
+        manifest_entry = {
+            "key": route_key,
+            "agencyId": agency_id,
+            "agencyLabel": agency_label,
+            "routeId": route_id,
+            "shortName": meta["shortName"],
+            "longName": meta["longName"],
+            "routeDesc": meta["routeDesc"],
+            "label": meta["label"],
+            "color": meta["color"],
+            "tripCount": len(route_trip_ids[route_id]),
+            "stopCount": len(route_stops),
+            "shapeCount": len(shapes),
+            "bounds": bounds,
+            "file": route_file_rel,
+            "searchText": long_bits.lower(),
+        }
+        if schedule_mode == "external":
+            manifest_entry["scheduleFile"] = route_payload.get("scheduleFile")
+
+        manifest_entries.append(manifest_entry)
 
     source_meta = {
         "agencyId": agency_id,
@@ -663,18 +661,23 @@ def main() -> int:
     parser.add_argument(
         "--max-shape-points",
         type=int,
-        default=850,
+        default=260,
         help="Maximum points kept per shape after simplification",
     )
     parser.add_argument(
-        "--web-slim",
+        "--inline-schedules",
         action="store_true",
-        help="Create deployment-friendly data: fewer shape points with stop schedules in lazy per-route files",
+        help="Embed stop schedules inside each route JSON (larger payload, faster per-stop popup rendering)",
     )
     parser.add_argument(
         "--no-stop-schedules",
         action="store_true",
         help="Omit stop-level schedule data entirely",
+    )
+    parser.add_argument(
+        "--web-slim",
+        action="store_true",
+        help=argparse.SUPPRESS,
     )
     args = parser.parse_args()
 
@@ -682,12 +685,13 @@ def main() -> int:
         raise SystemExit("--max-shape-points must be >= 50")
 
     effective_max_shape_points = args.max_shape_points
-    schedule_mode = "inline"
-    if args.web_slim:
-        effective_max_shape_points = min(effective_max_shape_points, 260)
-        schedule_mode = "external"
+    schedule_mode = "external"
+    if args.inline_schedules:
+        schedule_mode = "inline"
     if args.no_stop_schedules:
         schedule_mode = "none"
+    if args.web_slim:
+        effective_max_shape_points = min(effective_max_shape_points, 260)
 
     output_dir = pathlib.Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)

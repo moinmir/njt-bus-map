@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-14T05:25:37.968424+00:00",
+  "generatedAt": "2026-02-14T05:37:32.086634+00:00",
   "timezone": "America/New_York",
   "agencies": [
     {
@@ -57,7 +57,8 @@
         ]
       ],
       "file": "routes/njt_1_1.json",
-      "searchText": "1 nj transit"
+      "searchText": "1 nj transit",
+      "scheduleFile": "schedules/njt_1_1_schedule.json"
     },
     {
       "key": "njt:80",
@@ -83,7 +84,8 @@
         ]
       ],
       "file": "routes/njt_2_80.json",
-      "searchText": "2 nj transit"
+      "searchText": "2 nj transit",
+      "scheduleFile": "schedules/njt_2_80_schedule.json"
     },
     {
       "key": "njt:138",
@@ -109,7 +111,8 @@
         ]
       ],
       "file": "routes/njt_5_138.json",
-      "searchText": "5 nj transit"
+      "searchText": "5 nj transit",
+      "scheduleFile": "schedules/njt_5_138_schedule.json"
     },
     {
       "key": "njt:157",
@@ -135,7 +138,8 @@
         ]
       ],
       "file": "routes/njt_6_157.json",
-      "searchText": "6 nj transit"
+      "searchText": "6 nj transit",
+      "scheduleFile": "schedules/njt_6_157_schedule.json"
     },
     {
       "key": "njt:208",
@@ -161,7 +165,8 @@
         ]
       ],
       "file": "routes/njt_8_208.json",
-      "searchText": "8 nj transit"
+      "searchText": "8 nj transit",
+      "scheduleFile": "schedules/njt_8_208_schedule.json"
     },
     {
       "key": "njt:249",
@@ -187,7 +192,8 @@
         ]
       ],
       "file": "routes/njt_9_249.json",
-      "searchText": "9 nj transit"
+      "searchText": "9 nj transit",
+      "scheduleFile": "schedules/njt_9_249_schedule.json"
     },
     {
       "key": "njt:2",
@@ -213,7 +219,8 @@
         ]
       ],
       "file": "routes/njt_10_2.json",
-      "searchText": "10 nj transit"
+      "searchText": "10 nj transit",
+      "scheduleFile": "schedules/njt_10_2_schedule.json"
     },
     {
       "key": "njt:9",
@@ -239,7 +246,8 @@
         ]
       ],
       "file": "routes/njt_11_9.json",
-      "searchText": "11 nj transit"
+      "searchText": "11 nj transit",
+      "scheduleFile": "schedules/njt_11_9_schedule.json"
     },
     {
       "key": "njt:18",
@@ -265,7 +273,8 @@
         ]
       ],
       "file": "routes/njt_12_18.json",
-      "searchText": "12 nj transit"
+      "searchText": "12 nj transit",
+      "scheduleFile": "schedules/njt_12_18_schedule.json"
     },
     {
       "key": "njt:29",
@@ -291,7 +300,8 @@
         ]
       ],
       "file": "routes/njt_13_29.json",
-      "searchText": "13 nj transit"
+      "searchText": "13 nj transit",
+      "scheduleFile": "schedules/njt_13_29_schedule.json"
     },
     {
       "key": "njt:39",
@@ -317,7 +327,8 @@
         ]
       ],
       "file": "routes/njt_14_39.json",
-      "searchText": "14 nj transit"
+      "searchText": "14 nj transit",
+      "scheduleFile": "schedules/njt_14_39_schedule.json"
     },
     {
       "key": "njt:51",
@@ -343,7 +354,8 @@
         ]
       ],
       "file": "routes/njt_16_51.json",
-      "searchText": "16 nj transit"
+      "searchText": "16 nj transit",
+      "scheduleFile": "schedules/njt_16_51_schedule.json"
     },
     {
       "key": "njt:81",
@@ -369,7 +381,8 @@
         ]
       ],
       "file": "routes/njt_21_81.json",
-      "searchText": "21 nj transit"
+      "searchText": "21 nj transit",
+      "scheduleFile": "schedules/njt_21_81_schedule.json"
     },
     {
       "key": "njt:82",
@@ -395,7 +408,8 @@
         ]
       ],
       "file": "routes/njt_22_82.json",
-      "searchText": "22 nj transit"
+      "searchText": "22 nj transit",
+      "scheduleFile": "schedules/njt_22_82_schedule.json"
     },
     {
       "key": "njt:83",
@@ -421,7 +435,8 @@
         ]
       ],
       "file": "routes/njt_23_83.json",
-      "searchText": "23 nj transit"
+      "searchText": "23 nj transit",
+      "scheduleFile": "schedules/njt_23_83_schedule.json"
     },
     {
       "key": "njt:84",
@@ -447,7 +462,8 @@
         ]
       ],
       "file": "routes/njt_24_84.json",
-      "searchText": "24 nj transit"
+      "searchText": "24 nj transit",
+      "scheduleFile": "schedules/njt_24_84_schedule.json"
     },
     {
       "key": "njt:85",
@@ -473,7 +489,8 @@
         ]
       ],
       "file": "routes/njt_25_85.json",
-      "searchText": "25 nj transit"
+      "searchText": "25 nj transit",
+      "scheduleFile": "schedules/njt_25_85_schedule.json"
     },
     {
       "key": "njt:86",
@@ -499,7 +516,8 @@
         ]
       ],
       "file": "routes/njt_26_86.json",
-      "searchText": "26 nj transit"
+      "searchText": "26 nj transit",
+      "scheduleFile": "schedules/njt_26_86_schedule.json"
     },
     {
       "key": "njt:87",
@@ -525,7 +543,8 @@
         ]
       ],
       "file": "routes/njt_27_87.json",
-      "searchText": "27 nj transit"
+      "searchText": "27 nj transit",
+      "scheduleFile": "schedules/njt_27_87_schedule.json"
     },
     {
       "key": "njt:88",
@@ -551,7 +570,8 @@
         ]
       ],
       "file": "routes/njt_28_88.json",
-      "searchText": "28 nj transit"
+      "searchText": "28 nj transit",
+      "scheduleFile": "schedules/njt_28_88_schedule.json"
     },
     {
       "key": "njt:89",
@@ -577,7 +597,8 @@
         ]
       ],
       "file": "routes/njt_29_89.json",
-      "searchText": "29 nj transit"
+      "searchText": "29 nj transit",
+      "scheduleFile": "schedules/njt_29_89_schedule.json"
     },
     {
       "key": "njt:90",
@@ -603,7 +624,8 @@
         ]
       ],
       "file": "routes/njt_30_90.json",
-      "searchText": "30 nj transit"
+      "searchText": "30 nj transit",
+      "scheduleFile": "schedules/njt_30_90_schedule.json"
     },
     {
       "key": "njt:91",
@@ -629,7 +651,8 @@
         ]
       ],
       "file": "routes/njt_31_91.json",
-      "searchText": "31 nj transit"
+      "searchText": "31 nj transit",
+      "scheduleFile": "schedules/njt_31_91_schedule.json"
     },
     {
       "key": "njt:100",
@@ -655,7 +678,8 @@
         ]
       ],
       "file": "routes/njt_34_100.json",
-      "searchText": "34 nj transit"
+      "searchText": "34 nj transit",
+      "scheduleFile": "schedules/njt_34_100_schedule.json"
     },
     {
       "key": "njt:101",
@@ -681,7 +705,8 @@
         ]
       ],
       "file": "routes/njt_34S_101.json",
-      "searchText": "34s nj transit"
+      "searchText": "34s nj transit",
+      "scheduleFile": "schedules/njt_34S_101_schedule.json"
     },
     {
       "key": "njt:104",
@@ -707,7 +732,8 @@
         ]
       ],
       "file": "routes/njt_37_104.json",
-      "searchText": "37 nj transit"
+      "searchText": "37 nj transit",
+      "scheduleFile": "schedules/njt_37_104_schedule.json"
     },
     {
       "key": "njt:107",
@@ -733,7 +759,8 @@
         ]
       ],
       "file": "routes/njt_39_107.json",
-      "searchText": "39 nj transit"
+      "searchText": "39 nj transit",
+      "scheduleFile": "schedules/njt_39_107_schedule.json"
     },
     {
       "key": "njt:108",
@@ -759,7 +786,8 @@
         ]
       ],
       "file": "routes/njt_40_108.json",
-      "searchText": "40 nj transit"
+      "searchText": "40 nj transit",
+      "scheduleFile": "schedules/njt_40_108_schedule.json"
     },
     {
       "key": "njt:119",
@@ -785,7 +813,8 @@
         ]
       ],
       "file": "routes/njt_41_119.json",
-      "searchText": "41 nj transit"
+      "searchText": "41 nj transit",
+      "scheduleFile": "schedules/njt_41_119_schedule.json"
     },
     {
       "key": "njt:127",
@@ -811,7 +840,8 @@
         ]
       ],
       "file": "routes/njt_44_127.json",
-      "searchText": "44 nj transit"
+      "searchText": "44 nj transit",
+      "scheduleFile": "schedules/njt_44_127_schedule.json"
     },
     {
       "key": "njt:137",
@@ -837,7 +867,8 @@
         ]
       ],
       "file": "routes/njt_48_137.json",
-      "searchText": "48 nj transit"
+      "searchText": "48 nj transit",
+      "scheduleFile": "schedules/njt_48_137_schedule.json"
     },
     {
       "key": "njt:146",
@@ -863,7 +894,8 @@
         ]
       ],
       "file": "routes/njt_52_146.json",
-      "searchText": "52 nj transit"
+      "searchText": "52 nj transit",
+      "scheduleFile": "schedules/njt_52_146_schedule.json"
     },
     {
       "key": "njt:153",
@@ -889,7 +921,8 @@
         ]
       ],
       "file": "routes/njt_56_153.json",
-      "searchText": "56 nj transit"
+      "searchText": "56 nj transit",
+      "scheduleFile": "schedules/njt_56_153_schedule.json"
     },
     {
       "key": "njt:154",
@@ -915,7 +948,8 @@
         ]
       ],
       "file": "routes/njt_57_154.json",
-      "searchText": "57 nj transit"
+      "searchText": "57 nj transit",
+      "scheduleFile": "schedules/njt_57_154_schedule.json"
     },
     {
       "key": "njt:155",
@@ -941,7 +975,8 @@
         ]
       ],
       "file": "routes/njt_58_155.json",
-      "searchText": "58 nj transit"
+      "searchText": "58 nj transit",
+      "scheduleFile": "schedules/njt_58_155_schedule.json"
     },
     {
       "key": "njt:156",
@@ -967,7 +1002,8 @@
         ]
       ],
       "file": "routes/njt_59_156.json",
-      "searchText": "59 nj transit"
+      "searchText": "59 nj transit",
+      "scheduleFile": "schedules/njt_59_156_schedule.json"
     },
     {
       "key": "njt:171",
@@ -993,7 +1029,8 @@
         ]
       ],
       "file": "routes/njt_62_171.json",
-      "searchText": "62 nj transit"
+      "searchText": "62 nj transit",
+      "scheduleFile": "schedules/njt_62_171_schedule.json"
     },
     {
       "key": "njt:173",
@@ -1019,7 +1056,8 @@
         ]
       ],
       "file": "routes/njt_63_173.json",
-      "searchText": "63 nj transit"
+      "searchText": "63 nj transit",
+      "scheduleFile": "schedules/njt_63_173_schedule.json"
     },
     {
       "key": "njt:174",
@@ -1045,7 +1083,8 @@
         ]
       ],
       "file": "routes/njt_64_174.json",
-      "searchText": "64 nj transit"
+      "searchText": "64 nj transit",
+      "scheduleFile": "schedules/njt_64_174_schedule.json"
     },
     {
       "key": "njt:175",
@@ -1071,7 +1110,8 @@
         ]
       ],
       "file": "routes/njt_65_175.json",
-      "searchText": "65 nj transit"
+      "searchText": "65 nj transit",
+      "scheduleFile": "schedules/njt_65_175_schedule.json"
     },
     {
       "key": "njt:176",
@@ -1097,7 +1137,8 @@
         ]
       ],
       "file": "routes/njt_66_176.json",
-      "searchText": "66 nj transit"
+      "searchText": "66 nj transit",
+      "scheduleFile": "schedules/njt_66_176_schedule.json"
     },
     {
       "key": "njt:177",
@@ -1123,7 +1164,8 @@
         ]
       ],
       "file": "routes/njt_67_177.json",
-      "searchText": "67 nj transit"
+      "searchText": "67 nj transit",
+      "scheduleFile": "schedules/njt_67_177_schedule.json"
     },
     {
       "key": "njt:178",
@@ -1149,7 +1191,8 @@
         ]
       ],
       "file": "routes/njt_68_178.json",
-      "searchText": "68 nj transit"
+      "searchText": "68 nj transit",
+      "scheduleFile": "schedules/njt_68_178_schedule.json"
     },
     {
       "key": "njt:179",
@@ -1175,7 +1218,8 @@
         ]
       ],
       "file": "routes/njt_70_179.json",
-      "searchText": "70 nj transit"
+      "searchText": "70 nj transit",
+      "scheduleFile": "schedules/njt_70_179_schedule.json"
     },
     {
       "key": "njt:186",
@@ -1201,7 +1245,8 @@
         ]
       ],
       "file": "routes/njt_71_186.json",
-      "searchText": "71 nj transit"
+      "searchText": "71 nj transit",
+      "scheduleFile": "schedules/njt_71_186_schedule.json"
     },
     {
       "key": "njt:188",
@@ -1227,7 +1272,8 @@
         ]
       ],
       "file": "routes/njt_72_188.json",
-      "searchText": "72 nj transit"
+      "searchText": "72 nj transit",
+      "scheduleFile": "schedules/njt_72_188_schedule.json"
     },
     {
       "key": "njt:190",
@@ -1253,7 +1299,8 @@
         ]
       ],
       "file": "routes/njt_73_190.json",
-      "searchText": "73 nj transit"
+      "searchText": "73 nj transit",
+      "scheduleFile": "schedules/njt_73_190_schedule.json"
     },
     {
       "key": "njt:191",
@@ -1279,7 +1326,8 @@
         ]
       ],
       "file": "routes/njt_74_191.json",
-      "searchText": "74 nj transit"
+      "searchText": "74 nj transit",
+      "scheduleFile": "schedules/njt_74_191_schedule.json"
     },
     {
       "key": "njt:201",
@@ -1305,7 +1353,8 @@
         ]
       ],
       "file": "routes/njt_76_201.json",
-      "searchText": "76 nj transit"
+      "searchText": "76 nj transit",
+      "scheduleFile": "schedules/njt_76_201_schedule.json"
     },
     {
       "key": "njt:205",
@@ -1331,7 +1380,8 @@
         ]
       ],
       "file": "routes/njt_78_205.json",
-      "searchText": "78 nj transit"
+      "searchText": "78 nj transit",
+      "scheduleFile": "schedules/njt_78_205_schedule.json"
     },
     {
       "key": "njt:207",
@@ -1357,7 +1407,8 @@
         ]
       ],
       "file": "routes/njt_79_207.json",
-      "searchText": "79 nj transit"
+      "searchText": "79 nj transit",
+      "scheduleFile": "schedules/njt_79_207_schedule.json"
     },
     {
       "key": "njt:209",
@@ -1383,7 +1434,8 @@
         ]
       ],
       "file": "routes/njt_80_209.json",
-      "searchText": "80 nj transit"
+      "searchText": "80 nj transit",
+      "scheduleFile": "schedules/njt_80_209_schedule.json"
     },
     {
       "key": "njt:215",
@@ -1409,7 +1461,8 @@
         ]
       ],
       "file": "routes/njt_81_215.json",
-      "searchText": "81 nj transit"
+      "searchText": "81 nj transit",
+      "scheduleFile": "schedules/njt_81_215_schedule.json"
     },
     {
       "key": "njt:224",
@@ -1435,7 +1488,8 @@
         ]
       ],
       "file": "routes/njt_82_224.json",
-      "searchText": "82 nj transit"
+      "searchText": "82 nj transit",
+      "scheduleFile": "schedules/njt_82_224_schedule.json"
     },
     {
       "key": "njt:226",
@@ -1461,7 +1515,8 @@
         ]
       ],
       "file": "routes/njt_83_226.json",
-      "searchText": "83 nj transit"
+      "searchText": "83 nj transit",
+      "scheduleFile": "schedules/njt_83_226_schedule.json"
     },
     {
       "key": "njt:234",
@@ -1487,7 +1542,8 @@
         ]
       ],
       "file": "routes/njt_84_234.json",
-      "searchText": "84 nj transit"
+      "searchText": "84 nj transit",
+      "scheduleFile": "schedules/njt_84_234_schedule.json"
     },
     {
       "key": "njt:235",
@@ -1513,7 +1569,8 @@
         ]
       ],
       "file": "routes/njt_85_235.json",
-      "searchText": "85 nj transit"
+      "searchText": "85 nj transit",
+      "scheduleFile": "schedules/njt_85_235_schedule.json"
     },
     {
       "key": "njt:236",
@@ -1539,7 +1596,8 @@
         ]
       ],
       "file": "routes/njt_86_236.json",
-      "searchText": "86 nj transit"
+      "searchText": "86 nj transit",
+      "scheduleFile": "schedules/njt_86_236_schedule.json"
     },
     {
       "key": "njt:237",
@@ -1565,7 +1623,8 @@
         ]
       ],
       "file": "routes/njt_87_237.json",
-      "searchText": "87 nj transit"
+      "searchText": "87 nj transit",
+      "scheduleFile": "schedules/njt_87_237_schedule.json"
     },
     {
       "key": "njt:244",
@@ -1591,7 +1650,8 @@
         ]
       ],
       "file": "routes/njt_88_244.json",
-      "searchText": "88 nj transit"
+      "searchText": "88 nj transit",
+      "scheduleFile": "schedules/njt_88_244_schedule.json"
     },
     {
       "key": "njt:246",
@@ -1617,7 +1677,8 @@
         ]
       ],
       "file": "routes/njt_89_246.json",
-      "searchText": "89 nj transit"
+      "searchText": "89 nj transit",
+      "scheduleFile": "schedules/njt_89_246_schedule.json"
     },
     {
       "key": "njt:250",
@@ -1643,7 +1704,8 @@
         ]
       ],
       "file": "routes/njt_90_250.json",
-      "searchText": "90 nj transit"
+      "searchText": "90 nj transit",
+      "scheduleFile": "schedules/njt_90_250_schedule.json"
     },
     {
       "key": "njt:251",
@@ -1669,7 +1731,8 @@
         ]
       ],
       "file": "routes/njt_92_251.json",
-      "searchText": "92 nj transit"
+      "searchText": "92 nj transit",
+      "scheduleFile": "schedules/njt_92_251_schedule.json"
     },
     {
       "key": "njt:252",
@@ -1695,7 +1758,8 @@
         ]
       ],
       "file": "routes/njt_94_252.json",
-      "searchText": "94 nj transit"
+      "searchText": "94 nj transit",
+      "scheduleFile": "schedules/njt_94_252_schedule.json"
     },
     {
       "key": "njt:253",
@@ -1721,7 +1785,8 @@
         ]
       ],
       "file": "routes/njt_96_253.json",
-      "searchText": "96 nj transit"
+      "searchText": "96 nj transit",
+      "scheduleFile": "schedules/njt_96_253_schedule.json"
     },
     {
       "key": "njt:254",
@@ -1747,7 +1812,8 @@
         ]
       ],
       "file": "routes/njt_97_254.json",
-      "searchText": "97 nj transit"
+      "searchText": "97 nj transit",
+      "scheduleFile": "schedules/njt_97_254_schedule.json"
     },
     {
       "key": "njt:256",
@@ -1773,7 +1839,8 @@
         ]
       ],
       "file": "routes/njt_99_256.json",
-      "searchText": "99 nj transit"
+      "searchText": "99 nj transit",
+      "scheduleFile": "schedules/njt_99_256_schedule.json"
     },
     {
       "key": "njt:3",
@@ -1799,7 +1866,8 @@
         ]
       ],
       "file": "routes/njt_101_3.json",
-      "searchText": "101 nj transit"
+      "searchText": "101 nj transit",
+      "scheduleFile": "schedules/njt_101_3_schedule.json"
     },
     {
       "key": "njt:4",
@@ -1825,7 +1893,8 @@
         ]
       ],
       "file": "routes/njt_102_4.json",
-      "searchText": "102 nj transit"
+      "searchText": "102 nj transit",
+      "scheduleFile": "schedules/njt_102_4_schedule.json"
     },
     {
       "key": "njt:5",
@@ -1851,7 +1920,8 @@
         ]
       ],
       "file": "routes/njt_105_5.json",
-      "searchText": "105 nj transit"
+      "searchText": "105 nj transit",
+      "scheduleFile": "schedules/njt_105_5_schedule.json"
     },
     {
       "key": "njt:6",
@@ -1877,7 +1947,8 @@
         ]
       ],
       "file": "routes/njt_107_6.json",
-      "searchText": "107 nj transit"
+      "searchText": "107 nj transit",
+      "scheduleFile": "schedules/njt_107_6_schedule.json"
     },
     {
       "key": "njt:7",
@@ -1903,7 +1974,8 @@
         ]
       ],
       "file": "routes/njt_108_7.json",
-      "searchText": "108 nj transit"
+      "searchText": "108 nj transit",
+      "scheduleFile": "schedules/njt_108_7_schedule.json"
     },
     {
       "key": "njt:8",
@@ -1929,7 +2001,8 @@
         ]
       ],
       "file": "routes/njt_109_8.json",
-      "searchText": "109 nj transit"
+      "searchText": "109 nj transit",
+      "scheduleFile": "schedules/njt_109_8_schedule.json"
     },
     {
       "key": "njt:10",
@@ -1955,7 +2028,8 @@
         ]
       ],
       "file": "routes/njt_111_10.json",
-      "searchText": "111 nj transit"
+      "searchText": "111 nj transit",
+      "scheduleFile": "schedules/njt_111_10_schedule.json"
     },
     {
       "key": "njt:11",
@@ -1981,7 +2055,8 @@
         ]
       ],
       "file": "routes/njt_112_11.json",
-      "searchText": "112 nj transit"
+      "searchText": "112 nj transit",
+      "scheduleFile": "schedules/njt_112_11_schedule.json"
     },
     {
       "key": "njt:12",
@@ -2007,7 +2082,8 @@
         ]
       ],
       "file": "routes/njt_113_12.json",
-      "searchText": "113 nj transit"
+      "searchText": "113 nj transit",
+      "scheduleFile": "schedules/njt_113_12_schedule.json"
     },
     {
       "key": "njt:13",
@@ -2033,7 +2109,8 @@
         ]
       ],
       "file": "routes/njt_114_13.json",
-      "searchText": "114 nj transit"
+      "searchText": "114 nj transit",
+      "scheduleFile": "schedules/njt_114_13_schedule.json"
     },
     {
       "key": "njt:14",
@@ -2059,7 +2136,8 @@
         ]
       ],
       "file": "routes/njt_115_14.json",
-      "searchText": "115 nj transit"
+      "searchText": "115 nj transit",
+      "scheduleFile": "schedules/njt_115_14_schedule.json"
     },
     {
       "key": "njt:15",
@@ -2085,7 +2163,8 @@
         ]
       ],
       "file": "routes/njt_116_15.json",
-      "searchText": "116 nj transit"
+      "searchText": "116 nj transit",
+      "scheduleFile": "schedules/njt_116_15_schedule.json"
     },
     {
       "key": "njt:16",
@@ -2111,7 +2190,8 @@
         ]
       ],
       "file": "routes/njt_117_16.json",
-      "searchText": "117 nj transit"
+      "searchText": "117 nj transit",
+      "scheduleFile": "schedules/njt_117_16_schedule.json"
     },
     {
       "key": "njt:17",
@@ -2137,7 +2217,8 @@
         ]
       ],
       "file": "routes/njt_119_17.json",
-      "searchText": "119 nj transit"
+      "searchText": "119 nj transit",
+      "scheduleFile": "schedules/njt_119_17_schedule.json"
     },
     {
       "key": "njt:19",
@@ -2163,7 +2244,8 @@
         ]
       ],
       "file": "routes/njt_120_19.json",
-      "searchText": "120 nj transit"
+      "searchText": "120 nj transit",
+      "scheduleFile": "schedules/njt_120_19_schedule.json"
     },
     {
       "key": "njt:20",
@@ -2189,7 +2271,8 @@
         ]
       ],
       "file": "routes/njt_121_20.json",
-      "searchText": "121 nj transit"
+      "searchText": "121 nj transit",
+      "scheduleFile": "schedules/njt_121_20_schedule.json"
     },
     {
       "key": "njt:21",
@@ -2215,7 +2298,8 @@
         ]
       ],
       "file": "routes/njt_122_21.json",
-      "searchText": "122 nj transit"
+      "searchText": "122 nj transit",
+      "scheduleFile": "schedules/njt_122_21_schedule.json"
     },
     {
       "key": "njt:22",
@@ -2241,7 +2325,8 @@
         ]
       ],
       "file": "routes/njt_123_22.json",
-      "searchText": "123 nj transit"
+      "searchText": "123 nj transit",
+      "scheduleFile": "schedules/njt_123_22_schedule.json"
     },
     {
       "key": "njt:23",
@@ -2267,7 +2352,8 @@
         ]
       ],
       "file": "routes/njt_124_23.json",
-      "searchText": "124 nj transit"
+      "searchText": "124 nj transit",
+      "scheduleFile": "schedules/njt_124_23_schedule.json"
     },
     {
       "key": "njt:24",
@@ -2293,7 +2379,8 @@
         ]
       ],
       "file": "routes/njt_125_24.json",
-      "searchText": "125 nj transit"
+      "searchText": "125 nj transit",
+      "scheduleFile": "schedules/njt_125_24_schedule.json"
     },
     {
       "key": "njt:25",
@@ -2319,7 +2406,8 @@
         ]
       ],
       "file": "routes/njt_126_25.json",
-      "searchText": "126 nj transit"
+      "searchText": "126 nj transit",
+      "scheduleFile": "schedules/njt_126_25_schedule.json"
     },
     {
       "key": "njt:26",
@@ -2345,7 +2433,8 @@
         ]
       ],
       "file": "routes/njt_127_26.json",
-      "searchText": "127 nj transit"
+      "searchText": "127 nj transit",
+      "scheduleFile": "schedules/njt_127_26_schedule.json"
     },
     {
       "key": "njt:27",
@@ -2371,7 +2460,8 @@
         ]
       ],
       "file": "routes/njt_128_27.json",
-      "searchText": "128 nj transit"
+      "searchText": "128 nj transit",
+      "scheduleFile": "schedules/njt_128_27_schedule.json"
     },
     {
       "key": "njt:28",
@@ -2397,7 +2487,8 @@
         ]
       ],
       "file": "routes/njt_129_28.json",
-      "searchText": "129 nj transit"
+      "searchText": "129 nj transit",
+      "scheduleFile": "schedules/njt_129_28_schedule.json"
     },
     {
       "key": "njt:30",
@@ -2423,7 +2514,8 @@
         ]
       ],
       "file": "routes/njt_130_30.json",
-      "searchText": "130 nj transit"
+      "searchText": "130 nj transit",
+      "scheduleFile": "schedules/njt_130_30_schedule.json"
     },
     {
       "key": "njt:31",
@@ -2449,7 +2541,8 @@
         ]
       ],
       "file": "routes/njt_131_31.json",
-      "searchText": "131 nj transit"
+      "searchText": "131 nj transit",
+      "scheduleFile": "schedules/njt_131_31_schedule.json"
     },
     {
       "key": "njt:32",
@@ -2475,7 +2568,8 @@
         ]
       ],
       "file": "routes/njt_132_32.json",
-      "searchText": "132 nj transit"
+      "searchText": "132 nj transit",
+      "scheduleFile": "schedules/njt_132_32_schedule.json"
     },
     {
       "key": "njt:33",
@@ -2501,7 +2595,8 @@
         ]
       ],
       "file": "routes/njt_133_33.json",
-      "searchText": "133 nj transit"
+      "searchText": "133 nj transit",
+      "scheduleFile": "schedules/njt_133_33_schedule.json"
     },
     {
       "key": "njt:34",
@@ -2527,7 +2622,8 @@
         ]
       ],
       "file": "routes/njt_135_34.json",
-      "searchText": "135 nj transit"
+      "searchText": "135 nj transit",
+      "scheduleFile": "schedules/njt_135_34_schedule.json"
     },
     {
       "key": "njt:35",
@@ -2553,7 +2649,8 @@
         ]
       ],
       "file": "routes/njt_136_35.json",
-      "searchText": "136 nj transit"
+      "searchText": "136 nj transit",
+      "scheduleFile": "schedules/njt_136_35_schedule.json"
     },
     {
       "key": "njt:36",
@@ -2579,7 +2676,8 @@
         ]
       ],
       "file": "routes/njt_137_36.json",
-      "searchText": "137 nj transit"
+      "searchText": "137 nj transit",
+      "scheduleFile": "schedules/njt_137_36_schedule.json"
     },
     {
       "key": "njt:37",
@@ -2605,7 +2703,8 @@
         ]
       ],
       "file": "routes/njt_138_37.json",
-      "searchText": "138 nj transit"
+      "searchText": "138 nj transit",
+      "scheduleFile": "schedules/njt_138_37_schedule.json"
     },
     {
       "key": "njt:38",
@@ -2631,7 +2730,8 @@
         ]
       ],
       "file": "routes/njt_139_38.json",
-      "searchText": "139 nj transit"
+      "searchText": "139 nj transit",
+      "scheduleFile": "schedules/njt_139_38_schedule.json"
     },
     {
       "key": "njt:40",
@@ -2657,7 +2757,8 @@
         ]
       ],
       "file": "routes/njt_144_40.json",
-      "searchText": "144 nj transit"
+      "searchText": "144 nj transit",
+      "scheduleFile": "schedules/njt_144_40_schedule.json"
     },
     {
       "key": "njt:41",
@@ -2683,7 +2784,8 @@
         ]
       ],
       "file": "routes/njt_145_41.json",
-      "searchText": "145 nj transit"
+      "searchText": "145 nj transit",
+      "scheduleFile": "schedules/njt_145_41_schedule.json"
     },
     {
       "key": "njt:42",
@@ -2709,7 +2811,8 @@
         ]
       ],
       "file": "routes/njt_148_42.json",
-      "searchText": "148 nj transit"
+      "searchText": "148 nj transit",
+      "scheduleFile": "schedules/njt_148_42_schedule.json"
     },
     {
       "key": "njt:43",
@@ -2735,7 +2838,8 @@
         ]
       ],
       "file": "routes/njt_151_43.json",
-      "searchText": "151 nj transit"
+      "searchText": "151 nj transit",
+      "scheduleFile": "schedules/njt_151_43_schedule.json"
     },
     {
       "key": "njt:44",
@@ -2761,7 +2865,8 @@
         ]
       ],
       "file": "routes/njt_153_44.json",
-      "searchText": "153 nj transit"
+      "searchText": "153 nj transit",
+      "scheduleFile": "schedules/njt_153_44_schedule.json"
     },
     {
       "key": "njt:45",
@@ -2787,7 +2892,8 @@
         ]
       ],
       "file": "routes/njt_154_45.json",
-      "searchText": "154 nj transit"
+      "searchText": "154 nj transit",
+      "scheduleFile": "schedules/njt_154_45_schedule.json"
     },
     {
       "key": "njt:46",
@@ -2813,7 +2919,8 @@
         ]
       ],
       "file": "routes/njt_155_46.json",
-      "searchText": "155 nj transit"
+      "searchText": "155 nj transit",
+      "scheduleFile": "schedules/njt_155_46_schedule.json"
     },
     {
       "key": "njt:47",
@@ -2839,7 +2946,8 @@
         ]
       ],
       "file": "routes/njt_156_47.json",
-      "searchText": "156 nj transit"
+      "searchText": "156 nj transit",
+      "scheduleFile": "schedules/njt_156_47_schedule.json"
     },
     {
       "key": "njt:48",
@@ -2865,7 +2973,8 @@
         ]
       ],
       "file": "routes/njt_157_48.json",
-      "searchText": "157 nj transit"
+      "searchText": "157 nj transit",
+      "scheduleFile": "schedules/njt_157_48_schedule.json"
     },
     {
       "key": "njt:49",
@@ -2891,7 +3000,8 @@
         ]
       ],
       "file": "routes/njt_158_49.json",
-      "searchText": "158 nj transit"
+      "searchText": "158 nj transit",
+      "scheduleFile": "schedules/njt_158_49_schedule.json"
     },
     {
       "key": "njt:50",
@@ -2917,7 +3027,8 @@
         ]
       ],
       "file": "routes/njt_159_50.json",
-      "searchText": "159 nj transit"
+      "searchText": "159 nj transit",
+      "scheduleFile": "schedules/njt_159_50_schedule.json"
     },
     {
       "key": "njt:52",
@@ -2943,7 +3054,8 @@
         ]
       ],
       "file": "routes/njt_160_52.json",
-      "searchText": "160 nj transit"
+      "searchText": "160 nj transit",
+      "scheduleFile": "schedules/njt_160_52_schedule.json"
     },
     {
       "key": "njt:53",
@@ -2969,7 +3081,8 @@
         ]
       ],
       "file": "routes/njt_161_53.json",
-      "searchText": "161 nj transit"
+      "searchText": "161 nj transit",
+      "scheduleFile": "schedules/njt_161_53_schedule.json"
     },
     {
       "key": "njt:54",
@@ -2995,7 +3108,8 @@
         ]
       ],
       "file": "routes/njt_162_54.json",
-      "searchText": "162 nj transit"
+      "searchText": "162 nj transit",
+      "scheduleFile": "schedules/njt_162_54_schedule.json"
     },
     {
       "key": "njt:55",
@@ -3021,7 +3135,8 @@
         ]
       ],
       "file": "routes/njt_163_55.json",
-      "searchText": "163 nj transit"
+      "searchText": "163 nj transit",
+      "scheduleFile": "schedules/njt_163_55_schedule.json"
     },
     {
       "key": "njt:56",
@@ -3047,7 +3162,8 @@
         ]
       ],
       "file": "routes/njt_163S_56.json",
-      "searchText": "163s nj transit"
+      "searchText": "163s nj transit",
+      "scheduleFile": "schedules/njt_163S_56_schedule.json"
     },
     {
       "key": "njt:57",
@@ -3073,7 +3189,8 @@
         ]
       ],
       "file": "routes/njt_164_57.json",
-      "searchText": "164 nj transit"
+      "searchText": "164 nj transit",
+      "scheduleFile": "schedules/njt_164_57_schedule.json"
     },
     {
       "key": "njt:58",
@@ -3099,7 +3216,8 @@
         ]
       ],
       "file": "routes/njt_165_58.json",
-      "searchText": "165 nj transit"
+      "searchText": "165 nj transit",
+      "scheduleFile": "schedules/njt_165_58_schedule.json"
     },
     {
       "key": "njt:59",
@@ -3125,7 +3243,8 @@
         ]
       ],
       "file": "routes/njt_166_59.json",
-      "searchText": "166 nj transit"
+      "searchText": "166 nj transit",
+      "scheduleFile": "schedules/njt_166_59_schedule.json"
     },
     {
       "key": "njt:60",
@@ -3151,7 +3270,8 @@
         ]
       ],
       "file": "routes/njt_167_60.json",
-      "searchText": "167 nj transit"
+      "searchText": "167 nj transit",
+      "scheduleFile": "schedules/njt_167_60_schedule.json"
     },
     {
       "key": "njt:61",
@@ -3177,7 +3297,8 @@
         ]
       ],
       "file": "routes/njt_168_61.json",
-      "searchText": "168 nj transit"
+      "searchText": "168 nj transit",
+      "scheduleFile": "schedules/njt_168_61_schedule.json"
     },
     {
       "key": "njt:62",
@@ -3203,7 +3324,8 @@
         ]
       ],
       "file": "routes/njt_171_62.json",
-      "searchText": "171 nj transit"
+      "searchText": "171 nj transit",
+      "scheduleFile": "schedules/njt_171_62_schedule.json"
     },
     {
       "key": "njt:63",
@@ -3229,7 +3351,8 @@
         ]
       ],
       "file": "routes/njt_175_63.json",
-      "searchText": "175 nj transit"
+      "searchText": "175 nj transit",
+      "scheduleFile": "schedules/njt_175_63_schedule.json"
     },
     {
       "key": "njt:64",
@@ -3255,7 +3378,8 @@
         ]
       ],
       "file": "routes/njt_177_64.json",
-      "searchText": "177 nj transit"
+      "searchText": "177 nj transit",
+      "scheduleFile": "schedules/njt_177_64_schedule.json"
     },
     {
       "key": "njt:65",
@@ -3281,7 +3405,8 @@
         ]
       ],
       "file": "routes/njt_178_65.json",
-      "searchText": "178 nj transit"
+      "searchText": "178 nj transit",
+      "scheduleFile": "schedules/njt_178_65_schedule.json"
     },
     {
       "key": "njt:66",
@@ -3307,7 +3432,8 @@
         ]
       ],
       "file": "routes/njt_181_66.json",
-      "searchText": "181 nj transit"
+      "searchText": "181 nj transit",
+      "scheduleFile": "schedules/njt_181_66_schedule.json"
     },
     {
       "key": "njt:67",
@@ -3333,7 +3459,8 @@
         ]
       ],
       "file": "routes/njt_182_67.json",
-      "searchText": "182 nj transit"
+      "searchText": "182 nj transit",
+      "scheduleFile": "schedules/njt_182_67_schedule.json"
     },
     {
       "key": "njt:68",
@@ -3359,7 +3486,8 @@
         ]
       ],
       "file": "routes/njt_186_68.json",
-      "searchText": "186 nj transit"
+      "searchText": "186 nj transit",
+      "scheduleFile": "schedules/njt_186_68_schedule.json"
     },
     {
       "key": "njt:69",
@@ -3385,7 +3513,8 @@
         ]
       ],
       "file": "routes/njt_188_69.json",
-      "searchText": "188 nj transit"
+      "searchText": "188 nj transit",
+      "scheduleFile": "schedules/njt_188_69_schedule.json"
     },
     {
       "key": "njt:70",
@@ -3411,7 +3540,8 @@
         ]
       ],
       "file": "routes/njt_190_70.json",
-      "searchText": "190 nj transit"
+      "searchText": "190 nj transit",
+      "scheduleFile": "schedules/njt_190_70_schedule.json"
     },
     {
       "key": "njt:71",
@@ -3437,7 +3567,8 @@
         ]
       ],
       "file": "routes/njt_191_71.json",
-      "searchText": "191 nj transit"
+      "searchText": "191 nj transit",
+      "scheduleFile": "schedules/njt_191_71_schedule.json"
     },
     {
       "key": "njt:72",
@@ -3463,7 +3594,8 @@
         ]
       ],
       "file": "routes/njt_192_72.json",
-      "searchText": "192 nj transit"
+      "searchText": "192 nj transit",
+      "scheduleFile": "schedules/njt_192_72_schedule.json"
     },
     {
       "key": "njt:73",
@@ -3489,7 +3621,8 @@
         ]
       ],
       "file": "routes/njt_193_73.json",
-      "searchText": "193 nj transit"
+      "searchText": "193 nj transit",
+      "scheduleFile": "schedules/njt_193_73_schedule.json"
     },
     {
       "key": "njt:74",
@@ -3515,7 +3648,8 @@
         ]
       ],
       "file": "routes/njt_194_74.json",
-      "searchText": "194 nj transit"
+      "searchText": "194 nj transit",
+      "scheduleFile": "schedules/njt_194_74_schedule.json"
     },
     {
       "key": "njt:75",
@@ -3541,7 +3675,8 @@
         ]
       ],
       "file": "routes/njt_195_75.json",
-      "searchText": "195 nj transit"
+      "searchText": "195 nj transit",
+      "scheduleFile": "schedules/njt_195_75_schedule.json"
     },
     {
       "key": "njt:76",
@@ -3567,7 +3702,8 @@
         ]
       ],
       "file": "routes/njt_196_76.json",
-      "searchText": "196 nj transit"
+      "searchText": "196 nj transit",
+      "scheduleFile": "schedules/njt_196_76_schedule.json"
     },
     {
       "key": "njt:77",
@@ -3593,7 +3729,8 @@
         ]
       ],
       "file": "routes/njt_197_77.json",
-      "searchText": "197 nj transit"
+      "searchText": "197 nj transit",
+      "scheduleFile": "schedules/njt_197_77_schedule.json"
     },
     {
       "key": "njt:78",
@@ -3619,7 +3756,8 @@
         ]
       ],
       "file": "routes/njt_198_78.json",
-      "searchText": "198 nj transit"
+      "searchText": "198 nj transit",
+      "scheduleFile": "schedules/njt_198_78_schedule.json"
     },
     {
       "key": "njt:79",
@@ -3645,7 +3783,8 @@
         ]
       ],
       "file": "routes/njt_199_79.json",
-      "searchText": "199 nj transit"
+      "searchText": "199 nj transit",
+      "scheduleFile": "schedules/njt_199_79_schedule.json"
     },
     {
       "key": "njt:92",
@@ -3671,7 +3810,8 @@
         ]
       ],
       "file": "routes/njt_313_92.json",
-      "searchText": "313 nj transit"
+      "searchText": "313 nj transit",
+      "scheduleFile": "schedules/njt_313_92_schedule.json"
     },
     {
       "key": "njt:93",
@@ -3697,7 +3837,8 @@
         ]
       ],
       "file": "routes/njt_315_93.json",
-      "searchText": "315 nj transit"
+      "searchText": "315 nj transit",
+      "scheduleFile": "schedules/njt_315_93_schedule.json"
     },
     {
       "key": "njt:94",
@@ -3723,7 +3864,8 @@
         ]
       ],
       "file": "routes/njt_317_94.json",
-      "searchText": "317 nj transit"
+      "searchText": "317 nj transit",
+      "scheduleFile": "schedules/njt_317_94_schedule.json"
     },
     {
       "key": "njt:95",
@@ -3749,7 +3891,8 @@
         ]
       ],
       "file": "routes/njt_319_95.json",
-      "searchText": "319 nj transit"
+      "searchText": "319 nj transit",
+      "scheduleFile": "schedules/njt_319_95_schedule.json"
     },
     {
       "key": "njt:96",
@@ -3775,7 +3918,8 @@
         ]
       ],
       "file": "routes/njt_320_96.json",
-      "searchText": "320 nj transit"
+      "searchText": "320 nj transit",
+      "scheduleFile": "schedules/njt_320_96_schedule.json"
     },
     {
       "key": "njt:97",
@@ -3801,7 +3945,8 @@
         ]
       ],
       "file": "routes/njt_321_97.json",
-      "searchText": "321 nj transit"
+      "searchText": "321 nj transit",
+      "scheduleFile": "schedules/njt_321_97_schedule.json"
     },
     {
       "key": "njt:98",
@@ -3827,7 +3972,8 @@
         ]
       ],
       "file": "routes/njt_324_98.json",
-      "searchText": "324 nj transit"
+      "searchText": "324 nj transit",
+      "scheduleFile": "schedules/njt_324_98_schedule.json"
     },
     {
       "key": "njt:99",
@@ -3853,7 +3999,8 @@
         ]
       ],
       "file": "routes/njt_329_99.json",
-      "searchText": "329 nj transit"
+      "searchText": "329 nj transit",
+      "scheduleFile": "schedules/njt_329_99_schedule.json"
     },
     {
       "key": "njt:102",
@@ -3879,7 +4026,8 @@
         ]
       ],
       "file": "routes/njt_355_102.json",
-      "searchText": "355 nj transit"
+      "searchText": "355 nj transit",
+      "scheduleFile": "schedules/njt_355_102_schedule.json"
     },
     {
       "key": "njt:103",
@@ -3905,7 +4053,8 @@
         ]
       ],
       "file": "routes/njt_361_103.json",
-      "searchText": "361 nj transit"
+      "searchText": "361 nj transit",
+      "scheduleFile": "schedules/njt_361_103_schedule.json"
     },
     {
       "key": "njt:105",
@@ -3931,7 +4080,8 @@
         ]
       ],
       "file": "routes/njt_375_105.json",
-      "searchText": "375 nj transit"
+      "searchText": "375 nj transit",
+      "scheduleFile": "schedules/njt_375_105_schedule.json"
     },
     {
       "key": "njt:106",
@@ -3957,7 +4107,8 @@
         ]
       ],
       "file": "routes/njt_378_106.json",
-      "searchText": "378 nj transit"
+      "searchText": "378 nj transit",
+      "scheduleFile": "schedules/njt_378_106_schedule.json"
     },
     {
       "key": "njt:109",
@@ -3983,7 +4134,8 @@
         ]
       ],
       "file": "routes/njt_400_109.json",
-      "searchText": "400 nj transit"
+      "searchText": "400 nj transit",
+      "scheduleFile": "schedules/njt_400_109_schedule.json"
     },
     {
       "key": "njt:110",
@@ -4009,7 +4161,8 @@
         ]
       ],
       "file": "routes/njt_401_110.json",
-      "searchText": "401 nj transit"
+      "searchText": "401 nj transit",
+      "scheduleFile": "schedules/njt_401_110_schedule.json"
     },
     {
       "key": "njt:111",
@@ -4035,7 +4188,8 @@
         ]
       ],
       "file": "routes/njt_402_111.json",
-      "searchText": "402 nj transit"
+      "searchText": "402 nj transit",
+      "scheduleFile": "schedules/njt_402_111_schedule.json"
     },
     {
       "key": "njt:112",
@@ -4061,7 +4215,8 @@
         ]
       ],
       "file": "routes/njt_403_112.json",
-      "searchText": "403 nj transit"
+      "searchText": "403 nj transit",
+      "scheduleFile": "schedules/njt_403_112_schedule.json"
     },
     {
       "key": "njt:113",
@@ -4087,7 +4242,8 @@
         ]
       ],
       "file": "routes/njt_404_113.json",
-      "searchText": "404 nj transit"
+      "searchText": "404 nj transit",
+      "scheduleFile": "schedules/njt_404_113_schedule.json"
     },
     {
       "key": "njt:114",
@@ -4113,7 +4269,8 @@
         ]
       ],
       "file": "routes/njt_405_114.json",
-      "searchText": "405 nj transit"
+      "searchText": "405 nj transit",
+      "scheduleFile": "schedules/njt_405_114_schedule.json"
     },
     {
       "key": "njt:115",
@@ -4139,7 +4296,8 @@
         ]
       ],
       "file": "routes/njt_406_115.json",
-      "searchText": "406 nj transit"
+      "searchText": "406 nj transit",
+      "scheduleFile": "schedules/njt_406_115_schedule.json"
     },
     {
       "key": "njt:116",
@@ -4165,7 +4323,8 @@
         ]
       ],
       "file": "routes/njt_407_116.json",
-      "searchText": "407 nj transit"
+      "searchText": "407 nj transit",
+      "scheduleFile": "schedules/njt_407_116_schedule.json"
     },
     {
       "key": "njt:117",
@@ -4191,7 +4350,8 @@
         ]
       ],
       "file": "routes/njt_408_117.json",
-      "searchText": "408 nj transit"
+      "searchText": "408 nj transit",
+      "scheduleFile": "schedules/njt_408_117_schedule.json"
     },
     {
       "key": "njt:118",
@@ -4217,7 +4377,8 @@
         ]
       ],
       "file": "routes/njt_409_118.json",
-      "searchText": "409 nj transit"
+      "searchText": "409 nj transit",
+      "scheduleFile": "schedules/njt_409_118_schedule.json"
     },
     {
       "key": "njt:120",
@@ -4243,7 +4404,8 @@
         ]
       ],
       "file": "routes/njt_410_120.json",
-      "searchText": "410 nj transit"
+      "searchText": "410 nj transit",
+      "scheduleFile": "schedules/njt_410_120_schedule.json"
     },
     {
       "key": "njt:121",
@@ -4269,7 +4431,8 @@
         ]
       ],
       "file": "routes/njt_412_121.json",
-      "searchText": "412 nj transit"
+      "searchText": "412 nj transit",
+      "scheduleFile": "schedules/njt_412_121_schedule.json"
     },
     {
       "key": "njt:122",
@@ -4295,7 +4458,8 @@
         ]
       ],
       "file": "routes/njt_413_122.json",
-      "searchText": "413 nj transit"
+      "searchText": "413 nj transit",
+      "scheduleFile": "schedules/njt_413_122_schedule.json"
     },
     {
       "key": "njt:123",
@@ -4321,7 +4485,8 @@
         ]
       ],
       "file": "routes/njt_414_123.json",
-      "searchText": "414 nj transit"
+      "searchText": "414 nj transit",
+      "scheduleFile": "schedules/njt_414_123_schedule.json"
     },
     {
       "key": "njt:124",
@@ -4347,7 +4512,8 @@
         ]
       ],
       "file": "routes/njt_417_124.json",
-      "searchText": "417 nj transit"
+      "searchText": "417 nj transit",
+      "scheduleFile": "schedules/njt_417_124_schedule.json"
     },
     {
       "key": "njt:125",
@@ -4373,7 +4539,8 @@
         ]
       ],
       "file": "routes/njt_418_125.json",
-      "searchText": "418 nj transit"
+      "searchText": "418 nj transit",
+      "scheduleFile": "schedules/njt_418_125_schedule.json"
     },
     {
       "key": "njt:126",
@@ -4399,7 +4566,8 @@
         ]
       ],
       "file": "routes/njt_419_126.json",
-      "searchText": "419 nj transit"
+      "searchText": "419 nj transit",
+      "scheduleFile": "schedules/njt_419_126_schedule.json"
     },
     {
       "key": "njt:128",
@@ -4425,7 +4593,8 @@
         ]
       ],
       "file": "routes/njt_450_128.json",
-      "searchText": "450 nj transit"
+      "searchText": "450 nj transit",
+      "scheduleFile": "schedules/njt_450_128_schedule.json"
     },
     {
       "key": "njt:129",
@@ -4451,7 +4620,8 @@
         ]
       ],
       "file": "routes/njt_451_129.json",
-      "searchText": "451 nj transit"
+      "searchText": "451 nj transit",
+      "scheduleFile": "schedules/njt_451_129_schedule.json"
     },
     {
       "key": "njt:130",
@@ -4477,7 +4647,8 @@
         ]
       ],
       "file": "routes/njt_452_130.json",
-      "searchText": "452 nj transit"
+      "searchText": "452 nj transit",
+      "scheduleFile": "schedules/njt_452_130_schedule.json"
     },
     {
       "key": "njt:131",
@@ -4503,7 +4674,8 @@
         ]
       ],
       "file": "routes/njt_453_131.json",
-      "searchText": "453 nj transit"
+      "searchText": "453 nj transit",
+      "scheduleFile": "schedules/njt_453_131_schedule.json"
     },
     {
       "key": "njt:132",
@@ -4529,7 +4701,8 @@
         ]
       ],
       "file": "routes/njt_455_132.json",
-      "searchText": "455 nj transit"
+      "searchText": "455 nj transit",
+      "scheduleFile": "schedules/njt_455_132_schedule.json"
     },
     {
       "key": "njt:133",
@@ -4555,7 +4728,8 @@
         ]
       ],
       "file": "routes/njt_457_133.json",
-      "searchText": "457 nj transit"
+      "searchText": "457 nj transit",
+      "scheduleFile": "schedules/njt_457_133_schedule.json"
     },
     {
       "key": "njt:134",
@@ -4581,7 +4755,8 @@
         ]
       ],
       "file": "routes/njt_459_134.json",
-      "searchText": "459 nj transit"
+      "searchText": "459 nj transit",
+      "scheduleFile": "schedules/njt_459_134_schedule.json"
     },
     {
       "key": "njt:135",
@@ -4607,7 +4782,8 @@
         ]
       ],
       "file": "routes/njt_463_135.json",
-      "searchText": "463 nj transit"
+      "searchText": "463 nj transit",
+      "scheduleFile": "schedules/njt_463_135_schedule.json"
     },
     {
       "key": "njt:136",
@@ -4633,7 +4809,8 @@
         ]
       ],
       "file": "routes/njt_468_136.json",
-      "searchText": "468 nj transit"
+      "searchText": "468 nj transit",
+      "scheduleFile": "schedules/njt_468_136_schedule.json"
     },
     {
       "key": "njt:139",
@@ -4659,7 +4836,8 @@
         ]
       ],
       "file": "routes/njt_501_139.json",
-      "searchText": "501 nj transit"
+      "searchText": "501 nj transit",
+      "scheduleFile": "schedules/njt_501_139_schedule.json"
     },
     {
       "key": "njt:140",
@@ -4685,7 +4863,8 @@
         ]
       ],
       "file": "routes/njt_502_140.json",
-      "searchText": "502 nj transit"
+      "searchText": "502 nj transit",
+      "scheduleFile": "schedules/njt_502_140_schedule.json"
     },
     {
       "key": "njt:141",
@@ -4711,7 +4890,8 @@
         ]
       ],
       "file": "routes/njt_504_141.json",
-      "searchText": "504 nj transit"
+      "searchText": "504 nj transit",
+      "scheduleFile": "schedules/njt_504_141_schedule.json"
     },
     {
       "key": "njt:142",
@@ -4737,7 +4917,8 @@
         ]
       ],
       "file": "routes/njt_505_142.json",
-      "searchText": "505 nj transit"
+      "searchText": "505 nj transit",
+      "scheduleFile": "schedules/njt_505_142_schedule.json"
     },
     {
       "key": "njt:143",
@@ -4763,7 +4944,8 @@
         ]
       ],
       "file": "routes/njt_507_143.json",
-      "searchText": "507 nj transit"
+      "searchText": "507 nj transit",
+      "scheduleFile": "schedules/njt_507_143_schedule.json"
     },
     {
       "key": "njt:144",
@@ -4789,7 +4971,8 @@
         ]
       ],
       "file": "routes/njt_508_144.json",
-      "searchText": "508 nj transit"
+      "searchText": "508 nj transit",
+      "scheduleFile": "schedules/njt_508_144_schedule.json"
     },
     {
       "key": "njt:145",
@@ -4815,7 +4998,8 @@
         ]
       ],
       "file": "routes/njt_509_145.json",
-      "searchText": "509 nj transit"
+      "searchText": "509 nj transit",
+      "scheduleFile": "schedules/njt_509_145_schedule.json"
     },
     {
       "key": "njt:147",
@@ -4841,7 +5025,8 @@
         ]
       ],
       "file": "routes/njt_551_147.json",
-      "searchText": "551 nj transit"
+      "searchText": "551 nj transit",
+      "scheduleFile": "schedules/njt_551_147_schedule.json"
     },
     {
       "key": "njt:148",
@@ -4867,7 +5052,8 @@
         ]
       ],
       "file": "routes/njt_552_148.json",
-      "searchText": "552 nj transit"
+      "searchText": "552 nj transit",
+      "scheduleFile": "schedules/njt_552_148_schedule.json"
     },
     {
       "key": "njt:149",
@@ -4893,7 +5079,8 @@
         ]
       ],
       "file": "routes/njt_553_149.json",
-      "searchText": "553 nj transit"
+      "searchText": "553 nj transit",
+      "scheduleFile": "schedules/njt_553_149_schedule.json"
     },
     {
       "key": "njt:150",
@@ -4919,7 +5106,8 @@
         ]
       ],
       "file": "routes/njt_554_150.json",
-      "searchText": "554 nj transit"
+      "searchText": "554 nj transit",
+      "scheduleFile": "schedules/njt_554_150_schedule.json"
     },
     {
       "key": "njt:151",
@@ -4945,7 +5133,8 @@
         ]
       ],
       "file": "routes/njt_555_151.json",
-      "searchText": "555 nj transit"
+      "searchText": "555 nj transit",
+      "scheduleFile": "schedules/njt_555_151_schedule.json"
     },
     {
       "key": "njt:152",
@@ -4971,7 +5160,8 @@
         ]
       ],
       "file": "routes/njt_559_152.json",
-      "searchText": "559 nj transit"
+      "searchText": "559 nj transit",
+      "scheduleFile": "schedules/njt_559_152_schedule.json"
     },
     {
       "key": "njt:158",
@@ -4997,7 +5187,8 @@
         ]
       ],
       "file": "routes/njt_600_158.json",
-      "searchText": "600 nj transit"
+      "searchText": "600 nj transit",
+      "scheduleFile": "schedules/njt_600_158_schedule.json"
     },
     {
       "key": "njt:159",
@@ -5023,7 +5214,8 @@
         ]
       ],
       "file": "routes/njt_601_159.json",
-      "searchText": "601 nj transit"
+      "searchText": "601 nj transit",
+      "scheduleFile": "schedules/njt_601_159_schedule.json"
     },
     {
       "key": "njt:160",
@@ -5049,7 +5241,8 @@
         ]
       ],
       "file": "routes/njt_603_160.json",
-      "searchText": "603 nj transit"
+      "searchText": "603 nj transit",
+      "scheduleFile": "schedules/njt_603_160_schedule.json"
     },
     {
       "key": "njt:161",
@@ -5075,7 +5268,8 @@
         ]
       ],
       "file": "routes/njt_605_161.json",
-      "searchText": "605 nj transit"
+      "searchText": "605 nj transit",
+      "scheduleFile": "schedules/njt_605_161_schedule.json"
     },
     {
       "key": "njt:162",
@@ -5101,7 +5295,8 @@
         ]
       ],
       "file": "routes/njt_606_162.json",
-      "searchText": "606 nj transit"
+      "searchText": "606 nj transit",
+      "scheduleFile": "schedules/njt_606_162_schedule.json"
     },
     {
       "key": "njt:163",
@@ -5127,7 +5322,8 @@
         ]
       ],
       "file": "routes/njt_607_163.json",
-      "searchText": "607 nj transit"
+      "searchText": "607 nj transit",
+      "scheduleFile": "schedules/njt_607_163_schedule.json"
     },
     {
       "key": "njt:164",
@@ -5153,7 +5349,8 @@
         ]
       ],
       "file": "routes/njt_608_164.json",
-      "searchText": "608 nj transit"
+      "searchText": "608 nj transit",
+      "scheduleFile": "schedules/njt_608_164_schedule.json"
     },
     {
       "key": "njt:165",
@@ -5179,7 +5376,8 @@
         ]
       ],
       "file": "routes/njt_609_165.json",
-      "searchText": "609 nj transit"
+      "searchText": "609 nj transit",
+      "scheduleFile": "schedules/njt_609_165_schedule.json"
     },
     {
       "key": "njt:166",
@@ -5205,7 +5403,8 @@
         ]
       ],
       "file": "routes/njt_610_166.json",
-      "searchText": "610 nj transit"
+      "searchText": "610 nj transit",
+      "scheduleFile": "schedules/njt_610_166_schedule.json"
     },
     {
       "key": "njt:167",
@@ -5231,7 +5430,8 @@
         ]
       ],
       "file": "routes/njt_611_167.json",
-      "searchText": "611 nj transit"
+      "searchText": "611 nj transit",
+      "scheduleFile": "schedules/njt_611_167_schedule.json"
     },
     {
       "key": "njt:168",
@@ -5257,7 +5457,8 @@
         ]
       ],
       "file": "routes/njt_612_168.json",
-      "searchText": "612 nj transit"
+      "searchText": "612 nj transit",
+      "scheduleFile": "schedules/njt_612_168_schedule.json"
     },
     {
       "key": "njt:169",
@@ -5283,7 +5484,8 @@
         ]
       ],
       "file": "routes/njt_613_169.json",
-      "searchText": "613 nj transit"
+      "searchText": "613 nj transit",
+      "scheduleFile": "schedules/njt_613_169_schedule.json"
     },
     {
       "key": "njt:170",
@@ -5309,7 +5511,8 @@
         ]
       ],
       "file": "routes/njt_619_170.json",
-      "searchText": "619 nj transit"
+      "searchText": "619 nj transit",
+      "scheduleFile": "schedules/njt_619_170_schedule.json"
     },
     {
       "key": "njt:172",
@@ -5335,7 +5538,8 @@
         ]
       ],
       "file": "routes/njt_624_172.json",
-      "searchText": "624 nj transit"
+      "searchText": "624 nj transit",
+      "scheduleFile": "schedules/njt_624_172_schedule.json"
     },
     {
       "key": "njt:180",
@@ -5361,7 +5565,8 @@
         ]
       ],
       "file": "routes/njt_702_180.json",
-      "searchText": "702 nj transit"
+      "searchText": "702 nj transit",
+      "scheduleFile": "schedules/njt_702_180_schedule.json"
     },
     {
       "key": "njt:181",
@@ -5387,7 +5592,8 @@
         ]
       ],
       "file": "routes/njt_703_181.json",
-      "searchText": "703 nj transit"
+      "searchText": "703 nj transit",
+      "scheduleFile": "schedules/njt_703_181_schedule.json"
     },
     {
       "key": "njt:182",
@@ -5413,7 +5619,8 @@
         ]
       ],
       "file": "routes/njt_704_182.json",
-      "searchText": "704 nj transit"
+      "searchText": "704 nj transit",
+      "scheduleFile": "schedules/njt_704_182_schedule.json"
     },
     {
       "key": "njt:183",
@@ -5439,7 +5646,8 @@
         ]
       ],
       "file": "routes/njt_705_183.json",
-      "searchText": "705 nj transit"
+      "searchText": "705 nj transit",
+      "scheduleFile": "schedules/njt_705_183_schedule.json"
     },
     {
       "key": "njt:184",
@@ -5465,7 +5673,8 @@
         ]
       ],
       "file": "routes/njt_707_184.json",
-      "searchText": "707 nj transit"
+      "searchText": "707 nj transit",
+      "scheduleFile": "schedules/njt_707_184_schedule.json"
     },
     {
       "key": "njt:185",
@@ -5491,7 +5700,8 @@
         ]
       ],
       "file": "routes/njt_709_185.json",
-      "searchText": "709 nj transit"
+      "searchText": "709 nj transit",
+      "scheduleFile": "schedules/njt_709_185_schedule.json"
     },
     {
       "key": "njt:187",
@@ -5517,7 +5727,8 @@
         ]
       ],
       "file": "routes/njt_712_187.json",
-      "searchText": "712 nj transit"
+      "searchText": "712 nj transit",
+      "scheduleFile": "schedules/njt_712_187_schedule.json"
     },
     {
       "key": "njt:189",
@@ -5543,7 +5754,8 @@
         ]
       ],
       "file": "routes/njt_722_189.json",
-      "searchText": "722 nj transit"
+      "searchText": "722 nj transit",
+      "scheduleFile": "schedules/njt_722_189_schedule.json"
     },
     {
       "key": "njt:192",
@@ -5569,7 +5781,8 @@
         ]
       ],
       "file": "routes/njt_744_192.json",
-      "searchText": "744 nj transit"
+      "searchText": "744 nj transit",
+      "scheduleFile": "schedules/njt_744_192_schedule.json"
     },
     {
       "key": "njt:193",
@@ -5595,7 +5808,8 @@
         ]
       ],
       "file": "routes/njt_746_193.json",
-      "searchText": "746 nj transit"
+      "searchText": "746 nj transit",
+      "scheduleFile": "schedules/njt_746_193_schedule.json"
     },
     {
       "key": "njt:194",
@@ -5621,7 +5835,8 @@
         ]
       ],
       "file": "routes/njt_748_194.json",
-      "searchText": "748 nj transit"
+      "searchText": "748 nj transit",
+      "scheduleFile": "schedules/njt_748_194_schedule.json"
     },
     {
       "key": "njt:195",
@@ -5647,7 +5862,8 @@
         ]
       ],
       "file": "routes/njt_751_195.json",
-      "searchText": "751 nj transit"
+      "searchText": "751 nj transit",
+      "scheduleFile": "schedules/njt_751_195_schedule.json"
     },
     {
       "key": "njt:196",
@@ -5673,7 +5889,8 @@
         ]
       ],
       "file": "routes/njt_752_196.json",
-      "searchText": "752 nj transit"
+      "searchText": "752 nj transit",
+      "scheduleFile": "schedules/njt_752_196_schedule.json"
     },
     {
       "key": "njt:197",
@@ -5699,7 +5916,8 @@
         ]
       ],
       "file": "routes/njt_753_197.json",
-      "searchText": "753 nj transit"
+      "searchText": "753 nj transit",
+      "scheduleFile": "schedules/njt_753_197_schedule.json"
     },
     {
       "key": "njt:198",
@@ -5725,7 +5943,8 @@
         ]
       ],
       "file": "routes/njt_755_198.json",
-      "searchText": "755 nj transit"
+      "searchText": "755 nj transit",
+      "scheduleFile": "schedules/njt_755_198_schedule.json"
     },
     {
       "key": "njt:199",
@@ -5751,7 +5970,8 @@
         ]
       ],
       "file": "routes/njt_756_199.json",
-      "searchText": "756 nj transit"
+      "searchText": "756 nj transit",
+      "scheduleFile": "schedules/njt_756_199_schedule.json"
     },
     {
       "key": "njt:200",
@@ -5777,7 +5997,8 @@
         ]
       ],
       "file": "routes/njt_758_200.json",
-      "searchText": "758 nj transit"
+      "searchText": "758 nj transit",
+      "scheduleFile": "schedules/njt_758_200_schedule.json"
     },
     {
       "key": "njt:202",
@@ -5803,7 +6024,8 @@
         ]
       ],
       "file": "routes/njt_762_202.json",
-      "searchText": "762 nj transit"
+      "searchText": "762 nj transit",
+      "scheduleFile": "schedules/njt_762_202_schedule.json"
     },
     {
       "key": "njt:203",
@@ -5829,7 +6051,8 @@
         ]
       ],
       "file": "routes/njt_770_203.json",
-      "searchText": "770 nj transit"
+      "searchText": "770 nj transit",
+      "scheduleFile": "schedules/njt_770_203_schedule.json"
     },
     {
       "key": "njt:204",
@@ -5855,7 +6078,8 @@
         ]
       ],
       "file": "routes/njt_772_204.json",
-      "searchText": "772 nj transit"
+      "searchText": "772 nj transit",
+      "scheduleFile": "schedules/njt_772_204_schedule.json"
     },
     {
       "key": "njt:206",
@@ -5881,7 +6105,8 @@
         ]
       ],
       "file": "routes/njt_780_206.json",
-      "searchText": "780 nj transit"
+      "searchText": "780 nj transit",
+      "scheduleFile": "schedules/njt_780_206_schedule.json"
     },
     {
       "key": "njt:210",
@@ -5907,7 +6132,8 @@
         ]
       ],
       "file": "routes/njt_801_210.json",
-      "searchText": "801 nj transit"
+      "searchText": "801 nj transit",
+      "scheduleFile": "schedules/njt_801_210_schedule.json"
     },
     {
       "key": "njt:211",
@@ -5933,7 +6159,8 @@
         ]
       ],
       "file": "routes/njt_802_211.json",
-      "searchText": "802 nj transit"
+      "searchText": "802 nj transit",
+      "scheduleFile": "schedules/njt_802_211_schedule.json"
     },
     {
       "key": "njt:212",
@@ -5959,7 +6186,8 @@
         ]
       ],
       "file": "routes/njt_803_212.json",
-      "searchText": "803 nj transit"
+      "searchText": "803 nj transit",
+      "scheduleFile": "schedules/njt_803_212_schedule.json"
     },
     {
       "key": "njt:213",
@@ -5985,7 +6213,8 @@
         ]
       ],
       "file": "routes/njt_804_213.json",
-      "searchText": "804 nj transit"
+      "searchText": "804 nj transit",
+      "scheduleFile": "schedules/njt_804_213_schedule.json"
     },
     {
       "key": "njt:214",
@@ -6011,7 +6240,8 @@
         ]
       ],
       "file": "routes/njt_805_214.json",
-      "searchText": "805 nj transit"
+      "searchText": "805 nj transit",
+      "scheduleFile": "schedules/njt_805_214_schedule.json"
     },
     {
       "key": "njt:216",
@@ -6037,7 +6267,8 @@
         ]
       ],
       "file": "routes/njt_810_216.json",
-      "searchText": "810 nj transit"
+      "searchText": "810 nj transit",
+      "scheduleFile": "schedules/njt_810_216_schedule.json"
     },
     {
       "key": "njt:217",
@@ -6063,7 +6294,8 @@
         ]
       ],
       "file": "routes/njt_811_217.json",
-      "searchText": "811 nj transit"
+      "searchText": "811 nj transit",
+      "scheduleFile": "schedules/njt_811_217_schedule.json"
     },
     {
       "key": "njt:218",
@@ -6089,7 +6321,8 @@
         ]
       ],
       "file": "routes/njt_813_218.json",
-      "searchText": "813 nj transit"
+      "searchText": "813 nj transit",
+      "scheduleFile": "schedules/njt_813_218_schedule.json"
     },
     {
       "key": "njt:219",
@@ -6115,7 +6348,8 @@
         ]
       ],
       "file": "routes/njt_814_219.json",
-      "searchText": "814 nj transit"
+      "searchText": "814 nj transit",
+      "scheduleFile": "schedules/njt_814_219_schedule.json"
     },
     {
       "key": "njt:220",
@@ -6141,7 +6375,8 @@
         ]
       ],
       "file": "routes/njt_815_220.json",
-      "searchText": "815 nj transit"
+      "searchText": "815 nj transit",
+      "scheduleFile": "schedules/njt_815_220_schedule.json"
     },
     {
       "key": "njt:221",
@@ -6167,7 +6402,8 @@
         ]
       ],
       "file": "routes/njt_817_221.json",
-      "searchText": "817 nj transit"
+      "searchText": "817 nj transit",
+      "scheduleFile": "schedules/njt_817_221_schedule.json"
     },
     {
       "key": "njt:222",
@@ -6193,7 +6429,8 @@
         ]
       ],
       "file": "routes/njt_818_222.json",
-      "searchText": "818 nj transit"
+      "searchText": "818 nj transit",
+      "scheduleFile": "schedules/njt_818_222_schedule.json"
     },
     {
       "key": "njt:223",
@@ -6219,7 +6456,8 @@
         ]
       ],
       "file": "routes/njt_819_223.json",
-      "searchText": "819 nj transit"
+      "searchText": "819 nj transit",
+      "scheduleFile": "schedules/njt_819_223_schedule.json"
     },
     {
       "key": "njt:225",
@@ -6245,7 +6483,8 @@
         ]
       ],
       "file": "routes/njt_822_225.json",
-      "searchText": "822 nj transit"
+      "searchText": "822 nj transit",
+      "scheduleFile": "schedules/njt_822_225_schedule.json"
     },
     {
       "key": "njt:227",
@@ -6271,7 +6510,8 @@
         ]
       ],
       "file": "routes/njt_830_227.json",
-      "searchText": "830 nj transit"
+      "searchText": "830 nj transit",
+      "scheduleFile": "schedules/njt_830_227_schedule.json"
     },
     {
       "key": "njt:228",
@@ -6297,7 +6537,8 @@
         ]
       ],
       "file": "routes/njt_831_228.json",
-      "searchText": "831 nj transit"
+      "searchText": "831 nj transit",
+      "scheduleFile": "schedules/njt_831_228_schedule.json"
     },
     {
       "key": "njt:229",
@@ -6323,7 +6564,8 @@
         ]
       ],
       "file": "routes/njt_832_229.json",
-      "searchText": "832 nj transit"
+      "searchText": "832 nj transit",
+      "scheduleFile": "schedules/njt_832_229_schedule.json"
     },
     {
       "key": "njt:230",
@@ -6349,7 +6591,8 @@
         ]
       ],
       "file": "routes/njt_834_230.json",
-      "searchText": "834 nj transit"
+      "searchText": "834 nj transit",
+      "scheduleFile": "schedules/njt_834_230_schedule.json"
     },
     {
       "key": "njt:231",
@@ -6375,7 +6618,8 @@
         ]
       ],
       "file": "routes/njt_836_231.json",
-      "searchText": "836 nj transit"
+      "searchText": "836 nj transit",
+      "scheduleFile": "schedules/njt_836_231_schedule.json"
     },
     {
       "key": "njt:232",
@@ -6401,7 +6645,8 @@
         ]
       ],
       "file": "routes/njt_837_232.json",
-      "searchText": "837 nj transit"
+      "searchText": "837 nj transit",
+      "scheduleFile": "schedules/njt_837_232_schedule.json"
     },
     {
       "key": "njt:233",
@@ -6427,7 +6672,8 @@
         ]
       ],
       "file": "routes/njt_838_233.json",
-      "searchText": "838 nj transit"
+      "searchText": "838 nj transit",
+      "scheduleFile": "schedules/njt_838_233_schedule.json"
     },
     {
       "key": "njt:238",
@@ -6453,7 +6699,8 @@
         ]
       ],
       "file": "routes/njt_871_238.json",
-      "searchText": "871 nj transit"
+      "searchText": "871 nj transit",
+      "scheduleFile": "schedules/njt_871_238_schedule.json"
     },
     {
       "key": "njt:239",
@@ -6479,7 +6726,8 @@
         ]
       ],
       "file": "routes/njt_872_239.json",
-      "searchText": "872 nj transit"
+      "searchText": "872 nj transit",
+      "scheduleFile": "schedules/njt_872_239_schedule.json"
     },
     {
       "key": "njt:240",
@@ -6505,7 +6753,8 @@
         ]
       ],
       "file": "routes/njt_873_240.json",
-      "searchText": "873 nj transit"
+      "searchText": "873 nj transit",
+      "scheduleFile": "schedules/njt_873_240_schedule.json"
     },
     {
       "key": "njt:241",
@@ -6531,7 +6780,8 @@
         ]
       ],
       "file": "routes/njt_874_241.json",
-      "searchText": "874 nj transit"
+      "searchText": "874 nj transit",
+      "scheduleFile": "schedules/njt_874_241_schedule.json"
     },
     {
       "key": "njt:242",
@@ -6557,7 +6807,8 @@
         ]
       ],
       "file": "routes/njt_875_242.json",
-      "searchText": "875 nj transit"
+      "searchText": "875 nj transit",
+      "scheduleFile": "schedules/njt_875_242_schedule.json"
     },
     {
       "key": "njt:243",
@@ -6583,7 +6834,8 @@
         ]
       ],
       "file": "routes/njt_878_243.json",
-      "searchText": "878 nj transit"
+      "searchText": "878 nj transit",
+      "scheduleFile": "schedules/njt_878_243_schedule.json"
     },
     {
       "key": "njt:245",
@@ -6609,7 +6861,8 @@
         ]
       ],
       "file": "routes/njt_880_245.json",
-      "searchText": "880 nj transit"
+      "searchText": "880 nj transit",
+      "scheduleFile": "schedules/njt_880_245_schedule.json"
     },
     {
       "key": "njt:247",
@@ -6635,7 +6888,8 @@
         ]
       ],
       "file": "routes/njt_890_247.json",
-      "searchText": "890 nj transit"
+      "searchText": "890 nj transit",
+      "scheduleFile": "schedules/njt_890_247_schedule.json"
     },
     {
       "key": "njt:248",
@@ -6661,7 +6915,8 @@
         ]
       ],
       "file": "routes/njt_891_248.json",
-      "searchText": "891 nj transit"
+      "searchText": "891 nj transit",
+      "scheduleFile": "schedules/njt_891_248_schedule.json"
     },
     {
       "key": "njt:255",
@@ -6687,7 +6942,8 @@
         ]
       ],
       "file": "routes/njt_986_255.json",
-      "searchText": "986 nj transit"
+      "searchText": "986 nj transit",
+      "scheduleFile": "schedules/njt_986_255_schedule.json"
     },
     {
       "key": "njt:257",
@@ -6713,7 +6969,8 @@
         ]
       ],
       "file": "routes/njt_AC1_257.json",
-      "searchText": "ac1 nj transit"
+      "searchText": "ac1 nj transit",
+      "scheduleFile": "schedules/njt_AC1_257_schedule.json"
     },
     {
       "key": "njt:258",
@@ -6739,7 +6996,8 @@
         ]
       ],
       "file": "routes/njt_AC3_258.json",
-      "searchText": "ac3 nj transit"
+      "searchText": "ac3 nj transit",
+      "scheduleFile": "schedules/njt_AC3_258_schedule.json"
     },
     {
       "key": "njt:259",
@@ -6765,7 +7023,8 @@
         ]
       ],
       "file": "routes/njt_AC4B_259.json",
-      "searchText": "ac4b nj transit"
+      "searchText": "ac4b nj transit",
+      "scheduleFile": "schedules/njt_AC4B_259_schedule.json"
     },
     {
       "key": "njt:260",
@@ -6791,7 +7050,8 @@
         ]
       ],
       "file": "routes/njt_GO25_260.json",
-      "searchText": "go25 nj transit"
+      "searchText": "go25 nj transit",
+      "scheduleFile": "schedules/njt_GO25_260_schedule.json"
     },
     {
       "key": "njt:261",
@@ -6817,7 +7077,8 @@
         ]
       ],
       "file": "routes/njt_GO28_261.json",
-      "searchText": "go28 nj transit"
+      "searchText": "go28 nj transit",
+      "scheduleFile": "schedules/njt_GO28_261_schedule.json"
     },
     {
       "key": "princeton:28ea7117-5d28-4c7e-a919-5e4e94e79b42",
@@ -6843,7 +7104,8 @@
         ]
       ],
       "file": "routes/princeton_1_28ea7117-5d28-4c7e-a919-5e4e94e79b42.json",
-      "searchText": "1 route 1: grad college to meadows princeton transit tigertransit tiger transit"
+      "searchText": "1 route 1: grad college to meadows princeton transit tigertransit tiger transit",
+      "scheduleFile": "schedules/princeton_1_28ea7117-5d28-4c7e-a919-5e4e94e79b42_schedule.json"
     },
     {
       "key": "princeton:4894d1d9-889e-4687-8a93-13bb19426ed6",
@@ -6869,7 +7131,8 @@
         ]
       ],
       "file": "routes/princeton_2_4894d1d9-889e-4687-8a93-13bb19426ed6.json",
-      "searchText": "2 route 2: lawrence/lakeside to equad princeton transit tigertransit tiger transit"
+      "searchText": "2 route 2: lawrence/lakeside to equad princeton transit tigertransit tiger transit",
+      "scheduleFile": "schedules/princeton_2_4894d1d9-889e-4687-8a93-13bb19426ed6_schedule.json"
     },
     {
       "key": "princeton:886dd8f1-6a83-4be3-9909-3e3170a5fb65",
@@ -6895,7 +7158,8 @@
         ]
       ],
       "file": "routes/princeton_3_886dd8f1-6a83-4be3-9909-3e3170a5fb65.json",
-      "searchText": "3 route 3: merwick to forrestal/pppl princeton transit tigertransit tiger transit"
+      "searchText": "3 route 3: merwick to forrestal/pppl princeton transit tigertransit tiger transit",
+      "scheduleFile": "schedules/princeton_3_886dd8f1-6a83-4be3-9909-3e3170a5fb65_schedule.json"
     },
     {
       "key": "princeton:d092e3be-9034-438f-9914-6ae8d74aa39e",
@@ -6921,7 +7185,8 @@
         ]
       ],
       "file": "routes/princeton_4_d092e3be-9034-438f-9914-6ae8d74aa39e.json",
-      "searchText": "4 route 4: princeton junction to stadium drive garage princeton transit tigertransit tiger transit"
+      "searchText": "4 route 4: princeton junction to stadium drive garage princeton transit tigertransit tiger transit",
+      "scheduleFile": "schedules/princeton_4_d092e3be-9034-438f-9914-6ae8d74aa39e_schedule.json"
     },
     {
       "key": "princeton:70629116-e51d-4c6d-991d-5f100441a2d7",
@@ -6947,7 +7212,8 @@
         ]
       ],
       "file": "routes/princeton_5_70629116-e51d-4c6d-991d-5f100441a2d7.json",
-      "searchText": "5 route 5: princeton station to stadium drive garage princeton transit tigertransit tiger transit"
+      "searchText": "5 route 5: princeton station to stadium drive garage princeton transit tigertransit tiger transit",
+      "scheduleFile": "schedules/princeton_5_70629116-e51d-4c6d-991d-5f100441a2d7_schedule.json"
     },
     {
       "key": "princeton:7f065734-5848-4c9e-8a5a-f5ae5c80e795",
@@ -6973,7 +7239,8 @@
         ]
       ],
       "file": "routes/princeton_6A_7f065734-5848-4c9e-8a5a-f5ae5c80e795.json",
-      "searchText": "6a route 6a: campus circulator via equad princeton transit tigertransit tiger transit"
+      "searchText": "6a route 6a: campus circulator via equad princeton transit tigertransit tiger transit",
+      "scheduleFile": "schedules/princeton_6A_7f065734-5848-4c9e-8a5a-f5ae5c80e795_schedule.json"
     },
     {
       "key": "princeton:8213b9c6-a8f2-43b2-af72-041ad35719b7",
@@ -6999,7 +7266,8 @@
         ]
       ],
       "file": "routes/princeton_6B_8213b9c6-a8f2-43b2-af72-041ad35719b7.json",
-      "searchText": "6b route 6b: campus circulator via washington road princeton transit tigertransit tiger transit"
+      "searchText": "6b route 6b: campus circulator via washington road princeton transit tigertransit tiger transit",
+      "scheduleFile": "schedules/princeton_6B_8213b9c6-a8f2-43b2-af72-041ad35719b7_schedule.json"
     },
     {
       "key": "princeton:bb733fc7-4b53-481f-9616-28d61cca131c",
@@ -7025,7 +7293,8 @@
         ]
       ],
       "file": "routes/princeton_TPL_bb733fc7-4b53-481f-9616-28d61cca131c.json",
-      "searchText": "tpl the princeton loop - local princeton transit princeton loop"
+      "searchText": "tpl the princeton loop - local princeton transit princeton loop",
+      "scheduleFile": "schedules/princeton_TPL_bb733fc7-4b53-481f-9616-28d61cca131c_schedule.json"
     },
     {
       "key": "princeton:d03ad4f8-19b1-482a-a028-1bd79bffd7ef",
@@ -7051,7 +7320,8 @@
         ]
       ],
       "file": "routes/princeton_TPLEXP_d03ad4f8-19b1-482a-a028-1bd79bffd7ef.json",
-      "searchText": "tplexp the princeton loop - express princeton transit princeton loop"
+      "searchText": "tplexp the princeton loop - express princeton transit princeton loop",
+      "scheduleFile": "schedules/princeton_TPLEXP_d03ad4f8-19b1-482a-a028-1bd79bffd7ef_schedule.json"
     },
     {
       "key": "princeton:3f0911c5-6c8d-474a-9bc6-bb7c2ed7bf21",
@@ -7077,7 +7347,8 @@
         ]
       ],
       "file": "routes/princeton_WS_3f0911c5-6c8d-474a-9bc6-bb7c2ed7bf21.json",
-      "searchText": "ws ws: weekend shopper princeton transit weekend shopper"
+      "searchText": "ws ws: weekend shopper princeton transit weekend shopper",
+      "scheduleFile": "schedules/princeton_WS_3f0911c5-6c8d-474a-9bc6-bb7c2ed7bf21_schedule.json"
     }
   ]
 }

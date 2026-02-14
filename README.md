@@ -10,7 +10,7 @@ Interactive map for:
 - Searchable route catalog grouped by agency
 - Multi-route overlays with distinct colors
 - Stop popups with route/stop details
-- Stop-level schedule popups (inline in full mode, lazy-loaded in web-slim mode)
+- Stop-level schedule popups (optimized external schedule files by default)
 - Mobile-friendly controls: collapsible panel + location centering
 - Installable web app support (`manifest.webmanifest` + service worker)
 
@@ -21,29 +21,29 @@ Interactive map for:
 
 ## Build or Refresh Dataset
 
-Full dataset (includes stop-level schedules, larger files):
+Default optimized web build (shape simplification + lazy schedule files):
 
 ```bash
 ./scripts/build_njt_data.py --refresh
 ```
 
-Web-slim dataset (faster/lighter for deployment):
+Inline schedules in route files (larger payloads, no schedule-file request on hover):
 
 ```bash
-./scripts/build_njt_data.py --web-slim --refresh
+./scripts/build_njt_data.py --inline-schedules --refresh
 ```
 
 No stop schedules (smallest payload, schedules omitted):
 
 ```bash
-./scripts/build_njt_data.py --web-slim --no-stop-schedules --refresh
+./scripts/build_njt_data.py --no-stop-schedules --refresh
 ```
 
 Generated output paths:
 
 - `data/manifest.json`
 - `data/routes/*.json`
-- `data/schedules/*.json` (when using `--web-slim` without `--no-stop-schedules`)
+- `data/schedules/*.json` (default mode)
 
 ## Run Locally
 
@@ -53,37 +53,24 @@ python3 -m http.server 8000
 
 Open `http://localhost:8000`.
 
-## Deploy to Vercel (Claimable, No Project Needed)
+## Deploy to Vercel
 
-This repo includes the `vercel-deploy-claimable` skill at:
-`./.agents/skills/vercel-deploy-claimable`
-
-Deploy from repo root:
+Deploy from repo root with the Vercel CLI:
 
 ```bash
-tmp=$(mktemp /tmp/njt-vercel.XXXXXX.tgz)
-tar -czf "$tmp" \
-  --exclude='node_modules' \
-  --exclude='.git' \
-  --exclude='.agents' \
-  --exclude='scripts' \
-  --exclude='data/*.zip' \
-  --exclude='.vercel' \
-  .
-bash ./.agents/skills/vercel-deploy-claimable/scripts/deploy.sh "$tmp"
+vercel deploy
 ```
 
-The command returns:
+Deploy to production:
 
-- `Preview URL`: live deployment link
-- `Claim URL`: transfer deployment into your Vercel account
-
-Packing a slim tarball avoids claimable endpoint payload limits from large raw GTFS zip files.
+```bash
+vercel deploy --prod
+```
 
 ## Deployment Notes
 
 - `vercel.json` sets caching and security headers for static assets and route data.
 - `.vercelignore` excludes local-only files (`scripts/`, raw GTFS zip files, and skill folders) from deployment uploads.
 - `data/routes/*.json` remains lazy-loaded to keep initial page load fast.
-- `data/schedules/*.json` loads on demand when a stop popup is opened in web-slim builds.
-- For claimable deployment size limits, use `--web-slim` data generation.
+- `data/schedules/*.json` is cached and prefetched when routes are selected to keep hover popups responsive.
+- For smallest deployment payloads, use `--no-stop-schedules`.

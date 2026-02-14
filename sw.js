@@ -1,5 +1,6 @@
-const APP_SHELL_CACHE = "njt-app-shell-v1";
-const ROUTE_DATA_CACHE = "njt-route-data-v1";
+const APP_SHELL_CACHE = "njt-app-shell-v2";
+const ROUTE_DATA_CACHE = "njt-route-data-v2";
+const SCHEDULE_DATA_CACHE = "njt-schedule-data-v1";
 
 const APP_SHELL_PATHS = new Set([
   "/",
@@ -10,6 +11,13 @@ const APP_SHELL_PATHS = new Set([
   "/icons/icon-192.svg",
   "/icons/icon-512.svg",
   "/data/manifest.json",
+  "/js/constants.js",
+  "/js/map.js",
+  "/js/popup.js",
+  "/js/route-data.js",
+  "/js/stop-popup.js",
+  "/js/text.js",
+  "/js/time.js",
 ]);
 
 self.addEventListener("install", (event) => {
@@ -29,7 +37,12 @@ self.addEventListener("activate", (event) => {
       .then((keys) =>
         Promise.all(
           keys
-            .filter((key) => key !== APP_SHELL_CACHE && key !== ROUTE_DATA_CACHE)
+            .filter(
+              (key) =>
+                key !== APP_SHELL_CACHE &&
+                key !== ROUTE_DATA_CACHE &&
+                key !== SCHEDULE_DATA_CACHE,
+            )
             .map((key) => caches.delete(key)),
         ),
       )
@@ -51,6 +64,11 @@ self.addEventListener("fetch", (event) => {
 
   if (url.pathname.startsWith("/data/routes/")) {
     event.respondWith(networkFirst(request, ROUTE_DATA_CACHE));
+    return;
+  }
+
+  if (url.pathname.startsWith("/data/schedules/")) {
+    event.respondWith(networkFirst(request, SCHEDULE_DATA_CACHE));
     return;
   }
 
