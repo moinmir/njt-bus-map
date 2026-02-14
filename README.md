@@ -10,7 +10,7 @@ Interactive map for:
 - Searchable route catalog grouped by agency
 - Multi-route overlays with distinct colors
 - Stop popups with route/stop details
-- Optional full schedule popups when built with full dataset mode
+- Stop-level schedule popups (inline in full mode, lazy-loaded in web-slim mode)
 - Mobile-friendly controls: collapsible panel + location centering
 - Installable web app support (`manifest.webmanifest` + service worker)
 
@@ -33,10 +33,17 @@ Web-slim dataset (faster/lighter for deployment):
 ./scripts/build_njt_data.py --web-slim --refresh
 ```
 
+No stop schedules (smallest payload, schedules omitted):
+
+```bash
+./scripts/build_njt_data.py --web-slim --no-stop-schedules --refresh
+```
+
 Generated output paths:
 
 - `data/manifest.json`
 - `data/routes/*.json`
+- `data/schedules/*.json` (when using `--web-slim` without `--no-stop-schedules`)
 
 ## Run Locally
 
@@ -78,4 +85,5 @@ Packing a slim tarball avoids claimable endpoint payload limits from large raw G
 - `vercel.json` sets caching and security headers for static assets and route data.
 - `.vercelignore` excludes local-only files (`scripts/`, raw GTFS zip files, and skill folders) from deployment uploads.
 - `data/routes/*.json` remains lazy-loaded to keep initial page load fast.
-- For claimable deployment size limits, use `--web-slim` route data.
+- `data/schedules/*.json` loads on demand when a stop popup is opened in web-slim builds.
+- For claimable deployment size limits, use `--web-slim` data generation.

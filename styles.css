@@ -331,6 +331,18 @@ button.secondary:hover {
   background: #fff;
 }
 
+.map-area-button:disabled {
+  opacity: 0.68;
+  cursor: wait;
+}
+
+#clear-area {
+  min-width: 2rem;
+  padding-inline: 0.62rem;
+  font-size: 1.08rem;
+  line-height: 1;
+}
+
 .map-area-button.is-hidden {
   display: none;
 }

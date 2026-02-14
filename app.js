@@ -73,6 +73,7 @@ let activeSearchTerm = "";
 let activeAreaBounds = null;
 let userLocationLayer = null;
 let mobilePanelCollapsed = mobileLayoutMediaQuery.matches;
+let areaSelectionInProgress = false;
 
 init().catch((error) => {
   console.error(error);
@@ -106,8 +107,12 @@ function attachTopLevelEvents() {
 
   fitButton.addEventListener("click", fitToSelectedRoutes);
   locateMeButton.addEventListener("click", locateUser);
-  searchAreaButton?.addEventListener("click", applyCurrentMapAreaFilter);
-  clearAreaButton?.addEventListener("click", clearAreaFilter);
+  searchAreaButton?.addEventListener("click", () => {
+    void applyCurrentMapAreaFilter();
+  });
+  clearAreaButton?.addEventListener("click", () => {
+    void clearAreaFilter();
+  });
 
   selectVisibleButton.addEventListener("click", async () => {
     const keys = getVisibleRouteKeys();
@@ -286,7 +291,9 @@ function buildRouteControls(manifest) {
         isVisible: true,
         layer: null,
         routeData: null,
+        scheduleData: null,
         loadPromise: null,
+        scheduleLoadPromise: null,
       });
     }
   }
@@ -375,28 +382,71 @@ function getVisibleRouteKeys() {
   return keys;
 }
 
-function applyCurrentMapAreaFilter() {
+async function applyCurrentMapAreaFilter() {
+  if (areaSelectionInProgress) return;
+  areaSelectionInProgress = true;
+  updateAreaFilterControls();
+
   activeAreaBounds = createMapAreaBounds(map.getBounds());
   applySearchFilter();
-  updateAreaFilterControls();
-  updateStatus();
+
+  const keysToSelect = getVisibleRouteKeys();
+  if (keysToSelect.length === 0) {
+    areaSelectionInProgress = false;
+    updateAreaFilterControls();
+    updateStatus();
+    return;
+  }
+
+  statusNode.textContent = `Loading ${keysToSelect.length} route(s) in this area...`;
+
+  try {
+    for (const key of [...selectedRouteKeys]) {
+      await setRouteSelection(key, false, { refreshUi: false });
+    }
+
+    for (const key of keysToSelect) {
+      await setRouteSelection(key, true, { refreshUi: false });
+    }
+  } finally {
+    areaSelectionInProgress = false;
+    updateAreaFilterControls();
+    applySearchFilter();
+    updateStatus();
+  }
 }
 
-function clearAreaFilter() {
-  if (!activeAreaBounds) return;
-  activeAreaBounds = null;
-  applySearchFilter();
+async function clearAreaFilter() {
+  if (areaSelectionInProgress) return;
+  areaSelectionInProgress = true;
   updateAreaFilterControls();
-  updateStatus();
+
+  activeAreaBounds = null;
+
+  try {
+    for (const key of [...selectedRouteKeys]) {
+      await setRouteSelection(key, false, { refreshUi: false });
+    }
+  } finally {
+    areaSelectionInProgress = false;
+    updateAreaFilterControls();
+    applySearchFilter();
+    updateStatus();
+  }
 }
 
 function updateAreaFilterControls() {
   const areaFilterActive = Boolean(activeAreaBounds);
 
   if (searchAreaButton) {
+    searchAreaButton.disabled = areaSelectionInProgress;
     searchAreaButton.textContent = areaFilterActive ? "Search this area again" : "Search this area";
   }
-  clearAreaButton?.classList.toggle("is-hidden", !areaFilterActive);
+
+  if (clearAreaButton) {
+    clearAreaButton.disabled = areaSelectionInProgress;
+    clearAreaButton.classList.toggle("is-hidden", !areaFilterActive && !areaSelectionInProgress);
+  }
 }
 
 function createMapAreaBounds(bounds) {
@@ -450,7 +500,7 @@ function applySearchFilter() {
   }
 }
 
-async function setRouteSelection(routeKey, selected) {
+async function setRouteSelection(routeKey, selected, options = {}) {
   const state = routeStateByKey.get(routeKey);
   if (!state) return;
 
@@ -484,8 +534,10 @@ async function setRouteSelection(routeKey, selected) {
     }
   }
 
-  applySearchFilter();
-  updateStatus();
+  if (options.refreshUi !== false) {
+    applySearchFilter();
+    updateStatus();
+  }
 }
 
 async function ensureRouteLoaded(state) {
@@ -504,7 +556,7 @@ async function ensureRouteLoaded(state) {
 
     const routeData = await response.json();
     state.routeData = routeData;
-    state.layer = buildRouteLayer(state.meta, routeData);
+    state.layer = buildRouteLayer(state, routeData);
   })();
 
   try {
@@ -515,7 +567,8 @@ async function ensureRouteLoaded(state) {
   }
 }
 
-function buildRouteLayer(routeMeta, routeData) {
+function buildRouteLayer(state, routeData) {
+  const routeMeta = state.meta;
   const group = L.layerGroup();
 
   for (const shape of routeData.shapes ?? []) {
@@ -544,7 +597,7 @@ function buildRouteLayer(routeMeta, routeData) {
       offset: [0, -6],
     });
 
-    attachInteractivePopup(marker, () => buildStopPopup(routeMeta, routeData, stop));
+    attachInteractivePopup(marker, () => buildStopPopup(state, stop));
     marker.addTo(group);
   }
 
@@ -553,6 +606,7 @@ function buildRouteLayer(routeMeta, routeData) {
 
 function attachInteractivePopup(marker, contentFactory) {
   let closeTimer = null;
+  let popupRequestToken = 0;
   const hoverCapable = window.matchMedia(HOVER_POINTER_QUERY).matches;
 
   const clearCloseTimer = () => {
@@ -571,8 +625,25 @@ function attachInteractivePopup(marker, contentFactory) {
 
   const openPopup = () => {
     clearCloseTimer();
-    marker.setPopupContent(contentFactory());
+    const token = ++popupRequestToken;
+    marker.setPopupContent(
+      '<div class="popup-shell"><div class="next-bar">Loading stop schedule...</div></div>',
+    );
     marker.openPopup();
+    Promise.resolve(contentFactory())
+      .then((content) => {
+        if (token !== popupRequestToken) return;
+        if (!marker.isPopupOpen()) return;
+        marker.setPopupContent(content);
+      })
+      .catch((error) => {
+        console.error(error);
+        if (token !== popupRequestToken) return;
+        if (!marker.isPopupOpen()) return;
+        marker.setPopupContent(
+          '<div class="popup-shell"><div class="next-bar">Unable to load stop schedule right now.</div></div>',
+        );
+      });
   };
 
   if (hoverCapable) {
@@ -600,8 +671,14 @@ function attachInteractivePopup(marker, contentFactory) {
   marker.on("remove", clearCloseTimer);
 }
 
-function buildStopPopup(routeMeta, routeData, stop) {
-  const hasScheduleData = Boolean(routeData.activeServicesByDay) && Boolean(stop.serviceSchedule);
+async function buildStopPopup(state, stop) {
+  const routeMeta = state.meta;
+  const routeData = state.routeData;
+  const scheduleData = await ensureRouteScheduleLoaded(state);
+  const daySchedules = computeDaySchedules(routeData, stop, scheduleData);
+  const representativeDates = scheduleData?.representativeDates ?? routeData.representativeDates;
+  const hasScheduleData = DAY_KEYS.some((dayKey) => (daySchedules[dayKey] ?? []).length > 0);
+
   if (!hasScheduleData) {
     return `
       <div class="popup-shell">
@@ -609,12 +686,11 @@ function buildStopPopup(routeMeta, routeData, stop) {
           <h3 class="popup-title">${escapeHtml(stop.name)}</h3>
           <p class="popup-subtitle">${escapeHtml(routeMeta.agencyLabel)} • Route ${escapeHtml(routeMeta.shortName)}</p>
         </div>
-        <div class="next-bar">Stop-level schedules are omitted in this slim web deployment.</div>
+        <div class="next-bar">No stop-level schedule data is currently available for this stop.</div>
       </div>
     `;
   }
 
-  const daySchedules = computeDaySchedules(routeData, stop);
   const next = findNextArrival(daySchedules);
   const upcoming = findUpcomingArrivals(daySchedules, 3);
 
@@ -622,7 +698,7 @@ function buildStopPopup(routeMeta, routeData, stop) {
 
   const dayBlocks = DAY_KEYS.map((dayKey) => {
     const times = daySchedules[dayKey] ?? [];
-    const representativeDate = routeData.representativeDates?.[dayKey];
+    const representativeDate = representativeDates?.[dayKey];
     const openAttr = dayKey === defaultOpenDay ? " open" : "";
 
     let bodyHtml = '<div class="no-service">No service</div>';
@@ -673,7 +749,48 @@ function buildStopPopup(routeMeta, routeData, stop) {
   `;
 }
 
-function computeDaySchedules(routeData, stop) {
+async function ensureRouteScheduleLoaded(state) {
+  if (state.routeData?.activeServicesByDay) {
+    return null;
+  }
+
+  if (state.scheduleData) {
+    return state.scheduleData;
+  }
+
+  const scheduleFile = state.routeData?.scheduleFile;
+  if (!scheduleFile) {
+    return null;
+  }
+
+  if (state.scheduleLoadPromise) {
+    await state.scheduleLoadPromise;
+    return state.scheduleData;
+  }
+
+  state.scheduleLoadPromise = (async () => {
+    const response = await fetch(`./data/${scheduleFile}`);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    state.scheduleData = await response.json();
+  })();
+
+  try {
+    await state.scheduleLoadPromise;
+  } finally {
+    state.scheduleLoadPromise = null;
+  }
+
+  return state.scheduleData;
+}
+
+function computeDaySchedules(routeData, stop, scheduleData = null) {
+  const externalByStop = scheduleData?.daySchedulesByStop?.[stop.stopId];
+  if (externalByStop) {
+    return externalByStop;
+  }
+
   if (stop._daySchedules) {
     return stop._daySchedules;
   }

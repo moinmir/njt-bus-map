@@ -3,7 +3,8 @@
 
 Outputs:
 - data/manifest.json (route index + source metadata)
-- data/routes/*.json (per-route geometry + stops + schedules)
+- data/routes/*.json (per-route geometry + stops)
+- data/schedules/*.json (optional per-route stop schedules, web-slim mode)
 
 Official data sources:
 - NJ Transit GTFS: https://www.njtransit.com/bus_data.zip
@@ -272,8 +273,9 @@ def build_feed(
     feed_config: dict,
     gtfs_zip_path: pathlib.Path,
     routes_dir: pathlib.Path,
+    schedules_dir: pathlib.Path | None,
     max_shape_points: int,
-    include_stop_schedules: bool,
+    schedule_mode: str,
     today: dt.date,
 ) -> tuple[dict, list[dict]]:
     agency_id = feed_config["id"]
@@ -373,7 +375,7 @@ def build_feed(
             stop_id = row["stop_id"].strip()
             route_stop_ids[route_id].add(stop_id)
 
-            if not include_stop_schedules:
+            if schedule_mode == "none":
                 continue
 
             raw_time = row.get("departure_time") or row.get("arrival_time") or ""
@@ -482,7 +484,7 @@ def build_feed(
                 continue
 
             stop_payload = {**info}
-            if include_stop_schedules:
+            if schedule_mode == "inline":
                 service_schedule = {}
                 for service_id, times in route_stop_schedule_by_service[route_id][stop_id].items():
                     if service_id not in route_service_ids[route_id]:
@@ -522,11 +524,6 @@ def build_feed(
             for day_key in DAY_KEYS
         }
 
-        active_services_json = {
-            day_key: sorted(active_services_by_route_day[route_id][day_key])
-            for day_key in DAY_KEYS
-        }
-
         filename = (
             f"{agency_id}_{sanitize_filename(meta['shortName'])}_{sanitize_filename(route_id)}.json"
         )
@@ -550,9 +547,53 @@ def build_feed(
             "shapes": shapes,
             "stops": route_stops,
         }
-        if include_stop_schedules:
+        if schedule_mode == "inline":
+            active_services_json = {
+                day_key: sorted(active_services_by_route_day[route_id][day_key])
+                for day_key in DAY_KEYS
+            }
             route_payload["representativeDates"] = representative_dates_json
             route_payload["activeServicesByDay"] = active_services_json
+        elif schedule_mode == "external":
+            if schedules_dir is None:
+                raise RuntimeError("schedules_dir is required when schedule_mode='external'")
+
+            day_schedules_by_stop: dict[str, dict[str, list[str]]] = {}
+            for stop in route_stops:
+                stop_id = stop["stopId"]
+                day_schedule: dict[str, list[str]] = {}
+                has_times = False
+
+                for day_key in DAY_KEYS:
+                    merged: set[str] = set()
+                    active_services = active_services_by_route_day[route_id][day_key]
+                    for service_id in active_services:
+                        merged.update(
+                            route_stop_schedule_by_service[route_id][stop_id].get(service_id, set())
+                        )
+
+                    sorted_times = sorted(merged, key=parse_time_to_seconds)
+                    day_schedule[day_key] = sorted_times
+                    if sorted_times:
+                        has_times = True
+
+                if has_times:
+                    day_schedules_by_stop[stop_id] = day_schedule
+
+            schedule_filename = filename.replace(".json", "_schedule.json")
+            schedule_file_rel = f"schedules/{schedule_filename}"
+            schedule_payload = {
+                "key": route_key,
+                "agencyId": agency_id,
+                "routeId": route_id,
+                "representativeDates": representative_dates_json,
+                "daySchedulesByStop": day_schedules_by_stop,
+            }
+            (schedules_dir / schedule_filename).write_text(
+                json.dumps(schedule_payload, separators=(",", ":")),
+                encoding="utf-8",
+            )
+            route_payload["scheduleFile"] = schedule_file_rel
 
         (routes_dir / filename).write_text(
             json.dumps(route_payload, separators=(",", ":")),
@@ -628,7 +669,12 @@ def main() -> int:
     parser.add_argument(
         "--web-slim",
         action="store_true",
-        help="Create deployment-friendly data: fewer shape points and no stop-level schedules",
+        help="Create deployment-friendly data: fewer shape points with stop schedules in lazy per-route files",
+    )
+    parser.add_argument(
+        "--no-stop-schedules",
+        action="store_true",
+        help="Omit stop-level schedule data entirely",
     )
     args = parser.parse_args()
 
@@ -636,10 +682,12 @@ def main() -> int:
         raise SystemExit("--max-shape-points must be >= 50")
 
     effective_max_shape_points = args.max_shape_points
-    include_stop_schedules = True
+    schedule_mode = "inline"
     if args.web_slim:
         effective_max_shape_points = min(effective_max_shape_points, 260)
-        include_stop_schedules = False
+        schedule_mode = "external"
+    if args.no_stop_schedules:
+        schedule_mode = "none"
 
     output_dir = pathlib.Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -648,6 +696,14 @@ def main() -> int:
     if routes_dir.exists():
         shutil.rmtree(routes_dir)
     routes_dir.mkdir(parents=True, exist_ok=True)
+
+    schedules_dir: pathlib.Path | None = None
+    schedules_path = output_dir / "schedules"
+    if schedules_path.exists():
+        shutil.rmtree(schedules_path)
+    if schedule_mode == "external":
+        schedules_path.mkdir(parents=True, exist_ok=True)
+        schedules_dir = schedules_path
 
     today = dt.date.today()
     sources = []
@@ -664,8 +720,9 @@ def main() -> int:
             feed,
             zip_path,
             routes_dir,
+            schedules_dir,
             effective_max_shape_points,
-            include_stop_schedules,
+            schedule_mode,
             today,
         )
         sources.append(source_meta)
