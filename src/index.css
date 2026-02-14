@@ -1,0 +1,230 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: oklch(0.98 0.005 250);
+  --foreground: oklch(0.2 0.04 250);
+  --card: oklch(0.98 0.005 250);
+  --card-foreground: oklch(0.2 0.04 250);
+  --popover: oklch(0.98 0.005 250);
+  --popover-foreground: oklch(0.2 0.04 250);
+  --primary: oklch(0.35 0.08 250);
+  --primary-foreground: oklch(0.98 0.005 250);
+  --secondary: oklch(0.93 0.015 250);
+  --secondary-foreground: oklch(0.3 0.05 250);
+  --muted: oklch(0.93 0.015 250);
+  --muted-foreground: oklch(0.5 0.03 250);
+  --accent: oklch(0.93 0.015 250);
+  --accent-foreground: oklch(0.3 0.05 250);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.98 0.005 250);
+  --border: oklch(0.88 0.02 250);
+  --input: oklch(0.88 0.02 250);
+  --ring: oklch(0.35 0.08 250);
+  --radius: 0.625rem;
+  --chart-1: oklch(0.55 0.15 250);
+  --chart-2: oklch(0.6 0.15 160);
+  --chart-3: oklch(0.5 0.12 280);
+  --chart-4: oklch(0.65 0.15 80);
+  --chart-5: oklch(0.55 0.18 20);
+  --sidebar: oklch(0.96 0.008 250);
+  --sidebar-foreground: oklch(0.2 0.04 250);
+  --sidebar-primary: oklch(0.35 0.08 250);
+  --sidebar-primary-foreground: oklch(0.98 0.005 250);
+  --sidebar-accent: oklch(0.93 0.015 250);
+  --sidebar-accent-foreground: oklch(0.3 0.05 250);
+  --sidebar-border: oklch(0.88 0.02 250);
+  --sidebar-ring: oklch(0.35 0.08 250);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Leaflet popup overrides */
+.stop-popup .leaflet-popup-content-wrapper {
+  border-radius: 13px;
+}
+
+.stop-popup .leaflet-popup-content {
+  margin: 0.7rem 0.74rem;
+  min-width: 290px;
+  max-width: 390px;
+}
+
+@media (max-width: 620px) {
+  .stop-popup .leaflet-popup-content {
+    min-width: 220px;
+    max-width: min(84vw, 390px);
+  }
+}
+
+/* Popup internals (these are raw HTML strings in Leaflet, not React) */
+.popup-shell {
+  display: grid;
+  gap: 0.48rem;
+}
+
+.popup-head {
+  display: grid;
+  gap: 0.18rem;
+}
+
+.popup-title {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.popup-subtitle {
+  margin: 0;
+  font-size: 0.78rem;
+  color: oklch(0.5 0.03 250);
+}
+
+.next-bar {
+  font-size: 0.77rem;
+  color: oklch(0.35 0.04 250);
+  background: oklch(0.97 0.008 250);
+  border: 1px solid oklch(0.9 0.015 250);
+  border-radius: 8px;
+  padding: 0.34rem 0.45rem;
+}
+
+.next-bar strong {
+  color: oklch(0.5 0.18 20);
+}
+
+.day-list {
+  display: grid;
+  gap: 0.32rem;
+}
+
+.day-item {
+  border: 1px solid oklch(0.9 0.015 250);
+  border-radius: 8px;
+  background: oklch(0.99 0.003 250);
+}
+
+.day-item > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.36rem 0.44rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.day-item > summary::-webkit-details-marker {
+  display: none;
+}
+
+.day-left {
+  display: flex;
+  gap: 0.3rem;
+  align-items: baseline;
+}
+
+.day-label {
+  font-weight: 600;
+  color: oklch(0.3 0.04 250);
+  font-size: 0.77rem;
+}
+
+.day-date {
+  color: oklch(0.55 0.025 250);
+  font-size: 0.72rem;
+}
+
+.day-count {
+  color: oklch(0.5 0.025 250);
+  font-size: 0.72rem;
+}
+
+.day-body {
+  padding: 0 0.4rem 0.43rem;
+}
+
+.no-service {
+  color: oklch(0.55 0.025 250);
+  font-size: 0.74rem;
+  font-style: italic;
+  padding-top: 0.12rem;
+}
+
+.times-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.22rem;
+  max-height: 114px;
+  overflow-y: auto;
+  padding-right: 0.2rem;
+}
+
+.time-chip,
+.next-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.14rem 0.32rem;
+  border-radius: 999px;
+  border: 1px solid oklch(0.88 0.015 250);
+  background: oklch(0.96 0.01 250);
+  color: oklch(0.3 0.04 250);
+  font-size: 0.7rem;
+  line-height: 1.2;
+}
+
+.next-chip {
+  background: oklch(0.92 0.06 20);
+  border-color: oklch(0.8 0.08 20);
+  color: oklch(0.4 0.14 20);
+}
