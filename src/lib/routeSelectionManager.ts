@@ -4,6 +4,7 @@ import { getRouteHoverLabel } from "./routeLabel";
 import { loadRouteData, loadScheduleData } from "./transitDataClient";
 import { attachInteractivePopup } from "./attachInteractivePopup";
 import { buildStopPopupContent } from "./buildStopPopupContent";
+import { MAP_PANES } from "./mapPanes";
 import type {
   RouteState,
   RouteSelectionManager,
@@ -25,6 +26,28 @@ interface RouteShapeLayerState {
   polyline: L.Polyline;
   directionKeys: Set<string>;
 }
+
+interface StopLayerState {
+  routeColor: string;
+  visualMarker: L.CircleMarker;
+  hitMarker: L.CircleMarker;
+}
+
+const STOP_VISUAL_RADIUS = 5.2;
+const STOP_VISUAL_FOCUS_RADIUS = 6.4;
+const STOP_VISUAL_STROKE_COLOR = "#ffffff";
+const STOP_VISUAL_FOCUS_STROKE_COLOR = "#10233d";
+const STOP_VISUAL_STROKE_WEIGHT = 1.4;
+const STOP_VISUAL_FOCUS_STROKE_WEIGHT = 2.1;
+const STOP_VISUAL_FILL_OPACITY = 0.95;
+
+const STOP_HIT_FOCUS_OPACITY = 0.14;
+const STOP_HIT_RADIUS_FINE_POINTER = 12;
+const STOP_HIT_RADIUS_COARSE_POINTER = 16;
+const STOP_HIT_RADIUS_MIN_FINE_POINTER = 6.5;
+const STOP_HIT_RADIUS_MIN_COARSE_POINTER = 9;
+const STOP_HIT_RADIUS_DENSE_SCALE = 0.44;
+const STOP_HIT_TARGET_CELL_SIZE_PX = 28;
 
 function stopHasExternalDirectionDepartures(
   scheduleData: ScheduleData | null,
@@ -84,6 +107,36 @@ function getStopDirectionKeysForHoverPreview(
   return keys;
 }
 
+function clamp(value: number, min: number, max: number): number {
+  return Math.min(max, Math.max(min, value));
+}
+
+function getCellKey(x: number, y: number): string {
+  return `${x}:${y}`;
+}
+
+function setStopFocusState(stopLayer: StopLayerState, focused: boolean): void {
+  const { visualMarker, hitMarker, routeColor } = stopLayer;
+
+  visualMarker.setRadius(focused ? STOP_VISUAL_FOCUS_RADIUS : STOP_VISUAL_RADIUS);
+  visualMarker.setStyle({
+    color: focused ? STOP_VISUAL_FOCUS_STROKE_COLOR : STOP_VISUAL_STROKE_COLOR,
+    weight: focused ? STOP_VISUAL_FOCUS_STROKE_WEIGHT : STOP_VISUAL_STROKE_WEIGHT,
+    fillColor: routeColor,
+    fillOpacity: STOP_VISUAL_FILL_OPACITY,
+  });
+
+  hitMarker.setStyle({
+    fillColor: routeColor,
+    fillOpacity: focused ? STOP_HIT_FOCUS_OPACITY : 0,
+  });
+
+  if (focused) {
+    visualMarker.bringToFront();
+    hitMarker.bringToFront();
+  }
+}
+
 export function createRouteSelectionManager({
   map,
   routeStateByKey,
@@ -93,21 +146,126 @@ export function createRouteSelectionManager({
 }: ManagerDeps): RouteSelectionManager {
   const refreshUi = onUiRefresh;
   const shapeLayersByRouteKey = new Map<string, RouteShapeLayerState[]>();
+  const stopLayersByRouteKey = new Map<string, StopLayerState[]>();
   const previewHoverCountsByRouteKey = new Map<string, number>();
   const previewActivationOrderByRouteKey = new Map<string, number>();
   const previewDirectionByRouteKey = new Map<string, string>();
+  const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
+  const defaultStopHitRadius = coarsePointer ? STOP_HIT_RADIUS_COARSE_POINTER : STOP_HIT_RADIUS_FINE_POINTER;
+  const minStopHitRadius = coarsePointer ? STOP_HIT_RADIUS_MIN_COARSE_POINTER : STOP_HIT_RADIUS_MIN_FINE_POINTER;
+  let stopHitTargetRefreshFrame: number | null = null;
   let activePreviewRouteKey: string | null = null;
   let previewActivationSequence = 0;
+
+  function getVisibleStopLayers(): StopLayerState[] {
+    const visibleStopLayers: StopLayerState[] = [];
+
+    for (const routeKey of selectedRouteKeys) {
+      const state = routeStateByKey.get(routeKey);
+      if (!state?.layer || !map.hasLayer(state.layer)) continue;
+      const stopLayers = stopLayersByRouteKey.get(routeKey);
+      if (!stopLayers) continue;
+      visibleStopLayers.push(...stopLayers);
+    }
+
+    return visibleStopLayers;
+  }
+
+  function getStopHitRadius(nearestDistancePx: number): number {
+    if (!Number.isFinite(nearestDistancePx)) {
+      return defaultStopHitRadius;
+    }
+    return clamp(
+      nearestDistancePx * STOP_HIT_RADIUS_DENSE_SCALE,
+      minStopHitRadius,
+      defaultStopHitRadius,
+    );
+  }
+
+  function refreshVisibleStopHitTargets(): void {
+    const visibleStopLayers = getVisibleStopLayers();
+    if (visibleStopLayers.length === 0) {
+      return;
+    }
+
+    if (visibleStopLayers.length === 1) {
+      visibleStopLayers[0].hitMarker.setRadius(defaultStopHitRadius);
+      return;
+    }
+
+    const points = visibleStopLayers.map((stopLayer) => map.latLngToLayerPoint(stopLayer.hitMarker.getLatLng()));
+    const grid = new Map<string, number[]>();
+
+    // Bucket points into a small screen-space grid so we only compare nearby markers.
+    for (let index = 0; index < points.length; index += 1) {
+      const point = points[index];
+      const cellX = Math.floor(point.x / STOP_HIT_TARGET_CELL_SIZE_PX);
+      const cellY = Math.floor(point.y / STOP_HIT_TARGET_CELL_SIZE_PX);
+      const key = getCellKey(cellX, cellY);
+      const cell = grid.get(key);
+      if (cell) {
+        cell.push(index);
+      } else {
+        grid.set(key, [index]);
+      }
+    }
+
+    for (let index = 0; index < points.length; index += 1) {
+      const point = points[index];
+      const cellX = Math.floor(point.x / STOP_HIT_TARGET_CELL_SIZE_PX);
+      const cellY = Math.floor(point.y / STOP_HIT_TARGET_CELL_SIZE_PX);
+      let nearestDistanceSq = Number.POSITIVE_INFINITY;
+
+      for (let offsetX = -1; offsetX <= 1; offsetX += 1) {
+        for (let offsetY = -1; offsetY <= 1; offsetY += 1) {
+          const neighbor = grid.get(getCellKey(cellX + offsetX, cellY + offsetY));
+          if (!neighbor) continue;
+
+          for (const neighborIndex of neighbor) {
+            if (neighborIndex === index) continue;
+            const neighborPoint = points[neighborIndex];
+            const deltaX = point.x - neighborPoint.x;
+            const deltaY = point.y - neighborPoint.y;
+            const distanceSq = deltaX * deltaX + deltaY * deltaY;
+            if (distanceSq < nearestDistanceSq) {
+              nearestDistanceSq = distanceSq;
+            }
+          }
+        }
+      }
+
+      const nearestDistancePx = Number.isFinite(nearestDistanceSq)
+        ? Math.sqrt(nearestDistanceSq)
+        : Number.POSITIVE_INFINITY;
+      const nextRadius = getStopHitRadius(nearestDistancePx);
+      const hitMarker = visibleStopLayers[index].hitMarker;
+      if (Math.abs(hitMarker.getRadius() - nextRadius) > 0.25) {
+        hitMarker.setRadius(nextRadius);
+      }
+    }
+  }
+
+  function scheduleStopHitTargetRefresh(): void {
+    if (stopHitTargetRefreshFrame !== null) {
+      return;
+    }
+    stopHitTargetRefreshFrame = window.requestAnimationFrame(() => {
+      stopHitTargetRefreshFrame = null;
+      refreshVisibleStopHitTargets();
+    });
+  }
 
   function setLayerVisibility(state: RouteState, visible: boolean): void {
     if (!state.layer) return;
     const hasLayer = map.hasLayer(state.layer);
     if (visible && !hasLayer) {
       map.addLayer(state.layer);
+      scheduleStopHitTargetRefresh();
       return;
     }
     if (!visible && hasLayer) {
       map.removeLayer(state.layer);
+      scheduleStopHitTargetRefresh();
     }
   }
 
@@ -236,6 +394,8 @@ export function createRouteSelectionManager({
     if (activePreviewRouteKey !== routeKey) return;
     applyActivePreviewRoute(pickNextPreviewRouteKey());
   }
+
+  map.on("zoomend", scheduleStopHitTargetRefresh);
 
   async function setRouteKeysSelected(
     keys: string[],
@@ -409,6 +569,7 @@ export function createRouteSelectionManager({
     const group = L.layerGroup();
     const routeHoverLabel = getRouteHoverLabel(routeMeta);
     const shapeLayers: RouteShapeLayerState[] = [];
+    const stopLayers: StopLayerState[] = [];
 
     for (const shape of routeData.shapes ?? []) {
       const polyline = L.polyline(shape.points, {
@@ -417,6 +578,7 @@ export function createRouteSelectionManager({
         opacity: 0.86,
         lineCap: "round",
         lineJoin: "round",
+        pane: MAP_PANES.routeLines,
       });
 
       polyline.bindTooltip(routeHoverLabel, {
@@ -435,15 +597,35 @@ export function createRouteSelectionManager({
     shapeLayersByRouteKey.set(routeMeta.key, shapeLayers);
 
     for (const stop of routeData.stops ?? []) {
-      const marker = L.circleMarker([stop.lat, stop.lon], {
-        radius: 5.2,
-        color: "#ffffff",
-        weight: 1.4,
+      const visualMarker = L.circleMarker([stop.lat, stop.lon], {
+        radius: STOP_VISUAL_RADIUS,
+        color: STOP_VISUAL_STROKE_COLOR,
+        weight: STOP_VISUAL_STROKE_WEIGHT,
         fillColor: routeMeta.color,
-        fillOpacity: 0.95,
+        fillOpacity: STOP_VISUAL_FILL_OPACITY,
+        pane: MAP_PANES.stopVisuals,
+        interactive: false,
+        bubblingMouseEvents: false,
       });
 
-      marker.bindPopup("", {
+      const hitMarker = L.circleMarker([stop.lat, stop.lon], {
+        radius: defaultStopHitRadius,
+        stroke: false,
+        fill: true,
+        fillColor: routeMeta.color,
+        fillOpacity: 0,
+        pane: MAP_PANES.stopHitTargets,
+        bubblingMouseEvents: false,
+      });
+
+      const stopLayer: StopLayerState = {
+        routeColor: routeMeta.color,
+        visualMarker,
+        hitMarker,
+      };
+      setStopFocusState(stopLayer, false);
+
+      hitMarker.bindPopup("", {
         closeButton: false,
         autoPan: true,
         className: "stop-popup",
@@ -451,7 +633,7 @@ export function createRouteSelectionManager({
       });
 
       attachInteractivePopup(
-        marker,
+        hitMarker,
         async () => {
           let scheduleData = state.scheduleData;
           if (!scheduleData && !routeData.activeServicesByDayByDirection) {
@@ -463,6 +645,7 @@ export function createRouteSelectionManager({
           closeDelayMs: POPUP_CLOSE_DELAY_MS,
           hoverPointerQuery: HOVER_POINTER_QUERY,
           onHoverSessionStart: () => {
+            setStopFocusState(stopLayer, true);
             const hoverDirectionKeys = getStopDirectionKeysForHoverPreview(routeData, stop, state.scheduleData);
             const initialDirectionKey = hoverDirectionKeys.length === 1 ? hoverDirectionKeys[0] : null;
             startStationHoverPreview(routeMeta.key, initialDirectionKey);
@@ -471,13 +654,17 @@ export function createRouteSelectionManager({
             setStationHoverPreviewDirection(routeMeta.key, directionKey);
           },
           onHoverSessionEnd: () => {
+            setStopFocusState(stopLayer, false);
             endStationHoverPreview(routeMeta.key);
           },
         },
       );
 
-      marker.addTo(group);
+      visualMarker.addTo(group);
+      hitMarker.addTo(group);
+      stopLayers.push(stopLayer);
     }
+    stopLayersByRouteKey.set(routeMeta.key, stopLayers);
 
     return group;
   }

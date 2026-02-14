@@ -1,4 +1,5 @@
 import L from "leaflet";
+import { ensureTransitMapPanes } from "./mapPanes";
 
 export function createBaseMap(container: HTMLElement): L.Map {
   const map = L.map(container, {
@@ -10,6 +11,7 @@ export function createBaseMap(container: HTMLElement): L.Map {
   });
 
   L.control.zoom({ position: "bottomright" }).addTo(map);
+  ensureTransitMapPanes(map);
 
   L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
     maxZoom: 20,
