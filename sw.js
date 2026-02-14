@@ -1,4 +1,4 @@
-const APP_SHELL_CACHE = "njt-app-shell-v3";
+const APP_SHELL_CACHE = "njt-app-shell-v4";
 const ROUTE_DATA_CACHE = "njt-route-data-v3";
 const SCHEDULE_DATA_CACHE = "njt-schedule-data-v2";
 
@@ -11,6 +11,15 @@ const APP_SHELL_PATHS = new Set([
   "/icons/icon-192.svg",
   "/icons/icon-512.svg",
   "/data/manifest.json",
+  "/src/app/configureMobilePanel.js",
+  "/src/app/fitToSelectedRoutes.js",
+  "/src/app/getDomNodes.js",
+  "/src/app/locateUser.js",
+  "/src/app/registerServiceWorker.js",
+  "/src/app/updateStatusLine.js",
+  "/src/app/routes/buildRouteControls.js",
+  "/src/app/routes/createRouteSelectionManager.js",
+  "/src/app/routes/routeFiltering.js",
   "/src/config/constants.js",
   "/src/data/transitDataClient.js",
   "/src/map/attachInteractivePopup.js",
