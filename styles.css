@@ -50,22 +50,52 @@ body {
 
 .layout {
   display: grid;
-  grid-template-columns: 390px 1fr;
+  grid-template-columns: auto 1fr;
   height: 100dvh;
 }
 
 .panel {
+  position: relative;
+  width: 390px;
   background: var(--panel);
   border-right: 1px solid var(--panel-border);
   box-shadow: var(--shadow);
   backdrop-filter: blur(8px);
   padding: 1.2rem 1rem 1rem;
   overflow-y: auto;
+  transition: width 180ms ease, padding 180ms ease;
 }
 
-.panel-toggle {
-  display: none;
-  margin-bottom: 0.7rem;
+.sidebar-toggle {
+  position: absolute;
+  top: 0.95rem;
+  right: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.sidebar-toggle-icon {
+  display: inline-block;
+  transition: transform 180ms ease;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 h1,
@@ -495,6 +525,27 @@ button.secondary:hover {
   color: #8e1f2b;
 }
 
+
+.panel.is-collapsed {
+  width: 3.15rem;
+  padding-inline: 0.55rem;
+  overflow: hidden;
+}
+
+.panel.is-collapsed #panel-content,
+.panel.is-collapsed .subtitle,
+.panel.is-collapsed h1 {
+  display: none;
+}
+
+.panel.is-collapsed .sidebar-toggle {
+  right: 0.55rem;
+}
+
+.panel.is-collapsed .sidebar-toggle-icon {
+  transform: rotate(180deg);
+}
+
 @media (max-width: 1020px) {
   .layout {
     grid-template-columns: 1fr;
@@ -502,25 +553,26 @@ button.secondary:hover {
   }
 
   .panel {
+    width: 100%;
     border-right: 0;
     border-bottom: 1px solid var(--panel-border);
     max-height: 56dvh;
     padding-bottom: calc(1rem + env(safe-area-inset-bottom));
   }
 
+  .sidebar-toggle {
+    top: 0.8rem;
+  }
+
   .panel.is-collapsed {
-    max-height: none;
+    width: 100%;
+    max-height: 4rem;
     padding-bottom: 0.8rem;
   }
 
   .panel.is-collapsed #panel-content,
   .panel.is-collapsed .subtitle {
     display: none;
-  }
-
-  .panel-toggle {
-    display: inline-flex;
-    align-items: center;
   }
 
   button,
@@ -555,6 +607,10 @@ button.secondary:hover {
 @media (max-width: 620px) {
   .panel {
     padding: 1rem 0.78rem 0.9rem;
+  }
+
+  .sidebar-toggle {
+    right: 0.6rem;
   }
 
   .control-block {
