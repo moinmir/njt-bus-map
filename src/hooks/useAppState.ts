@@ -38,7 +38,13 @@ function createStore(): Store {
 
   const listeners = new Set<Listener>();
 
+  // useSyncExternalStore compares snapshots via Object.is.
+  // We mutate `state` in-place, so we produce a new shallow copy on
+  // every notify() so React sees a different reference and re-renders.
+  let snapshot: AppState = { ...state };
+
   const notify = () => {
+    snapshot = { ...state };
     for (const l of listeners) l();
   };
 
@@ -50,7 +56,7 @@ function createStore(): Store {
       listeners.add(listener);
       return () => listeners.delete(listener);
     },
-    getSnapshot: () => state,
+    getSnapshot: () => snapshot,
   };
 }
 
