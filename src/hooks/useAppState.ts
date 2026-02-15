@@ -4,11 +4,13 @@ import type {
   AppState,
   AgencyState,
   RouteSelectionManager,
+  LiveVehicleLayerManager,
   Manifest,
   RouteMeta,
 } from "@/types";
 import { MOBILE_LAYOUT_QUERY } from "@/lib/constants";
 import { createRouteSelectionManager } from "@/lib/routeSelectionManager";
+import { createLiveVehicleLayerManager } from "@/lib/liveVehicleLayerManager";
 import { applyRouteFilters, getVisibleRouteKeys, createMapAreaBounds } from "@/lib/routeFiltering";
 import { loadManifest } from "@/lib/transitDataClient";
 import { resolveAreaRouteKeys } from "@/lib/resolveAreaRouteKeys";
@@ -78,6 +80,7 @@ export interface AppActions {
 export function useAppState(): [AppState, AppActions] {
   const storeRef = useRef<Store | null>(null);
   const managerRef = useRef<RouteSelectionManager | null>(null);
+  const liveVehicleManagerRef = useRef<LiveVehicleLayerManager | null>(null);
   const manifestRef = useRef<Manifest | null>(null);
   const mapRef = useRef<L.Map | null>(null);
 
@@ -90,6 +93,7 @@ export function useAppState(): [AppState, AppActions] {
 
   const refreshFilters = useCallback(() => {
     const s = store.state;
+    liveVehicleManagerRef.current?.setSelectedRouteKeys(s.selectedRouteKeys);
     applyRouteFilters({
       routeStateByKey: s.routeStateByKey,
       agencyStateById: s.agencyStateById,
@@ -159,6 +163,13 @@ export function useAppState(): [AppState, AppActions] {
           refreshFilters();
         },
       });
+
+      liveVehicleManagerRef.current?.destroy();
+      liveVehicleManagerRef.current = createLiveVehicleLayerManager({
+        map,
+        routeStateByKey: s.routeStateByKey,
+      });
+      liveVehicleManagerRef.current.setSelectedRouteKeys(s.selectedRouteKeys);
 
       refreshFilters();
       return manifest;

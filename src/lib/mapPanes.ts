@@ -2,6 +2,7 @@ import type L from "leaflet";
 
 export const MAP_PANES = {
   routeLines: "route-lines",
+  liveVehicles: "live-vehicles",
   stopVisuals: "stop-visuals",
   stopHitTargets: "stop-hit-targets",
 } as const;
@@ -13,6 +14,7 @@ interface PaneConfig {
 
 const PANE_CONFIGS: PaneConfig[] = [
   { name: MAP_PANES.routeLines, zIndex: 430 },
+  { name: MAP_PANES.liveVehicles, zIndex: 610 },
   { name: MAP_PANES.stopVisuals, zIndex: 620 },
   { name: MAP_PANES.stopHitTargets, zIndex: 625 },
 ];

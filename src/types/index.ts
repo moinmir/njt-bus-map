@@ -151,3 +151,8 @@ export interface RouteSelectionManager {
     options?: SetRouteKeysOptions,
   ) => Promise<void>;
 }
+
+export interface LiveVehicleLayerManager {
+  setSelectedRouteKeys: (routeKeys: Iterable<string>) => void;
+  destroy: () => void;
+}
