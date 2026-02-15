@@ -8,7 +8,6 @@ interface SidebarProps {
   onToggleRoute: (routeKey: string, selected: boolean) => void;
   onClearAll: () => void;
   onFitSelected: () => void;
-  onLocateMe: () => void;
   onSetAgencySelected: (agencyId: string, selected: boolean) => void;
   onTogglePanel: () => void;
 }

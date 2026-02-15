@@ -26,8 +26,15 @@ export default function App() {
     if (mapRef.current) actions.fitSelectedRoutes(mapRef.current);
   }, [actions]);
 
-  const handleLocateMe = useCallback(() => {
-    if (mapRef.current) actions.locateUser(mapRef.current);
+  const handleLocateAndSearch = useCallback(() => {
+    const map = mapRef.current;
+    if (!map) return;
+
+    actions.locateUser(map, {
+      onLocated: () => {
+        actions.applyAreaFilter(map);
+      },
+    });
   }, [actions]);
 
   const handleSearchArea = useCallback(() => {
@@ -47,13 +54,12 @@ export default function App() {
         onToggleRoute={actions.toggleRoute}
         onClearAll={actions.clearAllRoutes}
         onFitSelected={handleFitSelected}
-        onLocateMe={handleLocateMe}
         onSetAgencySelected={actions.setAgencySelected}
         onTogglePanel={actions.togglePanel}
       />
 
       <main className="relative min-h-0 min-w-0">
-        <MapView onMapReady={handleMapReady} />
+        <MapView onMapReady={handleMapReady} onLocateRequest={handleLocateAndSearch} />
         <MapAreaFilter
           activeAreaBounds={state.activeAreaBounds}
           areaSelectionInProgress={state.areaSelectionInProgress}
