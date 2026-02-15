@@ -1,11 +1,16 @@
 {
-  "generatedAt": "2026-02-14T20:31:37.205625+00:00",
+  "generatedAt": "2026-02-15T03:55:28.091548+00:00",
   "timezone": "America/New_York",
   "agencies": [
     {
       "id": "njt",
       "label": "NJ Transit",
       "description": "Official NJ Transit bus routes"
+    },
+    {
+      "id": "njt_rail",
+      "label": "NJ Transit Rail",
+      "description": "Official NJ Transit rail lines and station stops"
     },
     {
       "id": "princeton",
@@ -23,20 +28,29 @@
       "feedUpdatedAt": "2026-01-14T15:23:58+00:00"
     },
     {
+      "agencyId": "njt_rail",
+      "agencyLabel": "NJ Transit Rail",
+      "description": "Official NJ Transit rail lines and station stops",
+      "gtfsUrl": "https://www.njtransit.com/rail_data.zip",
+      "gtfsZip": "data/rail_data.zip",
+      "feedUpdatedAt": "2026-01-22T15:16:04+00:00"
+    },
+    {
       "agencyId": "princeton",
       "agencyLabel": "Princeton Transit",
       "description": "TigerTransit, Princeton Loop, Weekend Shopper, and related Princeton shuttles",
       "gtfsUrl": "https://princeton.tripshot.com/v1/gtfs.zip",
       "gtfsZip": "data/princeton_gtfs.zip",
-      "feedUpdatedAt": "2026-02-14T20:31:36+00:00"
+      "feedUpdatedAt": "2026-02-14T04:33:14+00:00"
     }
   ],
-  "routeCount": 271,
+  "routeCount": 287,
   "routes": [
     {
       "key": "njt:1",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "1",
       "shortName": "1",
       "longName": "",
@@ -57,13 +71,14 @@
         ]
       ],
       "file": "routes/njt_1_1.json",
-      "searchText": "1 nj transit",
+      "searchText": "1 nj transit bus route stop",
       "scheduleFile": "schedules/njt_1_1_schedule.json"
     },
     {
       "key": "njt:80",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "80",
       "shortName": "2",
       "longName": "",
@@ -84,13 +99,14 @@
         ]
       ],
       "file": "routes/njt_2_80.json",
-      "searchText": "2 nj transit",
+      "searchText": "2 nj transit bus route stop",
       "scheduleFile": "schedules/njt_2_80_schedule.json"
     },
     {
       "key": "njt:138",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "138",
       "shortName": "5",
       "longName": "",
@@ -111,13 +127,14 @@
         ]
       ],
       "file": "routes/njt_5_138.json",
-      "searchText": "5 nj transit",
+      "searchText": "5 nj transit bus route stop",
       "scheduleFile": "schedules/njt_5_138_schedule.json"
     },
     {
       "key": "njt:157",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "157",
       "shortName": "6",
       "longName": "",
@@ -138,13 +155,14 @@
         ]
       ],
       "file": "routes/njt_6_157.json",
-      "searchText": "6 nj transit",
+      "searchText": "6 nj transit bus route stop",
       "scheduleFile": "schedules/njt_6_157_schedule.json"
     },
     {
       "key": "njt:208",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "208",
       "shortName": "8",
       "longName": "",
@@ -165,13 +183,14 @@
         ]
       ],
       "file": "routes/njt_8_208.json",
-      "searchText": "8 nj transit",
+      "searchText": "8 nj transit bus route stop",
       "scheduleFile": "schedules/njt_8_208_schedule.json"
     },
     {
       "key": "njt:249",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "249",
       "shortName": "9",
       "longName": "",
@@ -192,13 +211,14 @@
         ]
       ],
       "file": "routes/njt_9_249.json",
-      "searchText": "9 nj transit",
+      "searchText": "9 nj transit bus route stop",
       "scheduleFile": "schedules/njt_9_249_schedule.json"
     },
     {
       "key": "njt:2",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "2",
       "shortName": "10",
       "longName": "",
@@ -219,13 +239,14 @@
         ]
       ],
       "file": "routes/njt_10_2.json",
-      "searchText": "10 nj transit",
+      "searchText": "10 nj transit bus route stop",
       "scheduleFile": "schedules/njt_10_2_schedule.json"
     },
     {
       "key": "njt:9",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "9",
       "shortName": "11",
       "longName": "",
@@ -246,13 +267,14 @@
         ]
       ],
       "file": "routes/njt_11_9.json",
-      "searchText": "11 nj transit",
+      "searchText": "11 nj transit bus route stop",
       "scheduleFile": "schedules/njt_11_9_schedule.json"
     },
     {
       "key": "njt:18",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "18",
       "shortName": "12",
       "longName": "",
@@ -273,13 +295,14 @@
         ]
       ],
       "file": "routes/njt_12_18.json",
-      "searchText": "12 nj transit",
+      "searchText": "12 nj transit bus route stop",
       "scheduleFile": "schedules/njt_12_18_schedule.json"
     },
     {
       "key": "njt:29",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "29",
       "shortName": "13",
       "longName": "",
@@ -300,13 +323,14 @@
         ]
       ],
       "file": "routes/njt_13_29.json",
-      "searchText": "13 nj transit",
+      "searchText": "13 nj transit bus route stop",
       "scheduleFile": "schedules/njt_13_29_schedule.json"
     },
     {
       "key": "njt:39",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "39",
       "shortName": "14",
       "longName": "",
@@ -327,13 +351,14 @@
         ]
       ],
       "file": "routes/njt_14_39.json",
-      "searchText": "14 nj transit",
+      "searchText": "14 nj transit bus route stop",
       "scheduleFile": "schedules/njt_14_39_schedule.json"
     },
     {
       "key": "njt:51",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "51",
       "shortName": "16",
       "longName": "",
@@ -354,13 +379,14 @@
         ]
       ],
       "file": "routes/njt_16_51.json",
-      "searchText": "16 nj transit",
+      "searchText": "16 nj transit bus route stop",
       "scheduleFile": "schedules/njt_16_51_schedule.json"
     },
     {
       "key": "njt:81",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "81",
       "shortName": "21",
       "longName": "",
@@ -381,13 +407,14 @@
         ]
       ],
       "file": "routes/njt_21_81.json",
-      "searchText": "21 nj transit",
+      "searchText": "21 nj transit bus route stop",
       "scheduleFile": "schedules/njt_21_81_schedule.json"
     },
     {
       "key": "njt:82",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "82",
       "shortName": "22",
       "longName": "",
@@ -408,13 +435,14 @@
         ]
       ],
       "file": "routes/njt_22_82.json",
-      "searchText": "22 nj transit",
+      "searchText": "22 nj transit bus route stop",
       "scheduleFile": "schedules/njt_22_82_schedule.json"
     },
     {
       "key": "njt:83",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "83",
       "shortName": "23",
       "longName": "",
@@ -435,13 +463,14 @@
         ]
       ],
       "file": "routes/njt_23_83.json",
-      "searchText": "23 nj transit",
+      "searchText": "23 nj transit bus route stop",
       "scheduleFile": "schedules/njt_23_83_schedule.json"
     },
     {
       "key": "njt:84",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "84",
       "shortName": "24",
       "longName": "",
@@ -462,13 +491,14 @@
         ]
       ],
       "file": "routes/njt_24_84.json",
-      "searchText": "24 nj transit",
+      "searchText": "24 nj transit bus route stop",
       "scheduleFile": "schedules/njt_24_84_schedule.json"
     },
     {
       "key": "njt:85",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "85",
       "shortName": "25",
       "longName": "",
@@ -489,13 +519,14 @@
         ]
       ],
       "file": "routes/njt_25_85.json",
-      "searchText": "25 nj transit",
+      "searchText": "25 nj transit bus route stop",
       "scheduleFile": "schedules/njt_25_85_schedule.json"
     },
     {
       "key": "njt:86",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "86",
       "shortName": "26",
       "longName": "",
@@ -516,13 +547,14 @@
         ]
       ],
       "file": "routes/njt_26_86.json",
-      "searchText": "26 nj transit",
+      "searchText": "26 nj transit bus route stop",
       "scheduleFile": "schedules/njt_26_86_schedule.json"
     },
     {
       "key": "njt:87",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "87",
       "shortName": "27",
       "longName": "",
@@ -543,13 +575,14 @@
         ]
       ],
       "file": "routes/njt_27_87.json",
-      "searchText": "27 nj transit",
+      "searchText": "27 nj transit bus route stop",
       "scheduleFile": "schedules/njt_27_87_schedule.json"
     },
     {
       "key": "njt:88",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "88",
       "shortName": "28",
       "longName": "",
@@ -570,13 +603,14 @@
         ]
       ],
       "file": "routes/njt_28_88.json",
-      "searchText": "28 nj transit",
+      "searchText": "28 nj transit bus route stop",
       "scheduleFile": "schedules/njt_28_88_schedule.json"
     },
     {
       "key": "njt:89",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "89",
       "shortName": "29",
       "longName": "",
@@ -597,13 +631,14 @@
         ]
       ],
       "file": "routes/njt_29_89.json",
-      "searchText": "29 nj transit",
+      "searchText": "29 nj transit bus route stop",
       "scheduleFile": "schedules/njt_29_89_schedule.json"
     },
     {
       "key": "njt:90",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "90",
       "shortName": "30",
       "longName": "",
@@ -624,13 +659,14 @@
         ]
       ],
       "file": "routes/njt_30_90.json",
-      "searchText": "30 nj transit",
+      "searchText": "30 nj transit bus route stop",
       "scheduleFile": "schedules/njt_30_90_schedule.json"
     },
     {
       "key": "njt:91",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "91",
       "shortName": "31",
       "longName": "",
@@ -651,13 +687,14 @@
         ]
       ],
       "file": "routes/njt_31_91.json",
-      "searchText": "31 nj transit",
+      "searchText": "31 nj transit bus route stop",
       "scheduleFile": "schedules/njt_31_91_schedule.json"
     },
     {
       "key": "njt:100",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "100",
       "shortName": "34",
       "longName": "",
@@ -678,13 +715,14 @@
         ]
       ],
       "file": "routes/njt_34_100.json",
-      "searchText": "34 nj transit",
+      "searchText": "34 nj transit bus route stop",
       "scheduleFile": "schedules/njt_34_100_schedule.json"
     },
     {
       "key": "njt:101",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "101",
       "shortName": "34S",
       "longName": "",
@@ -705,13 +743,14 @@
         ]
       ],
       "file": "routes/njt_34S_101.json",
-      "searchText": "34s nj transit",
+      "searchText": "34s nj transit bus route stop",
       "scheduleFile": "schedules/njt_34S_101_schedule.json"
     },
     {
       "key": "njt:104",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "104",
       "shortName": "37",
       "longName": "",
@@ -732,13 +771,14 @@
         ]
       ],
       "file": "routes/njt_37_104.json",
-      "searchText": "37 nj transit",
+      "searchText": "37 nj transit bus route stop",
       "scheduleFile": "schedules/njt_37_104_schedule.json"
     },
     {
       "key": "njt:107",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "107",
       "shortName": "39",
       "longName": "",
@@ -759,13 +799,14 @@
         ]
       ],
       "file": "routes/njt_39_107.json",
-      "searchText": "39 nj transit",
+      "searchText": "39 nj transit bus route stop",
       "scheduleFile": "schedules/njt_39_107_schedule.json"
     },
     {
       "key": "njt:108",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "108",
       "shortName": "40",
       "longName": "",
@@ -786,13 +827,14 @@
         ]
       ],
       "file": "routes/njt_40_108.json",
-      "searchText": "40 nj transit",
+      "searchText": "40 nj transit bus route stop",
       "scheduleFile": "schedules/njt_40_108_schedule.json"
     },
     {
       "key": "njt:119",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "119",
       "shortName": "41",
       "longName": "",
@@ -813,13 +855,14 @@
         ]
       ],
       "file": "routes/njt_41_119.json",
-      "searchText": "41 nj transit",
+      "searchText": "41 nj transit bus route stop",
       "scheduleFile": "schedules/njt_41_119_schedule.json"
     },
     {
       "key": "njt:127",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "127",
       "shortName": "44",
       "longName": "",
@@ -840,13 +883,14 @@
         ]
       ],
       "file": "routes/njt_44_127.json",
-      "searchText": "44 nj transit",
+      "searchText": "44 nj transit bus route stop",
       "scheduleFile": "schedules/njt_44_127_schedule.json"
     },
     {
       "key": "njt:137",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "137",
       "shortName": "48",
       "longName": "",
@@ -867,13 +911,14 @@
         ]
       ],
       "file": "routes/njt_48_137.json",
-      "searchText": "48 nj transit",
+      "searchText": "48 nj transit bus route stop",
       "scheduleFile": "schedules/njt_48_137_schedule.json"
     },
     {
       "key": "njt:146",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "146",
       "shortName": "52",
       "longName": "",
@@ -894,13 +939,14 @@
         ]
       ],
       "file": "routes/njt_52_146.json",
-      "searchText": "52 nj transit",
+      "searchText": "52 nj transit bus route stop",
       "scheduleFile": "schedules/njt_52_146_schedule.json"
     },
     {
       "key": "njt:153",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "153",
       "shortName": "56",
       "longName": "",
@@ -921,13 +967,14 @@
         ]
       ],
       "file": "routes/njt_56_153.json",
-      "searchText": "56 nj transit",
+      "searchText": "56 nj transit bus route stop",
       "scheduleFile": "schedules/njt_56_153_schedule.json"
     },
     {
       "key": "njt:154",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "154",
       "shortName": "57",
       "longName": "",
@@ -948,13 +995,14 @@
         ]
       ],
       "file": "routes/njt_57_154.json",
-      "searchText": "57 nj transit",
+      "searchText": "57 nj transit bus route stop",
       "scheduleFile": "schedules/njt_57_154_schedule.json"
     },
     {
       "key": "njt:155",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "155",
       "shortName": "58",
       "longName": "",
@@ -975,13 +1023,14 @@
         ]
       ],
       "file": "routes/njt_58_155.json",
-      "searchText": "58 nj transit",
+      "searchText": "58 nj transit bus route stop",
       "scheduleFile": "schedules/njt_58_155_schedule.json"
     },
     {
       "key": "njt:156",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "156",
       "shortName": "59",
       "longName": "",
@@ -1002,13 +1051,14 @@
         ]
       ],
       "file": "routes/njt_59_156.json",
-      "searchText": "59 nj transit",
+      "searchText": "59 nj transit bus route stop",
       "scheduleFile": "schedules/njt_59_156_schedule.json"
     },
     {
       "key": "njt:171",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "171",
       "shortName": "62",
       "longName": "",
@@ -1029,13 +1079,14 @@
         ]
       ],
       "file": "routes/njt_62_171.json",
-      "searchText": "62 nj transit",
+      "searchText": "62 nj transit bus route stop",
       "scheduleFile": "schedules/njt_62_171_schedule.json"
     },
     {
       "key": "njt:173",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "173",
       "shortName": "63",
       "longName": "",
@@ -1056,13 +1107,14 @@
         ]
       ],
       "file": "routes/njt_63_173.json",
-      "searchText": "63 nj transit",
+      "searchText": "63 nj transit bus route stop",
       "scheduleFile": "schedules/njt_63_173_schedule.json"
     },
     {
       "key": "njt:174",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "174",
       "shortName": "64",
       "longName": "",
@@ -1083,13 +1135,14 @@
         ]
       ],
       "file": "routes/njt_64_174.json",
-      "searchText": "64 nj transit",
+      "searchText": "64 nj transit bus route stop",
       "scheduleFile": "schedules/njt_64_174_schedule.json"
     },
     {
       "key": "njt:175",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "175",
       "shortName": "65",
       "longName": "",
@@ -1110,13 +1163,14 @@
         ]
       ],
       "file": "routes/njt_65_175.json",
-      "searchText": "65 nj transit",
+      "searchText": "65 nj transit bus route stop",
       "scheduleFile": "schedules/njt_65_175_schedule.json"
     },
     {
       "key": "njt:176",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "176",
       "shortName": "66",
       "longName": "",
@@ -1137,13 +1191,14 @@
         ]
       ],
       "file": "routes/njt_66_176.json",
-      "searchText": "66 nj transit",
+      "searchText": "66 nj transit bus route stop",
       "scheduleFile": "schedules/njt_66_176_schedule.json"
     },
     {
       "key": "njt:177",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "177",
       "shortName": "67",
       "longName": "",
@@ -1164,13 +1219,14 @@
         ]
       ],
       "file": "routes/njt_67_177.json",
-      "searchText": "67 nj transit",
+      "searchText": "67 nj transit bus route stop",
       "scheduleFile": "schedules/njt_67_177_schedule.json"
     },
     {
       "key": "njt:178",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "178",
       "shortName": "68",
       "longName": "",
@@ -1191,13 +1247,14 @@
         ]
       ],
       "file": "routes/njt_68_178.json",
-      "searchText": "68 nj transit",
+      "searchText": "68 nj transit bus route stop",
       "scheduleFile": "schedules/njt_68_178_schedule.json"
     },
     {
       "key": "njt:179",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "179",
       "shortName": "70",
       "longName": "",
@@ -1218,13 +1275,14 @@
         ]
       ],
       "file": "routes/njt_70_179.json",
-      "searchText": "70 nj transit",
+      "searchText": "70 nj transit bus route stop",
       "scheduleFile": "schedules/njt_70_179_schedule.json"
     },
     {
       "key": "njt:186",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "186",
       "shortName": "71",
       "longName": "",
@@ -1245,13 +1303,14 @@
         ]
       ],
       "file": "routes/njt_71_186.json",
-      "searchText": "71 nj transit",
+      "searchText": "71 nj transit bus route stop",
       "scheduleFile": "schedules/njt_71_186_schedule.json"
     },
     {
       "key": "njt:188",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "188",
       "shortName": "72",
       "longName": "",
@@ -1272,13 +1331,14 @@
         ]
       ],
       "file": "routes/njt_72_188.json",
-      "searchText": "72 nj transit",
+      "searchText": "72 nj transit bus route stop",
       "scheduleFile": "schedules/njt_72_188_schedule.json"
     },
     {
       "key": "njt:190",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "190",
       "shortName": "73",
       "longName": "",
@@ -1299,13 +1359,14 @@
         ]
       ],
       "file": "routes/njt_73_190.json",
-      "searchText": "73 nj transit",
+      "searchText": "73 nj transit bus route stop",
       "scheduleFile": "schedules/njt_73_190_schedule.json"
     },
     {
       "key": "njt:191",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "191",
       "shortName": "74",
       "longName": "",
@@ -1326,13 +1387,14 @@
         ]
       ],
       "file": "routes/njt_74_191.json",
-      "searchText": "74 nj transit",
+      "searchText": "74 nj transit bus route stop",
       "scheduleFile": "schedules/njt_74_191_schedule.json"
     },
     {
       "key": "njt:201",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "201",
       "shortName": "76",
       "longName": "",
@@ -1353,13 +1415,14 @@
         ]
       ],
       "file": "routes/njt_76_201.json",
-      "searchText": "76 nj transit",
+      "searchText": "76 nj transit bus route stop",
       "scheduleFile": "schedules/njt_76_201_schedule.json"
     },
     {
       "key": "njt:205",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "205",
       "shortName": "78",
       "longName": "",
@@ -1380,13 +1443,14 @@
         ]
       ],
       "file": "routes/njt_78_205.json",
-      "searchText": "78 nj transit",
+      "searchText": "78 nj transit bus route stop",
       "scheduleFile": "schedules/njt_78_205_schedule.json"
     },
     {
       "key": "njt:207",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "207",
       "shortName": "79",
       "longName": "",
@@ -1407,13 +1471,14 @@
         ]
       ],
       "file": "routes/njt_79_207.json",
-      "searchText": "79 nj transit",
+      "searchText": "79 nj transit bus route stop",
       "scheduleFile": "schedules/njt_79_207_schedule.json"
     },
     {
       "key": "njt:209",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "209",
       "shortName": "80",
       "longName": "",
@@ -1434,13 +1499,14 @@
         ]
       ],
       "file": "routes/njt_80_209.json",
-      "searchText": "80 nj transit",
+      "searchText": "80 nj transit bus route stop",
       "scheduleFile": "schedules/njt_80_209_schedule.json"
     },
     {
       "key": "njt:215",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "215",
       "shortName": "81",
       "longName": "",
@@ -1461,13 +1527,14 @@
         ]
       ],
       "file": "routes/njt_81_215.json",
-      "searchText": "81 nj transit",
+      "searchText": "81 nj transit bus route stop",
       "scheduleFile": "schedules/njt_81_215_schedule.json"
     },
     {
       "key": "njt:224",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "224",
       "shortName": "82",
       "longName": "",
@@ -1488,13 +1555,14 @@
         ]
       ],
       "file": "routes/njt_82_224.json",
-      "searchText": "82 nj transit",
+      "searchText": "82 nj transit bus route stop",
       "scheduleFile": "schedules/njt_82_224_schedule.json"
     },
     {
       "key": "njt:226",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "226",
       "shortName": "83",
       "longName": "",
@@ -1515,13 +1583,14 @@
         ]
       ],
       "file": "routes/njt_83_226.json",
-      "searchText": "83 nj transit",
+      "searchText": "83 nj transit bus route stop",
       "scheduleFile": "schedules/njt_83_226_schedule.json"
     },
     {
       "key": "njt:234",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "234",
       "shortName": "84",
       "longName": "",
@@ -1542,13 +1611,14 @@
         ]
       ],
       "file": "routes/njt_84_234.json",
-      "searchText": "84 nj transit",
+      "searchText": "84 nj transit bus route stop",
       "scheduleFile": "schedules/njt_84_234_schedule.json"
     },
     {
       "key": "njt:235",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "235",
       "shortName": "85",
       "longName": "",
@@ -1569,13 +1639,14 @@
         ]
       ],
       "file": "routes/njt_85_235.json",
-      "searchText": "85 nj transit",
+      "searchText": "85 nj transit bus route stop",
       "scheduleFile": "schedules/njt_85_235_schedule.json"
     },
     {
       "key": "njt:236",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "236",
       "shortName": "86",
       "longName": "",
@@ -1596,13 +1667,14 @@
         ]
       ],
       "file": "routes/njt_86_236.json",
-      "searchText": "86 nj transit",
+      "searchText": "86 nj transit bus route stop",
       "scheduleFile": "schedules/njt_86_236_schedule.json"
     },
     {
       "key": "njt:237",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "237",
       "shortName": "87",
       "longName": "",
@@ -1623,13 +1695,14 @@
         ]
       ],
       "file": "routes/njt_87_237.json",
-      "searchText": "87 nj transit",
+      "searchText": "87 nj transit bus route stop",
       "scheduleFile": "schedules/njt_87_237_schedule.json"
     },
     {
       "key": "njt:244",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "244",
       "shortName": "88",
       "longName": "",
@@ -1650,13 +1723,14 @@
         ]
       ],
       "file": "routes/njt_88_244.json",
-      "searchText": "88 nj transit",
+      "searchText": "88 nj transit bus route stop",
       "scheduleFile": "schedules/njt_88_244_schedule.json"
     },
     {
       "key": "njt:246",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "246",
       "shortName": "89",
       "longName": "",
@@ -1677,13 +1751,14 @@
         ]
       ],
       "file": "routes/njt_89_246.json",
-      "searchText": "89 nj transit",
+      "searchText": "89 nj transit bus route stop",
       "scheduleFile": "schedules/njt_89_246_schedule.json"
     },
     {
       "key": "njt:250",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "250",
       "shortName": "90",
       "longName": "",
@@ -1704,13 +1779,14 @@
         ]
       ],
       "file": "routes/njt_90_250.json",
-      "searchText": "90 nj transit",
+      "searchText": "90 nj transit bus route stop",
       "scheduleFile": "schedules/njt_90_250_schedule.json"
     },
     {
       "key": "njt:251",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "251",
       "shortName": "92",
       "longName": "",
@@ -1731,13 +1807,14 @@
         ]
       ],
       "file": "routes/njt_92_251.json",
-      "searchText": "92 nj transit",
+      "searchText": "92 nj transit bus route stop",
       "scheduleFile": "schedules/njt_92_251_schedule.json"
     },
     {
       "key": "njt:252",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "252",
       "shortName": "94",
       "longName": "",
@@ -1758,13 +1835,14 @@
         ]
       ],
       "file": "routes/njt_94_252.json",
-      "searchText": "94 nj transit",
+      "searchText": "94 nj transit bus route stop",
       "scheduleFile": "schedules/njt_94_252_schedule.json"
     },
     {
       "key": "njt:253",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "253",
       "shortName": "96",
       "longName": "",
@@ -1785,13 +1863,14 @@
         ]
       ],
       "file": "routes/njt_96_253.json",
-      "searchText": "96 nj transit",
+      "searchText": "96 nj transit bus route stop",
       "scheduleFile": "schedules/njt_96_253_schedule.json"
     },
     {
       "key": "njt:254",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "254",
       "shortName": "97",
       "longName": "",
@@ -1812,13 +1891,14 @@
         ]
       ],
       "file": "routes/njt_97_254.json",
-      "searchText": "97 nj transit",
+      "searchText": "97 nj transit bus route stop",
       "scheduleFile": "schedules/njt_97_254_schedule.json"
     },
     {
       "key": "njt:256",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "256",
       "shortName": "99",
       "longName": "",
@@ -1839,13 +1919,14 @@
         ]
       ],
       "file": "routes/njt_99_256.json",
-      "searchText": "99 nj transit",
+      "searchText": "99 nj transit bus route stop",
       "scheduleFile": "schedules/njt_99_256_schedule.json"
     },
     {
       "key": "njt:3",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "3",
       "shortName": "101",
       "longName": "",
@@ -1866,13 +1947,14 @@
         ]
       ],
       "file": "routes/njt_101_3.json",
-      "searchText": "101 nj transit",
+      "searchText": "101 nj transit bus route stop",
       "scheduleFile": "schedules/njt_101_3_schedule.json"
     },
     {
       "key": "njt:4",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "4",
       "shortName": "102",
       "longName": "",
@@ -1893,13 +1975,14 @@
         ]
       ],
       "file": "routes/njt_102_4.json",
-      "searchText": "102 nj transit",
+      "searchText": "102 nj transit bus route stop",
       "scheduleFile": "schedules/njt_102_4_schedule.json"
     },
     {
       "key": "njt:5",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "5",
       "shortName": "105",
       "longName": "",
@@ -1920,13 +2003,14 @@
         ]
       ],
       "file": "routes/njt_105_5.json",
-      "searchText": "105 nj transit",
+      "searchText": "105 nj transit bus route stop",
       "scheduleFile": "schedules/njt_105_5_schedule.json"
     },
     {
       "key": "njt:6",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "6",
       "shortName": "107",
       "longName": "",
@@ -1947,13 +2031,14 @@
         ]
       ],
       "file": "routes/njt_107_6.json",
-      "searchText": "107 nj transit",
+      "searchText": "107 nj transit bus route stop",
       "scheduleFile": "schedules/njt_107_6_schedule.json"
     },
     {
       "key": "njt:7",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "7",
       "shortName": "108",
       "longName": "",
@@ -1974,13 +2059,14 @@
         ]
       ],
       "file": "routes/njt_108_7.json",
-      "searchText": "108 nj transit",
+      "searchText": "108 nj transit bus route stop",
       "scheduleFile": "schedules/njt_108_7_schedule.json"
     },
     {
       "key": "njt:8",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "8",
       "shortName": "109",
       "longName": "",
@@ -2001,13 +2087,14 @@
         ]
       ],
       "file": "routes/njt_109_8.json",
-      "searchText": "109 nj transit",
+      "searchText": "109 nj transit bus route stop",
       "scheduleFile": "schedules/njt_109_8_schedule.json"
     },
     {
       "key": "njt:10",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "10",
       "shortName": "111",
       "longName": "",
@@ -2028,13 +2115,14 @@
         ]
       ],
       "file": "routes/njt_111_10.json",
-      "searchText": "111 nj transit",
+      "searchText": "111 nj transit bus route stop",
       "scheduleFile": "schedules/njt_111_10_schedule.json"
     },
     {
       "key": "njt:11",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "11",
       "shortName": "112",
       "longName": "",
@@ -2055,13 +2143,14 @@
         ]
       ],
       "file": "routes/njt_112_11.json",
-      "searchText": "112 nj transit",
+      "searchText": "112 nj transit bus route stop",
       "scheduleFile": "schedules/njt_112_11_schedule.json"
     },
     {
       "key": "njt:12",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "12",
       "shortName": "113",
       "longName": "",
@@ -2082,13 +2171,14 @@
         ]
       ],
       "file": "routes/njt_113_12.json",
-      "searchText": "113 nj transit",
+      "searchText": "113 nj transit bus route stop",
       "scheduleFile": "schedules/njt_113_12_schedule.json"
     },
     {
       "key": "njt:13",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "13",
       "shortName": "114",
       "longName": "",
@@ -2109,13 +2199,14 @@
         ]
       ],
       "file": "routes/njt_114_13.json",
-      "searchText": "114 nj transit",
+      "searchText": "114 nj transit bus route stop",
       "scheduleFile": "schedules/njt_114_13_schedule.json"
     },
     {
       "key": "njt:14",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "14",
       "shortName": "115",
       "longName": "",
@@ -2136,13 +2227,14 @@
         ]
       ],
       "file": "routes/njt_115_14.json",
-      "searchText": "115 nj transit",
+      "searchText": "115 nj transit bus route stop",
       "scheduleFile": "schedules/njt_115_14_schedule.json"
     },
     {
       "key": "njt:15",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "15",
       "shortName": "116",
       "longName": "",
@@ -2163,13 +2255,14 @@
         ]
       ],
       "file": "routes/njt_116_15.json",
-      "searchText": "116 nj transit",
+      "searchText": "116 nj transit bus route stop",
       "scheduleFile": "schedules/njt_116_15_schedule.json"
     },
     {
       "key": "njt:16",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "16",
       "shortName": "117",
       "longName": "",
@@ -2190,13 +2283,14 @@
         ]
       ],
       "file": "routes/njt_117_16.json",
-      "searchText": "117 nj transit",
+      "searchText": "117 nj transit bus route stop",
       "scheduleFile": "schedules/njt_117_16_schedule.json"
     },
     {
       "key": "njt:17",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "17",
       "shortName": "119",
       "longName": "",
@@ -2217,13 +2311,14 @@
         ]
       ],
       "file": "routes/njt_119_17.json",
-      "searchText": "119 nj transit",
+      "searchText": "119 nj transit bus route stop",
       "scheduleFile": "schedules/njt_119_17_schedule.json"
     },
     {
       "key": "njt:19",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "19",
       "shortName": "120",
       "longName": "",
@@ -2244,13 +2339,14 @@
         ]
       ],
       "file": "routes/njt_120_19.json",
-      "searchText": "120 nj transit",
+      "searchText": "120 nj transit bus route stop",
       "scheduleFile": "schedules/njt_120_19_schedule.json"
     },
     {
       "key": "njt:20",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "20",
       "shortName": "121",
       "longName": "",
@@ -2271,13 +2367,14 @@
         ]
       ],
       "file": "routes/njt_121_20.json",
-      "searchText": "121 nj transit",
+      "searchText": "121 nj transit bus route stop",
       "scheduleFile": "schedules/njt_121_20_schedule.json"
     },
     {
       "key": "njt:21",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "21",
       "shortName": "122",
       "longName": "",
@@ -2298,13 +2395,14 @@
         ]
       ],
       "file": "routes/njt_122_21.json",
-      "searchText": "122 nj transit",
+      "searchText": "122 nj transit bus route stop",
       "scheduleFile": "schedules/njt_122_21_schedule.json"
     },
     {
       "key": "njt:22",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "22",
       "shortName": "123",
       "longName": "",
@@ -2325,13 +2423,14 @@
         ]
       ],
       "file": "routes/njt_123_22.json",
-      "searchText": "123 nj transit",
+      "searchText": "123 nj transit bus route stop",
       "scheduleFile": "schedules/njt_123_22_schedule.json"
     },
     {
       "key": "njt:23",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "23",
       "shortName": "124",
       "longName": "",
@@ -2352,13 +2451,14 @@
         ]
       ],
       "file": "routes/njt_124_23.json",
-      "searchText": "124 nj transit",
+      "searchText": "124 nj transit bus route stop",
       "scheduleFile": "schedules/njt_124_23_schedule.json"
     },
     {
       "key": "njt:24",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "24",
       "shortName": "125",
       "longName": "",
@@ -2379,13 +2479,14 @@
         ]
       ],
       "file": "routes/njt_125_24.json",
-      "searchText": "125 nj transit",
+      "searchText": "125 nj transit bus route stop",
       "scheduleFile": "schedules/njt_125_24_schedule.json"
     },
     {
       "key": "njt:25",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "25",
       "shortName": "126",
       "longName": "",
@@ -2406,13 +2507,14 @@
         ]
       ],
       "file": "routes/njt_126_25.json",
-      "searchText": "126 nj transit",
+      "searchText": "126 nj transit bus route stop",
       "scheduleFile": "schedules/njt_126_25_schedule.json"
     },
     {
       "key": "njt:26",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "26",
       "shortName": "127",
       "longName": "",
@@ -2433,13 +2535,14 @@
         ]
       ],
       "file": "routes/njt_127_26.json",
-      "searchText": "127 nj transit",
+      "searchText": "127 nj transit bus route stop",
       "scheduleFile": "schedules/njt_127_26_schedule.json"
     },
     {
       "key": "njt:27",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "27",
       "shortName": "128",
       "longName": "",
@@ -2460,13 +2563,14 @@
         ]
       ],
       "file": "routes/njt_128_27.json",
-      "searchText": "128 nj transit",
+      "searchText": "128 nj transit bus route stop",
       "scheduleFile": "schedules/njt_128_27_schedule.json"
     },
     {
       "key": "njt:28",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "28",
       "shortName": "129",
       "longName": "",
@@ -2487,13 +2591,14 @@
         ]
       ],
       "file": "routes/njt_129_28.json",
-      "searchText": "129 nj transit",
+      "searchText": "129 nj transit bus route stop",
       "scheduleFile": "schedules/njt_129_28_schedule.json"
     },
     {
       "key": "njt:30",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "30",
       "shortName": "130",
       "longName": "",
@@ -2514,13 +2619,14 @@
         ]
       ],
       "file": "routes/njt_130_30.json",
-      "searchText": "130 nj transit",
+      "searchText": "130 nj transit bus route stop",
       "scheduleFile": "schedules/njt_130_30_schedule.json"
     },
     {
       "key": "njt:31",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "31",
       "shortName": "131",
       "longName": "",
@@ -2541,13 +2647,14 @@
         ]
       ],
       "file": "routes/njt_131_31.json",
-      "searchText": "131 nj transit",
+      "searchText": "131 nj transit bus route stop",
       "scheduleFile": "schedules/njt_131_31_schedule.json"
     },
     {
       "key": "njt:32",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "32",
       "shortName": "132",
       "longName": "",
@@ -2568,13 +2675,14 @@
         ]
       ],
       "file": "routes/njt_132_32.json",
-      "searchText": "132 nj transit",
+      "searchText": "132 nj transit bus route stop",
       "scheduleFile": "schedules/njt_132_32_schedule.json"
     },
     {
       "key": "njt:33",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "33",
       "shortName": "133",
       "longName": "",
@@ -2595,13 +2703,14 @@
         ]
       ],
       "file": "routes/njt_133_33.json",
-      "searchText": "133 nj transit",
+      "searchText": "133 nj transit bus route stop",
       "scheduleFile": "schedules/njt_133_33_schedule.json"
     },
     {
       "key": "njt:34",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "34",
       "shortName": "135",
       "longName": "",
@@ -2622,13 +2731,14 @@
         ]
       ],
       "file": "routes/njt_135_34.json",
-      "searchText": "135 nj transit",
+      "searchText": "135 nj transit bus route stop",
       "scheduleFile": "schedules/njt_135_34_schedule.json"
     },
     {
       "key": "njt:35",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "35",
       "shortName": "136",
       "longName": "",
@@ -2649,13 +2759,14 @@
         ]
       ],
       "file": "routes/njt_136_35.json",
-      "searchText": "136 nj transit",
+      "searchText": "136 nj transit bus route stop",
       "scheduleFile": "schedules/njt_136_35_schedule.json"
     },
     {
       "key": "njt:36",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "36",
       "shortName": "137",
       "longName": "",
@@ -2676,13 +2787,14 @@
         ]
       ],
       "file": "routes/njt_137_36.json",
-      "searchText": "137 nj transit",
+      "searchText": "137 nj transit bus route stop",
       "scheduleFile": "schedules/njt_137_36_schedule.json"
     },
     {
       "key": "njt:37",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "37",
       "shortName": "138",
       "longName": "",
@@ -2703,13 +2815,14 @@
         ]
       ],
       "file": "routes/njt_138_37.json",
-      "searchText": "138 nj transit",
+      "searchText": "138 nj transit bus route stop",
       "scheduleFile": "schedules/njt_138_37_schedule.json"
     },
     {
       "key": "njt:38",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "38",
       "shortName": "139",
       "longName": "",
@@ -2730,13 +2843,14 @@
         ]
       ],
       "file": "routes/njt_139_38.json",
-      "searchText": "139 nj transit",
+      "searchText": "139 nj transit bus route stop",
       "scheduleFile": "schedules/njt_139_38_schedule.json"
     },
     {
       "key": "njt:40",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "40",
       "shortName": "144",
       "longName": "",
@@ -2757,13 +2871,14 @@
         ]
       ],
       "file": "routes/njt_144_40.json",
-      "searchText": "144 nj transit",
+      "searchText": "144 nj transit bus route stop",
       "scheduleFile": "schedules/njt_144_40_schedule.json"
     },
     {
       "key": "njt:41",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "41",
       "shortName": "145",
       "longName": "",
@@ -2784,13 +2899,14 @@
         ]
       ],
       "file": "routes/njt_145_41.json",
-      "searchText": "145 nj transit",
+      "searchText": "145 nj transit bus route stop",
       "scheduleFile": "schedules/njt_145_41_schedule.json"
     },
     {
       "key": "njt:42",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "42",
       "shortName": "148",
       "longName": "",
@@ -2811,13 +2927,14 @@
         ]
       ],
       "file": "routes/njt_148_42.json",
-      "searchText": "148 nj transit",
+      "searchText": "148 nj transit bus route stop",
       "scheduleFile": "schedules/njt_148_42_schedule.json"
     },
     {
       "key": "njt:43",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "43",
       "shortName": "151",
       "longName": "",
@@ -2838,13 +2955,14 @@
         ]
       ],
       "file": "routes/njt_151_43.json",
-      "searchText": "151 nj transit",
+      "searchText": "151 nj transit bus route stop",
       "scheduleFile": "schedules/njt_151_43_schedule.json"
     },
     {
       "key": "njt:44",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "44",
       "shortName": "153",
       "longName": "",
@@ -2865,13 +2983,14 @@
         ]
       ],
       "file": "routes/njt_153_44.json",
-      "searchText": "153 nj transit",
+      "searchText": "153 nj transit bus route stop",
       "scheduleFile": "schedules/njt_153_44_schedule.json"
     },
     {
       "key": "njt:45",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "45",
       "shortName": "154",
       "longName": "",
@@ -2892,13 +3011,14 @@
         ]
       ],
       "file": "routes/njt_154_45.json",
-      "searchText": "154 nj transit",
+      "searchText": "154 nj transit bus route stop",
       "scheduleFile": "schedules/njt_154_45_schedule.json"
     },
     {
       "key": "njt:46",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "46",
       "shortName": "155",
       "longName": "",
@@ -2919,13 +3039,14 @@
         ]
       ],
       "file": "routes/njt_155_46.json",
-      "searchText": "155 nj transit",
+      "searchText": "155 nj transit bus route stop",
       "scheduleFile": "schedules/njt_155_46_schedule.json"
     },
     {
       "key": "njt:47",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "47",
       "shortName": "156",
       "longName": "",
@@ -2946,13 +3067,14 @@
         ]
       ],
       "file": "routes/njt_156_47.json",
-      "searchText": "156 nj transit",
+      "searchText": "156 nj transit bus route stop",
       "scheduleFile": "schedules/njt_156_47_schedule.json"
     },
     {
       "key": "njt:48",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "48",
       "shortName": "157",
       "longName": "",
@@ -2973,13 +3095,14 @@
         ]
       ],
       "file": "routes/njt_157_48.json",
-      "searchText": "157 nj transit",
+      "searchText": "157 nj transit bus route stop",
       "scheduleFile": "schedules/njt_157_48_schedule.json"
     },
     {
       "key": "njt:49",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "49",
       "shortName": "158",
       "longName": "",
@@ -3000,13 +3123,14 @@
         ]
       ],
       "file": "routes/njt_158_49.json",
-      "searchText": "158 nj transit",
+      "searchText": "158 nj transit bus route stop",
       "scheduleFile": "schedules/njt_158_49_schedule.json"
     },
     {
       "key": "njt:50",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "50",
       "shortName": "159",
       "longName": "",
@@ -3027,13 +3151,14 @@
         ]
       ],
       "file": "routes/njt_159_50.json",
-      "searchText": "159 nj transit",
+      "searchText": "159 nj transit bus route stop",
       "scheduleFile": "schedules/njt_159_50_schedule.json"
     },
     {
       "key": "njt:52",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "52",
       "shortName": "160",
       "longName": "",
@@ -3054,13 +3179,14 @@
         ]
       ],
       "file": "routes/njt_160_52.json",
-      "searchText": "160 nj transit",
+      "searchText": "160 nj transit bus route stop",
       "scheduleFile": "schedules/njt_160_52_schedule.json"
     },
     {
       "key": "njt:53",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "53",
       "shortName": "161",
       "longName": "",
@@ -3081,13 +3207,14 @@
         ]
       ],
       "file": "routes/njt_161_53.json",
-      "searchText": "161 nj transit",
+      "searchText": "161 nj transit bus route stop",
       "scheduleFile": "schedules/njt_161_53_schedule.json"
     },
     {
       "key": "njt:54",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "54",
       "shortName": "162",
       "longName": "",
@@ -3108,13 +3235,14 @@
         ]
       ],
       "file": "routes/njt_162_54.json",
-      "searchText": "162 nj transit",
+      "searchText": "162 nj transit bus route stop",
       "scheduleFile": "schedules/njt_162_54_schedule.json"
     },
     {
       "key": "njt:55",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "55",
       "shortName": "163",
       "longName": "",
@@ -3135,13 +3263,14 @@
         ]
       ],
       "file": "routes/njt_163_55.json",
-      "searchText": "163 nj transit",
+      "searchText": "163 nj transit bus route stop",
       "scheduleFile": "schedules/njt_163_55_schedule.json"
     },
     {
       "key": "njt:56",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "56",
       "shortName": "163S",
       "longName": "",
@@ -3162,13 +3291,14 @@
         ]
       ],
       "file": "routes/njt_163S_56.json",
-      "searchText": "163s nj transit",
+      "searchText": "163s nj transit bus route stop",
       "scheduleFile": "schedules/njt_163S_56_schedule.json"
     },
     {
       "key": "njt:57",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "57",
       "shortName": "164",
       "longName": "",
@@ -3189,13 +3319,14 @@
         ]
       ],
       "file": "routes/njt_164_57.json",
-      "searchText": "164 nj transit",
+      "searchText": "164 nj transit bus route stop",
       "scheduleFile": "schedules/njt_164_57_schedule.json"
     },
     {
       "key": "njt:58",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "58",
       "shortName": "165",
       "longName": "",
@@ -3216,13 +3347,14 @@
         ]
       ],
       "file": "routes/njt_165_58.json",
-      "searchText": "165 nj transit",
+      "searchText": "165 nj transit bus route stop",
       "scheduleFile": "schedules/njt_165_58_schedule.json"
     },
     {
       "key": "njt:59",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "59",
       "shortName": "166",
       "longName": "",
@@ -3243,13 +3375,14 @@
         ]
       ],
       "file": "routes/njt_166_59.json",
-      "searchText": "166 nj transit",
+      "searchText": "166 nj transit bus route stop",
       "scheduleFile": "schedules/njt_166_59_schedule.json"
     },
     {
       "key": "njt:60",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "60",
       "shortName": "167",
       "longName": "",
@@ -3270,13 +3403,14 @@
         ]
       ],
       "file": "routes/njt_167_60.json",
-      "searchText": "167 nj transit",
+      "searchText": "167 nj transit bus route stop",
       "scheduleFile": "schedules/njt_167_60_schedule.json"
     },
     {
       "key": "njt:61",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "61",
       "shortName": "168",
       "longName": "",
@@ -3297,13 +3431,14 @@
         ]
       ],
       "file": "routes/njt_168_61.json",
-      "searchText": "168 nj transit",
+      "searchText": "168 nj transit bus route stop",
       "scheduleFile": "schedules/njt_168_61_schedule.json"
     },
     {
       "key": "njt:62",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "62",
       "shortName": "171",
       "longName": "",
@@ -3324,13 +3459,14 @@
         ]
       ],
       "file": "routes/njt_171_62.json",
-      "searchText": "171 nj transit",
+      "searchText": "171 nj transit bus route stop",
       "scheduleFile": "schedules/njt_171_62_schedule.json"
     },
     {
       "key": "njt:63",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "63",
       "shortName": "175",
       "longName": "",
@@ -3351,13 +3487,14 @@
         ]
       ],
       "file": "routes/njt_175_63.json",
-      "searchText": "175 nj transit",
+      "searchText": "175 nj transit bus route stop",
       "scheduleFile": "schedules/njt_175_63_schedule.json"
     },
     {
       "key": "njt:64",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "64",
       "shortName": "177",
       "longName": "",
@@ -3378,13 +3515,14 @@
         ]
       ],
       "file": "routes/njt_177_64.json",
-      "searchText": "177 nj transit",
+      "searchText": "177 nj transit bus route stop",
       "scheduleFile": "schedules/njt_177_64_schedule.json"
     },
     {
       "key": "njt:65",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "65",
       "shortName": "178",
       "longName": "",
@@ -3405,13 +3543,14 @@
         ]
       ],
       "file": "routes/njt_178_65.json",
-      "searchText": "178 nj transit",
+      "searchText": "178 nj transit bus route stop",
       "scheduleFile": "schedules/njt_178_65_schedule.json"
     },
     {
       "key": "njt:66",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "66",
       "shortName": "181",
       "longName": "",
@@ -3432,13 +3571,14 @@
         ]
       ],
       "file": "routes/njt_181_66.json",
-      "searchText": "181 nj transit",
+      "searchText": "181 nj transit bus route stop",
       "scheduleFile": "schedules/njt_181_66_schedule.json"
     },
     {
       "key": "njt:67",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "67",
       "shortName": "182",
       "longName": "",
@@ -3459,13 +3599,14 @@
         ]
       ],
       "file": "routes/njt_182_67.json",
-      "searchText": "182 nj transit",
+      "searchText": "182 nj transit bus route stop",
       "scheduleFile": "schedules/njt_182_67_schedule.json"
     },
     {
       "key": "njt:68",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "68",
       "shortName": "186",
       "longName": "",
@@ -3486,13 +3627,14 @@
         ]
       ],
       "file": "routes/njt_186_68.json",
-      "searchText": "186 nj transit",
+      "searchText": "186 nj transit bus route stop",
       "scheduleFile": "schedules/njt_186_68_schedule.json"
     },
     {
       "key": "njt:69",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "69",
       "shortName": "188",
       "longName": "",
@@ -3513,13 +3655,14 @@
         ]
       ],
       "file": "routes/njt_188_69.json",
-      "searchText": "188 nj transit",
+      "searchText": "188 nj transit bus route stop",
       "scheduleFile": "schedules/njt_188_69_schedule.json"
     },
     {
       "key": "njt:70",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "70",
       "shortName": "190",
       "longName": "",
@@ -3540,13 +3683,14 @@
         ]
       ],
       "file": "routes/njt_190_70.json",
-      "searchText": "190 nj transit",
+      "searchText": "190 nj transit bus route stop",
       "scheduleFile": "schedules/njt_190_70_schedule.json"
     },
     {
       "key": "njt:71",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "71",
       "shortName": "191",
       "longName": "",
@@ -3567,13 +3711,14 @@
         ]
       ],
       "file": "routes/njt_191_71.json",
-      "searchText": "191 nj transit",
+      "searchText": "191 nj transit bus route stop",
       "scheduleFile": "schedules/njt_191_71_schedule.json"
     },
     {
       "key": "njt:72",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "72",
       "shortName": "192",
       "longName": "",
@@ -3594,13 +3739,14 @@
         ]
       ],
       "file": "routes/njt_192_72.json",
-      "searchText": "192 nj transit",
+      "searchText": "192 nj transit bus route stop",
       "scheduleFile": "schedules/njt_192_72_schedule.json"
     },
     {
       "key": "njt:73",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "73",
       "shortName": "193",
       "longName": "",
@@ -3621,13 +3767,14 @@
         ]
       ],
       "file": "routes/njt_193_73.json",
-      "searchText": "193 nj transit",
+      "searchText": "193 nj transit bus route stop",
       "scheduleFile": "schedules/njt_193_73_schedule.json"
     },
     {
       "key": "njt:74",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "74",
       "shortName": "194",
       "longName": "",
@@ -3648,13 +3795,14 @@
         ]
       ],
       "file": "routes/njt_194_74.json",
-      "searchText": "194 nj transit",
+      "searchText": "194 nj transit bus route stop",
       "scheduleFile": "schedules/njt_194_74_schedule.json"
     },
     {
       "key": "njt:75",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "75",
       "shortName": "195",
       "longName": "",
@@ -3675,13 +3823,14 @@
         ]
       ],
       "file": "routes/njt_195_75.json",
-      "searchText": "195 nj transit",
+      "searchText": "195 nj transit bus route stop",
       "scheduleFile": "schedules/njt_195_75_schedule.json"
     },
     {
       "key": "njt:76",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "76",
       "shortName": "196",
       "longName": "",
@@ -3702,13 +3851,14 @@
         ]
       ],
       "file": "routes/njt_196_76.json",
-      "searchText": "196 nj transit",
+      "searchText": "196 nj transit bus route stop",
       "scheduleFile": "schedules/njt_196_76_schedule.json"
     },
     {
       "key": "njt:77",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "77",
       "shortName": "197",
       "longName": "",
@@ -3729,13 +3879,14 @@
         ]
       ],
       "file": "routes/njt_197_77.json",
-      "searchText": "197 nj transit",
+      "searchText": "197 nj transit bus route stop",
       "scheduleFile": "schedules/njt_197_77_schedule.json"
     },
     {
       "key": "njt:78",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "78",
       "shortName": "198",
       "longName": "",
@@ -3756,13 +3907,14 @@
         ]
       ],
       "file": "routes/njt_198_78.json",
-      "searchText": "198 nj transit",
+      "searchText": "198 nj transit bus route stop",
       "scheduleFile": "schedules/njt_198_78_schedule.json"
     },
     {
       "key": "njt:79",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "79",
       "shortName": "199",
       "longName": "",
@@ -3783,13 +3935,14 @@
         ]
       ],
       "file": "routes/njt_199_79.json",
-      "searchText": "199 nj transit",
+      "searchText": "199 nj transit bus route stop",
       "scheduleFile": "schedules/njt_199_79_schedule.json"
     },
     {
       "key": "njt:92",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "92",
       "shortName": "313",
       "longName": "",
@@ -3810,13 +3963,14 @@
         ]
       ],
       "file": "routes/njt_313_92.json",
-      "searchText": "313 nj transit",
+      "searchText": "313 nj transit bus route stop",
       "scheduleFile": "schedules/njt_313_92_schedule.json"
     },
     {
       "key": "njt:93",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "93",
       "shortName": "315",
       "longName": "",
@@ -3837,13 +3991,14 @@
         ]
       ],
       "file": "routes/njt_315_93.json",
-      "searchText": "315 nj transit",
+      "searchText": "315 nj transit bus route stop",
       "scheduleFile": "schedules/njt_315_93_schedule.json"
     },
     {
       "key": "njt:94",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "94",
       "shortName": "317",
       "longName": "",
@@ -3864,13 +4019,14 @@
         ]
       ],
       "file": "routes/njt_317_94.json",
-      "searchText": "317 nj transit",
+      "searchText": "317 nj transit bus route stop",
       "scheduleFile": "schedules/njt_317_94_schedule.json"
     },
     {
       "key": "njt:95",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "95",
       "shortName": "319",
       "longName": "",
@@ -3891,13 +4047,14 @@
         ]
       ],
       "file": "routes/njt_319_95.json",
-      "searchText": "319 nj transit",
+      "searchText": "319 nj transit bus route stop",
       "scheduleFile": "schedules/njt_319_95_schedule.json"
     },
     {
       "key": "njt:96",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "96",
       "shortName": "320",
       "longName": "",
@@ -3918,13 +4075,14 @@
         ]
       ],
       "file": "routes/njt_320_96.json",
-      "searchText": "320 nj transit",
+      "searchText": "320 nj transit bus route stop",
       "scheduleFile": "schedules/njt_320_96_schedule.json"
     },
     {
       "key": "njt:97",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "97",
       "shortName": "321",
       "longName": "",
@@ -3945,13 +4103,14 @@
         ]
       ],
       "file": "routes/njt_321_97.json",
-      "searchText": "321 nj transit",
+      "searchText": "321 nj transit bus route stop",
       "scheduleFile": "schedules/njt_321_97_schedule.json"
     },
     {
       "key": "njt:98",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "98",
       "shortName": "324",
       "longName": "",
@@ -3972,13 +4131,14 @@
         ]
       ],
       "file": "routes/njt_324_98.json",
-      "searchText": "324 nj transit",
+      "searchText": "324 nj transit bus route stop",
       "scheduleFile": "schedules/njt_324_98_schedule.json"
     },
     {
       "key": "njt:99",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "99",
       "shortName": "329",
       "longName": "",
@@ -3999,13 +4159,14 @@
         ]
       ],
       "file": "routes/njt_329_99.json",
-      "searchText": "329 nj transit",
+      "searchText": "329 nj transit bus route stop",
       "scheduleFile": "schedules/njt_329_99_schedule.json"
     },
     {
       "key": "njt:102",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "102",
       "shortName": "355",
       "longName": "",
@@ -4026,13 +4187,14 @@
         ]
       ],
       "file": "routes/njt_355_102.json",
-      "searchText": "355 nj transit",
+      "searchText": "355 nj transit bus route stop",
       "scheduleFile": "schedules/njt_355_102_schedule.json"
     },
     {
       "key": "njt:103",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "103",
       "shortName": "361",
       "longName": "",
@@ -4053,13 +4215,14 @@
         ]
       ],
       "file": "routes/njt_361_103.json",
-      "searchText": "361 nj transit",
+      "searchText": "361 nj transit bus route stop",
       "scheduleFile": "schedules/njt_361_103_schedule.json"
     },
     {
       "key": "njt:105",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "105",
       "shortName": "375",
       "longName": "",
@@ -4080,13 +4243,14 @@
         ]
       ],
       "file": "routes/njt_375_105.json",
-      "searchText": "375 nj transit",
+      "searchText": "375 nj transit bus route stop",
       "scheduleFile": "schedules/njt_375_105_schedule.json"
     },
     {
       "key": "njt:106",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "106",
       "shortName": "378",
       "longName": "",
@@ -4107,13 +4271,14 @@
         ]
       ],
       "file": "routes/njt_378_106.json",
-      "searchText": "378 nj transit",
+      "searchText": "378 nj transit bus route stop",
       "scheduleFile": "schedules/njt_378_106_schedule.json"
     },
     {
       "key": "njt:109",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "109",
       "shortName": "400",
       "longName": "",
@@ -4134,13 +4299,14 @@
         ]
       ],
       "file": "routes/njt_400_109.json",
-      "searchText": "400 nj transit",
+      "searchText": "400 nj transit bus route stop",
       "scheduleFile": "schedules/njt_400_109_schedule.json"
     },
     {
       "key": "njt:110",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "110",
       "shortName": "401",
       "longName": "",
@@ -4161,13 +4327,14 @@
         ]
       ],
       "file": "routes/njt_401_110.json",
-      "searchText": "401 nj transit",
+      "searchText": "401 nj transit bus route stop",
       "scheduleFile": "schedules/njt_401_110_schedule.json"
     },
     {
       "key": "njt:111",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "111",
       "shortName": "402",
       "longName": "",
@@ -4188,13 +4355,14 @@
         ]
       ],
       "file": "routes/njt_402_111.json",
-      "searchText": "402 nj transit",
+      "searchText": "402 nj transit bus route stop",
       "scheduleFile": "schedules/njt_402_111_schedule.json"
     },
     {
       "key": "njt:112",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "112",
       "shortName": "403",
       "longName": "",
@@ -4215,13 +4383,14 @@
         ]
       ],
       "file": "routes/njt_403_112.json",
-      "searchText": "403 nj transit",
+      "searchText": "403 nj transit bus route stop",
       "scheduleFile": "schedules/njt_403_112_schedule.json"
     },
     {
       "key": "njt:113",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "113",
       "shortName": "404",
       "longName": "",
@@ -4242,13 +4411,14 @@
         ]
       ],
       "file": "routes/njt_404_113.json",
-      "searchText": "404 nj transit",
+      "searchText": "404 nj transit bus route stop",
       "scheduleFile": "schedules/njt_404_113_schedule.json"
     },
     {
       "key": "njt:114",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "114",
       "shortName": "405",
       "longName": "",
@@ -4269,13 +4439,14 @@
         ]
       ],
       "file": "routes/njt_405_114.json",
-      "searchText": "405 nj transit",
+      "searchText": "405 nj transit bus route stop",
       "scheduleFile": "schedules/njt_405_114_schedule.json"
     },
     {
       "key": "njt:115",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "115",
       "shortName": "406",
       "longName": "",
@@ -4296,13 +4467,14 @@
         ]
       ],
       "file": "routes/njt_406_115.json",
-      "searchText": "406 nj transit",
+      "searchText": "406 nj transit bus route stop",
       "scheduleFile": "schedules/njt_406_115_schedule.json"
     },
     {
       "key": "njt:116",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "116",
       "shortName": "407",
       "longName": "",
@@ -4323,13 +4495,14 @@
         ]
       ],
       "file": "routes/njt_407_116.json",
-      "searchText": "407 nj transit",
+      "searchText": "407 nj transit bus route stop",
       "scheduleFile": "schedules/njt_407_116_schedule.json"
     },
     {
       "key": "njt:117",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "117",
       "shortName": "408",
       "longName": "",
@@ -4350,13 +4523,14 @@
         ]
       ],
       "file": "routes/njt_408_117.json",
-      "searchText": "408 nj transit",
+      "searchText": "408 nj transit bus route stop",
       "scheduleFile": "schedules/njt_408_117_schedule.json"
     },
     {
       "key": "njt:118",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "118",
       "shortName": "409",
       "longName": "",
@@ -4377,13 +4551,14 @@
         ]
       ],
       "file": "routes/njt_409_118.json",
-      "searchText": "409 nj transit",
+      "searchText": "409 nj transit bus route stop",
       "scheduleFile": "schedules/njt_409_118_schedule.json"
     },
     {
       "key": "njt:120",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "120",
       "shortName": "410",
       "longName": "",
@@ -4404,13 +4579,14 @@
         ]
       ],
       "file": "routes/njt_410_120.json",
-      "searchText": "410 nj transit",
+      "searchText": "410 nj transit bus route stop",
       "scheduleFile": "schedules/njt_410_120_schedule.json"
     },
     {
       "key": "njt:121",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "121",
       "shortName": "412",
       "longName": "",
@@ -4431,13 +4607,14 @@
         ]
       ],
       "file": "routes/njt_412_121.json",
-      "searchText": "412 nj transit",
+      "searchText": "412 nj transit bus route stop",
       "scheduleFile": "schedules/njt_412_121_schedule.json"
     },
     {
       "key": "njt:122",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "122",
       "shortName": "413",
       "longName": "",
@@ -4458,13 +4635,14 @@
         ]
       ],
       "file": "routes/njt_413_122.json",
-      "searchText": "413 nj transit",
+      "searchText": "413 nj transit bus route stop",
       "scheduleFile": "schedules/njt_413_122_schedule.json"
     },
     {
       "key": "njt:123",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "123",
       "shortName": "414",
       "longName": "",
@@ -4485,13 +4663,14 @@
         ]
       ],
       "file": "routes/njt_414_123.json",
-      "searchText": "414 nj transit",
+      "searchText": "414 nj transit bus route stop",
       "scheduleFile": "schedules/njt_414_123_schedule.json"
     },
     {
       "key": "njt:124",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "124",
       "shortName": "417",
       "longName": "",
@@ -4512,13 +4691,14 @@
         ]
       ],
       "file": "routes/njt_417_124.json",
-      "searchText": "417 nj transit",
+      "searchText": "417 nj transit bus route stop",
       "scheduleFile": "schedules/njt_417_124_schedule.json"
     },
     {
       "key": "njt:125",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "125",
       "shortName": "418",
       "longName": "",
@@ -4539,13 +4719,14 @@
         ]
       ],
       "file": "routes/njt_418_125.json",
-      "searchText": "418 nj transit",
+      "searchText": "418 nj transit bus route stop",
       "scheduleFile": "schedules/njt_418_125_schedule.json"
     },
     {
       "key": "njt:126",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "126",
       "shortName": "419",
       "longName": "",
@@ -4566,13 +4747,14 @@
         ]
       ],
       "file": "routes/njt_419_126.json",
-      "searchText": "419 nj transit",
+      "searchText": "419 nj transit bus route stop",
       "scheduleFile": "schedules/njt_419_126_schedule.json"
     },
     {
       "key": "njt:128",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "128",
       "shortName": "450",
       "longName": "",
@@ -4593,13 +4775,14 @@
         ]
       ],
       "file": "routes/njt_450_128.json",
-      "searchText": "450 nj transit",
+      "searchText": "450 nj transit bus route stop",
       "scheduleFile": "schedules/njt_450_128_schedule.json"
     },
     {
       "key": "njt:129",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "129",
       "shortName": "451",
       "longName": "",
@@ -4620,13 +4803,14 @@
         ]
       ],
       "file": "routes/njt_451_129.json",
-      "searchText": "451 nj transit",
+      "searchText": "451 nj transit bus route stop",
       "scheduleFile": "schedules/njt_451_129_schedule.json"
     },
     {
       "key": "njt:130",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "130",
       "shortName": "452",
       "longName": "",
@@ -4647,13 +4831,14 @@
         ]
       ],
       "file": "routes/njt_452_130.json",
-      "searchText": "452 nj transit",
+      "searchText": "452 nj transit bus route stop",
       "scheduleFile": "schedules/njt_452_130_schedule.json"
     },
     {
       "key": "njt:131",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "131",
       "shortName": "453",
       "longName": "",
@@ -4674,13 +4859,14 @@
         ]
       ],
       "file": "routes/njt_453_131.json",
-      "searchText": "453 nj transit",
+      "searchText": "453 nj transit bus route stop",
       "scheduleFile": "schedules/njt_453_131_schedule.json"
     },
     {
       "key": "njt:132",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "132",
       "shortName": "455",
       "longName": "",
@@ -4701,13 +4887,14 @@
         ]
       ],
       "file": "routes/njt_455_132.json",
-      "searchText": "455 nj transit",
+      "searchText": "455 nj transit bus route stop",
       "scheduleFile": "schedules/njt_455_132_schedule.json"
     },
     {
       "key": "njt:133",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "133",
       "shortName": "457",
       "longName": "",
@@ -4728,13 +4915,14 @@
         ]
       ],
       "file": "routes/njt_457_133.json",
-      "searchText": "457 nj transit",
+      "searchText": "457 nj transit bus route stop",
       "scheduleFile": "schedules/njt_457_133_schedule.json"
     },
     {
       "key": "njt:134",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "134",
       "shortName": "459",
       "longName": "",
@@ -4755,13 +4943,14 @@
         ]
       ],
       "file": "routes/njt_459_134.json",
-      "searchText": "459 nj transit",
+      "searchText": "459 nj transit bus route stop",
       "scheduleFile": "schedules/njt_459_134_schedule.json"
     },
     {
       "key": "njt:135",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "135",
       "shortName": "463",
       "longName": "",
@@ -4782,13 +4971,14 @@
         ]
       ],
       "file": "routes/njt_463_135.json",
-      "searchText": "463 nj transit",
+      "searchText": "463 nj transit bus route stop",
       "scheduleFile": "schedules/njt_463_135_schedule.json"
     },
     {
       "key": "njt:136",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "136",
       "shortName": "468",
       "longName": "",
@@ -4809,13 +4999,14 @@
         ]
       ],
       "file": "routes/njt_468_136.json",
-      "searchText": "468 nj transit",
+      "searchText": "468 nj transit bus route stop",
       "scheduleFile": "schedules/njt_468_136_schedule.json"
     },
     {
       "key": "njt:139",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "139",
       "shortName": "501",
       "longName": "",
@@ -4836,13 +5027,14 @@
         ]
       ],
       "file": "routes/njt_501_139.json",
-      "searchText": "501 nj transit",
+      "searchText": "501 nj transit bus route stop",
       "scheduleFile": "schedules/njt_501_139_schedule.json"
     },
     {
       "key": "njt:140",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "140",
       "shortName": "502",
       "longName": "",
@@ -4863,13 +5055,14 @@
         ]
       ],
       "file": "routes/njt_502_140.json",
-      "searchText": "502 nj transit",
+      "searchText": "502 nj transit bus route stop",
       "scheduleFile": "schedules/njt_502_140_schedule.json"
     },
     {
       "key": "njt:141",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "141",
       "shortName": "504",
       "longName": "",
@@ -4890,13 +5083,14 @@
         ]
       ],
       "file": "routes/njt_504_141.json",
-      "searchText": "504 nj transit",
+      "searchText": "504 nj transit bus route stop",
       "scheduleFile": "schedules/njt_504_141_schedule.json"
     },
     {
       "key": "njt:142",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "142",
       "shortName": "505",
       "longName": "",
@@ -4917,13 +5111,14 @@
         ]
       ],
       "file": "routes/njt_505_142.json",
-      "searchText": "505 nj transit",
+      "searchText": "505 nj transit bus route stop",
       "scheduleFile": "schedules/njt_505_142_schedule.json"
     },
     {
       "key": "njt:143",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "143",
       "shortName": "507",
       "longName": "",
@@ -4944,13 +5139,14 @@
         ]
       ],
       "file": "routes/njt_507_143.json",
-      "searchText": "507 nj transit",
+      "searchText": "507 nj transit bus route stop",
       "scheduleFile": "schedules/njt_507_143_schedule.json"
     },
     {
       "key": "njt:144",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "144",
       "shortName": "508",
       "longName": "",
@@ -4971,13 +5167,14 @@
         ]
       ],
       "file": "routes/njt_508_144.json",
-      "searchText": "508 nj transit",
+      "searchText": "508 nj transit bus route stop",
       "scheduleFile": "schedules/njt_508_144_schedule.json"
     },
     {
       "key": "njt:145",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "145",
       "shortName": "509",
       "longName": "",
@@ -4998,13 +5195,14 @@
         ]
       ],
       "file": "routes/njt_509_145.json",
-      "searchText": "509 nj transit",
+      "searchText": "509 nj transit bus route stop",
       "scheduleFile": "schedules/njt_509_145_schedule.json"
     },
     {
       "key": "njt:147",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "147",
       "shortName": "551",
       "longName": "",
@@ -5025,13 +5223,14 @@
         ]
       ],
       "file": "routes/njt_551_147.json",
-      "searchText": "551 nj transit",
+      "searchText": "551 nj transit bus route stop",
       "scheduleFile": "schedules/njt_551_147_schedule.json"
     },
     {
       "key": "njt:148",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "148",
       "shortName": "552",
       "longName": "",
@@ -5052,13 +5251,14 @@
         ]
       ],
       "file": "routes/njt_552_148.json",
-      "searchText": "552 nj transit",
+      "searchText": "552 nj transit bus route stop",
       "scheduleFile": "schedules/njt_552_148_schedule.json"
     },
     {
       "key": "njt:149",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "149",
       "shortName": "553",
       "longName": "",
@@ -5079,13 +5279,14 @@
         ]
       ],
       "file": "routes/njt_553_149.json",
-      "searchText": "553 nj transit",
+      "searchText": "553 nj transit bus route stop",
       "scheduleFile": "schedules/njt_553_149_schedule.json"
     },
     {
       "key": "njt:150",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "150",
       "shortName": "554",
       "longName": "",
@@ -5106,13 +5307,14 @@
         ]
       ],
       "file": "routes/njt_554_150.json",
-      "searchText": "554 nj transit",
+      "searchText": "554 nj transit bus route stop",
       "scheduleFile": "schedules/njt_554_150_schedule.json"
     },
     {
       "key": "njt:151",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "151",
       "shortName": "555",
       "longName": "",
@@ -5133,13 +5335,14 @@
         ]
       ],
       "file": "routes/njt_555_151.json",
-      "searchText": "555 nj transit",
+      "searchText": "555 nj transit bus route stop",
       "scheduleFile": "schedules/njt_555_151_schedule.json"
     },
     {
       "key": "njt:152",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "152",
       "shortName": "559",
       "longName": "",
@@ -5160,13 +5363,14 @@
         ]
       ],
       "file": "routes/njt_559_152.json",
-      "searchText": "559 nj transit",
+      "searchText": "559 nj transit bus route stop",
       "scheduleFile": "schedules/njt_559_152_schedule.json"
     },
     {
       "key": "njt:158",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "158",
       "shortName": "600",
       "longName": "",
@@ -5187,13 +5391,14 @@
         ]
       ],
       "file": "routes/njt_600_158.json",
-      "searchText": "600 nj transit",
+      "searchText": "600 nj transit bus route stop",
       "scheduleFile": "schedules/njt_600_158_schedule.json"
     },
     {
       "key": "njt:159",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "159",
       "shortName": "601",
       "longName": "",
@@ -5214,13 +5419,14 @@
         ]
       ],
       "file": "routes/njt_601_159.json",
-      "searchText": "601 nj transit",
+      "searchText": "601 nj transit bus route stop",
       "scheduleFile": "schedules/njt_601_159_schedule.json"
     },
     {
       "key": "njt:160",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "160",
       "shortName": "603",
       "longName": "",
@@ -5241,13 +5447,14 @@
         ]
       ],
       "file": "routes/njt_603_160.json",
-      "searchText": "603 nj transit",
+      "searchText": "603 nj transit bus route stop",
       "scheduleFile": "schedules/njt_603_160_schedule.json"
     },
     {
       "key": "njt:161",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "161",
       "shortName": "605",
       "longName": "",
@@ -5268,13 +5475,14 @@
         ]
       ],
       "file": "routes/njt_605_161.json",
-      "searchText": "605 nj transit",
+      "searchText": "605 nj transit bus route stop",
       "scheduleFile": "schedules/njt_605_161_schedule.json"
     },
     {
       "key": "njt:162",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "162",
       "shortName": "606",
       "longName": "",
@@ -5295,13 +5503,14 @@
         ]
       ],
       "file": "routes/njt_606_162.json",
-      "searchText": "606 nj transit",
+      "searchText": "606 nj transit bus route stop",
       "scheduleFile": "schedules/njt_606_162_schedule.json"
     },
     {
       "key": "njt:163",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "163",
       "shortName": "607",
       "longName": "",
@@ -5322,13 +5531,14 @@
         ]
       ],
       "file": "routes/njt_607_163.json",
-      "searchText": "607 nj transit",
+      "searchText": "607 nj transit bus route stop",
       "scheduleFile": "schedules/njt_607_163_schedule.json"
     },
     {
       "key": "njt:164",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "164",
       "shortName": "608",
       "longName": "",
@@ -5349,13 +5559,14 @@
         ]
       ],
       "file": "routes/njt_608_164.json",
-      "searchText": "608 nj transit",
+      "searchText": "608 nj transit bus route stop",
       "scheduleFile": "schedules/njt_608_164_schedule.json"
     },
     {
       "key": "njt:165",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "165",
       "shortName": "609",
       "longName": "",
@@ -5376,13 +5587,14 @@
         ]
       ],
       "file": "routes/njt_609_165.json",
-      "searchText": "609 nj transit",
+      "searchText": "609 nj transit bus route stop",
       "scheduleFile": "schedules/njt_609_165_schedule.json"
     },
     {
       "key": "njt:166",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "166",
       "shortName": "610",
       "longName": "",
@@ -5403,13 +5615,14 @@
         ]
       ],
       "file": "routes/njt_610_166.json",
-      "searchText": "610 nj transit",
+      "searchText": "610 nj transit bus route stop",
       "scheduleFile": "schedules/njt_610_166_schedule.json"
     },
     {
       "key": "njt:167",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "167",
       "shortName": "611",
       "longName": "",
@@ -5430,13 +5643,14 @@
         ]
       ],
       "file": "routes/njt_611_167.json",
-      "searchText": "611 nj transit",
+      "searchText": "611 nj transit bus route stop",
       "scheduleFile": "schedules/njt_611_167_schedule.json"
     },
     {
       "key": "njt:168",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "168",
       "shortName": "612",
       "longName": "",
@@ -5457,13 +5671,14 @@
         ]
       ],
       "file": "routes/njt_612_168.json",
-      "searchText": "612 nj transit",
+      "searchText": "612 nj transit bus route stop",
       "scheduleFile": "schedules/njt_612_168_schedule.json"
     },
     {
       "key": "njt:169",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "169",
       "shortName": "613",
       "longName": "",
@@ -5484,13 +5699,14 @@
         ]
       ],
       "file": "routes/njt_613_169.json",
-      "searchText": "613 nj transit",
+      "searchText": "613 nj transit bus route stop",
       "scheduleFile": "schedules/njt_613_169_schedule.json"
     },
     {
       "key": "njt:170",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "170",
       "shortName": "619",
       "longName": "",
@@ -5511,13 +5727,14 @@
         ]
       ],
       "file": "routes/njt_619_170.json",
-      "searchText": "619 nj transit",
+      "searchText": "619 nj transit bus route stop",
       "scheduleFile": "schedules/njt_619_170_schedule.json"
     },
     {
       "key": "njt:172",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "172",
       "shortName": "624",
       "longName": "",
@@ -5538,13 +5755,14 @@
         ]
       ],
       "file": "routes/njt_624_172.json",
-      "searchText": "624 nj transit",
+      "searchText": "624 nj transit bus route stop",
       "scheduleFile": "schedules/njt_624_172_schedule.json"
     },
     {
       "key": "njt:180",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "180",
       "shortName": "702",
       "longName": "",
@@ -5565,13 +5783,14 @@
         ]
       ],
       "file": "routes/njt_702_180.json",
-      "searchText": "702 nj transit",
+      "searchText": "702 nj transit bus route stop",
       "scheduleFile": "schedules/njt_702_180_schedule.json"
     },
     {
       "key": "njt:181",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "181",
       "shortName": "703",
       "longName": "",
@@ -5592,13 +5811,14 @@
         ]
       ],
       "file": "routes/njt_703_181.json",
-      "searchText": "703 nj transit",
+      "searchText": "703 nj transit bus route stop",
       "scheduleFile": "schedules/njt_703_181_schedule.json"
     },
     {
       "key": "njt:182",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "182",
       "shortName": "704",
       "longName": "",
@@ -5619,13 +5839,14 @@
         ]
       ],
       "file": "routes/njt_704_182.json",
-      "searchText": "704 nj transit",
+      "searchText": "704 nj transit bus route stop",
       "scheduleFile": "schedules/njt_704_182_schedule.json"
     },
     {
       "key": "njt:183",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "183",
       "shortName": "705",
       "longName": "",
@@ -5646,13 +5867,14 @@
         ]
       ],
       "file": "routes/njt_705_183.json",
-      "searchText": "705 nj transit",
+      "searchText": "705 nj transit bus route stop",
       "scheduleFile": "schedules/njt_705_183_schedule.json"
     },
     {
       "key": "njt:184",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "184",
       "shortName": "707",
       "longName": "",
@@ -5673,13 +5895,14 @@
         ]
       ],
       "file": "routes/njt_707_184.json",
-      "searchText": "707 nj transit",
+      "searchText": "707 nj transit bus route stop",
       "scheduleFile": "schedules/njt_707_184_schedule.json"
     },
     {
       "key": "njt:185",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "185",
       "shortName": "709",
       "longName": "",
@@ -5700,13 +5923,14 @@
         ]
       ],
       "file": "routes/njt_709_185.json",
-      "searchText": "709 nj transit",
+      "searchText": "709 nj transit bus route stop",
       "scheduleFile": "schedules/njt_709_185_schedule.json"
     },
     {
       "key": "njt:187",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "187",
       "shortName": "712",
       "longName": "",
@@ -5727,13 +5951,14 @@
         ]
       ],
       "file": "routes/njt_712_187.json",
-      "searchText": "712 nj transit",
+      "searchText": "712 nj transit bus route stop",
       "scheduleFile": "schedules/njt_712_187_schedule.json"
     },
     {
       "key": "njt:189",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "189",
       "shortName": "722",
       "longName": "",
@@ -5754,13 +5979,14 @@
         ]
       ],
       "file": "routes/njt_722_189.json",
-      "searchText": "722 nj transit",
+      "searchText": "722 nj transit bus route stop",
       "scheduleFile": "schedules/njt_722_189_schedule.json"
     },
     {
       "key": "njt:192",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "192",
       "shortName": "744",
       "longName": "",
@@ -5781,13 +6007,14 @@
         ]
       ],
       "file": "routes/njt_744_192.json",
-      "searchText": "744 nj transit",
+      "searchText": "744 nj transit bus route stop",
       "scheduleFile": "schedules/njt_744_192_schedule.json"
     },
     {
       "key": "njt:193",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "193",
       "shortName": "746",
       "longName": "",
@@ -5808,13 +6035,14 @@
         ]
       ],
       "file": "routes/njt_746_193.json",
-      "searchText": "746 nj transit",
+      "searchText": "746 nj transit bus route stop",
       "scheduleFile": "schedules/njt_746_193_schedule.json"
     },
     {
       "key": "njt:194",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "194",
       "shortName": "748",
       "longName": "",
@@ -5835,13 +6063,14 @@
         ]
       ],
       "file": "routes/njt_748_194.json",
-      "searchText": "748 nj transit",
+      "searchText": "748 nj transit bus route stop",
       "scheduleFile": "schedules/njt_748_194_schedule.json"
     },
     {
       "key": "njt:195",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "195",
       "shortName": "751",
       "longName": "",
@@ -5862,13 +6091,14 @@
         ]
       ],
       "file": "routes/njt_751_195.json",
-      "searchText": "751 nj transit",
+      "searchText": "751 nj transit bus route stop",
       "scheduleFile": "schedules/njt_751_195_schedule.json"
     },
     {
       "key": "njt:196",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "196",
       "shortName": "752",
       "longName": "",
@@ -5889,13 +6119,14 @@
         ]
       ],
       "file": "routes/njt_752_196.json",
-      "searchText": "752 nj transit",
+      "searchText": "752 nj transit bus route stop",
       "scheduleFile": "schedules/njt_752_196_schedule.json"
     },
     {
       "key": "njt:197",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "197",
       "shortName": "753",
       "longName": "",
@@ -5916,13 +6147,14 @@
         ]
       ],
       "file": "routes/njt_753_197.json",
-      "searchText": "753 nj transit",
+      "searchText": "753 nj transit bus route stop",
       "scheduleFile": "schedules/njt_753_197_schedule.json"
     },
     {
       "key": "njt:198",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "198",
       "shortName": "755",
       "longName": "",
@@ -5943,13 +6175,14 @@
         ]
       ],
       "file": "routes/njt_755_198.json",
-      "searchText": "755 nj transit",
+      "searchText": "755 nj transit bus route stop",
       "scheduleFile": "schedules/njt_755_198_schedule.json"
     },
     {
       "key": "njt:199",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "199",
       "shortName": "756",
       "longName": "",
@@ -5970,13 +6203,14 @@
         ]
       ],
       "file": "routes/njt_756_199.json",
-      "searchText": "756 nj transit",
+      "searchText": "756 nj transit bus route stop",
       "scheduleFile": "schedules/njt_756_199_schedule.json"
     },
     {
       "key": "njt:200",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "200",
       "shortName": "758",
       "longName": "",
@@ -5997,13 +6231,14 @@
         ]
       ],
       "file": "routes/njt_758_200.json",
-      "searchText": "758 nj transit",
+      "searchText": "758 nj transit bus route stop",
       "scheduleFile": "schedules/njt_758_200_schedule.json"
     },
     {
       "key": "njt:202",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "202",
       "shortName": "762",
       "longName": "",
@@ -6024,13 +6259,14 @@
         ]
       ],
       "file": "routes/njt_762_202.json",
-      "searchText": "762 nj transit",
+      "searchText": "762 nj transit bus route stop",
       "scheduleFile": "schedules/njt_762_202_schedule.json"
     },
     {
       "key": "njt:203",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "203",
       "shortName": "770",
       "longName": "",
@@ -6051,13 +6287,14 @@
         ]
       ],
       "file": "routes/njt_770_203.json",
-      "searchText": "770 nj transit",
+      "searchText": "770 nj transit bus route stop",
       "scheduleFile": "schedules/njt_770_203_schedule.json"
     },
     {
       "key": "njt:204",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "204",
       "shortName": "772",
       "longName": "",
@@ -6078,13 +6315,14 @@
         ]
       ],
       "file": "routes/njt_772_204.json",
-      "searchText": "772 nj transit",
+      "searchText": "772 nj transit bus route stop",
       "scheduleFile": "schedules/njt_772_204_schedule.json"
     },
     {
       "key": "njt:206",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "206",
       "shortName": "780",
       "longName": "",
@@ -6105,13 +6343,14 @@
         ]
       ],
       "file": "routes/njt_780_206.json",
-      "searchText": "780 nj transit",
+      "searchText": "780 nj transit bus route stop",
       "scheduleFile": "schedules/njt_780_206_schedule.json"
     },
     {
       "key": "njt:210",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "210",
       "shortName": "801",
       "longName": "",
@@ -6132,13 +6371,14 @@
         ]
       ],
       "file": "routes/njt_801_210.json",
-      "searchText": "801 nj transit",
+      "searchText": "801 nj transit bus route stop",
       "scheduleFile": "schedules/njt_801_210_schedule.json"
     },
     {
       "key": "njt:211",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "211",
       "shortName": "802",
       "longName": "",
@@ -6159,13 +6399,14 @@
         ]
       ],
       "file": "routes/njt_802_211.json",
-      "searchText": "802 nj transit",
+      "searchText": "802 nj transit bus route stop",
       "scheduleFile": "schedules/njt_802_211_schedule.json"
     },
     {
       "key": "njt:212",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "212",
       "shortName": "803",
       "longName": "",
@@ -6186,13 +6427,14 @@
         ]
       ],
       "file": "routes/njt_803_212.json",
-      "searchText": "803 nj transit",
+      "searchText": "803 nj transit bus route stop",
       "scheduleFile": "schedules/njt_803_212_schedule.json"
     },
     {
       "key": "njt:213",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "213",
       "shortName": "804",
       "longName": "",
@@ -6213,13 +6455,14 @@
         ]
       ],
       "file": "routes/njt_804_213.json",
-      "searchText": "804 nj transit",
+      "searchText": "804 nj transit bus route stop",
       "scheduleFile": "schedules/njt_804_213_schedule.json"
     },
     {
       "key": "njt:214",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "214",
       "shortName": "805",
       "longName": "",
@@ -6240,13 +6483,14 @@
         ]
       ],
       "file": "routes/njt_805_214.json",
-      "searchText": "805 nj transit",
+      "searchText": "805 nj transit bus route stop",
       "scheduleFile": "schedules/njt_805_214_schedule.json"
     },
     {
       "key": "njt:216",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "216",
       "shortName": "810",
       "longName": "",
@@ -6267,13 +6511,14 @@
         ]
       ],
       "file": "routes/njt_810_216.json",
-      "searchText": "810 nj transit",
+      "searchText": "810 nj transit bus route stop",
       "scheduleFile": "schedules/njt_810_216_schedule.json"
     },
     {
       "key": "njt:217",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "217",
       "shortName": "811",
       "longName": "",
@@ -6294,13 +6539,14 @@
         ]
       ],
       "file": "routes/njt_811_217.json",
-      "searchText": "811 nj transit",
+      "searchText": "811 nj transit bus route stop",
       "scheduleFile": "schedules/njt_811_217_schedule.json"
     },
     {
       "key": "njt:218",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "218",
       "shortName": "813",
       "longName": "",
@@ -6321,13 +6567,14 @@
         ]
       ],
       "file": "routes/njt_813_218.json",
-      "searchText": "813 nj transit",
+      "searchText": "813 nj transit bus route stop",
       "scheduleFile": "schedules/njt_813_218_schedule.json"
     },
     {
       "key": "njt:219",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "219",
       "shortName": "814",
       "longName": "",
@@ -6348,13 +6595,14 @@
         ]
       ],
       "file": "routes/njt_814_219.json",
-      "searchText": "814 nj transit",
+      "searchText": "814 nj transit bus route stop",
       "scheduleFile": "schedules/njt_814_219_schedule.json"
     },
     {
       "key": "njt:220",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "220",
       "shortName": "815",
       "longName": "",
@@ -6375,13 +6623,14 @@
         ]
       ],
       "file": "routes/njt_815_220.json",
-      "searchText": "815 nj transit",
+      "searchText": "815 nj transit bus route stop",
       "scheduleFile": "schedules/njt_815_220_schedule.json"
     },
     {
       "key": "njt:221",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "221",
       "shortName": "817",
       "longName": "",
@@ -6402,13 +6651,14 @@
         ]
       ],
       "file": "routes/njt_817_221.json",
-      "searchText": "817 nj transit",
+      "searchText": "817 nj transit bus route stop",
       "scheduleFile": "schedules/njt_817_221_schedule.json"
     },
     {
       "key": "njt:222",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "222",
       "shortName": "818",
       "longName": "",
@@ -6429,13 +6679,14 @@
         ]
       ],
       "file": "routes/njt_818_222.json",
-      "searchText": "818 nj transit",
+      "searchText": "818 nj transit bus route stop",
       "scheduleFile": "schedules/njt_818_222_schedule.json"
     },
     {
       "key": "njt:223",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "223",
       "shortName": "819",
       "longName": "",
@@ -6456,13 +6707,14 @@
         ]
       ],
       "file": "routes/njt_819_223.json",
-      "searchText": "819 nj transit",
+      "searchText": "819 nj transit bus route stop",
       "scheduleFile": "schedules/njt_819_223_schedule.json"
     },
     {
       "key": "njt:225",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "225",
       "shortName": "822",
       "longName": "",
@@ -6483,13 +6735,14 @@
         ]
       ],
       "file": "routes/njt_822_225.json",
-      "searchText": "822 nj transit",
+      "searchText": "822 nj transit bus route stop",
       "scheduleFile": "schedules/njt_822_225_schedule.json"
     },
     {
       "key": "njt:227",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "227",
       "shortName": "830",
       "longName": "",
@@ -6510,13 +6763,14 @@
         ]
       ],
       "file": "routes/njt_830_227.json",
-      "searchText": "830 nj transit",
+      "searchText": "830 nj transit bus route stop",
       "scheduleFile": "schedules/njt_830_227_schedule.json"
     },
     {
       "key": "njt:228",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "228",
       "shortName": "831",
       "longName": "",
@@ -6537,13 +6791,14 @@
         ]
       ],
       "file": "routes/njt_831_228.json",
-      "searchText": "831 nj transit",
+      "searchText": "831 nj transit bus route stop",
       "scheduleFile": "schedules/njt_831_228_schedule.json"
     },
     {
       "key": "njt:229",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "229",
       "shortName": "832",
       "longName": "",
@@ -6564,13 +6819,14 @@
         ]
       ],
       "file": "routes/njt_832_229.json",
-      "searchText": "832 nj transit",
+      "searchText": "832 nj transit bus route stop",
       "scheduleFile": "schedules/njt_832_229_schedule.json"
     },
     {
       "key": "njt:230",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "230",
       "shortName": "834",
       "longName": "",
@@ -6591,13 +6847,14 @@
         ]
       ],
       "file": "routes/njt_834_230.json",
-      "searchText": "834 nj transit",
+      "searchText": "834 nj transit bus route stop",
       "scheduleFile": "schedules/njt_834_230_schedule.json"
     },
     {
       "key": "njt:231",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "231",
       "shortName": "836",
       "longName": "",
@@ -6618,13 +6875,14 @@
         ]
       ],
       "file": "routes/njt_836_231.json",
-      "searchText": "836 nj transit",
+      "searchText": "836 nj transit bus route stop",
       "scheduleFile": "schedules/njt_836_231_schedule.json"
     },
     {
       "key": "njt:232",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "232",
       "shortName": "837",
       "longName": "",
@@ -6645,13 +6903,14 @@
         ]
       ],
       "file": "routes/njt_837_232.json",
-      "searchText": "837 nj transit",
+      "searchText": "837 nj transit bus route stop",
       "scheduleFile": "schedules/njt_837_232_schedule.json"
     },
     {
       "key": "njt:233",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "233",
       "shortName": "838",
       "longName": "",
@@ -6672,13 +6931,14 @@
         ]
       ],
       "file": "routes/njt_838_233.json",
-      "searchText": "838 nj transit",
+      "searchText": "838 nj transit bus route stop",
       "scheduleFile": "schedules/njt_838_233_schedule.json"
     },
     {
       "key": "njt:238",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "238",
       "shortName": "871",
       "longName": "",
@@ -6699,13 +6959,14 @@
         ]
       ],
       "file": "routes/njt_871_238.json",
-      "searchText": "871 nj transit",
+      "searchText": "871 nj transit bus route stop",
       "scheduleFile": "schedules/njt_871_238_schedule.json"
     },
     {
       "key": "njt:239",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "239",
       "shortName": "872",
       "longName": "",
@@ -6726,13 +6987,14 @@
         ]
       ],
       "file": "routes/njt_872_239.json",
-      "searchText": "872 nj transit",
+      "searchText": "872 nj transit bus route stop",
       "scheduleFile": "schedules/njt_872_239_schedule.json"
     },
     {
       "key": "njt:240",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "240",
       "shortName": "873",
       "longName": "",
@@ -6753,13 +7015,14 @@
         ]
       ],
       "file": "routes/njt_873_240.json",
-      "searchText": "873 nj transit",
+      "searchText": "873 nj transit bus route stop",
       "scheduleFile": "schedules/njt_873_240_schedule.json"
     },
     {
       "key": "njt:241",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "241",
       "shortName": "874",
       "longName": "",
@@ -6780,13 +7043,14 @@
         ]
       ],
       "file": "routes/njt_874_241.json",
-      "searchText": "874 nj transit",
+      "searchText": "874 nj transit bus route stop",
       "scheduleFile": "schedules/njt_874_241_schedule.json"
     },
     {
       "key": "njt:242",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "242",
       "shortName": "875",
       "longName": "",
@@ -6807,13 +7071,14 @@
         ]
       ],
       "file": "routes/njt_875_242.json",
-      "searchText": "875 nj transit",
+      "searchText": "875 nj transit bus route stop",
       "scheduleFile": "schedules/njt_875_242_schedule.json"
     },
     {
       "key": "njt:243",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "243",
       "shortName": "878",
       "longName": "",
@@ -6834,13 +7099,14 @@
         ]
       ],
       "file": "routes/njt_878_243.json",
-      "searchText": "878 nj transit",
+      "searchText": "878 nj transit bus route stop",
       "scheduleFile": "schedules/njt_878_243_schedule.json"
     },
     {
       "key": "njt:245",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "245",
       "shortName": "880",
       "longName": "",
@@ -6861,13 +7127,14 @@
         ]
       ],
       "file": "routes/njt_880_245.json",
-      "searchText": "880 nj transit",
+      "searchText": "880 nj transit bus route stop",
       "scheduleFile": "schedules/njt_880_245_schedule.json"
     },
     {
       "key": "njt:247",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "247",
       "shortName": "890",
       "longName": "",
@@ -6888,13 +7155,14 @@
         ]
       ],
       "file": "routes/njt_890_247.json",
-      "searchText": "890 nj transit",
+      "searchText": "890 nj transit bus route stop",
       "scheduleFile": "schedules/njt_890_247_schedule.json"
     },
     {
       "key": "njt:248",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "248",
       "shortName": "891",
       "longName": "",
@@ -6915,13 +7183,14 @@
         ]
       ],
       "file": "routes/njt_891_248.json",
-      "searchText": "891 nj transit",
+      "searchText": "891 nj transit bus route stop",
       "scheduleFile": "schedules/njt_891_248_schedule.json"
     },
     {
       "key": "njt:255",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "255",
       "shortName": "986",
       "longName": "",
@@ -6942,13 +7211,14 @@
         ]
       ],
       "file": "routes/njt_986_255.json",
-      "searchText": "986 nj transit",
+      "searchText": "986 nj transit bus route stop",
       "scheduleFile": "schedules/njt_986_255_schedule.json"
     },
     {
       "key": "njt:257",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "257",
       "shortName": "AC1",
       "longName": "",
@@ -6969,13 +7239,14 @@
         ]
       ],
       "file": "routes/njt_AC1_257.json",
-      "searchText": "ac1 nj transit",
+      "searchText": "ac1 nj transit bus route stop",
       "scheduleFile": "schedules/njt_AC1_257_schedule.json"
     },
     {
       "key": "njt:258",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "258",
       "shortName": "AC3",
       "longName": "",
@@ -6996,13 +7267,14 @@
         ]
       ],
       "file": "routes/njt_AC3_258.json",
-      "searchText": "ac3 nj transit",
+      "searchText": "ac3 nj transit bus route stop",
       "scheduleFile": "schedules/njt_AC3_258_schedule.json"
     },
     {
       "key": "njt:259",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "259",
       "shortName": "AC4B",
       "longName": "",
@@ -7023,13 +7295,14 @@
         ]
       ],
       "file": "routes/njt_AC4B_259.json",
-      "searchText": "ac4b nj transit",
+      "searchText": "ac4b nj transit bus route stop",
       "scheduleFile": "schedules/njt_AC4B_259_schedule.json"
     },
     {
       "key": "njt:260",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "260",
       "shortName": "GO25",
       "longName": "",
@@ -7050,13 +7323,14 @@
         ]
       ],
       "file": "routes/njt_GO25_260.json",
-      "searchText": "go25 nj transit",
+      "searchText": "go25 nj transit bus route stop",
       "scheduleFile": "schedules/njt_GO25_260_schedule.json"
     },
     {
       "key": "njt:261",
       "agencyId": "njt",
       "agencyLabel": "NJ Transit",
+      "mode": "bus",
       "routeId": "261",
       "shortName": "GO28",
       "longName": "",
@@ -7077,13 +7351,462 @@
         ]
       ],
       "file": "routes/njt_GO28_261.json",
-      "searchText": "go28 nj transit",
+      "searchText": "go28 nj transit bus route stop",
       "scheduleFile": "schedules/njt_GO28_261_schedule.json"
+    },
+    {
+      "key": "njt_rail:1",
+      "agencyId": "njt_rail",
+      "agencyLabel": "NJ Transit Rail",
+      "mode": "rail",
+      "routeId": "1",
+      "shortName": "ATLC",
+      "longName": "Atlantic City Rail Line",
+      "routeDesc": "",
+      "label": "ATLC Atlantic City Rail Line",
+      "color": "#075aaa",
+      "tripCount": 97,
+      "stopCount": 9,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          39.363299,
+          -75.197955
+        ],
+        [
+          40.005141,
+          -74.441486
+        ]
+      ],
+      "file": "routes/njt_rail_ATLC_1.json",
+      "searchText": "atlc atlantic city rail line nj transit rail rail train line station",
+      "scheduleFile": "schedules/njt_rail_ATLC_1_schedule.json"
+    },
+    {
+      "key": "njt_rail:2",
+      "agencyId": "njt_rail",
+      "agencyLabel": "NJ Transit Rail",
+      "mode": "rail",
+      "routeId": "2",
+      "shortName": "BNTN",
+      "longName": "Montclair-Boonton Line",
+      "routeDesc": "",
+      "label": "BNTN Montclair-Boonton Line",
+      "color": "#e66859",
+      "tripCount": 41,
+      "stopCount": 26,
+      "shapeCount": 8,
+      "bounds": [
+        [
+          40.73473,
+          -74.835352
+        ],
+        [
+          40.928136,
+          -74.028046
+        ]
+      ],
+      "file": "routes/njt_rail_BNTN_2.json",
+      "searchText": "bntn montclair-boonton line nj transit rail rail train line station",
+      "scheduleFile": "schedules/njt_rail_BNTN_2_schedule.json"
+    },
+    {
+      "key": "njt_rail:3",
+      "agencyId": "njt_rail",
+      "agencyLabel": "NJ Transit Rail",
+      "mode": "rail",
+      "routeId": "3",
+      "shortName": "BNTNM",
+      "longName": "Montclair-Boonton Line",
+      "routeDesc": "",
+      "label": "BNTNM Montclair-Boonton Line",
+      "color": "#e66859",
+      "tripCount": 214,
+      "stopCount": 14,
+      "shapeCount": 8,
+      "bounds": [
+        [
+          40.73473,
+          -74.209635
+        ],
+        [
+          40.869782,
+          -73.992358
+        ]
+      ],
+      "file": "routes/njt_rail_BNTNM_3.json",
+      "searchText": "bntnm montclair-boonton line nj transit rail rail train line station",
+      "scheduleFile": "schedules/njt_rail_BNTNM_3_schedule.json"
+    },
+    {
+      "key": "njt_rail:4",
+      "agencyId": "njt_rail",
+      "agencyLabel": "NJ Transit Rail",
+      "mode": "rail",
+      "routeId": "4",
+      "shortName": "HBLR",
+      "longName": "Hudson-Bergen Light Rail",
+      "routeDesc": "",
+      "label": "HBLR Hudson-Bergen Light Rail",
+      "color": "#008080",
+      "tripCount": 985,
+      "stopCount": 24,
+      "shapeCount": 8,
+      "bounds": [
+        [
+          40.654125,
+          -74.12937
+        ],
+        [
+          40.78733,
+          -74.012707
+        ]
+      ],
+      "file": "routes/njt_rail_HBLR_4.json",
+      "searchText": "hblr hudson-bergen light rail nj transit rail rail train line station",
+      "scheduleFile": "schedules/njt_rail_HBLR_4_schedule.json"
+    },
+    {
+      "key": "njt_rail:5",
+      "agencyId": "njt_rail",
+      "agencyLabel": "NJ Transit Rail",
+      "mode": "rail",
+      "routeId": "5",
+      "shortName": "MNBN",
+      "longName": "Main/Bergen County Line",
+      "routeDesc": "",
+      "label": "MNBN Main/Bergen County Line",
+      "color": "#ffd411",
+      "tripCount": 321,
+      "stopCount": 24,
+      "shapeCount": 8,
+      "bounds": [
+        [
+          40.73473,
+          -74.167354
+        ],
+        [
+          41.11354,
+          -74.028046
+        ]
+      ],
+      "file": "routes/njt_rail_MNBN_5.json",
+      "searchText": "mnbn main/bergen county line nj transit rail rail train line station",
+      "scheduleFile": "schedules/njt_rail_MNBN_5_schedule.json"
+    },
+    {
+      "key": "njt_rail:6",
+      "agencyId": "njt_rail",
+      "agencyLabel": "NJ Transit Rail",
+      "mode": "rail",
+      "routeId": "6",
+      "shortName": "MNBNP",
+      "longName": "Port Jervis Line",
+      "routeDesc": "",
+      "label": "MNBNP Port Jervis Line",
+      "color": "#ffd411",
+      "tripCount": 86,
+      "stopCount": 32,
+      "shapeCount": 8,
+      "bounds": [
+        [
+          40.734733,
+          -74.69556
+        ],
+        [
+          41.488683,
+          -74.028046
+        ]
+      ],
+      "file": "routes/njt_rail_MNBNP_6.json",
+      "searchText": "mnbnp port jervis line nj transit rail rail train line station",
+      "scheduleFile": "schedules/njt_rail_MNBNP_6_schedule.json"
+    },
+    {
+      "key": "njt_rail:7",
+      "agencyId": "njt_rail",
+      "agencyLabel": "NJ Transit Rail",
+      "mode": "rail",
+      "routeId": "7",
+      "shortName": "MNE",
+      "longName": "Morris & Essex Line",
+      "routeDesc": "",
+      "label": "MNE Morris & Essex Line",
+      "color": "#08a652",
+      "tripCount": 427,
+      "stopCount": 27,
+      "shapeCount": 8,
+      "bounds": [
+        [
+          40.714082,
+          -74.835352
+        ],
+        [
+          40.907376,
+          -73.992358
+        ]
+      ],
+      "file": "routes/njt_rail_MNE_7.json",
+      "searchText": "mne morris & essex line nj transit rail rail train line station",
+      "scheduleFile": "schedules/njt_rail_MNE_7_schedule.json"
+    },
+    {
+      "key": "njt_rail:8",
+      "agencyId": "njt_rail",
+      "agencyLabel": "NJ Transit Rail",
+      "mode": "rail",
+      "routeId": "8",
+      "shortName": "MNEG",
+      "longName": "Gladstone Branch",
+      "routeDesc": "",
+      "label": "MNEG Gladstone Branch",
+      "color": "#a4c9aa",
+      "tripCount": 227,
+      "stopCount": 26,
+      "shapeCount": 8,
+      "bounds": [
+        [
+          40.672318,
+          -74.666371
+        ],
+        [
+          40.771987,
+          -73.992358
+        ]
+      ],
+      "file": "routes/njt_rail_MNEG_8.json",
+      "searchText": "mneg gladstone branch nj transit rail rail train line station",
+      "scheduleFile": "schedules/njt_rail_MNEG_8_schedule.json"
+    },
+    {
+      "key": "njt_rail:9",
+      "agencyId": "njt_rail",
+      "agencyLabel": "NJ Transit Rail",
+      "mode": "rail",
+      "routeId": "9",
+      "shortName": "NEC",
+      "longName": "Northeast Corridor",
+      "routeDesc": "",
+      "label": "NEC Northeast Corridor",
+      "color": "#dd3439",
+      "tripCount": 626,
+      "stopCount": 16,
+      "shapeCount": 8,
+      "bounds": [
+        [
+          40.218513,
+          -74.753926
+        ],
+        [
+          40.772579,
+          -73.992358
+        ]
+      ],
+      "file": "routes/njt_rail_NEC_9.json",
+      "searchText": "nec northeast corridor nj transit rail rail train line station",
+      "scheduleFile": "schedules/njt_rail_NEC_9_schedule.json"
+    },
+    {
+      "key": "njt_rail:10",
+      "agencyId": "njt_rail",
+      "agencyLabel": "NJ Transit Rail",
+      "mode": "rail",
+      "routeId": "10",
+      "shortName": "NJCL",
+      "longName": "North Jersey Coast Line",
+      "routeDesc": "",
+      "label": "NJCL North Jersey Coast Line",
+      "color": "#03a3df",
+      "tripCount": 402,
+      "stopCount": 27,
+      "shapeCount": 8,
+      "bounds": [
+        [
+          40.077178,
+          -74.2856
+        ],
+        [
+          40.772579,
+          -73.988321
+        ]
+      ],
+      "file": "routes/njt_rail_NJCL_10.json",
+      "searchText": "njcl north jersey coast line nj transit rail rail train line station",
+      "scheduleFile": "schedules/njt_rail_NJCL_10_schedule.json"
+    },
+    {
+      "key": "njt_rail:11",
+      "agencyId": "njt_rail",
+      "agencyLabel": "NJ Transit Rail",
+      "mode": "rail",
+      "routeId": "11",
+      "shortName": "NJCLL",
+      "longName": "North Jersey Coast Line",
+      "routeDesc": "",
+      "label": "NJCLL North Jersey Coast Line",
+      "color": "#03a3df",
+      "tripCount": 151,
+      "stopCount": 23,
+      "shapeCount": 3,
+      "bounds": [
+        [
+          40.077178,
+          -74.28014
+        ],
+        [
+          40.761188,
+          -73.988331
+        ]
+      ],
+      "file": "routes/njt_rail_NJCLL_11.json",
+      "searchText": "njcll north jersey coast line nj transit rail rail train line station",
+      "scheduleFile": "schedules/njt_rail_NJCLL_11_schedule.json"
+    },
+    {
+      "key": "njt_rail:12",
+      "agencyId": "njt_rail",
+      "agencyLabel": "NJ Transit Rail",
+      "mode": "rail",
+      "routeId": "12",
+      "shortName": "NLR",
+      "longName": "Newark Light Rail",
+      "routeDesc": "",
+      "label": "NLR Newark Light Rail",
+      "color": "#009ad1",
+      "tripCount": 708,
+      "stopCount": 18,
+      "shapeCount": 8,
+      "bounds": [
+        [
+          40.7345,
+          -74.187938
+        ],
+        [
+          40.78149,
+          -74.163142
+        ]
+      ],
+      "file": "routes/njt_rail_NLR_12.json",
+      "searchText": "nlr newark light rail nj transit rail rail train line station",
+      "scheduleFile": "schedules/njt_rail_NLR_12_schedule.json"
+    },
+    {
+      "key": "njt_rail:13",
+      "agencyId": "njt_rail",
+      "agencyLabel": "NJ Transit Rail",
+      "mode": "rail",
+      "routeId": "13",
+      "shortName": "PASC",
+      "longName": "Pascack Valley Line",
+      "routeDesc": "",
+      "label": "PASC Pascack Valley Line",
+      "color": "#94219a",
+      "tripCount": 129,
+      "stopCount": 18,
+      "shapeCount": 8,
+      "bounds": [
+        [
+          40.73473,
+          -74.095388
+        ],
+        [
+          41.111992,
+          -74.014701
+        ]
+      ],
+      "file": "routes/njt_rail_PASC_13.json",
+      "searchText": "pasc pascack valley line nj transit rail rail train line station",
+      "scheduleFile": "schedules/njt_rail_PASC_13_schedule.json"
+    },
+    {
+      "key": "njt_rail:14",
+      "agencyId": "njt_rail",
+      "agencyLabel": "NJ Transit Rail",
+      "mode": "rail",
+      "routeId": "14",
+      "shortName": "PRIN",
+      "longName": "Princeton Shuttle",
+      "routeDesc": "",
+      "label": "PRIN Princeton Shuttle",
+      "color": "#dd3439",
+      "tripCount": 474,
+      "stopCount": 2,
+      "shapeCount": 2,
+      "bounds": [
+        [
+          40.316316,
+          -74.658878
+        ],
+        [
+          40.342088,
+          -74.623753
+        ]
+      ],
+      "file": "routes/njt_rail_PRIN_14.json",
+      "searchText": "prin princeton shuttle nj transit rail rail train line station",
+      "scheduleFile": "schedules/njt_rail_PRIN_14_schedule.json"
+    },
+    {
+      "key": "njt_rail:15",
+      "agencyId": "njt_rail",
+      "agencyLabel": "NJ Transit Rail",
+      "mode": "rail",
+      "routeId": "15",
+      "shortName": "RARV",
+      "longName": "Raritan Valley Line",
+      "routeDesc": "",
+      "label": "RARV Raritan Valley Line",
+      "color": "#f2a537",
+      "tripCount": 263,
+      "stopCount": 22,
+      "shapeCount": 8,
+      "bounds": [
+        [
+          40.558887,
+          -74.895863
+        ],
+        [
+          40.772579,
+          -73.992358
+        ]
+      ],
+      "file": "routes/njt_rail_RARV_15.json",
+      "searchText": "rarv raritan valley line nj transit rail rail train line station",
+      "scheduleFile": "schedules/njt_rail_RARV_15_schedule.json"
+    },
+    {
+      "key": "njt_rail:16",
+      "agencyId": "njt_rail",
+      "agencyLabel": "NJ Transit Rail",
+      "mode": "rail",
+      "routeId": "16",
+      "shortName": "RVLN",
+      "longName": "Riverline Light Rail",
+      "routeDesc": "",
+      "label": "RVLN Riverline Light Rail",
+      "color": "#00008b",
+      "tripCount": 223,
+      "stopCount": 21,
+      "shapeCount": 3,
+      "bounds": [
+        [
+          39.94094,
+          -75.129346
+        ],
+        [
+          40.218348,
+          -74.714287
+        ]
+      ],
+      "file": "routes/njt_rail_RVLN_16.json",
+      "searchText": "rvln riverline light rail nj transit rail rail train line station",
+      "scheduleFile": "schedules/njt_rail_RVLN_16_schedule.json"
     },
     {
       "key": "princeton:28ea7117-5d28-4c7e-a919-5e4e94e79b42",
       "agencyId": "princeton",
       "agencyLabel": "Princeton Transit",
+      "mode": "bus",
       "routeId": "28ea7117-5d28-4c7e-a919-5e4e94e79b42",
       "shortName": "1",
       "longName": "Route 1: Grad College to Meadows",
@@ -7104,13 +7827,14 @@
         ]
       ],
       "file": "routes/princeton_1_28ea7117-5d28-4c7e-a919-5e4e94e79b42.json",
-      "searchText": "1 route 1: grad college to meadows princeton transit tigertransit tiger transit",
+      "searchText": "1 route 1: grad college to meadows princeton transit bus route stop tigertransit tiger transit",
       "scheduleFile": "schedules/princeton_1_28ea7117-5d28-4c7e-a919-5e4e94e79b42_schedule.json"
     },
     {
       "key": "princeton:4894d1d9-889e-4687-8a93-13bb19426ed6",
       "agencyId": "princeton",
       "agencyLabel": "Princeton Transit",
+      "mode": "bus",
       "routeId": "4894d1d9-889e-4687-8a93-13bb19426ed6",
       "shortName": "2",
       "longName": "Route 2: Lawrence/Lakeside to EQUAD",
@@ -7131,13 +7855,14 @@
         ]
       ],
       "file": "routes/princeton_2_4894d1d9-889e-4687-8a93-13bb19426ed6.json",
-      "searchText": "2 route 2: lawrence/lakeside to equad princeton transit tigertransit tiger transit",
+      "searchText": "2 route 2: lawrence/lakeside to equad princeton transit bus route stop tigertransit tiger transit",
       "scheduleFile": "schedules/princeton_2_4894d1d9-889e-4687-8a93-13bb19426ed6_schedule.json"
     },
     {
       "key": "princeton:886dd8f1-6a83-4be3-9909-3e3170a5fb65",
       "agencyId": "princeton",
       "agencyLabel": "Princeton Transit",
+      "mode": "bus",
       "routeId": "886dd8f1-6a83-4be3-9909-3e3170a5fb65",
       "shortName": "3",
       "longName": "Route 3: Merwick to Forrestal/PPPL",
@@ -7158,13 +7883,14 @@
         ]
       ],
       "file": "routes/princeton_3_886dd8f1-6a83-4be3-9909-3e3170a5fb65.json",
-      "searchText": "3 route 3: merwick to forrestal/pppl princeton transit tigertransit tiger transit",
+      "searchText": "3 route 3: merwick to forrestal/pppl princeton transit bus route stop tigertransit tiger transit",
       "scheduleFile": "schedules/princeton_3_886dd8f1-6a83-4be3-9909-3e3170a5fb65_schedule.json"
     },
     {
       "key": "princeton:d092e3be-9034-438f-9914-6ae8d74aa39e",
       "agencyId": "princeton",
       "agencyLabel": "Princeton Transit",
+      "mode": "bus",
       "routeId": "d092e3be-9034-438f-9914-6ae8d74aa39e",
       "shortName": "4",
       "longName": "Route 4: Princeton Junction to Stadium Drive Garage",
@@ -7185,13 +7911,14 @@
         ]
       ],
       "file": "routes/princeton_4_d092e3be-9034-438f-9914-6ae8d74aa39e.json",
-      "searchText": "4 route 4: princeton junction to stadium drive garage princeton transit tigertransit tiger transit",
+      "searchText": "4 route 4: princeton junction to stadium drive garage princeton transit bus route stop tigertransit tiger transit",
       "scheduleFile": "schedules/princeton_4_d092e3be-9034-438f-9914-6ae8d74aa39e_schedule.json"
     },
     {
       "key": "princeton:70629116-e51d-4c6d-991d-5f100441a2d7",
       "agencyId": "princeton",
       "agencyLabel": "Princeton Transit",
+      "mode": "bus",
       "routeId": "70629116-e51d-4c6d-991d-5f100441a2d7",
       "shortName": "5",
       "longName": "Route 5: Princeton Station to Stadium Drive Garage",
@@ -7212,13 +7939,14 @@
         ]
       ],
       "file": "routes/princeton_5_70629116-e51d-4c6d-991d-5f100441a2d7.json",
-      "searchText": "5 route 5: princeton station to stadium drive garage princeton transit tigertransit tiger transit",
+      "searchText": "5 route 5: princeton station to stadium drive garage princeton transit bus route stop tigertransit tiger transit",
       "scheduleFile": "schedules/princeton_5_70629116-e51d-4c6d-991d-5f100441a2d7_schedule.json"
     },
     {
       "key": "princeton:7f065734-5848-4c9e-8a5a-f5ae5c80e795",
       "agencyId": "princeton",
       "agencyLabel": "Princeton Transit",
+      "mode": "bus",
       "routeId": "7f065734-5848-4c9e-8a5a-f5ae5c80e795",
       "shortName": "6A",
       "longName": "Route 6A: Campus Circulator via EQUAD",
@@ -7239,13 +7967,14 @@
         ]
       ],
       "file": "routes/princeton_6A_7f065734-5848-4c9e-8a5a-f5ae5c80e795.json",
-      "searchText": "6a route 6a: campus circulator via equad princeton transit tigertransit tiger transit",
+      "searchText": "6a route 6a: campus circulator via equad princeton transit bus route stop tigertransit tiger transit",
       "scheduleFile": "schedules/princeton_6A_7f065734-5848-4c9e-8a5a-f5ae5c80e795_schedule.json"
     },
     {
       "key": "princeton:8213b9c6-a8f2-43b2-af72-041ad35719b7",
       "agencyId": "princeton",
       "agencyLabel": "Princeton Transit",
+      "mode": "bus",
       "routeId": "8213b9c6-a8f2-43b2-af72-041ad35719b7",
       "shortName": "6B",
       "longName": "Route 6B: Campus Circulator via Washington Road",
@@ -7266,13 +7995,14 @@
         ]
       ],
       "file": "routes/princeton_6B_8213b9c6-a8f2-43b2-af72-041ad35719b7.json",
-      "searchText": "6b route 6b: campus circulator via washington road princeton transit tigertransit tiger transit",
+      "searchText": "6b route 6b: campus circulator via washington road princeton transit bus route stop tigertransit tiger transit",
       "scheduleFile": "schedules/princeton_6B_8213b9c6-a8f2-43b2-af72-041ad35719b7_schedule.json"
     },
     {
       "key": "princeton:bb733fc7-4b53-481f-9616-28d61cca131c",
       "agencyId": "princeton",
       "agencyLabel": "Princeton Transit",
+      "mode": "bus",
       "routeId": "bb733fc7-4b53-481f-9616-28d61cca131c",
       "shortName": "TPL",
       "longName": "The Princeton Loop - LOCAL",
@@ -7293,13 +8023,14 @@
         ]
       ],
       "file": "routes/princeton_TPL_bb733fc7-4b53-481f-9616-28d61cca131c.json",
-      "searchText": "tpl the princeton loop - local princeton transit princeton loop",
+      "searchText": "tpl the princeton loop - local princeton transit bus route stop princeton loop",
       "scheduleFile": "schedules/princeton_TPL_bb733fc7-4b53-481f-9616-28d61cca131c_schedule.json"
     },
     {
       "key": "princeton:d03ad4f8-19b1-482a-a028-1bd79bffd7ef",
       "agencyId": "princeton",
       "agencyLabel": "Princeton Transit",
+      "mode": "bus",
       "routeId": "d03ad4f8-19b1-482a-a028-1bd79bffd7ef",
       "shortName": "TPLEXP",
       "longName": "The Princeton Loop - EXPRESS",
@@ -7320,13 +8051,14 @@
         ]
       ],
       "file": "routes/princeton_TPLEXP_d03ad4f8-19b1-482a-a028-1bd79bffd7ef.json",
-      "searchText": "tplexp the princeton loop - express princeton transit princeton loop",
+      "searchText": "tplexp the princeton loop - express princeton transit bus route stop princeton loop",
       "scheduleFile": "schedules/princeton_TPLEXP_d03ad4f8-19b1-482a-a028-1bd79bffd7ef_schedule.json"
     },
     {
       "key": "princeton:3f0911c5-6c8d-474a-9bc6-bb7c2ed7bf21",
       "agencyId": "princeton",
       "agencyLabel": "Princeton Transit",
+      "mode": "bus",
       "routeId": "3f0911c5-6c8d-474a-9bc6-bb7c2ed7bf21",
       "shortName": "WS",
       "longName": "WS: Weekend Shopper",
@@ -7347,7 +8079,7 @@
         ]
       ],
       "file": "routes/princeton_WS_3f0911c5-6c8d-474a-9bc6-bb7c2ed7bf21.json",
-      "searchText": "ws ws: weekend shopper princeton transit weekend shopper",
+      "searchText": "ws ws: weekend shopper princeton transit bus route stop weekend shopper",
       "scheduleFile": "schedules/princeton_WS_3f0911c5-6c8d-474a-9bc6-bb7c2ed7bf21_schedule.json"
     }
   ]

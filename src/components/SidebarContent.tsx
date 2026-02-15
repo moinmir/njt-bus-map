@@ -42,8 +42,8 @@ export function SidebarContent({
           NJ + Princeton Transit Explorer
         </h1>
         <p className="mt-1.5 text-sm text-muted-foreground leading-snug">
-          Official GTFS-backed map for all NJ Transit bus routes plus Princeton
-          transit routes (TigerTransit, Princeton Loop, Weekend Shopper).
+          Official GTFS-backed map for NJ Transit bus routes, rail lines, and
+          Princeton transit routes (TigerTransit, Princeton Loop, Weekend Shopper).
         </p>
       </div>
 

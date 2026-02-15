@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { ChevronDown } from "lucide-react";
+import { BusFront, ChevronDown, TrainFront } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { cn } from "@/lib/utils";
@@ -18,6 +18,7 @@ interface RouteItemProps {
 
 function RouteItem({ routeState, onToggle }: RouteItemProps) {
   const { meta, selected, isVisible } = routeState;
+  const ModeIcon = meta.mode === "rail" ? TrainFront : BusFront;
 
   if (!isVisible) return null;
 
@@ -40,6 +41,7 @@ function RouteItem({ routeState, onToggle }: RouteItemProps) {
         className="h-3 w-3 rounded-full shrink-0 border border-black/10"
         style={{ background: meta.color }}
       />
+      <ModeIcon className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
       <span className="min-w-0 flex-1">
         <span className="block text-[0.82rem] font-semibold leading-tight text-foreground truncate">
           {meta.shortName}

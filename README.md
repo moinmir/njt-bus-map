@@ -1,6 +1,6 @@
 # NJ + Princeton Transit Explorer
 
-Interactive map of NJ Transit bus routes and Princeton-area shuttle routes with route-level filtering, area-based selection, and stop-level schedule popups.
+Interactive map of NJ Transit bus routes, NJ Transit rail lines, and Princeton-area shuttle routes with route-level filtering, area-based selection, and stop-level schedule popups.
 
 ## Requirements
 - `uv`
@@ -23,7 +23,7 @@ http://localhost:8000
 ```
 
 ## Data Build Modes
-Default (recommended): route geometry in `data/routes/` plus schedule payloads in `data/schedules/`.
+Default (recommended): route/line geometry in `data/routes/` plus schedule payloads in `data/schedules/`.
 ```bash
 uv run scripts/build_njt_data.py --refresh
 ```
@@ -60,6 +60,6 @@ sw.js
 ```
 
 ## Notes
-- Route files are lazy-loaded when selected.
+- Route/line files are lazy-loaded when selected.
 - Schedule files are prefetched after route load so stop hover popups render quickly.
 - GTFS archives are cached under `data/` for reproducible rebuilds.

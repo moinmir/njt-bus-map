@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build route data for all NJ Transit bus routes plus Princeton transit routes.
+"""Build route data for NJ Transit bus + rail routes plus Princeton transit routes.
 
 Outputs:
 - data/manifest.json (route index + source metadata)
@@ -7,7 +7,8 @@ Outputs:
 - data/schedules/*.json (optional per-route stop schedules in external mode)
 
 Official data sources:
-- NJ Transit GTFS: https://www.njtransit.com/bus_data.zip
+- NJ Transit Bus GTFS: https://www.njtransit.com/bus_data.zip
+- NJ Transit Rail GTFS: https://www.njtransit.com/rail_data.zip
 - Princeton/TripShot GTFS: https://princeton.tripshot.com/v1/gtfs.zip
 """
 
@@ -45,13 +46,23 @@ FEEDS = (
         "id": "njt",
         "label": "NJ Transit",
         "description": "Official NJ Transit bus routes",
+        "mode": "bus",
         "gtfs_url": "https://www.njtransit.com/bus_data.zip",
         "zip_path": "data/bus_data.zip",
+    },
+    {
+        "id": "njt_rail",
+        "label": "NJ Transit Rail",
+        "description": "Official NJ Transit rail lines and station stops",
+        "mode": "rail",
+        "gtfs_url": "https://www.njtransit.com/rail_data.zip",
+        "zip_path": "data/rail_data.zip",
     },
     {
         "id": "princeton",
         "label": "Princeton Transit",
         "description": "TigerTransit, Princeton Loop, Weekend Shopper, and related Princeton shuttles",
+        "mode": "bus",
         "gtfs_url": "https://princeton.tripshot.com/v1/gtfs.zip",
         "zip_path": "data/princeton_gtfs.zip",
     },
@@ -478,6 +489,7 @@ def build_feed(
 ) -> tuple[dict, list[dict]]:
     agency_id = feed_config["id"]
     agency_label = feed_config["label"]
+    feed_mode = feed_config["mode"]
     gtfs_url = feed_config["gtfs_url"]
 
     with zipfile.ZipFile(gtfs_zip_path) as zf:
@@ -498,6 +510,7 @@ def build_feed(
                 "longName": long_name,
                 "routeDesc": route_desc,
                 "label": f"{short_name} {long_name}".strip(),
+                "mode": feed_mode,
                 "color": route_color,
                 "gtfsColor": normalize_color(row.get("route_color", "")) or "",
             }
@@ -847,6 +860,7 @@ def build_feed(
             "key": route_key,
             "agencyId": agency_id,
             "agencyLabel": agency_label,
+            "mode": meta["mode"],
             "routeId": route_id,
             "shortName": meta["shortName"],
             "longName": meta["longName"],
@@ -930,6 +944,10 @@ def build_feed(
             meta["routeDesc"],
             agency_label,
         ]
+        if meta["mode"] == "rail":
+            search_parts.append("rail train line station")
+        else:
+            search_parts.append("bus route stop")
         if agency_id == "princeton":
             if meta["shortName"] in {"TPL", "TPLEXP"}:
                 search_parts.append("Princeton Loop")
@@ -944,6 +962,7 @@ def build_feed(
             "key": route_key,
             "agencyId": agency_id,
             "agencyLabel": agency_label,
+            "mode": meta["mode"],
             "routeId": route_id,
             "shortName": meta["shortName"],
             "longName": meta["longName"],

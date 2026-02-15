@@ -11,6 +11,10 @@ interface DirectionScheduleView {
   daySchedules: DaySchedules;
 }
 
+interface ScheduleRenderOptions {
+  autoOpenNextDay: boolean;
+}
+
 export interface StopPopupSections {
   title: string;
   subtitle: string;
@@ -164,14 +168,18 @@ function renderStatusCard(message: string): string {
   `;
 }
 
-function renderDayBlocks(daySchedules: DaySchedules, representativeDates: Record<string, string> | undefined): string {
+function renderDayBlocks(
+  daySchedules: DaySchedules,
+  representativeDates: Record<string, string> | undefined,
+  options: ScheduleRenderOptions,
+): string {
   const next = findNextArrival(daySchedules);
   const defaultOpenDay: DayKey = next?.dayKey ?? JS_DAY_TO_KEY[new Date().getDay()];
 
   return DAY_KEYS.map((dayKey) => {
     const times = daySchedules[dayKey] ?? [];
     const representativeDate = representativeDates?.[dayKey];
-    const openAttr = dayKey === defaultOpenDay ? " open" : "";
+    const openAttr = options.autoOpenNextDay && dayKey === defaultOpenDay ? " open" : "";
 
     let bodyHtml = `
       <div class="no-service">
@@ -211,9 +219,13 @@ function renderDayBlocks(daySchedules: DaySchedules, representativeDates: Record
   }).join("");
 }
 
-function renderScheduleSection(daySchedules: DaySchedules, representativeDates: Record<string, string> | undefined): string {
+function renderScheduleSection(
+  daySchedules: DaySchedules,
+  representativeDates: Record<string, string> | undefined,
+  options: ScheduleRenderOptions,
+): string {
   return `
-    <div class="day-list">${renderDayBlocks(daySchedules, representativeDates)}</div>
+    <div class="day-list">${renderDayBlocks(daySchedules, representativeDates, options)}</div>
   `;
 }
 
@@ -248,9 +260,12 @@ export function buildStopPopupSections(
   routeData: RouteData,
   stop: StopData,
   scheduleData: ScheduleData | null,
+  options: { autoOpenNextDay?: boolean } = {},
 ): StopPopupSections {
+  const { autoOpenNextDay = true } = options;
   const title = escapeHtml(stop.name);
-  const subtitle = `${escapeHtml(routeMeta.agencyLabel)} • Route ${escapeHtml(routeMeta.shortName)}`;
+  const routeNoun = routeMeta.mode === "rail" ? "Line" : "Route";
+  const subtitle = `${escapeHtml(routeMeta.agencyLabel)} • ${routeNoun} ${escapeHtml(routeMeta.shortName)}`;
   const directionSchedules = resolveDirectionDaySchedules(routeData, stop, scheduleData);
   if (!directionSchedules || Object.keys(directionSchedules).length === 0) {
     return {
@@ -295,7 +310,7 @@ export function buildStopPopupSections(
   const directionPanelsHtml = directionViews.length === 1
     ? `
       <section class="direction-panel is-active" data-direction-panel="${escapeHtml(directionViews[0].key)}">
-        ${renderScheduleSection(directionViews[0].daySchedules, representativeDates)}
+        ${renderScheduleSection(directionViews[0].daySchedules, representativeDates, { autoOpenNextDay })}
       </section>
     `
     : `
@@ -308,7 +323,7 @@ export function buildStopPopupSections(
             data-direction-icon="${escapeHtml(view.icon)}"
             aria-hidden="${idx === 0 ? "false" : "true"}"
           >
-            ${renderScheduleSection(view.daySchedules, representativeDates)}
+            ${renderScheduleSection(view.daySchedules, representativeDates, { autoOpenNextDay })}
           </section>
         `).join("")}
       </div>

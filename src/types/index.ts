@@ -17,12 +17,15 @@ export interface Source {
   feedUpdatedAt: string;
 }
 
+export type TransitMode = "bus" | "rail";
+
 export type RouteBounds = [[number, number], [number, number]];
 
 export interface RouteMeta {
   key: string;
   agencyId: string;
   agencyLabel: string;
+  mode: TransitMode;
   routeId: string;
   shortName: string;
   longName: string;
@@ -65,6 +68,7 @@ export interface StopData {
 }
 
 export interface RouteData {
+  mode?: TransitMode;
   shapes?: ShapeData[];
   stops?: StopData[];
   scheduleFile?: string;

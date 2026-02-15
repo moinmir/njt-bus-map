@@ -12,7 +12,7 @@ export function RouteSearch({ value, onChange }: RouteSearchProps) {
       <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
       <Input
         type="search"
-        placeholder="Search route number or name"
+        placeholder="Search route or line name"
         autoComplete="off"
         value={value}
         onChange={(e) => onChange(e.target.value)}

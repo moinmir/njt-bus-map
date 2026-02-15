@@ -28,7 +28,7 @@ export function MapView({ onMapReady }: MapViewProps) {
       ref={containerRef}
       className="w-full h-full"
       role="region"
-      aria-label="Map of transit routes"
+      aria-label="Map of transit routes and rail lines"
     />
   );
 }

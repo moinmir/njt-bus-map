@@ -23,8 +23,13 @@ interface ManagerDeps {
 }
 
 interface RouteShapeLayerState {
-  polyline: L.Polyline;
+  layers: L.Polyline[];
   directionKeys: Set<string>;
+}
+
+interface RouteShapeRenderLayers {
+  interactiveLayer: L.Polyline;
+  layers: L.Polyline[];
 }
 
 interface StopVariantState {
@@ -46,7 +51,8 @@ interface StopClusterBuildState {
 interface StopClusterLayerState {
   variants: StopVariantState[];
   activeRouteKey: string;
-  visualMarker: L.CircleMarker;
+  usesRailIcon: boolean;
+  visualMarker: L.CircleMarker | L.Marker;
   hitMarker: L.CircleMarker;
 }
 
@@ -62,6 +68,15 @@ const STOP_VISUAL_FOCUS_STROKE_COLOR = "#10233d";
 const STOP_VISUAL_STROKE_WEIGHT = 1.4;
 const STOP_VISUAL_FOCUS_STROKE_WEIGHT = 2.1;
 const STOP_VISUAL_FILL_OPACITY = 0.95;
+const STATION_ICON_BASE_SIZE = 20;
+const STATION_ICON_FOCUS_SIZE = 24;
+const RAIL_ROUTE_HALO_WEIGHT = 8.2;
+const RAIL_ROUTE_HALO_OPACITY = 0.25;
+const RAIL_ROUTE_BED_WEIGHT = 5.4;
+const RAIL_ROUTE_BED_COLOR = "#111111";
+const RAIL_ROUTE_TEXTURE_WEIGHT = 2;
+const RAIL_ROUTE_TEXTURE_COLOR = "#c4cbd4";
+const RAIL_ROUTE_TEXTURE_PATTERN = "2 10";
 
 const STOP_HIT_FOCUS_OPACITY = 0.14;
 const STOP_HIT_RADIUS_FINE_POINTER = 12;
@@ -163,6 +178,84 @@ function compareStopVariants(a: StopVariantState, b: StopVariantState): number {
   if (agencyCompare !== 0) return agencyCompare;
 
   return a.routeKey.localeCompare(b.routeKey);
+}
+
+function createRailStationIcon(
+  fillColor: string,
+  sharedStop: boolean,
+  focused: boolean,
+): L.DivIcon {
+  const size = focused ? STATION_ICON_FOCUS_SIZE : STATION_ICON_BASE_SIZE;
+  const classes = [
+    "station-stop-icon",
+    sharedStop ? "is-shared" : "is-single",
+    focused ? "is-focused" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  return L.divIcon({
+    className: "station-stop-icon-wrap",
+    html: `<span class="${classes}" style="--station-fill:${fillColor}" aria-hidden="true">&#128646;</span>`,
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2],
+  });
+}
+
+function buildRouteShapeLayers(
+  points: [number, number][],
+  color: string,
+  mode: "bus" | "rail",
+): RouteShapeRenderLayers {
+  if (mode !== "rail") {
+    const busLine = L.polyline(points, {
+      color,
+      weight: 3.8,
+      opacity: 0.86,
+      lineCap: "round",
+      lineJoin: "round",
+      pane: MAP_PANES.routeLines,
+    });
+    return {
+      interactiveLayer: busLine,
+      layers: [busLine],
+    };
+  }
+
+  const halo = L.polyline(points, {
+    color,
+    weight: RAIL_ROUTE_HALO_WEIGHT,
+    opacity: RAIL_ROUTE_HALO_OPACITY,
+    lineCap: "round",
+    lineJoin: "round",
+    pane: MAP_PANES.routeLines,
+    interactive: false,
+  });
+
+  const bed = L.polyline(points, {
+    color: RAIL_ROUTE_BED_COLOR,
+    weight: RAIL_ROUTE_BED_WEIGHT,
+    opacity: 0.9,
+    lineCap: "round",
+    lineJoin: "round",
+    pane: MAP_PANES.routeLines,
+  });
+
+  const textured = L.polyline(points, {
+    color: RAIL_ROUTE_TEXTURE_COLOR,
+    weight: RAIL_ROUTE_TEXTURE_WEIGHT,
+    opacity: 0.72,
+    lineCap: "butt",
+    lineJoin: "round",
+    dashArray: RAIL_ROUTE_TEXTURE_PATTERN,
+    pane: MAP_PANES.routeLines,
+    interactive: false,
+  });
+
+  return {
+    interactiveLayer: bed,
+    layers: [halo, bed, textured],
+  };
 }
 
 export function createRouteSelectionManager({
@@ -299,16 +392,21 @@ export function createRouteSelectionManager({
     activeDirectionKey: string | null,
   ): void {
     if (!state.layer) return;
+    const routeLayer = state.layer;
     const shapeLayers = shapeLayersByRouteKey.get(routeKey);
     if (!shapeLayers) return;
 
     for (const shapeLayer of shapeLayers) {
       const shouldShowShape = !activeDirectionKey || shapeLayer.directionKeys.has(activeDirectionKey);
-      const hasShape = state.layer.hasLayer(shapeLayer.polyline);
+      const hasShape = shapeLayer.layers.some((layer) => routeLayer.hasLayer(layer));
       if (shouldShowShape && !hasShape) {
-        shapeLayer.polyline.addTo(state.layer);
+        for (const layer of shapeLayer.layers) {
+          layer.addTo(routeLayer);
+        }
       } else if (!shouldShowShape && hasShape) {
-        state.layer.removeLayer(shapeLayer.polyline);
+        for (const layer of shapeLayer.layers) {
+          routeLayer.removeLayer(layer);
+        }
       }
     }
   }
@@ -439,13 +537,24 @@ export function createRouteSelectionManager({
       : (focused ? STOP_VISUAL_FOCUS_RADIUS : STOP_VISUAL_RADIUS);
     const weight = focused ? STOP_VISUAL_FOCUS_STROKE_WEIGHT : STOP_VISUAL_STROKE_WEIGHT;
 
-    clusterLayer.visualMarker.setRadius(radius);
-    clusterLayer.visualMarker.setStyle({
-      color: strokeColor,
-      weight,
-      fillColor,
-      fillOpacity: STOP_VISUAL_FILL_OPACITY,
-    });
+    if (clusterLayer.usesRailIcon) {
+      const stationMarker = clusterLayer.visualMarker as L.Marker;
+      stationMarker.setIcon(createRailStationIcon(fillColor, isSharedStop, focused));
+      stationMarker.setZIndexOffset(focused ? 2000 : 0);
+    } else {
+      const circleMarker = clusterLayer.visualMarker as L.CircleMarker;
+      circleMarker.setRadius(radius);
+      circleMarker.setStyle({
+        color: strokeColor,
+        weight,
+        fillColor,
+        fillOpacity: STOP_VISUAL_FILL_OPACITY,
+      });
+
+      if (focused) {
+        circleMarker.bringToFront();
+      }
+    }
 
     clusterLayer.hitMarker.setStyle({
       fillColor: activeVariant.routeState.meta.color,
@@ -453,7 +562,6 @@ export function createRouteSelectionManager({
     });
 
     if (focused) {
-      clusterLayer.visualMarker.bringToFront();
       clusterLayer.hitMarker.bringToFront();
     }
   }
@@ -607,16 +715,26 @@ export function createRouteSelectionManager({
 
       const sharedStop = variants.length > 1;
       const activeRouteKey = variants[0].routeKey;
-      const visualMarker = L.circleMarker([centerLat, centerLon], {
-        radius: sharedStop ? STOP_CLUSTER_MULTI_RADIUS : STOP_VISUAL_RADIUS,
-        color: sharedStop ? STOP_CLUSTER_NEUTRAL_STROKE : STOP_VISUAL_STROKE_COLOR,
-        weight: STOP_VISUAL_STROKE_WEIGHT,
-        fillColor: sharedStop ? STOP_CLUSTER_NEUTRAL_FILL : variants[0].routeState.meta.color,
-        fillOpacity: STOP_VISUAL_FILL_OPACITY,
-        pane: MAP_PANES.stopVisuals,
-        interactive: false,
-        bubblingMouseEvents: false,
-      });
+      const usesRailIcon = variants.some((variant) => variant.routeState.meta.mode === "rail");
+      const initialFillColor = sharedStop ? STOP_CLUSTER_NEUTRAL_FILL : variants[0].routeState.meta.color;
+      const visualMarker: L.CircleMarker | L.Marker = usesRailIcon
+        ? L.marker([centerLat, centerLon], {
+          icon: createRailStationIcon(initialFillColor, sharedStop, false),
+          pane: MAP_PANES.stopVisuals,
+          interactive: false,
+          keyboard: false,
+          bubblingMouseEvents: false,
+        })
+        : L.circleMarker([centerLat, centerLon], {
+          radius: sharedStop ? STOP_CLUSTER_MULTI_RADIUS : STOP_VISUAL_RADIUS,
+          color: sharedStop ? STOP_CLUSTER_NEUTRAL_STROKE : STOP_VISUAL_STROKE_COLOR,
+          weight: STOP_VISUAL_STROKE_WEIGHT,
+          fillColor: initialFillColor,
+          fillOpacity: STOP_VISUAL_FILL_OPACITY,
+          pane: MAP_PANES.stopVisuals,
+          interactive: false,
+          bubblingMouseEvents: false,
+        });
 
       const hitMarker = L.circleMarker([centerLat, centerLon], {
         radius: defaultStopHitRadius,
@@ -631,6 +749,7 @@ export function createRouteSelectionManager({
       const clusterLayer: StopClusterLayerState = {
         variants,
         activeRouteKey,
+        usesRailIcon,
         visualMarker,
         hitMarker,
       };
@@ -899,25 +1018,26 @@ export function createRouteSelectionManager({
     const shapeLayers: RouteShapeLayerState[] = [];
 
     for (const shape of routeData.shapes ?? []) {
-      const polyline = L.polyline(shape.points, {
-        color: routeMeta.color,
-        weight: 3.8,
-        opacity: 0.86,
-        lineCap: "round",
-        lineJoin: "round",
-        pane: MAP_PANES.routeLines,
-      });
+      const { interactiveLayer, layers } = buildRouteShapeLayers(
+        shape.points,
+        routeMeta.color,
+        routeMeta.mode,
+      );
+      if (layers.length === 0) continue;
 
-      polyline.bindTooltip(routeHoverLabel, {
+      interactiveLayer.bindTooltip(routeHoverLabel, {
         sticky: true,
         direction: "top",
         offset: [0, -4],
         className: "route-hover-tooltip",
       });
 
-      polyline.addTo(group);
+      for (const layer of layers) {
+        layer.addTo(group);
+      }
+
       shapeLayers.push({
-        polyline,
+        layers,
         directionKeys: new Set(shape.directionKeys),
       });
     }

@@ -22,6 +22,10 @@ function getInitialRouteIndex(views: StopClusterRouteView[], activeRouteKey: str
   return index >= 0 ? index : 0;
 }
 
+function getTransitModeIcon(mode: RouteMeta["mode"]): string {
+  return mode === "rail" ? "🚆" : "🚌";
+}
+
 export function buildStopClusterPopupContent(
   views: StopClusterRouteView[],
   activeRouteKey: string | null,
@@ -57,6 +61,7 @@ export function buildStopClusterPopupContent(
 
   const initialIndex = clampIndex(getInitialRouteIndex(views, activeRouteKey), views.length);
   const initialView = views[initialIndex];
+  const initialModeIcon = getTransitModeIcon(initialView.routeMeta.mode);
 
   const routeToggleHtml = `
     <div class="route-toggle" role="group" aria-label="Route switcher">
@@ -70,7 +75,7 @@ export function buildStopClusterPopupContent(
         <span aria-hidden="true">←</span>
       </button>
       <div class="route-chip" aria-live="polite" aria-atomic="true">
-        <span class="route-chip-icon" aria-hidden="true">🚌</span>
+        <span class="route-chip-icon" aria-hidden="true" data-route-current-icon>${escapeHtml(initialModeIcon)}</span>
         <span class="route-chip-label" data-route-current-label>${escapeHtml(initialView.routeMeta.shortName)}</span>
         <span class="route-chip-count" data-route-current-count>${initialIndex + 1}/${views.length}</span>
       </div>
@@ -88,13 +93,20 @@ export function buildStopClusterPopupContent(
 
   const routePanelsHtml = views
     .map((view, index) => {
-      const section = buildStopPopupSections(view.routeMeta, view.routeData, view.stop, view.scheduleData);
+      const section = buildStopPopupSections(
+        view.routeMeta,
+        view.routeData,
+        view.stop,
+        view.scheduleData,
+        { autoOpenNextDay: false },
+      );
       const active = index === initialIndex;
       return `
         <section
           class="route-panel${active ? " is-active" : ""}"
           data-route-panel="${escapeHtml(view.routeKey)}"
           data-route-short-name="${escapeHtml(view.routeMeta.shortName)}"
+          data-route-icon="${escapeHtml(getTransitModeIcon(view.routeMeta.mode))}"
           aria-hidden="${active ? "false" : "true"}"
         >
           <div class="popup-head">

@@ -184,6 +184,7 @@ export function attachInteractivePopup(
     const routeNavButtons = Array.from(
       popupElement.querySelectorAll<HTMLButtonElement>(".route-nav[data-route-nav]"),
     );
+    const currentRouteIconElement = popupElement.querySelector<HTMLElement>("[data-route-current-icon]");
     const currentRouteLabelElement = popupElement.querySelector<HTMLElement>("[data-route-current-label]");
     const currentRouteCountElement = popupElement.querySelector<HTMLElement>("[data-route-current-count]");
     const normalizeRouteIndex = (index: number) => ((index % routePanels.length) + routePanels.length) % routePanels.length;
@@ -200,12 +201,16 @@ export function attachInteractivePopup(
       const activePanel = routePanels[normalizedIndex];
       const activeRouteKey = activePanel?.dataset.routePanel ?? null;
       const activeRouteShortName = activePanel?.dataset.routeShortName ?? "";
+      const activeRouteIcon = activePanel?.dataset.routeIcon ?? "🚌";
       const activeDirectionKey = bindDirectionToggles(activePanel, activeRouteKey, true);
 
       if (emitRouteChange) {
         onRouteChange?.(activeRouteKey, activeDirectionKey);
       }
 
+      if (currentRouteIconElement) {
+        currentRouteIconElement.textContent = activeRouteIcon;
+      }
       if (currentRouteLabelElement) {
         currentRouteLabelElement.textContent = activeRouteShortName;
       }
@@ -281,6 +286,13 @@ export function attachInteractivePopup(
       (popupElement as HTMLElement & { dataset: DOMStringMap }).dataset.boundInteractive = "1";
       popupElement.addEventListener("mouseenter", clearCloseTimer);
       popupElement.addEventListener("mouseleave", scheduleClose);
+      popupElement.addEventListener("pointerdown", (event) => {
+        clearCloseTimer();
+        event.stopPropagation();
+      });
+      popupElement.addEventListener("pointerup", (event) => {
+        event.stopPropagation();
+      });
     }
 
     bindRouteToggles();
@@ -288,6 +300,10 @@ export function attachInteractivePopup(
 
   const openPopup = () => {
     clearCloseTimer();
+    if (marker.isPopupOpen()) {
+      return;
+    }
+
     const token = ++popupRequestToken;
     marker.setPopupContent(loadingPopupHtml);
     marker.openPopup();
@@ -322,7 +338,9 @@ export function attachInteractivePopup(
     bindPopupBehaviors();
   });
 
-  marker.on("popupclose", endHoverSession);
+  marker.on("popupclose", () => {
+    endHoverSession();
+  });
 
   marker.on("remove", () => {
     clearCloseTimer();
