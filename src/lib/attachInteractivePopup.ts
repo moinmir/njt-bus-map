@@ -90,6 +90,11 @@ export function attachInteractivePopup(
 
     const normalizeIndex = (index: number) => ((index % panels.length) + panels.length) % panels.length;
     let activeDirectionKey: string | null = null;
+    const revealNextDepartureInPanel = (panel: HTMLElement) => {
+      const nextDepartureEntry = panel.querySelector<HTMLElement>(".time-entry.is-next");
+      if (!nextDepartureEntry) return;
+      nextDepartureEntry.scrollIntoView({ block: "nearest", inline: "nearest" });
+    };
 
     const setActiveDirectionByIndex = (index: number, emitChange: boolean) => {
       const normalizedIndex = normalizeIndex(index);
@@ -102,6 +107,7 @@ export function attachInteractivePopup(
 
       const activePanel = panels[normalizedIndex];
       activeDirectionKey = activePanel?.dataset.directionPanel ?? null;
+      revealNextDepartureInPanel(activePanel);
       if (emitChange) {
         onDirectionChange?.(routeKey, activeDirectionKey);
       }

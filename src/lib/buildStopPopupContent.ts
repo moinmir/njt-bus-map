@@ -130,6 +130,29 @@ function resolveDirectionDaySchedules(
   return null;
 }
 
+function getPreferredDirectionKey(directionSchedules: Record<string, DaySchedules>): string | null {
+  let preferredDirectionKey: string | null = null;
+  let preferredNextTime = Number.POSITIVE_INFINITY;
+
+  for (const [directionKey, daySchedules] of Object.entries(directionSchedules)) {
+    const next = findNextArrival(daySchedules);
+    if (!next) continue;
+
+    const when = next.when.getTime();
+    if (when < preferredNextTime) {
+      preferredDirectionKey = directionKey;
+      preferredNextTime = when;
+    }
+  }
+
+  if (preferredDirectionKey) {
+    return preferredDirectionKey;
+  }
+
+  const [fallbackDirectionKey] = Object.keys(directionSchedules);
+  return fallbackDirectionKey ?? null;
+}
+
 function formatDirectionLabel(rawLabel: string, directionKey: string): string {
   const strippedFare = rawLabel.replace(EXACT_FARE_SUFFIX_RE, "").trim();
   const strippedPrefix = strippedFare.replace(/^\d+[A-Z]?\s+/, "").trim();
@@ -255,6 +278,18 @@ function buildDirectionViews(
   return directionViews;
 }
 
+export function getDefaultDirectionKeyForStop(
+  routeData: RouteData,
+  stop: StopData,
+  scheduleData: ScheduleData | null,
+): string | null {
+  const directionSchedules = resolveDirectionDaySchedules(routeData, stop, scheduleData);
+  if (!directionSchedules || Object.keys(directionSchedules).length === 0) {
+    return null;
+  }
+  return getPreferredDirectionKey(directionSchedules);
+}
+
 export function buildStopPopupSections(
   routeMeta: RouteMeta,
   routeData: RouteData,
@@ -283,6 +318,11 @@ export function buildStopPopupSections(
       bodyHtml: renderStatusCard("Direction data is unavailable for this stop right now."),
     };
   }
+  const preferredDirectionKey = getPreferredDirectionKey(directionSchedules);
+  const preferredDirectionIndex = directionViews.findIndex((view) => view.key === preferredDirectionKey);
+  const initialDirectionIndex = preferredDirectionIndex >= 0 ? preferredDirectionIndex : 0;
+  const initialDirectionView = directionViews[initialDirectionIndex];
+  const nextDirectionView = directionViews[(initialDirectionIndex + 1) % directionViews.length];
 
   const representativeDates = scheduleData?.representativeDates ?? routeData.representativeDates;
 
@@ -293,13 +333,13 @@ export function buildStopPopupSections(
           type="button"
           class="direction-switch"
           data-direction-switch
-          data-direction-index="0"
-          aria-label="Switch direction to ${escapeHtml(directionViews[1].displayLabel)}"
+          data-direction-index="${initialDirectionIndex}"
+          aria-label="Switch direction to ${escapeHtml(nextDirectionView.displayLabel)}"
           title="Switch direction"
         >
           <span class="direction-switch-current">
-            <span class="direction-icon" aria-hidden="true" data-direction-current-icon>${escapeHtml(directionViews[0].icon)}</span>
-            <span class="direction-current-label" data-direction-current-label>${escapeHtml(directionViews[0].displayLabel)}</span>
+            <span class="direction-icon" aria-hidden="true" data-direction-current-icon>${escapeHtml(initialDirectionView.icon)}</span>
+            <span class="direction-current-label" data-direction-current-label>${escapeHtml(initialDirectionView.displayLabel)}</span>
           </span>
           <span class="direction-switch-arrow" aria-hidden="true">↻</span>
         </button>
@@ -309,19 +349,19 @@ export function buildStopPopupSections(
 
   const directionPanelsHtml = directionViews.length === 1
     ? `
-      <section class="direction-panel is-active" data-direction-panel="${escapeHtml(directionViews[0].key)}">
-        ${renderScheduleSection(directionViews[0].daySchedules, representativeDates, { autoOpenNextDay })}
+      <section class="direction-panel is-active" data-direction-panel="${escapeHtml(initialDirectionView.key)}">
+        ${renderScheduleSection(initialDirectionView.daySchedules, representativeDates, { autoOpenNextDay })}
       </section>
     `
     : `
       <div class="direction-panel-group">
         ${directionViews.map((view, idx) => `
           <section
-            class="direction-panel${idx === 0 ? " is-active" : ""}"
+            class="direction-panel${idx === initialDirectionIndex ? " is-active" : ""}"
             data-direction-panel="${escapeHtml(view.key)}"
             data-direction-label="${escapeHtml(view.displayLabel)}"
             data-direction-icon="${escapeHtml(view.icon)}"
-            aria-hidden="${idx === 0 ? "false" : "true"}"
+            aria-hidden="${idx === initialDirectionIndex ? "false" : "true"}"
           >
             ${renderScheduleSection(view.daySchedules, representativeDates, { autoOpenNextDay })}
           </section>

@@ -4,6 +4,7 @@ import { getRouteHoverLabel } from "./routeLabel";
 import { loadRouteData, loadScheduleData } from "./transitDataClient";
 import { attachInteractivePopup } from "./attachInteractivePopup";
 import { buildStopClusterPopupContent, type StopClusterRouteView } from "./buildStopClusterPopupContent";
+import { getDefaultDirectionKeyForStop } from "./buildStopPopupContent";
 import { MAP_PANES } from "./mapPanes";
 import type {
   RouteState,
@@ -86,64 +87,6 @@ const STOP_HIT_RADIUS_MIN_COARSE_POINTER = 9;
 const STOP_HIT_RADIUS_DENSE_SCALE = 0.44;
 const STOP_HIT_TARGET_CELL_SIZE_PX = 28;
 const METERS_PER_DEGREE = 111_320;
-
-function stopHasExternalDirectionDepartures(
-  scheduleData: ScheduleData | null,
-  stop: StopData,
-  directionKey: string,
-): boolean {
-  const byDirection = scheduleData?.daySchedulesByStopByDirection?.[stop.stopId];
-  if (!byDirection) return false;
-  const byDay = byDirection[directionKey];
-  if (!byDay) return false;
-  return Object.values(byDay).some((times) => times.length > 0);
-}
-
-function stopHasInlineDirectionDepartures(stop: StopData, directionKey: string): boolean {
-  const byService = stop.serviceScheduleByDirection?.[directionKey];
-  if (!byService) return false;
-  return Object.values(byService).some((times) => times.length > 0);
-}
-
-function getStopDirectionKeysForHoverPreview(
-  routeData: RouteData,
-  stop: StopData,
-  scheduleData: ScheduleData | null,
-): string[] {
-  const orderedDirectionKeys = Object.keys(routeData.directionLabels ?? {});
-  const seen = new Set<string>();
-  const keys: string[] = [];
-
-  const maybeAdd = (directionKey: string) => {
-    if (!directionKey || seen.has(directionKey)) return;
-    seen.add(directionKey);
-    keys.push(directionKey);
-  };
-
-  for (const directionKey of orderedDirectionKeys) {
-    if (
-      stopHasExternalDirectionDepartures(scheduleData, stop, directionKey) ||
-      stopHasInlineDirectionDepartures(stop, directionKey)
-    ) {
-      maybeAdd(directionKey);
-    }
-  }
-
-  const externalByDirection = scheduleData?.daySchedulesByStopByDirection?.[stop.stopId] ?? {};
-  for (const [directionKey, byDay] of Object.entries(externalByDirection)) {
-    if (Object.values(byDay).some((times) => times.length > 0)) {
-      maybeAdd(directionKey);
-    }
-  }
-
-  for (const [directionKey, byService] of Object.entries(stop.serviceScheduleByDirection ?? {})) {
-    if (Object.values(byService).some((times) => times.length > 0)) {
-      maybeAdd(directionKey);
-    }
-  }
-
-  return keys;
-}
 
 function clamp(value: number, min: number, max: number): number {
   return Math.min(max, Math.max(min, value));
@@ -280,8 +223,39 @@ export function createRouteSelectionManager({
   let activePreviewRouteKey: string | null = null;
   let previewActivationSequence = 0;
 
+  function shouldShowStopCluster(clusterLayer: StopClusterLayerState): boolean {
+    if (!activePreviewRouteKey) return true;
+    return clusterLayer.variants.some((variant) => variant.routeKey === activePreviewRouteKey);
+  }
+
   function getVisibleStopLayers(): StopClusterLayerState[] {
-    return stopClusterLayers;
+    return stopClusterLayers.filter((clusterLayer) => shouldShowStopCluster(clusterLayer));
+  }
+
+  function syncStopClusterVisibility(): void {
+    for (const clusterLayer of stopClusterLayers) {
+      const shouldShow = shouldShowStopCluster(clusterLayer);
+
+      if (!shouldShow && clusterLayer.hitMarker.isPopupOpen()) {
+        clusterLayer.hitMarker.closePopup();
+      }
+
+      const hasVisual = stopClusterLayerGroup.hasLayer(clusterLayer.visualMarker);
+      if (shouldShow && !hasVisual) {
+        stopClusterLayerGroup.addLayer(clusterLayer.visualMarker);
+      } else if (!shouldShow && hasVisual) {
+        stopClusterLayerGroup.removeLayer(clusterLayer.visualMarker);
+      }
+
+      const hasHit = stopClusterLayerGroup.hasLayer(clusterLayer.hitMarker);
+      if (shouldShow && !hasHit) {
+        stopClusterLayerGroup.addLayer(clusterLayer.hitMarker);
+      } else if (!shouldShow && hasHit) {
+        stopClusterLayerGroup.removeLayer(clusterLayer.hitMarker);
+      }
+    }
+
+    scheduleStopHitTargetRefresh();
   }
 
   function getStopHitRadius(nearestDistancePx: number): number {
@@ -452,6 +426,7 @@ export function createRouteSelectionManager({
     if (activePreviewRouteKey === routeKey) return;
     activePreviewRouteKey = routeKey;
     syncAllSelectedRouteLayers();
+    syncStopClusterVisibility();
   }
 
   function startStationHoverPreview(routeKey: string, initialDirectionKey: string | null = null): void {
@@ -688,12 +663,11 @@ export function createRouteSelectionManager({
 
   function getInitialDirectionForVariant(variant: StopVariantState): string | null {
     const state = routeStateByKey.get(variant.routeKey);
-    const hoverDirectionKeys = getStopDirectionKeysForHoverPreview(
+    return getDefaultDirectionKeyForStop(
       variant.routeData,
       variant.stop,
       state?.scheduleData ?? null,
     );
-    return hoverDirectionKeys.length === 1 ? hoverDirectionKeys[0] : null;
   }
 
   function rebuildStopClusters(): void {
@@ -828,7 +802,7 @@ export function createRouteSelectionManager({
       stopClusterLayers.push(clusterLayer);
     }
 
-    scheduleStopHitTargetRefresh();
+    syncStopClusterVisibility();
   }
 
   function scheduleStopClusterRebuild(): void {

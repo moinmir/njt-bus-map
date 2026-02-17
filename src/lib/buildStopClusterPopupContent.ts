@@ -98,7 +98,6 @@ export function buildStopClusterPopupContent(
         view.routeData,
         view.stop,
         view.scheduleData,
-        { autoOpenNextDay: false },
       );
       const active = index === initialIndex;
       return `
