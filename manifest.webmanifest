@@ -1,7 +1,7 @@
 {
-  "name": "NJ + Princeton Transit Explorer",
-  "short_name": "NJT Bus Map",
-  "description": "Explore NJ Transit and Princeton bus routes with stop-level schedule popups.",
+  "name": "NJ Transit Explorer",
+  "short_name": "NJ Transit",
+  "description": "Explore NJ Transit routes and local shuttles with stop-level schedule popups.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

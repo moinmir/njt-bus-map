@@ -37,11 +37,12 @@ export function SidebarContent({
       {/* Header */}
       <div>
         <h1 className="text-lg font-bold font-[Sora,sans-serif] tracking-tight leading-tight">
-          NJ + Princeton Transit Explorer
+          NJ Transit Explorer
         </h1>
         <p className="mt-1.5 text-sm text-muted-foreground leading-snug">
           Official GTFS-backed map for NJ Transit bus routes, rail lines, and
-          Princeton transit routes (TigerTransit, Princeton Loop, Weekend Shopper).
+          local shuttle routes (including TigerTransit, Princeton Loop, and Weekend
+          Shopper).
         </p>
       </div>
 

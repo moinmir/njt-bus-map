@@ -1,7 +1,7 @@
 {
-  "name": "njt-bus-map",
+  "name": "nj-transit-explorer",
   "version": "1.0.0",
-  "description": "Interactive map of NJ Transit bus routes and Princeton-area shuttle routes with route-level filtering, area-based selection, and stop-level schedule popups.",
+  "description": "Interactive map of NJ Transit bus routes, rail lines, and local shuttle routes with route-level filtering, area-based selection, and stop-level schedule popups.",
   "type": "module",
   "scripts": {
     "dev": "vite",

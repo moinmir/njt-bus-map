@@ -1,6 +1,8 @@
-# NJ + Princeton Transit Explorer
+# NJ Transit Explorer
 
-Interactive map of NJ Transit bus routes, NJ Transit rail lines, and Princeton-area shuttle routes with route-level filtering, area-based selection, and stop-level schedule popups.
+Interactive map of NJ Transit bus routes, NJ Transit rail lines, and local shuttle routes with route-level filtering, area-based selection, and stop-level schedule popups.
+
+Live app: https://nj-transit.vercel.app
 
 ## Requirements
 - `uv`
