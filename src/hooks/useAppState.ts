@@ -67,7 +67,7 @@ export interface AppActions {
   toggleRoute: (routeKey: string, selected: boolean) => void;
   clearAllRoutes: () => void;
   fitSelectedRoutes: (map: L.Map) => void;
-  locateUser: (map: L.Map) => void;
+  locateUser: (map: L.Map, options?: { onLocated?: () => void }) => void;
   applyAreaFilter: (map: L.Map) => void;
   clearAreaFilter: () => void;
   togglePanel: () => void;
@@ -200,13 +200,23 @@ export function useAppState(): [AppState, AppActions] {
       }
     },
 
-    locateUser: (map: L.Map) => {
+    locateUser: (map: L.Map, options) => {
       if (!("geolocation" in navigator)) return;
 
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const { latitude, longitude, accuracy } = position.coords;
           const latLng: L.LatLngExpression = [latitude, longitude];
+
+          let didInvokeOnLocated = false;
+          const invokeOnLocated = () => {
+            if (didInvokeOnLocated) return;
+            didInvokeOnLocated = true;
+            options?.onLocated?.();
+          };
+
+          map.once("moveend", invokeOnLocated);
+          window.setTimeout(invokeOnLocated, 1200);
 
           map.flyTo(latLng, 13, { animate: true, duration: 0.6 });
 

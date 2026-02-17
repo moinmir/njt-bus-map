@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { MapPin, Maximize2, Trash2 } from "lucide-react";
+import { Maximize2, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RouteSearch } from "./RouteSearch";
 import { RouteGroups } from "./RouteGroups";
@@ -13,7 +13,6 @@ export interface SidebarContentProps {
   onToggleRoute: (routeKey: string, selected: boolean) => void;
   onClearAll: () => void;
   onFitSelected: () => void;
-  onLocateMe: () => void;
   onSetAgencySelected: (agencyId: string, selected: boolean) => void;
 }
 
@@ -24,7 +23,6 @@ export function SidebarContent({
   onToggleRoute,
   onClearAll,
   onFitSelected,
-  onLocateMe,
   onSetAgencySelected,
 }: SidebarContentProps) {
   const handleSearchChange = useCallback(
@@ -73,15 +71,6 @@ export function SidebarContent({
           <Button onClick={onFitSelected} size="default" className="w-full">
             <Maximize2 className="h-4 w-4" />
             Fit Selected Routes
-          </Button>
-          <Button
-            variant="secondary"
-            size="default"
-            onClick={onLocateMe}
-            className="w-full"
-          >
-            <MapPin className="h-4 w-4" />
-            Use My Location
           </Button>
         </div>
       </section>

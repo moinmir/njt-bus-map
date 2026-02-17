@@ -260,6 +260,30 @@
   color: oklch(0.4 0.055 240);
 }
 
+/* Locate button integrated into Leaflet zoom control stack */
+.leaflet-bar a.leaflet-control-zoom-locate {
+  display: grid;
+  place-items: center;
+}
+
+.leaflet-control-locate-icon {
+  width: 14px;
+  height: 14px;
+  stroke: #1a73e8;
+  stroke-width: 2;
+  fill: none;
+}
+
+.leaflet-touch .leaflet-control-locate-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.leaflet-bar a.leaflet-control-zoom-locate:focus-visible {
+  outline: 2px solid #4d90fe;
+  outline-offset: -2px;
+}
+
 .direction-current-label {
   min-width: 0;
   overflow: hidden;
