@@ -1,5 +1,5 @@
 import L from "leaflet";
-import { HOVER_POINTER_QUERY, POPUP_CLOSE_DELAY_MS } from "./constants";
+import { HOVER_POINTER_QUERY, MOBILE_LAYOUT_QUERY, POPUP_CLOSE_DELAY_MS } from "./constants";
 import { getRouteHoverLabel } from "./routeLabel";
 import { loadRouteData, loadScheduleData } from "./transitDataClient";
 import { attachInteractivePopup } from "./attachInteractivePopup";
@@ -87,6 +87,11 @@ const STOP_HIT_RADIUS_MIN_COARSE_POINTER = 9;
 const STOP_HIT_RADIUS_DENSE_SCALE = 0.44;
 const STOP_HIT_TARGET_CELL_SIZE_PX = 28;
 const METERS_PER_DEGREE = 111_320;
+const MOBILE_POPUP_MAP_PADDING = 24;
+const MOBILE_POPUP_BOTTOM_PADDING_RATIO = 0.46;
+const MOBILE_POPUP_BOTTOM_PADDING_MIN = 180;
+const MOBILE_POPUP_BOTTOM_PADDING_MAX = 420;
+const MOBILE_POPUP_BOTTOM_PADDING_BUFFER = 72;
 
 function clamp(value: number, min: number, max: number): number {
   return Math.min(max, Math.max(min, value));
@@ -215,6 +220,7 @@ export function createRouteSelectionManager({
   const previewHoverCountsByRouteKey = new Map<string, number>();
   const previewActivationOrderByRouteKey = new Map<string, number>();
   const previewDirectionByRouteKey = new Map<string, string>();
+  const mobilePopupMode = window.matchMedia(MOBILE_LAYOUT_QUERY).matches;
   const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
   const defaultStopHitRadius = coarsePointer ? STOP_HIT_RADIUS_COARSE_POINTER : STOP_HIT_RADIUS_FINE_POINTER;
   const minStopHitRadius = coarsePointer ? STOP_HIT_RADIUS_MIN_COARSE_POINTER : STOP_HIT_RADIUS_MIN_FINE_POINTER;
@@ -442,6 +448,30 @@ export function createRouteSelectionManager({
       previewDirectionByRouteKey.delete(routeKey);
     }
     applyActivePreviewRoute(routeKey);
+  }
+
+  function fitRouteForMobilePopup(routeKey: string): void {
+    if (!mobilePopupMode) return;
+    const state = routeStateByKey.get(routeKey);
+    if (!state?.selected) return;
+
+    const mapHeight = map.getSize().y;
+    const maxBottomPadding = Math.max(MOBILE_POPUP_BOTTOM_PADDING_MIN, mapHeight - 48);
+    const fallbackPadding = Math.round(mapHeight * MOBILE_POPUP_BOTTOM_PADDING_RATIO);
+    const sheetPanel = document.querySelector<HTMLElement>(
+      ".mobile-stop-popup-sheet.is-open .mobile-stop-popup-sheet__panel",
+    );
+    const sheetPadding = sheetPanel
+      ? Math.ceil(sheetPanel.getBoundingClientRect().height) + MOBILE_POPUP_BOTTOM_PADDING_BUFFER
+      : fallbackPadding;
+    const bottomPadding = clamp(sheetPadding, MOBILE_POPUP_BOTTOM_PADDING_MIN, Math.min(MOBILE_POPUP_BOTTOM_PADDING_MAX, maxBottomPadding));
+
+    map.fitBounds(state.meta.bounds, {
+      paddingTopLeft: [MOBILE_POPUP_MAP_PADDING, MOBILE_POPUP_MAP_PADDING],
+      paddingBottomRight: [MOBILE_POPUP_MAP_PADDING, bottomPadding],
+      animate: true,
+      duration: 0.45,
+    });
   }
 
   function setStationHoverPreviewDirection(routeKey: string, directionKey: string | null): void {
@@ -748,12 +778,17 @@ export function createRouteSelectionManager({
           closeDelayMs: POPUP_CLOSE_DELAY_MS,
           hoverPointerQuery: HOVER_POINTER_QUERY,
           defaultRouteKey: clusterLayer.activeRouteKey,
+          onContentReady: () => {
+            if (!previewRouteKey) return;
+            fitRouteForMobilePopup(previewRouteKey);
+          },
           onHoverSessionStart: () => {
             const activeVariant = getActiveClusterVariant(clusterLayer);
             const initialDirection = getInitialDirectionForVariant(activeVariant);
             previewRouteKey = activeVariant.routeKey;
             setStopClusterFocusState(clusterLayer, true);
             startStationHoverPreview(previewRouteKey, initialDirection);
+            fitRouteForMobilePopup(previewRouteKey);
           },
           onRouteChange: (routeKey, directionKey) => {
             if (!routeKey) return;
@@ -763,12 +798,14 @@ export function createRouteSelectionManager({
             if (!previewRouteKey) {
               previewRouteKey = routeKey;
               startStationHoverPreview(routeKey, directionKey);
+              fitRouteForMobilePopup(routeKey);
               return;
             }
             if (previewRouteKey !== routeKey) {
               endStationHoverPreview(previewRouteKey);
               previewRouteKey = routeKey;
               startStationHoverPreview(routeKey, directionKey);
+              fitRouteForMobilePopup(routeKey);
               return;
             }
             setStationHoverPreviewDirection(routeKey, directionKey);
@@ -778,12 +815,14 @@ export function createRouteSelectionManager({
             if (!previewRouteKey) {
               previewRouteKey = routeKey;
               startStationHoverPreview(routeKey, directionKey);
+              fitRouteForMobilePopup(routeKey);
               return;
             }
             if (previewRouteKey !== routeKey) {
               endStationHoverPreview(previewRouteKey);
               previewRouteKey = routeKey;
               startStationHoverPreview(routeKey, directionKey);
+              fitRouteForMobilePopup(routeKey);
               return;
             }
             setStationHoverPreviewDirection(routeKey, directionKey);
